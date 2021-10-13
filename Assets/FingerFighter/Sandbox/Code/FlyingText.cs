@@ -15,7 +15,7 @@ namespace FingerFighter.Sandbox
         public void Init(string textToShow, Vector2 direction)
         {
             text.text = textToShow;
-            _direction = direction.normalized;
+            _direction = direction;
         }
 
         private void Update()
