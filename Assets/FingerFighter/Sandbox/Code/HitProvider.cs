@@ -11,13 +11,12 @@ namespace FingerFighter.Sandbox
         private void OnCollisionEnter2D(Collision2D other)
         {
             var hitTaker = other.gameObject.GetComponent<HitTaker>();
-            if (hitTaker != null)
-            {
-                hitTaker.TakeAHit(
-                    handleSpeed.Speed, 
-                    other.contacts[0].point, 
-                    handleSpeed.Direction);
-            }
+            if (hitTaker == null) return;
+            var contactPosition = other.contacts[0].point; 
+            hitTaker.TakeAHit(
+                handleSpeed.Speed, 
+                contactPosition, 
+                handleSpeed.Direction);
         }
     }
 }
