@@ -22,8 +22,19 @@ namespace FingerFighter.Sandbox
 
         private void Update()
         {
-            transform.position = (Vector2)transform.position + _direction * (speed * Time.deltaTime);
-            _durationLeft -= Time.deltaTime;
+            Move();
+            SubtractTime();
+            RepoolIfNeeded();
+        }
+
+        private void Move() 
+            => transform.position = (Vector2) transform.position + _direction * (speed * Time.deltaTime);
+
+        private void SubtractTime() 
+            => _durationLeft -= Time.deltaTime;
+
+        private void RepoolIfNeeded()
+        {
             if (_durationLeft <= 0)
             {
                 FlyingTextFactory.Instance.ReturnToPool(this);
