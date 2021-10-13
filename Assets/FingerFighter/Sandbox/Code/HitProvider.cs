@@ -13,7 +13,10 @@ namespace FingerFighter.Sandbox
             var hitTaker = other.gameObject.GetComponent<HitTaker>();
             if (hitTaker != null)
             {
-                hitTaker.TakeAHit(handleSpeed.Velocity, other.contacts[0].point, other.relativeVelocity);
+                hitTaker.TakeAHit(
+                    handleSpeed.Velocity, 
+                    other.contacts[0].point, 
+                    handleSpeed.Direction);
             }
         }
     }

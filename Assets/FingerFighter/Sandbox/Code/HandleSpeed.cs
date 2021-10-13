@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -11,7 +10,8 @@ namespace FingerFighter.Sandbox
         [SerializeField] private int numberOfCachedVelocities = 5;
         
         public float Velocity { get; private set; }
-        
+        public Vector2 Direction { get; private set; }
+
         private Vector2 _prevPos;
         private float[] _cachedVelocities;
         private int _cvIndex;
@@ -31,7 +31,8 @@ namespace FingerFighter.Sandbox
         private void UpdateVelocity()
         {
             Vector2 curPos = transform.position;
-            var curVel = (curPos - _prevPos).magnitude / Time.deltaTime;
+            Direction = curPos - _prevPos;
+            var curVel = Direction.magnitude / Time.deltaTime;
             _prevPos = curPos;
             
             _cachedVelocities[_cvIndex] = curVel;
