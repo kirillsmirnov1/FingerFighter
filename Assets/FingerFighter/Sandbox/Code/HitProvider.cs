@@ -14,7 +14,7 @@ namespace FingerFighter.Sandbox
             if (hitTaker != null)
             {
                 hitTaker.TakeAHit(
-                    handleSpeed.Velocity, 
+                    handleSpeed.Speed, 
                     other.contacts[0].point, 
                     handleSpeed.Direction);
             }

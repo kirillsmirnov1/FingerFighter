@@ -7,44 +7,49 @@ namespace FingerFighter.Sandbox
     public class HandleSpeed : MonoBehaviour
     {
         [SerializeField] private TextMeshPro txt;
-        [SerializeField] private int numberOfCachedVelocities = 5;
+        [SerializeField] private int cachedSpeedCount = 5;
         
-        public float Velocity { get; private set; }
+        public float Speed { get; private set; }
         public Vector2 Direction { get; private set; }
 
         private Vector2 _prevPos;
-        private float[] _cachedVelocities;
-        private int _cvIndex;
+        private float[] _cachedSpeed;
+        private int _cachedSpeedIndex;
 
         private void Start()
         {
-            _cachedVelocities = new float[numberOfCachedVelocities];
+            _cachedSpeed = new float[cachedSpeedCount];
             _prevPos = transform.position;
         }
 
         private void Update()
         {
-            UpdateVelocity();
-            DisplayVelocity();
+            UpdateDirection();
+            UpdateSpeed();
+            DisplaySpeed();
         }
 
-        private void UpdateVelocity()
+        private void UpdateDirection()
         {
             Vector2 curPos = transform.position;
             Direction = curPos - _prevPos;
-            var curVel = Direction.magnitude / Time.deltaTime;
             _prevPos = curPos;
-            
-            _cachedVelocities[_cvIndex] = curVel;
-            _cvIndex = (_cvIndex + 1) % numberOfCachedVelocities;
-            
-            Velocity = _cachedVelocities.Sum() / numberOfCachedVelocities;
         }
 
-        private void DisplayVelocity()
+        private void UpdateSpeed()
         {
-            var velocityStr = $"{(int)Velocity}";
-            txt.text = velocityStr;
+            var currentSpeed = Direction.magnitude / Time.deltaTime;
+            
+            _cachedSpeed[_cachedSpeedIndex] = currentSpeed;
+            _cachedSpeedIndex = (_cachedSpeedIndex + 1) % cachedSpeedCount;
+            
+            Speed = _cachedSpeed.Sum() / cachedSpeedCount;
+        }
+
+        private void DisplaySpeed()
+        {
+            var speedStr = $"{(int)Speed}";
+            txt.text = speedStr;
             txt.transform.rotation = Quaternion.identity;
         }
     }
