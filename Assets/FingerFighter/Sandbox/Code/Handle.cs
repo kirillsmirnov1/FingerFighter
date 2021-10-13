@@ -5,15 +5,18 @@ namespace FingerFighter.Sandbox
 {
     public class Handle : MonoBehaviour
     {
+        [SerializeField] private Rigidbody2D rb;
+        
         [HideInInspector] public Finger finger;
 
-        private void Update()
+        private void FixedUpdate()
         {
             // IMPR state machine 
             if(finger == null) return;
-            var fingerPos = Camera.main.ScreenToWorldPoint(finger.screenPosition);
-            fingerPos.z = 0;
-            transform.position = fingerPos; // TODO use rb 
+            
+            Vector2 fingerPos = Camera.main.ScreenToWorldPoint(finger.screenPosition);
+            
+            rb.MovePosition(fingerPos);
         }
     }
 }
