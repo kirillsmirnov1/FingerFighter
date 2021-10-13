@@ -26,7 +26,7 @@ namespace FingerFighter.Sandbox
         {
             UpdateDirection();
             UpdateSpeed();
-            DisplaySpeed();
+            // DisplaySpeed();
         }
 
         private void UpdateDirection()
