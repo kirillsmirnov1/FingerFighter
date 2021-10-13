@@ -331,6 +331,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &908241855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 908241856}
+  - component: {fileID: 908241857}
+  m_Layer: 0
+  m_Name: FlyingTextFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &908241856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908241855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &908241857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908241855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d699a110474fae9b247386f7eb00a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitDamageTextPrefab: {fileID: 1593544413518964786, guid: 3a9954d627d645358e5b05eceabf4b7b, type: 3}
 --- !u!1 &1663190954
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +472,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3d1b1f2d7e347488b91371ce5d0d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitDamageTextPrefab: {fileID: 1593544413518964786, guid: 3a9954d627d645358e5b05eceabf4b7b, type: 3}
 --- !u!58 &1663190958
 CircleCollider2D:
   m_ObjectHideFlags: 0

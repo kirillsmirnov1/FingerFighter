@@ -4,7 +4,7 @@ using UnityEngine;
 namespace FingerFighter.Sandbox
 {
     [RequireComponent(typeof(TextMeshPro))]
-    public class HitDamageText : MonoBehaviour
+    public class FlyingText : MonoBehaviour
     {
         [SerializeField] private TextMeshPro text;
         [SerializeField] private float duration = 3f;
@@ -12,9 +12,9 @@ namespace FingerFighter.Sandbox
         
         private Vector2 _direction;
         
-        public void Init(float hitForce, Vector2 direction)
+        public void Init(string textToShow, Vector2 direction)
         {
-            text.text = $"{(int) hitForce}";
+            text.text = textToShow;
             _direction = direction.normalized;
         }
 
