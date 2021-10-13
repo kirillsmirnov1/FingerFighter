@@ -8,7 +8,7 @@ namespace FingerFighter.Sandbox
         [SerializeField] private TextMeshPro txt;
 
         private Vector2 _prevPos;
-        private float _velocity;
+        public float Velocity { get; private set; }
 
         private void Start()
         {
@@ -24,13 +24,13 @@ namespace FingerFighter.Sandbox
         private void UpdateVelocity()
         {
             Vector2 curPos = transform.position;
-            _velocity = (curPos - _prevPos).magnitude / Time.deltaTime;
+            Velocity = (curPos - _prevPos).magnitude / Time.deltaTime;
             _prevPos = curPos;
         }
 
         private void DisplayVelocity()
         {
-            var velocityStr = $"{(int)_velocity}";
+            var velocityStr = $"{(int)Velocity}";
             txt.text = velocityStr;
             txt.transform.rotation = Quaternion.identity;
         }
