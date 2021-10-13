@@ -293,8 +293,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0
+  far clip plane: 20
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -357,8 +357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handles:
-  - {fileID: 1894821339}
   - {fileID: 1401465102}
+  - {fileID: 1894821339}
 --- !u!4 &796179929
 Transform:
   m_ObjectHideFlags: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1138830125}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cea2fa89ee80e15419426553c7233e20, type: 3}
   m_Name: 
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 971673428642313355}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cea2fa89ee80e15419426553c7233e20, type: 3}
   m_Name: 
