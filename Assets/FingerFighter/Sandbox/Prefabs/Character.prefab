@@ -213,6 +213,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HandRight
       objectReference: {fileID: 0}
+    - target: {fileID: 6430294526901351928, guid: 6ff1a117c4e14ff1a7b9ba1497375f24, type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 2817814460067074411}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ff1a117c4e14ff1a7b9ba1497375f24, type: 3}
 --- !u!4 &7730854463631887074 stripped
@@ -279,6 +283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HandLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 6430294526901351928, guid: 6ff1a117c4e14ff1a7b9ba1497375f24, type: 3}
+      propertyPath: body
+      value: 
+      objectReference: {fileID: 2817814460067074411}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ff1a117c4e14ff1a7b9ba1497375f24, type: 3}
 --- !u!4 &7445342522070025796 stripped

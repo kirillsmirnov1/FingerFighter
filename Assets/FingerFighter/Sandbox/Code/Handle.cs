@@ -6,6 +6,8 @@ namespace FingerFighter.Sandbox
     public class Handle : MonoBehaviour
     {
         [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private Transform body;
+        [SerializeField] private float handLength = 2f;
         
         [HideInInspector] public Finger finger;
 
@@ -15,8 +17,14 @@ namespace FingerFighter.Sandbox
             if(finger == null) return;
             
             Vector2 fingerPos = Camera.main.ScreenToWorldPoint(finger.screenPosition);
+            Vector2 bodyPos = body.position; 
             
-            rb.MovePosition(fingerPos);
+            var toFinger = fingerPos - bodyPos;
+            var toFingerClamped = Vector2.ClampMagnitude(toFinger, handLength);
+            
+            var targetPos = bodyPos + toFingerClamped;
+            
+            rb.MovePosition(targetPos);
         }
     }
 }
