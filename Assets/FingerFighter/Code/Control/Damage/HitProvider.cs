@@ -1,6 +1,7 @@
+using FingerFighter.Control.Character.Handles;
 using UnityEngine;
 
-namespace FingerFighter
+namespace FingerFighter.Control.Damage
 {
     [RequireComponent(typeof(Collider2D))]
     [RequireComponent(typeof(Rigidbody2D))]

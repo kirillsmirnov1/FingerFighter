@@ -1,7 +1,8 @@
+using FingerFighter.Control.Factories;
 using TMPro;
 using UnityEngine;
 
-namespace FingerFighter
+namespace FingerFighter.View
 {
     [RequireComponent(typeof(TextMeshPro))]
     public class FlyingText : MonoBehaviour

@@ -2,7 +2,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-namespace FingerFighter
+namespace FingerFighter.Control.Character.Handles
 {
     public class HandleSpeed : MonoBehaviour
     {

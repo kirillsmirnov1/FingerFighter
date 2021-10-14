@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 
-namespace FingerFighter
+namespace FingerFighter.Control.Character.Handles
 {
     public class Handle : MonoBehaviour
     {

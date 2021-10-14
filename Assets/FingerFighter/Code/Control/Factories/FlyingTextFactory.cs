@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using FingerFighter.View;
 using UnityEngine;
 
-namespace FingerFighter
+namespace FingerFighter.Control.Factories
 {
     public class FlyingTextFactory : MonoBehaviour
     {

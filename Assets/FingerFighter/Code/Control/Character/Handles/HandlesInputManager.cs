@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
-namespace FingerFighter
+namespace FingerFighter.Control.Character.Handles
 {
     [DefaultExecutionOrder(-1)]
     public class HandlesInputManager : MonoBehaviour
