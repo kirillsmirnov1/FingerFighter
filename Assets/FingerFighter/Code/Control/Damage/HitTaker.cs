@@ -12,6 +12,7 @@ namespace FingerFighter.Control.Damage
         
         public void TakeAHit(HitData hitData)
         {
+            // TODO damage entity 
             DisplayHitDamage(hitData);
         }
 
