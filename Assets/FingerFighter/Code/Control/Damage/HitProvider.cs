@@ -21,10 +21,15 @@ namespace FingerFighter.Control.Damage
             hitTaker.TakeAHit(PrepareHitData(other));
         }
 
-        private HitData PrepareHitData(Collision2D other)
+        private HitData PrepareHitData(Collision2D hitTakerCollision)
         {
             var hitData = hitDataProvider.HitData;
-            hitData.Position = other.contacts[0].point;
+            if (hitData.Direction.sqrMagnitude < 0.001f)
+            {
+                hitData.Direction = hitTakerCollision.transform.position - transform.position;
+            }
+            hitData.Direction.Normalize();
+            hitData.Position = hitTakerCollision.contacts[0].point;
             return hitData;
         }
     }
