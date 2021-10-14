@@ -1,4 +1,5 @@
 using FingerFighter.Control.Factories;
+using FingerFighter.Model.Damage;
 using UnityEngine;
 
 namespace FingerFighter.Control.Damage
@@ -7,6 +8,8 @@ namespace FingerFighter.Control.Damage
     [RequireComponent(typeof(Rigidbody2D))]
     public class HitTaker : MonoBehaviour
     {
+        [SerializeField] public Affiliation affiliation;
+        
         public void TakeAHit(float hitForce, Vector2 position, Vector2 direction)
         {
             DisplayHitDamage(hitForce, position, direction);
