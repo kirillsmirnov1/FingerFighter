@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using FingerFighter.Control.Damage;
+using FingerFighter.Model;
+using FingerFighter.Model.Damage;
 using FingerFighter.View;
 using UnityEngine;
 
@@ -15,12 +19,18 @@ namespace FingerFighter.Control.Factories
         private void Awake()
         {
             Instance = this;
+            HitTaker.OnHitTaken += Instantiate;
         }
 
-        public void Instantiate(string text, Vector2 position, Vector2 direction) // IMPR use struct FlyingTextData
+        private void OnDestroy()
         {
-            var newFlyingText = GetNewFlyingText(position);
-            newFlyingText.Init(text, direction);
+            HitTaker.OnHitTaken -= Instantiate;
+        }
+
+        private void Instantiate(HitData hitData)
+        {
+            var newFlyingText = GetNewFlyingText(hitData.Position);
+            newFlyingText.Init(ComposeFlyingTextData(hitData));
         }
 
         private FlyingText GetNewFlyingText(Vector2 position)
@@ -38,6 +48,24 @@ namespace FingerFighter.Control.Factories
                     .GetComponent<FlyingText>();
             }
         }
+
+        private FlyingTextData ComposeFlyingTextData(HitData hitData)
+        {
+            return new FlyingTextData
+            {
+                Text = $"{hitData.Force:0}",
+                TextColor = PickColor(hitData),
+                Direction = hitData.Direction
+            };
+        }
+
+        private Color PickColor(HitData hitData) =>
+            hitData.Affected switch
+            {
+                Affiliation.Player => Color.red,
+                Affiliation.Enemy => Color.white,
+                _ => throw new ArgumentOutOfRangeException()
+            };
 
         public void ReturnToPool(FlyingText flyingText)
         {

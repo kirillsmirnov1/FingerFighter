@@ -1,4 +1,5 @@
 using FingerFighter.Control.Factories;
+using FingerFighter.Model;
 using TMPro;
 using UnityEngine;
 
@@ -15,10 +16,11 @@ namespace FingerFighter.View
         private Vector2 _direction;
         private float _durationLeft;
         
-        public void Init(string textToShow, Vector2 direction)
+        public void Init(FlyingTextData data)
         {
-            text.text = textToShow;
-            _direction = direction;
+            text.text = data.Text;
+            text.color = data.TextColor;
+            _direction = data.Direction;
             _durationLeft = duration;
         }
 
