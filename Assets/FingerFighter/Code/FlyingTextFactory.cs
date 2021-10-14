@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace FingerFighter.Sandbox
+namespace FingerFighter
 {
     public class FlyingTextFactory : MonoBehaviour
     {

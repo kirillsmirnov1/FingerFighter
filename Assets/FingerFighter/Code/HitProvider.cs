@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FingerFighter.Sandbox
+namespace FingerFighter
 {
     [RequireComponent(typeof(Collider2D))]
     [RequireComponent(typeof(Rigidbody2D))]

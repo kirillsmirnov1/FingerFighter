@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 
-namespace FingerFighter.Sandbox
+namespace FingerFighter
 {
     public class Handle : MonoBehaviour
     {

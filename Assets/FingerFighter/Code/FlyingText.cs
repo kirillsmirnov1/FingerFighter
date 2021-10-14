@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace FingerFighter.Sandbox
+namespace FingerFighter
 {
     [RequireComponent(typeof(TextMeshPro))]
     public class FlyingText : MonoBehaviour
