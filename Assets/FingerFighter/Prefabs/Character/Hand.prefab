@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 6010186145799417756}
   - component: {fileID: 261871681114540746}
   - component: {fileID: 6430294526901351928}
+  - component: {fileID: 7233169938493871838}
   - component: {fileID: 971673427722101645}
   - component: {fileID: 971673427722101635}
   - component: {fileID: 971673427722101644}
@@ -219,7 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74a087b986a59447896f621d6b65030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handleSpeed: {fileID: 261871681114540746}
+  affiliation: 0
+  hitDataProvider: {fileID: 7233169938493871838}
 --- !u!114 &261871681114540746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +251,19 @@ MonoBehaviour:
   rb: {fileID: 971673427722101635}
   body: {fileID: 0}
   handLength: 3
+--- !u!114 &7233169938493871838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971673427722101647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04af9718495c4895893638aef68ca78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handleSpeed: {fileID: 261871681114540746}
 --- !u!212 &971673427722101645
 SpriteRenderer:
   m_ObjectHideFlags: 0

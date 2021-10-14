@@ -17,7 +17,7 @@ namespace FingerFighter.Control.Factories
             Instance = this;
         }
 
-        public void Instantiate(string text, Vector2 position, Vector2 direction)
+        public void Instantiate(string text, Vector2 position, Vector2 direction) // IMPR use struct FlyingTextData
         {
             direction = NormalizeDirection(direction);
             var newFlyingText = GetNewFlyingText(position);

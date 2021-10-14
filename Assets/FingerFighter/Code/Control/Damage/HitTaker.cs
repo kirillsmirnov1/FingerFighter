@@ -10,15 +10,15 @@ namespace FingerFighter.Control.Damage
     {
         [SerializeField] public Affiliation affiliation;
         
-        public void TakeAHit(float hitForce, Vector2 position, Vector2 direction)
+        public void TakeAHit(HitData hitData)
         {
-            DisplayHitDamage(hitForce, position, direction);
+            DisplayHitDamage(hitData);
         }
 
-        private static void DisplayHitDamage(float hitForce, Vector2 position, Vector2 direction)
+        private static void DisplayHitDamage(HitData hitData)
         {
             FlyingTextFactory.Instance
-                .Instantiate($"{hitForce:0}", position, direction);
+                .Instantiate($"{hitData.Force:0}", hitData.Position, hitData.Direction);
         }
     }
 }

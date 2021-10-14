@@ -1,5 +1,5 @@
-using FingerFighter.Control.Character.Handles;
 using FingerFighter.Model.Damage;
+using FingerFighter.Model.Damage.HitDataProvider;
 using UnityEngine;
 
 namespace FingerFighter.Control.Damage
@@ -9,7 +9,7 @@ namespace FingerFighter.Control.Damage
     public class HitProvider : MonoBehaviour
     {
         [SerializeField] private Affiliation affiliation;
-        [SerializeField] private HandleSpeed handleSpeed; // IMPR IHitForceProvider for both player and enemy
+        [SerializeField] private AHitDataProvider hitDataProvider;
         
         private void OnCollisionEnter2D(Collision2D other)
         {
@@ -18,11 +18,14 @@ namespace FingerFighter.Control.Damage
             if (hitTaker == null) return;
             if (hitTaker.affiliation == affiliation) return;
             
-            var contactPosition = other.contacts[0].point; 
-            hitTaker.TakeAHit(
-                handleSpeed.Speed, 
-                contactPosition, 
-                handleSpeed.Direction);
+            hitTaker.TakeAHit(PrepareHitData(other));
+        }
+
+        private HitData PrepareHitData(Collision2D other)
+        {
+            var hitData = hitDataProvider.HitData;
+            hitData.Position = other.contacts[0].point;
+            return hitData;
         }
     }
 }
