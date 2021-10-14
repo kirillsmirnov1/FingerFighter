@@ -1,4 +1,5 @@
 using System;
+using FingerFighter.Model;
 using FingerFighter.Model.Damage;
 using UnityEngine;
 
@@ -11,10 +12,11 @@ namespace FingerFighter.Control.Damage
         public static event Action<HitData> OnHitTaken; 
         
         [SerializeField] public Affiliation affiliation;
-        
+        [SerializeField] private Health health;
+
         public void TakeAHit(HitData hitData)
         {
-            // TODO damage entity 
+            health.Change(-hitData.Force); 
             OnHitTaken?.Invoke(hitData);
         }
     }
