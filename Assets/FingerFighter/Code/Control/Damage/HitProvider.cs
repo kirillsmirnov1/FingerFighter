@@ -18,10 +18,10 @@ namespace FingerFighter.Control.Damage
             if (hitTaker == null) return;
             if (hitTaker.affiliation == affiliation) return;
             
-            hitTaker.TakeAHit(PrepareHitData(other));
+            hitTaker.TakeAHit(PrepareHitData(other, hitTaker));
         }
 
-        private HitData PrepareHitData(Collision2D hitTakerCollision)
+        private HitData PrepareHitData(Collision2D hitTakerCollision, HitTaker hitTaker)
         {
             var hitData = hitDataProvider.HitData;
             if (hitData.Direction.sqrMagnitude < 0.001f)
@@ -30,6 +30,7 @@ namespace FingerFighter.Control.Damage
             }
             hitData.Direction.Normalize();
             hitData.Position = hitTakerCollision.contacts[0].point;
+            hitData.Affected = hitTaker.affiliation;
             return hitData;
         }
     }
