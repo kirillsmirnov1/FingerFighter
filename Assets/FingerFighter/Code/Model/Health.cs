@@ -5,8 +5,8 @@ namespace FingerFighter.Model
 {
     public class Health : MonoBehaviour
     {
-        [SerializeField] private float baseHealth;
-        
+        [field: SerializeField] public float BaseHealth { get; private set; }
+
         private float _currentHealth;
         private readonly object _lock = new object();
 
@@ -15,7 +15,7 @@ namespace FingerFighter.Model
         
         private void OnEnable()
         {
-            _currentHealth = baseHealth;
+            _currentHealth = BaseHealth;
         }
 
         public void Change(float healthChange)
