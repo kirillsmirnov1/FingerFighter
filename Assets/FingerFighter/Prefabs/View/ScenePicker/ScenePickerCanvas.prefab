@@ -38,9 +38,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2ec0a027ff4e46b9c5e34713838f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes:
-  - {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
-  - {fileID: 102900000, guid: 351dade6bb4175c4f998b470114cdb51, type: 3}
+  sceneNameReference:
+  - sceneName: Runner
+    sceneAsset: {fileID: 102900000, guid: 351dade6bb4175c4f998b470114cdb51, type: 3}
+  - sceneName: Ring
+    sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
   buttonPrefab: {fileID: 4143355490249659025, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
 --- !u!1001 &2211085266199788772
 PrefabInstance:

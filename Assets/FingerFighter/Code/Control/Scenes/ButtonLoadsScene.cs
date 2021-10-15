@@ -1,5 +1,5 @@
-﻿using TMPro;
-using UnityEditor;
+﻿using FingerFighter.Model.Scenes;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,30 +9,33 @@ namespace FingerFighter.Control.Scenes
     [RequireComponent(typeof(Button))]
     public class ButtonLoadsScene : MonoBehaviour
     {
-        [SerializeField] private SceneAsset sceneAsset;
+        [SerializeField] private SceneNameReference sceneNameReference;
         [SerializeField] private TextMeshProUGUI sceneName;
 
         private void OnValidate()
         {
-            if (sceneAsset != null) SetSceneNameText();
+            #if UNITY_EDITOR
+                sceneNameReference.SerializeName();
+            #endif
+            if (sceneNameReference.sceneName != null) SetSceneNameText();
         }
 
-        public void Init(SceneAsset scene)
+        public void Init(SceneNameReference sceneNameRef)
         {
-            sceneAsset = scene;
+            sceneNameReference = sceneNameRef;
             SetSceneNameText();
         }
 
         private void SetSceneNameText()
         {
             if (sceneName != null)
-                sceneName.text = sceneAsset.name;
+                sceneName.text = sceneNameReference.sceneName;
         }
 
         public void OnClick()
         {
-            Debug.Log($"Clicked on {sceneAsset.name} button");
-            SceneManager.LoadScene(sceneAsset.name);
+            Debug.Log($"Clicked on {sceneNameReference.sceneName} button");
+            SceneManager.LoadScene(sceneNameReference.sceneName);
         }
     }
 }
