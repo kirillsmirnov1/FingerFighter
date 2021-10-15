@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 
@@ -11,12 +12,19 @@ namespace FingerFighter.Control.Character.Handles
         
         [HideInInspector] public Finger finger;
 
+        private Camera _camera;
+        
+        private void OnEnable()
+        {
+            _camera = Camera.main;
+        }
+
         private void FixedUpdate()
         {
             // IMPR state machine 
             if(finger == null) return;
             
-            Vector2 fingerPos = Camera.main.ScreenToWorldPoint(finger.screenPosition);
+            Vector2 fingerPos = _camera.ScreenToWorldPoint(finger.screenPosition);
             Vector2 bodyPos = body.position; 
             
             var toFinger = fingerPos - bodyPos;
