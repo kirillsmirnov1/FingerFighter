@@ -4,5 +4,7 @@
     {
         Player,
         Enemy,
+        
+        Nada = int.MinValue, 
     }
 }
