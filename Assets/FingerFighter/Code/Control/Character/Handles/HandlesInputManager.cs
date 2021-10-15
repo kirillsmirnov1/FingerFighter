@@ -17,7 +17,7 @@ namespace FingerFighter.Control.Character.Handles
     
         private void OnValidate()
         {
-            handles = FindObjectsOfType<Handle>();
+            handles = GetComponentsInChildren<Handle>();
         }
 
         private void Awake()
