@@ -49,7 +49,7 @@ namespace FingerFighter.Control.Combat
 
         private void Move()
         {
-            var movement = _directionToPlayer * speed;
+            var movement = (Vector2)_self.up * speed;
             rb.MovePosition(_currentPos + movement);
         }
     }
