@@ -7,7 +7,8 @@ namespace FingerFighter.Control.Combat
     public class FlyBehaviour : MonoBehaviour // IMPR totally would need to refactor this 
     {
         [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private float speed = 0.01f;
+        [SerializeField] private float movementSpeed = 0.01f;
+        [SerializeField] private float rotationSpeed = 0.05f;
         [SerializeField] private float angleOffset = -90;
         
         private Transform _player;
@@ -44,12 +45,13 @@ namespace FingerFighter.Control.Combat
         private void Rotate()
         {
             var angle = Mathf.Atan2(_directionToPlayer.y, _directionToPlayer.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle + angleOffset);
+            var desiredRotation = Quaternion.Euler(0, 0, angle + angleOffset);
+            transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed);
         }
 
         private void Move()
         {
-            var movement = (Vector2)_self.up * speed;
+            var movement = (Vector2)_self.up * movementSpeed;
             rb.MovePosition(_currentPos + movement);
         }
     }
