@@ -180,6 +180,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dca51e2c43984adb8675204acdd29786, type: 3}
+--- !u!1 &1978966410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3740371941508899968, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
+  m_PrefabInstance: {fileID: 3740371941879209212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1978966414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978966410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922f9bccc4814e1c90e5c636c6ffebd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.3
 --- !u!1 &2087320883
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3740371941508899968, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
       propertyPath: m_Name
-      value: Main Camera
+      value: RunnerCamera
       objectReference: {fileID: 0}
     - target: {fileID: 3740371941508899971, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
       propertyPath: m_BackGroundColor.b
