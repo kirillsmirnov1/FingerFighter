@@ -9,20 +9,30 @@ namespace FingerFighter.Control.Scenes
     [RequireComponent(typeof(Button))]
     public class ButtonLoadsScene : MonoBehaviour
     {
+        [SerializeField] private SceneAsset sceneAsset;
         [SerializeField] private TextMeshProUGUI sceneName;
 
-        private SceneAsset _sceneAsset;
-        
+        private void OnValidate()
+        {
+            if (sceneAsset != null) SetSceneNameText();
+        }
+
         public void Init(SceneAsset scene)
         {
-            _sceneAsset = scene;
-            sceneName.text = scene.name;
+            sceneAsset = scene;
+            SetSceneNameText();
+        }
+
+        private void SetSceneNameText()
+        {
+            if (sceneName != null)
+                sceneName.text = sceneAsset.name;
         }
 
         public void OnClick()
         {
-            Debug.Log($"Clicked on {_sceneAsset.name} button");
-            SceneManager.LoadScene(_sceneAsset.name);
+            Debug.Log($"Clicked on {sceneAsset.name} button");
+            SceneManager.LoadScene(sceneAsset.name);
         }
     }
 }
