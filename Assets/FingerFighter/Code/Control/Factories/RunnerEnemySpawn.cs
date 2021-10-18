@@ -1,33 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FingerFighter.Model.Combat;
 using FingerFighter.View;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace FingerFighter.Control.Factories
 {
     public class RunnerEnemySpawn : JumpObjectOnOutOfCamera
     {
-        [SerializeField] private EnemyAndTag[] enemies; // TODO extract to SO 
         [SerializeField] private Vector2Int enemyCount = new Vector2Int(3, 10);
-
+        [SerializeField] private EnemyPrefabs enemies;
+        
         private readonly Dictionary<string, GameObject> _prefabs = new Dictionary<string, GameObject>();
         private readonly Dictionary<string, Queue<GameObject>> _pool = new Dictionary<string, Queue<GameObject>>();
         
         private Transform _anchor;
 
         private static RunnerEnemySpawn _instance;
-        
-        private void OnValidate() => InitEnemyTags();
-
-        private void InitEnemyTags()
-        {
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                enemies[i].tag = enemies[i].prefab.GetComponent<CombatEntityId>().EnemyType;
-            }
-        }
 
         private void Awake()
         {
@@ -74,13 +62,6 @@ namespace FingerFighter.Control.Factories
             return _pool[enemyTag].Count > 0 
                 ? _pool[enemyTag].Dequeue() 
                 : Instantiate(_prefabs[enemyTag], _anchor);
-        }
-
-        [Serializable]
-        public struct EnemyAndTag
-        {
-            public GameObject prefab;
-            public string tag;
         }
 
         public static void ReturnToPool(GameObject obj, string enemyType)
