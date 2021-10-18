@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using FingerFighter.Control.Combat;
+using UnityEngine;
 
 namespace FingerFighter.View
 {
@@ -8,16 +10,30 @@ namespace FingerFighter.View
 
         private Transform _transform;
         private Vector3 _up;
-        
+        private Action _onUpdate;
+
         private void Awake()
         {
             _transform = transform;
             _up = Vector3.up;
+            
+            OnPlayerAlive();
+            
+            PlayerStatus.OnAlive += OnPlayerAlive;
+            PlayerStatus.OnDead += OnPlayerDead;
         }
 
-        private void Update()
+        private void OnDestroy()
         {
-            _transform.position += _up * (speed * Time.deltaTime);
+            PlayerStatus.OnAlive -= OnPlayerAlive;
+            PlayerStatus.OnDead -= OnPlayerDead;
         }
+
+        private void Update() => _onUpdate?.Invoke();
+        
+        private void OnPlayerAlive() => _onUpdate = Move;
+        private void OnPlayerDead() => _onUpdate = null;
+        
+        private void Move() => _transform.position += _up * (speed * Time.deltaTime);
     }
 }

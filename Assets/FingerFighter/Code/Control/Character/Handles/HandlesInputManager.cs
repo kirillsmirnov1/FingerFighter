@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using FingerFighter.Control.Combat;
 using UnityEngine;
 using UnityEngine.InputSystem.EnhancedTouch;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
@@ -30,12 +32,14 @@ namespace FingerFighter.Control.Character.Handles
         {
             Touch.onFingerDown += OnFingerDown;
             Touch.onFingerUp += OnFingerUp;
+            PlayerStatus.OnDead += OnPlayerDead;
         }
 
         private void OnDisable()
         {
             Touch.onFingerDown -= OnFingerDown;
             Touch.onFingerUp -= OnFingerUp;
+            PlayerStatus.OnDead += OnPlayerDead;
         }
 
         private void OnFingerDown(Finger finger)
@@ -58,6 +62,17 @@ namespace FingerFighter.Control.Character.Handles
                 handle.finger = null;
                 _pairings.Remove(finger);
                 _freeHandles.Enqueue(handle);
+            }
+        }
+
+        private void OnPlayerDead() => FreeAllFingers();
+
+        private void FreeAllFingers()
+        {
+            var fingers = _pairings.Keys.ToArray();
+            for (int i = 0; i < fingers.Length; i++)
+            {
+                OnFingerUp(fingers[i]);
             }
         }
     }
