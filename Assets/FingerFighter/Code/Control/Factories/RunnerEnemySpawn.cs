@@ -8,6 +8,7 @@ namespace FingerFighter.Control.Factories
     public class RunnerEnemySpawn : JumpObjectOnOutOfCamera
     {
         [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private GameObject anotherEnemyPrefab;
         [SerializeField] private Vector2Int enemyCount = new Vector2Int(3, 10);
 
         private Transform _anchor;
@@ -16,7 +17,8 @@ namespace FingerFighter.Control.Factories
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            SpawnEnemies();
+            SpawnEnemies(enemyPrefab);
+            SpawnEnemies(anotherEnemyPrefab);
             Jump();
         }
 
@@ -25,14 +27,14 @@ namespace FingerFighter.Control.Factories
             _anchor = transform.parent;
         }
 
-        private void SpawnEnemies()
+        private void SpawnEnemies(GameObject enemy)
         {
             var count = Random.Range(enemyCount.x, enemyCount.y);
             Vector2 curPos = transform.position;
             for (int i = 0; i < count; i++)
             {
                 var pos = curPos + Random.insideUnitCircle * jumpDirection.y / 2;
-                Instantiate(enemyPrefab, pos, Quaternion.identity, _anchor);
+                Instantiate(enemy, pos, Quaternion.identity, _anchor);
             }
         }
     }
