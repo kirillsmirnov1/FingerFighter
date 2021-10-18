@@ -1,5 +1,4 @@
-﻿using FingerFighter.Control.Character;
-using FingerFighter.Control.Enemies.Behaviour;
+﻿using FingerFighter.Control.Enemies.Behaviour;
 using UnityEngine;
 using UnityUtils.Variables;
 
@@ -12,7 +11,8 @@ namespace FingerFighter.Control.Enemies
         [SerializeField] public FloatVariable movementSpeed;
         [SerializeField] public FloatVariable rotationSpeed;
         [SerializeField] public float angleOffset = -90;
-
+        [SerializeField] private TransformVariable playersTransform;
+        
         [Header("Behaviours")] 
         [SerializeField] private AEnemyBehaviour[] behaviours;
         
@@ -29,7 +29,7 @@ namespace FingerFighter.Control.Enemies
         private void OnEnable()
         {
             self = transform;
-            _player = PlayerSingleton.Transform;
+            _player = playersTransform.Value;
         }
 
         private void FixedUpdate()
