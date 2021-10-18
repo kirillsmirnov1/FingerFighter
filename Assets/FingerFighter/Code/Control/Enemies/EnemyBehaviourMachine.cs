@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityUtils.Variables;
 
-namespace FingerFighter.Control.Combat
+namespace FingerFighter.Control.Enemies
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class FlyBehaviour : MonoBehaviour // IMPR totally would need to refactor this 
+    public class EnemyBehaviourMachine : MonoBehaviour // IMPR totally would need to refactor this 
     {
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private FloatVariable movementSpeed;
