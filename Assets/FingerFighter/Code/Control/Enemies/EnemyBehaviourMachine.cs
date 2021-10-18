@@ -1,4 +1,5 @@
 ﻿using FingerFighter.Control.Character;
+using FingerFighter.Control.Enemies.Behaviour;
 using UnityEngine;
 using UnityUtils.Variables;
 
@@ -7,15 +8,17 @@ namespace FingerFighter.Control.Enemies
     [RequireComponent(typeof(Rigidbody2D))]
     public class EnemyBehaviourMachine : MonoBehaviour // IMPR totally would need to refactor this 
     {
-        [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private FloatVariable movementSpeed;
-        [SerializeField] private FloatVariable rotationSpeed;
-        [SerializeField] private float angleOffset = -90;
+        [SerializeField] public Rigidbody2D rb;
+        [SerializeField] public FloatVariable movementSpeed;
+        [SerializeField] public FloatVariable rotationSpeed;
+        [SerializeField] public float angleOffset = -90;
+
+        [Header("Behaviours")] 
+        [SerializeField] private AEnemyBehaviour[] behaviours;
         
+        [HideInInspector] public Transform self;
+        [HideInInspector] public Vector2 directionToPlayer;
         private Transform _player;
-        private Transform _self;
-        
-        private Vector2 _directionToPlayer;
         private Vector2 _currentPos;
 
         private void OnValidate()
@@ -25,35 +28,29 @@ namespace FingerFighter.Control.Enemies
 
         private void OnEnable()
         {
-            _self = transform;
+            self = transform;
             _player = PlayerSingleton.Transform;
         }
 
         private void FixedUpdate()
         {
             UpdateFields();
-            Rotate();
-            Move();
+            ApplyBehaviours();
         }
 
         private void UpdateFields()
         {
-            _currentPos = _self.position;
+            _currentPos = self.position;
             Vector2 playerPos = _player.position; 
-            _directionToPlayer = (playerPos - _currentPos).normalized;
+            directionToPlayer = (playerPos - _currentPos).normalized;
         }
 
-        private void Rotate()
+        private void ApplyBehaviours()
         {
-            var angle = Mathf.Atan2(_directionToPlayer.y, _directionToPlayer.x) * Mathf.Rad2Deg;
-            var desiredRotation = Quaternion.Euler(0, 0, angle + angleOffset);
-            transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed);
-        }
-
-        private void Move()
-        {
-            var movement = (Vector2)_self.up * movementSpeed;
-            rb.AddForce(movement, ForceMode2D.Force);
+            for (var i = 0; i < behaviours.Length; i++)
+            {
+                behaviours[i].Apply(this);
+            }
         }
     }
 }
