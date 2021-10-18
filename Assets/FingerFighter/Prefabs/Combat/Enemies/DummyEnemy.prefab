@@ -36,7 +36,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14481932405088701, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: m_Name
-      value: DummyEnemy_
+      value: DummyEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 256617835452036178, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: m_LocalScale.x
@@ -101,6 +101,18 @@ PrefabInstance:
     - target: {fileID: 3621181120631163398, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: enemyType
+      value: Dummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: Affiliation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: affiliation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: <Affiliation>k__BackingField

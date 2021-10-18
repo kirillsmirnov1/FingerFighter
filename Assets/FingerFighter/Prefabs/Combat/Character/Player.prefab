@@ -12,6 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bd7b8bd1f294182a3f0bc15a9aeb4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5324430715357425864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958435631759743695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d55a14507e476b89f5949249c22e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 2433728997311042946}
+  id: {fileID: 7653764864398762608}
 --- !u!114 &5867716892379511042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,20 +41,6 @@ MonoBehaviour:
   handles:
   - {fileID: 8341319484625314292}
   - {fileID: 8844470080695292777}
---- !u!114 &5324430715357425864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3958435631759743695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d55a14507e476b89f5949249c22e01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 2433728997311042946}
-  id: {fileID: 7653764864398762608}
 --- !u!1001 &2558361661077333649
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -262,6 +262,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3621181120631163398, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: Affiliation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: affiliation
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
