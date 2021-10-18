@@ -429,9 +429,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpDirection: {x: 0, y: 4}
-  enemyPrefab: {fileID: 514396837438159236, guid: 67e8925f9f297394e8c1b58d2d23c855, type: 3}
-  anotherEnemyPrefab: {fileID: 514396837438159236, guid: 6145a8a575d4fc547bdd21347346354b, type: 3}
-  enemyCount: {x: 3, y: 10}
+  enemies:
+  - prefab: {fileID: 514396837438159236, guid: 67e8925f9f297394e8c1b58d2d23c855, type: 3}
+    tag: Fly
+  - prefab: {fileID: 514396837438159236, guid: 6145a8a575d4fc547bdd21347346354b, type: 3}
+    tag: Another
+  enemyCount: {x: 1, y: 3}
 --- !u!1001 &2121645667
 PrefabInstance:
   m_ObjectHideFlags: 0

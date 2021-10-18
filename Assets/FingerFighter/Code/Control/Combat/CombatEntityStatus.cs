@@ -9,7 +9,7 @@ namespace FingerFighter.Control.Combat
     public class CombatEntityStatus : MonoBehaviour
     {
         [SerializeField] private Health health;
-        [SerializeField] private CombatEntityId id;
+        [SerializeField] protected CombatEntityId id;
 
         private void OnValidate()
         {
