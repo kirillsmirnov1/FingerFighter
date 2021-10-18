@@ -20,7 +20,7 @@ namespace FingerFighter.Model.Combat
                 Debug.Log($"Set affiliation on {gameObject.name}");
             }
 
-            if (affiliation == Affiliation.Enemy && string.IsNullOrEmpty(enemyType))
+            if (affiliation == Affiliation.Enemy && string.IsNullOrEmpty(enemyType) && gameObject.name != "_EnemyCombatEntity")
             {
                 Debug.Log($"Set enemy type on {gameObject.name}");
             }
