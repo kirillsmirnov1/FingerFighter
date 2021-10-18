@@ -19,7 +19,10 @@ namespace FingerFighter.Control.Combat
 
         private void OnEnable() => health.onNoHealth += OnNoHealth;
         private void OnDisable() => health.onNoHealth -= OnNoHealth;
-        private void OnNoHealth() => Die();
-        private void Die() => Destroy(gameObject); // IMPR probably should provide it with some referenced behaviour 
+        private void OnNoHealth() 
+        {
+            // TODO notify on death
+            gameObject.SetActive(false);
+        }
     }
 }
