@@ -5,7 +5,7 @@ using UnityUtils.Variables;
 namespace FingerFighter.Control.Enemies
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class EnemyBehaviourMachine : MonoBehaviour // IMPR totally would need to refactor this 
+    public class EnemyBehaviourMachine : MonoBehaviour 
     {
         [SerializeField] public Rigidbody2D rb;
         [SerializeField] public FloatVariable movementSpeed;
