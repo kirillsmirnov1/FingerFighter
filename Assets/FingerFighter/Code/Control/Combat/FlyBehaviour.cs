@@ -1,5 +1,6 @@
 ﻿using FingerFighter.Control.Character;
 using UnityEngine;
+using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Combat
 {
@@ -7,8 +8,8 @@ namespace FingerFighter.Control.Combat
     public class FlyBehaviour : MonoBehaviour // IMPR totally would need to refactor this 
     {
         [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private float movementSpeed = 0.01f;
-        [SerializeField] private float rotationSpeed = 0.05f;
+        [SerializeField] private FloatVariable movementSpeed;
+        [SerializeField] private FloatVariable rotationSpeed;
         [SerializeField] private float angleOffset = -90;
         
         private Transform _player;
@@ -52,7 +53,7 @@ namespace FingerFighter.Control.Combat
         private void Move()
         {
             var movement = (Vector2)_self.up * movementSpeed;
-            rb.MovePosition(_currentPos + movement);
+            rb.AddForce(movement, ForceMode2D.Force);
         }
     }
 }
