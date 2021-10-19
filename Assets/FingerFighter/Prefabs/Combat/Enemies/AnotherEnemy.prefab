@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1302259381993553923, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+    - target: {fileID: 1302259381993553923, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: enemyType
       value: Another
       objectReference: {fileID: 0}
@@ -30,11 +34,11 @@ PrefabInstance:
     - target: {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: movementSpeed
       value: 
-      objectReference: {fileID: 11400000, guid: 8c7d29f030689cf49a4716e36f63fddf, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: rotationSpeed
       value: 
-      objectReference: {fileID: 11400000, guid: 1544e71e24af8cd4d84b4ecd7128277d, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: behaviours.Array.size
       value: 2
