@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -255,20 +255,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4143355490249659052}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6061952409573288526}
-        m_TargetAssemblyTypeName: FingerFighter.Control.Scenes.ButtonLoadsScene,
-          Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &6061952409573288526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,5 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dcdbad8c1bd4fb08093db4819b710ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 4143355490249659027}
+  sceneNameReference:
+    sceneName: 
+    sceneAsset: {fileID: 0}
   sceneName: {fileID: 4143355489794063171}

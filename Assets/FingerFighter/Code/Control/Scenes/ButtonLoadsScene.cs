@@ -20,6 +20,11 @@ namespace FingerFighter.Control.Scenes
             if (sceneNameReference.sceneName != null) SetSceneNameText();
         }
 
+        private void Awake()
+        {
+            GetComponent<Button>().onClick.AddListener(OnClick);
+        }
+
         public void Init(SceneNameReference sceneNameRef)
         {
             sceneNameReference = sceneNameRef;
@@ -32,7 +37,7 @@ namespace FingerFighter.Control.Scenes
                 sceneName.text = sceneNameReference.sceneName;
         }
 
-        public void OnClick()
+        private void OnClick()
         {
             Debug.Log($"Clicked on {sceneNameReference.sceneName} button");
             SceneManager.LoadScene(sceneNameReference.sceneName);
