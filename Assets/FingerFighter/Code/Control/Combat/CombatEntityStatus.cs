@@ -1,19 +1,20 @@
-﻿using FingerFighter.Model;
+﻿using FingerFighter.Control.Combat.Health;
+using FingerFighter.Model;
 using FingerFighter.Model.Combat;
 using UnityEngine;
 
 namespace FingerFighter.Control.Combat
 {
-    [RequireComponent(typeof(Health))]
+    [RequireComponent(typeof(AHealth))]
     [RequireComponent(typeof(CombatEntityId))]
     public class CombatEntityStatus : MonoBehaviour
     {
-        [SerializeField] private Health health;
+        [SerializeField] private AHealth health;
         [SerializeField] protected CombatEntityId id;
 
         private void OnValidate()
         {
-            if (health == null) health = GetComponent<Health>();
+            if (health == null) health = GetComponent<AHealth>();
             if (id == null) id = GetComponent<CombatEntityId>();
         }
 

@@ -1,4 +1,5 @@
 using System;
+using FingerFighter.Control.Combat.Health;
 using FingerFighter.Model;
 using FingerFighter.Model.Combat;
 using FingerFighter.Model.Damage;
@@ -14,7 +15,7 @@ namespace FingerFighter.Control.Damage
         public static event Action<HitData> OnHitTaken;
 
         [SerializeField] private CombatEntityId id;
-        [SerializeField] private Health health;
+        [SerializeField] private AHealth health;
 
         public Affiliation Affiliation { get; private set; }
 

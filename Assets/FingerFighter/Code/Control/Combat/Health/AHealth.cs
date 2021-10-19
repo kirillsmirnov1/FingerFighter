@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-namespace FingerFighter.Model
+namespace FingerFighter.Control.Combat.Health
 {
-    public class Health : MonoBehaviour
+    public class AHealth : MonoBehaviour
     {
         [field: SerializeField] public float BaseHealth { get; private set; }
 

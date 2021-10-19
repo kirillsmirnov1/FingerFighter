@@ -1,4 +1,5 @@
 ﻿using System;
+using FingerFighter.Control.Combat.Health;
 using FingerFighter.Model;
 using TMPro;
 using UnityEngine;
@@ -8,7 +9,7 @@ namespace FingerFighter.View
     [RequireComponent(typeof(TextMeshPro))]
     public class HealthChangeDisplay : MonoBehaviour
     {
-        [SerializeField] private Health health;
+        [SerializeField] private AHealth health;
         [SerializeField] private TextMeshPro text;
         [SerializeField] private float duration = 1f;
         [SerializeField] private AnimationCurve textTransparency;
