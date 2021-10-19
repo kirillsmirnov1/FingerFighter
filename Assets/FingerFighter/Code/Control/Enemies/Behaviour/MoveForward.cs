@@ -7,7 +7,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
     {
         public override void Apply(EnemyBehaviourMachine enemy)
         {
-            var movement = enemy.self.up * enemy.movementSpeed;
+            var movement = enemy.self.up * enemy.Stats.movementSpeed;
             enemy.rb.AddForce(movement, ForceMode2D.Force);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using FingerFighter.Control.Enemies.Behaviour;
+using FingerFighter.Model.Combat;
 using UnityEngine;
 using UnityUtils.Variables;
 
@@ -8,14 +9,14 @@ namespace FingerFighter.Control.Enemies
     public class EnemyBehaviourMachine : MonoBehaviour 
     {
         [SerializeField] public Rigidbody2D rb;
-        [SerializeField] public FloatVariable movementSpeed;
-        [SerializeField] public FloatVariable rotationSpeed;
         [SerializeField] public float angleOffset = -90;
         [SerializeField] private TransformVariable playersTransform;
+        [SerializeField] private CombatEntityId id;
         
         [Header("Behaviours")] 
         [SerializeField] private AEnemyBehaviour[] behaviours;
-        
+
+        public EnemyStats Stats => id.EnemyStats; 
         [HideInInspector] public Transform self;
         [HideInInspector] public Vector2 directionToPlayer;
         private Transform _player;
@@ -24,6 +25,7 @@ namespace FingerFighter.Control.Enemies
         private void OnValidate()
         {
             rb = GetComponent<Rigidbody2D>();
+            id = GetComponent<CombatEntityId>();
         }
 
         private void OnEnable()

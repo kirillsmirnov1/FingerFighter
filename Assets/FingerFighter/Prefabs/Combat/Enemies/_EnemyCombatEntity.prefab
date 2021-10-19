@@ -117,6 +117,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+    - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: affiliation
       value: 1
       objectReference: {fileID: 0}
