@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 817924431}
   - component: {fileID: 817924430}
   - component: {fileID: 817924429}
-  - component: {fileID: 817924432}
+  - component: {fileID: 1734848305546174860}
   m_Layer: 5
   m_Name: AgainButton
   m_TagString: Untagged
@@ -122,10 +122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 817924432}
-        m_TargetAssemblyTypeName: FingerFighter.Control.Scenes.ButtonLoadsScene,
-          Assembly-CSharp
-        m_MethodName: OnClick
+      - m_Target: {fileID: 1734848305546174860}
+        m_TargetAssemblyTypeName: FingerFighter.Control.Scenes.ReloadScene, Assembly-CSharp
+        m_MethodName: Reload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -135,7 +134,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &817924432
+--- !u!114 &1734848305546174860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,13 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 817924427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dcdbad8c1bd4fb08093db4819b710ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a233a2000294ad2a2bc23d5fbc58295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNameReference:
-    sceneName: Runner
-    sceneAsset: {fileID: 102900000, guid: 351dade6bb4175c4f998b470114cdb51, type: 3}
-  sceneName: {fileID: 0}
 --- !u!1 &910458859
 GameObject:
   m_ObjectHideFlags: 0
