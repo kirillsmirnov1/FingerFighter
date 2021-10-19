@@ -17,11 +17,14 @@ MonoBehaviour:
     health: 50
     movementSpeed: 4
     rotationSpeed: 0.1
+    collisionDamage: 5
   - tag: Another
     health: 25
     movementSpeed: 10
     rotationSpeed: 0.03
+    collisionDamage: 3
   - tag: Dummy
     health: 500
     movementSpeed: 0
     rotationSpeed: 0.1
+    collisionDamage: 20
