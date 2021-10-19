@@ -4,7 +4,7 @@ using UnityEngine;
 namespace FingerFighter.Model.Combat
 {
     [CreateAssetMenu(menuName = "Data/EnemyStats", fileName = "EnemyStats", order = 0)]
-    public partial class EnemyStatsData : ScriptableObject
+    public class EnemyStatsData : ScriptableObject
     {
         [SerializeField] private EnemyStats[] stats;
 
