@@ -4,9 +4,25 @@ namespace FingerFighter.Model.EnemyFormations
 {
     public class EnemyFormation : MonoBehaviour
     {
+        [SerializeField] private EnemyFormationEntry[] formationEntries;
+        
         private void OnDrawGizmosSelected()
         {
             DrawBorderRect();
+            DrawFormationEntries();
+        }
+
+        private void DrawFormationEntries()
+        {
+            for (int i = 0; i < formationEntries.Length; i++)
+            {
+                DrawFormationEntry(formationEntries[i]);
+            }
+        }
+
+        private void DrawFormationEntry(EnemyFormationEntry formationEntry)
+        {
+            Gizmos.DrawWireSphere(formationEntry.pos, 0.3f);
         }
 
         private static void DrawBorderRect()
