@@ -1,13 +1,13 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
 namespace FingerFighter.Model.Combat
 {
     [CreateAssetMenu(menuName = "Data/EnemyStats", fileName = "EnemyStats", order = 0)]
-    public class EnemyStatsData : ScriptableObject
+    public class EnemyStatsList : ScriptableObject
     {
-        [SerializeField] private EnemyStats[] stats;
+        [SerializeField] private List<EnemyStats> stats;
 
         // TODO On creation provide empty instance 
         // TODO provide way to remove instances 
@@ -19,7 +19,7 @@ namespace FingerFighter.Model.Combat
         private void FillNullInstances()
         {
 #if UNITY_EDITOR
-            for (int i = 0; i < stats.Length; i++)
+            for (int i = 0; i < stats.Count; i++)
             {
                 if (stats[i] == null)
                 {
@@ -28,24 +28,6 @@ namespace FingerFighter.Model.Combat
                 }
             }
 #endif
-        }
-
-        public EnemyStats GetData(string tag)
-        {
-            for (int i = 0; i < stats.Length; i++)
-            {
-                if (stats[i].tag.Equals(tag)) return stats[i];
-            }
-            throw new ArgumentOutOfRangeException();
-        }
-        
-        public bool HasEnemy(string tag)
-        {
-            for (int i = 0; i < stats.Length; i++)
-            {
-                if (stats[i].tag.Equals(tag)) return true;
-            }
-            return false;
         }
     }
 }
