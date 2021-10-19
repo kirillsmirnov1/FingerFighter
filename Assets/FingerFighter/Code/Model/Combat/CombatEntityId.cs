@@ -11,7 +11,7 @@ namespace FingerFighter.Model.Combat
         [SerializeField] private string enemyType;
         
         [ConditionalField("affiliation", compareValues:new object[] {Affiliation.Enemy})] 
-        [SerializeField] private EnemyStatsData stats;
+        [SerializeField] private EnemyStatsData stats; // TODO use EnemyStats 
 
         public string EnemyType => enemyType;
         public Affiliation Affiliation => affiliation; 

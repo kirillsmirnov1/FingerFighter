@@ -1,14 +1,18 @@
-﻿using System;
+﻿using UnityEngine;
 
 namespace FingerFighter.Model.Combat
 {
-    [Serializable]
-    public class EnemyStats
+    public class EnemyStats : ScriptableObject
     {
         public string tag;
         public float health;
         public float movementSpeed;
         public float rotationSpeed;
         public float collisionDamage;
+
+        private void OnValidate()
+        {
+            name = tag;
+        }
     }
 }

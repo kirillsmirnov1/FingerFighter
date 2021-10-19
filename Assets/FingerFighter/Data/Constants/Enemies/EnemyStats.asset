@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5716806658356583056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
+  m_Name: Fly
+  m_EditorClassIdentifier: 
+  tag: Fly
+  health: 50
+  movementSpeed: 4
+  rotationSpeed: 0.1
+  collisionDamage: 5
+--- !u!114 &-3534459566151433842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
+  m_Name: Another
+  m_EditorClassIdentifier: 
+  tag: Another
+  health: 25
+  movementSpeed: 10
+  rotationSpeed: 0.03
+  collisionDamage: 3
+--- !u!114 &-526747421762644956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
+  m_Name: Dummy
+  m_EditorClassIdentifier: 
+  tag: Dummy
+  health: 500
+  movementSpeed: 0
+  rotationSpeed: 0.1
+  collisionDamage: 20
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,18 +64,6 @@ MonoBehaviour:
   m_Name: EnemyStats
   m_EditorClassIdentifier: 
   stats:
-  - tag: Fly
-    health: 50
-    movementSpeed: 4
-    rotationSpeed: 0.1
-    collisionDamage: 5
-  - tag: Another
-    health: 25
-    movementSpeed: 10
-    rotationSpeed: 0.03
-    collisionDamage: 3
-  - tag: Dummy
-    health: 500
-    movementSpeed: 0
-    rotationSpeed: 0.1
-    collisionDamage: 20
+  - {fileID: -5716806658356583056}
+  - {fileID: -3534459566151433842}
+  - {fileID: -526747421762644956}
