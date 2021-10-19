@@ -17,6 +17,7 @@ MonoBehaviour:
   movementSpeed: 4
   rotationSpeed: 0.1
   collisionDamage: 5
+  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &-3534459566151433842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,6 +35,7 @@ MonoBehaviour:
   movementSpeed: 10
   rotationSpeed: 0.03
   collisionDamage: 3
+  gizmoColor: {r: 1, g: 0, b: 1, a: 1}
 --- !u!114 &-526747421762644956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,6 +53,7 @@ MonoBehaviour:
   movementSpeed: 0
   rotationSpeed: 0.1
   collisionDamage: 20
+  gizmoColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

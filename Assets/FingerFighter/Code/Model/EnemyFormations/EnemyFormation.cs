@@ -16,13 +16,22 @@ namespace FingerFighter.Model.EnemyFormations
         {
             for (int i = 0; i < formationEntries.Length; i++)
             {
-                DrawFormationEntry(formationEntries[i]);
+                DrawFormationEntry(i);
             }
         }
 
-        private void DrawFormationEntry(EnemyFormationEntry formationEntry)
+        private void DrawFormationEntry(int index)
         {
-            Gizmos.DrawWireSphere(formationEntry.pos, 0.3f);
+            var formationEntry = formationEntries[index];
+            
+            if (formationEntry.enemy == null)
+            {
+                Debug.LogWarning($"No stats for {gameObject.name}:{index}");
+                return;
+            }
+
+            Gizmos.color = formationEntry.enemy.gizmoColor;
+            Gizmos.DrawSphere(formationEntry.pos, 0.3f);
         }
 
         private static void DrawBorderRect()
