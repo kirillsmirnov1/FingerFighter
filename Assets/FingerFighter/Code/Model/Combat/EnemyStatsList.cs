@@ -8,26 +8,49 @@ namespace FingerFighter.Model.Combat
     public class EnemyStatsList : ScriptableObject
     {
         [SerializeField] private List<EnemyStats> stats;
-
-        // TODO On creation provide empty instance 
-        // TODO provide way to remove instances 
-        private void OnValidate()
+        
+#if UNITY_EDITOR
+        public void Add()
         {
-            FillNullInstances();
+            var newOne = CreateInstance<EnemyStats>();
+            AssetDatabase.AddObjectToAsset(newOne, this);
+            stats.Add(newOne);
         }
 
-        private void FillNullInstances()
+        public void Remove()
         {
+            var lastOne = stats[stats.Count - 1];
+            stats.Remove(lastOne);
+            AssetDatabase.RemoveObjectFromAsset(lastOne);
+        }
+#endif
+    }
+    
 #if UNITY_EDITOR
-            for (int i = 0; i < stats.Count; i++)
+    [CustomEditor(typeof(EnemyStatsList))]
+    public class EnemyStatsListEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            var statsList = target as EnemyStatsList;
+            if(statsList == null) return;
+            
+            GUILayout.BeginHorizontal();
             {
-                if (stats[i] == null)
+                if (GUILayout.Button("Add"))
                 {
-                    stats[i] = CreateInstance<EnemyStats>();
-                    AssetDatabase.AddObjectToAsset(stats[i], this);
+                    statsList.Add();
+                }
+
+                if (GUILayout.Button("Remove"))
+                {
+                    statsList.Remove();
                 }
             }
-#endif
+            GUILayout.EndHorizontal();
+
+            base.OnInspectorGUI();
         }
     }
+#endif
 }
