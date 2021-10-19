@@ -217,6 +217,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1664665695224966896, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: baseHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3166363421491597416, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: m_Radius
       value: 0.5

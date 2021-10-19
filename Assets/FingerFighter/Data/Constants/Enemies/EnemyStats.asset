@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
   - tag: Fly
+    health: 50
     movementSpeed: 4
     rotationSpeed: 0.1
   - tag: Another
+    health: 25
     movementSpeed: 10
     rotationSpeed: 0.03
   - tag: Dummy
+    health: 500
     movementSpeed: 0
     rotationSpeed: 0.1

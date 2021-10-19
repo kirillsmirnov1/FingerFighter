@@ -6,6 +6,7 @@ namespace FingerFighter.Model.Combat
     public class EnemyStats
     {
         public string tag;
+        public float health;
         public float movementSpeed;
         public float rotationSpeed;
     }

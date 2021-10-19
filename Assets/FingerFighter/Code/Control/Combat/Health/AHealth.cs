@@ -5,7 +5,8 @@ namespace FingerFighter.Control.Combat.Health
 {
     public class AHealth : MonoBehaviour
     {
-        [field: SerializeField] public float BaseHealth { get; private set; }
+        [SerializeField] private float baseHealth;
+        public virtual float BaseHealth => baseHealth;
 
         private float _currentHealth;
         private readonly object _lock = new object();
