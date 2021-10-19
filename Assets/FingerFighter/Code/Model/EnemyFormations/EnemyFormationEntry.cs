@@ -1,4 +1,5 @@
 ﻿using System;
+using FingerFighter.Model.Combat;
 using UnityEngine;
 
 namespace FingerFighter.Model.EnemyFormations
@@ -6,7 +7,7 @@ namespace FingerFighter.Model.EnemyFormations
     [Serializable]
     public struct EnemyFormationEntry
     {
-        public string enemyType;
+        public EnemyStats enemy;
         public Vector2 pos;
     }
 }
