@@ -30,8 +30,25 @@ namespace FingerFighter.Model.EnemyFormations
                 return;
             }
 
-            Gizmos.color = formationEntry.enemy.gizmoColor;
-            Gizmos.DrawSphere(formationEntry.pos, 0.3f);
+            var stats = formationEntry.enemy;
+
+            
+            if (stats.gizmoTexture == null)
+            {
+                Gizmos.color = stats.gizmoColor;
+                Gizmos.DrawSphere(formationEntry.pos, 0.3f);
+            }
+            else
+            {
+                var rectSize = Vector2.one;  
+                var reqPos = formationEntry.pos;
+                var rectPos = new Vector2(reqPos.x - rectSize.x / 2f, reqPos.y - rectSize.y / 2f);  
+                var rect = new Rect(rectPos, rectSize);
+                // FIXME Unity messes scale up
+                // FIXME so position is wrong to
+                // FIXME need to draw with another method 
+                Gizmos.DrawGUITexture(rect, stats.gizmoTexture); 
+            }
         }
 
         private static void DrawBorderRect()
