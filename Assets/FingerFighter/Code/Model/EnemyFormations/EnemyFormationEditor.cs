@@ -2,7 +2,7 @@
 
 namespace FingerFighter.Model.EnemyFormations
 {
-    public class EnemyFormation : MonoBehaviour
+    public class EnemyFormationEditor : MonoBehaviour
     {
         [SerializeField] public EnemyFormationEntry[] formationEntries;
         
