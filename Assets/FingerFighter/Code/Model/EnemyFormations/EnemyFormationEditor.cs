@@ -1,11 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace FingerFighter.Model.EnemyFormations
 {
     public class EnemyFormationEditor : MonoBehaviour
     {
         [SerializeField] public EnemyFormation formation;
+        [SerializeField] private EnemyFormationPackEditor packEditor;
         
+        private void OnValidate()
+        {
+            packEditor = GetComponentInParent<EnemyFormationPackEditor>();
+            UpdatePack();
+        }
+
+        public void UpdatePack() => packEditor.UpdatePack();
+
         private void OnDrawGizmosSelected()
         {
             DrawBorderRect();

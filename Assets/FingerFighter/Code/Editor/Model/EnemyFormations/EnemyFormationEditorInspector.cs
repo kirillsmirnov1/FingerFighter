@@ -28,6 +28,7 @@ namespace FingerFighter.Model.EnemyFormations
                 {
                     Undo.RecordObject(formation, "Move");
                     formation.formation.entries[i].pos = transform.InverseTransformPoint(newPoint);
+                    formation.UpdatePack();
                 }
             }
         }
