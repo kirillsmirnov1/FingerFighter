@@ -4,7 +4,7 @@ namespace FingerFighter.Model.EnemyFormations
 {
     public class EnemyFormation : MonoBehaviour
     {
-        [SerializeField] private EnemyFormationEntry[] formationEntries;
+        [SerializeField] public EnemyFormationEntry[] formationEntries;
         
         private void OnDrawGizmosSelected()
         {
