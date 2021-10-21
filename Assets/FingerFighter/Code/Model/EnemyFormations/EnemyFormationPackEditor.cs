@@ -41,7 +41,7 @@ namespace FingerFighter.Model.EnemyFormations
 
         private void OverwritePack()
         {
-            enemyFormationPack.formations = editors.Select(e => e.formation).ToArray();
+            enemyFormationPack.Formations = editors.Select(e => e.formation).ToArray();
         }
     }
 }

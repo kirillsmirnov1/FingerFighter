@@ -5,8 +5,8 @@ namespace FingerFighter.Model.EnemyFormations
 {
     public class EnemyFormationEditor : MonoBehaviour
     {
-        [SerializeField] public EnemyFormation formation;
         [SerializeField] private EnemyFormationPackEditor packEditor;
+        [SerializeField] public EnemyFormation formation;
         
         private void OnValidate()
         {

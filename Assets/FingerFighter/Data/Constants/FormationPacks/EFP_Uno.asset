@@ -12,4 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df35f4a66664717bb45ad9eefa7b49c, type: 3}
   m_Name: EFP_Uno
   m_EditorClassIdentifier: 
-  formations: []
+  formations:
+  - entries:
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0, y: 2}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -1.9917223, y: -0.9411777}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 1.991722, y: -0.9411777}
+  - entries:
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -1.9917223, y: -0.9411777}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 1.991722, y: -0.9411777}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 1.3126502, y: -1.9061753}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -1.31265, y: -1.9061753}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -0.5263562, y: -2.5137658}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0.5263562, y: -2.5137658}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0, y: 2}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -0.75055337, y: 1.6425936}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0.7505534, y: 1.6425936}
