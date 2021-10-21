@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1603959843}
   - component: {fileID: 1603959844}
   m_Layer: 6
-  m_Name: EnemySpawn
+  m_Name: EnemySpawnRandomCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

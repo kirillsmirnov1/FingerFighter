@@ -7,7 +7,7 @@ namespace FingerFighter.Control.Combat
         protected override void OnDisable()
         {
             base.OnDisable();
-            RunnerEnemySpawn.ReturnToPool(gameObject, id.EnemyType);
+            EnemySpawnRandomCount.ReturnToPool(gameObject, id.EnemyType);
         }
     }
 }

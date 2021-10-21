@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FingerFighter.Control.Factories
 {
-    public class RunnerEnemySpawn : JumpObjectOnOutOfCamera
+    public class EnemySpawnRandomCount : JumpObjectOnOutOfCamera
     {
         [SerializeField] private Vector2Int enemyCount = new Vector2Int(3, 10);
         [SerializeField] private EnemyPrefabs enemies;
@@ -15,7 +15,7 @@ namespace FingerFighter.Control.Factories
         
         private Transform _anchor;
 
-        private static RunnerEnemySpawn _instance;
+        private static EnemySpawnRandomCount _instance;
 
         private void Awake()
         {
