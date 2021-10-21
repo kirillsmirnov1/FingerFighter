@@ -14,7 +14,7 @@ namespace FingerFighter.Model.EnemyFormations
             UpdatePack();
         }
 
-        public void UpdatePack() => packEditor.UpdatePack();
+        public void UpdatePack() => packEditor?.UpdatePack();
 
         private void OnDrawGizmosSelected()
         {
