@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using FingerFighter.Utils;
+using UnityEditor;
 using UnityEngine;
 
 namespace FingerFighter.Model.EnemyFormations
@@ -12,6 +13,11 @@ namespace FingerFighter.Model.EnemyFormations
         private void OnSceneGUI()
         {
             MoveEntries();
+        }
+
+        public override void OnInspectorGUI()
+        {
+            DisplayData();
         }
 
         private void MoveEntries()
@@ -31,6 +37,20 @@ namespace FingerFighter.Model.EnemyFormations
                     formation.UpdatePack();
                 }
             }
+        }
+
+        private void DisplayData()
+        {
+            var packEditor = serializedObject.FindProperty("packEditor");
+            var formation = serializedObject.FindProperty("formation.entries");
+            
+            serializedObject.Update();
+            {
+                EditorGUILayout.PropertyField(packEditor);
+                EditorGUILayout.LabelField(new GUIContent("Formation"));
+                EditorList.Show(formation, EditorListOption.ListSize | EditorListOption.Buttons);
+            }
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }
