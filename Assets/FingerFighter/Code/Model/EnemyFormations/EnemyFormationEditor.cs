@@ -4,7 +4,7 @@ namespace FingerFighter.Model.EnemyFormations
 {
     public class EnemyFormationEditor : MonoBehaviour
     {
-        [SerializeField] public EnemyFormationEntry[] formationEntries;
+        [SerializeField] public EnemyFormation formation;
         
         private void OnDrawGizmosSelected()
         {
@@ -14,7 +14,7 @@ namespace FingerFighter.Model.EnemyFormations
 
         private void DrawFormationEntries()
         {
-            for (int i = 0; i < formationEntries.Length; i++)
+            for (int i = 0; i < formation.entries.Length; i++)
             {
                 DrawFormationEntry(i);
             }
@@ -22,7 +22,7 @@ namespace FingerFighter.Model.EnemyFormations
 
         private void DrawFormationEntry(int index)
         {
-            var formationEntry = formationEntries[index];
+            var formationEntry = formation.entries[index];
             
             if (formationEntry.enemy == null)
             {

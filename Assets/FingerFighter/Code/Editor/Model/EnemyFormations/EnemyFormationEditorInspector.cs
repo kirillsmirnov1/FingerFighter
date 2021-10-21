@@ -19,14 +19,15 @@ namespace FingerFighter.Model.EnemyFormations
             var formation = target as EnemyFormationEditor;
             // ReSharper disable once PossibleNullReferenceException
             var transform = formation.transform;
-            for (int i = 0; i < formation.formationEntries.Length; i++)
+            if(formation.formation.entries == null) return;
+            for (int i = 0; i < formation.formation.entries.Length; i++)
             {
-                var oldPoint = transform.TransformPoint(formation.formationEntries[i].pos);
+                var oldPoint = transform.TransformPoint(formation.formation.entries[i].pos);
                 var newPoint = Handles.FreeMoveHandle(oldPoint, Quaternion.identity, HandleSize, Snap, Handles.DotHandleCap);
                 if (oldPoint != newPoint)
                 {
                     Undo.RecordObject(formation, "Move");
-                    formation.formationEntries[i].pos = transform.InverseTransformPoint(newPoint);
+                    formation.formation.entries[i].pos = transform.InverseTransformPoint(newPoint);
                 }
             }
         }
