@@ -39,3 +39,32 @@ MonoBehaviour:
       pos: {x: -0.75055337, y: 1.6425936}
     - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
       pos: {x: 0.7505534, y: 1.6425936}
+  - entries:
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -7.490622, y: -5.530867}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 7.490622, y: -5.530867}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -13.500539, y: -11.497236}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 13.50054, y: -11.497236}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -12.498886, y: -10.495584}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 12.49889, y: -10.495584}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -11.453684, y: -9.58103}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 11.45368, y: -9.58103}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -10.495581, y: -8.405177}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 10.49558, y: -8.405177}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -9.5374775, y: -7.4470735}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 9.537477, y: -7.4470735}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -8.492274, y: -6.4889703}
+    - enemy: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 8.492274, y: -6.4889703}
