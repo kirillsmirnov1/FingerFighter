@@ -19,7 +19,7 @@ namespace FingerFighter.Control.Character.Handles
             _camera = Camera.main;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             // IMPR state machine 
             if(finger == null) return;
