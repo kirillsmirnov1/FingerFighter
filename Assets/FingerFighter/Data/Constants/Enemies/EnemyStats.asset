@@ -52,7 +52,7 @@ MonoBehaviour:
   health: 500
   movementSpeed: 0
   rotationSpeed: 0.1
-  collisionDamage: 20
+  collisionDamage: 0
   gizmoColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &11400000
 MonoBehaviour:

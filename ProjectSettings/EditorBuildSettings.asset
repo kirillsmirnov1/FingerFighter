@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/FingerFighter/Scenes/ScenePicker.unity
     guid: 7e9ed93ebd4c66f41aebe016be6edba3
   - enabled: 1
