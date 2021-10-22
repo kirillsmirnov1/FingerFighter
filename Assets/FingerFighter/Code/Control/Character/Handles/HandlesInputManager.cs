@@ -39,7 +39,7 @@ namespace FingerFighter.Control.Character.Handles
         {
             Touch.onFingerDown -= OnFingerDown;
             Touch.onFingerUp -= OnFingerUp;
-            PlayerStatus.OnDead += OnPlayerDead;
+            PlayerStatus.OnDead -= OnPlayerDead;
         }
 
         private void OnFingerDown(Finger finger)
