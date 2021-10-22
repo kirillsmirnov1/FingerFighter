@@ -1,6 +1,4 @@
-﻿using System;
-using FingerFighter.Control.Combat.Health;
-using FingerFighter.Model;
+﻿using FingerFighter.Control.Combat.Health;
 using TMPro;
 using UnityEngine;
 
@@ -19,7 +17,12 @@ namespace FingerFighter.View
         private void Awake()
         {
             health.onHealthChange += DisplayHealthChange;
-            text.color = SetAlpha(text.color, 0f);
+        }
+
+        private void OnEnable()
+        {
+            SetTextAlpha(0f);
+            _durationLeft = 0f;
         }
 
         private void Update()
@@ -34,7 +37,7 @@ namespace FingerFighter.View
             _durationLeft -= Time.deltaTime;
             var t = 1 - _durationLeft / duration;
             var textAlpha = textTransparency.Evaluate(t);
-            text.color = SetAlpha(text.color, textAlpha);
+            SetTextAlpha(textAlpha);
         }
 
         private void DisplayHealthChange(float currHealth)
@@ -44,10 +47,11 @@ namespace FingerFighter.View
             _durationLeft = duration;
         }
 
-        private Color SetAlpha(Color color, float alpha)
+        private void SetTextAlpha(float alpha)
         {
+            var color = text.color;
             color.a = alpha;
-            return color;
+            text.color = color;
         }
     }
 }
