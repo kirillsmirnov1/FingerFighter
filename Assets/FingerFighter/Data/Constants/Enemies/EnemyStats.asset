@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fly
   m_EditorClassIdentifier: 
   tag: Fly
+  prefab: {fileID: 3432435433514336836, guid: 18eedc65fec292a428e10d2e7cf50444, type: 3}
   health: 50
   movementSpeed: 4
   rotationSpeed: 0.1
@@ -31,6 +32,7 @@ MonoBehaviour:
   m_Name: Another
   m_EditorClassIdentifier: 
   tag: Another
+  prefab: {fileID: 3432435433514336836, guid: 11325792cda9b934d9ad4bcd6527c732, type: 3}
   health: 25
   movementSpeed: 10
   rotationSpeed: 0.03
@@ -49,6 +51,7 @@ MonoBehaviour:
   m_Name: Dummy
   m_EditorClassIdentifier: 
   tag: Dummy
+  prefab: {fileID: 3432435433514336836, guid: 19a3375d720a17f4a8e79b81e48e9e2a, type: 3}
   health: 500
   movementSpeed: 0
   rotationSpeed: 0.1

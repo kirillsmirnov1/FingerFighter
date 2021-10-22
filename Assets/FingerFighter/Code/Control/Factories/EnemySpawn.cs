@@ -7,7 +7,7 @@ namespace FingerFighter.Control.Factories
 {
     public abstract class EnemySpawn : JumpObjectOnOutOfCamera
     {
-        [SerializeField] protected EnemyPrefabs enemies;
+        [SerializeField] protected EnemyStatsList enemyData;
         
         private readonly Dictionary<string, GameObject> prefabs = new Dictionary<string, GameObject>();
         private readonly Dictionary<string, Queue<GameObject>> pool = new Dictionary<string, Queue<GameObject>>();
@@ -25,10 +25,10 @@ namespace FingerFighter.Control.Factories
 
         private void InitDictionaries()
         {
-            for (int i = 0; i < enemies.Length; i++)
+            for (int i = 0; i < enemyData.Count; i++)
             {
-                pool.Add(enemies[i].tag, new Queue<GameObject>());
-                prefabs.Add(enemies[i].tag, enemies[i].prefab);
+                pool.Add(enemyData[i].tag, new Queue<GameObject>());
+                prefabs.Add(enemyData[i].tag, enemyData[i].prefab);
             }
         }
 

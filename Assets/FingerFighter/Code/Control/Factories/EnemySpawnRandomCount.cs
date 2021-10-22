@@ -8,9 +8,9 @@ namespace FingerFighter.Control.Factories
 
         protected override void Spawn()
         {
-            for (int i = 0; i < enemies.Length; i++)
+            for (int i = 0; i < enemyData.Count; i++)
             {
-                SpawnEnemies(enemies[i].tag);
+                SpawnEnemies(enemyData[i].tag);
             }
         }
 

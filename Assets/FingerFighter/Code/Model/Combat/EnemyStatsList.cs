@@ -8,6 +8,9 @@ namespace FingerFighter.Model.Combat
     public class EnemyStatsList : ScriptableObject
     {
         [SerializeField] private List<EnemyStats> stats;
+
+        public int Count => stats.Count;
+        public EnemyStats this[int i] => stats[i]; 
         
 #if UNITY_EDITOR
         public void Add()
