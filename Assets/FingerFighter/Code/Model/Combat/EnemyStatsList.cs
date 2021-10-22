@@ -28,32 +28,4 @@ namespace FingerFighter.Model.Combat
         }
 #endif
     }
-    
-#if UNITY_EDITOR
-    [CustomEditor(typeof(EnemyStatsList))]
-    public class EnemyStatsListEditor : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            var statsList = target as EnemyStatsList;
-            if(statsList == null) return;
-            
-            GUILayout.BeginHorizontal();
-            {
-                if (GUILayout.Button("Add"))
-                {
-                    statsList.Add();
-                }
-
-                if (GUILayout.Button("Remove"))
-                {
-                    statsList.Remove(); // TODO remove selected array element 
-                }
-            }
-            GUILayout.EndHorizontal();
-
-            base.OnInspectorGUI();
-        }
-    }
-#endif
 }
