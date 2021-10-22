@@ -31,6 +31,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3167804633342942263, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: behaviours.Array.size
       value: 2
