@@ -7,7 +7,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
     {
         [SerializeField] private EnemyFormationPack pack;
         
-        private int _i;
+        private int _formationIterator;
         
         private Camera _camera;
         private Vector2 _jumpToCameraGap;
@@ -30,8 +30,8 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 
         private EnemyFormation NextFormation()
         {
-            var formation = pack.Formations[_i];
-            _i = (_i + 1) % pack.Formations.Length;
+            var formation = pack.Formations[_formationIterator];
+            _formationIterator = (_formationIterator + 1) % pack.Formations.Length;
             return formation;
         }
 
