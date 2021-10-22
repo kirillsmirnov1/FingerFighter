@@ -29,6 +29,7 @@ namespace FingerFighter.Control.Factories
 
         private void Instantiate(HitData hitData)
         {
+            if(hitData.Force < 1) return;
             var newFlyingText = GetNewFlyingText(hitData.Position);
             newFlyingText.Init(ComposeFlyingTextData(hitData));
         }
