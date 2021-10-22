@@ -17,7 +17,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         private Vector2 _currentPos;
         private int _aliveEnemies;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _instance = this;
             anchor = transform.parent;
