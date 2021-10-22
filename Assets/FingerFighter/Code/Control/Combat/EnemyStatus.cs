@@ -1,4 +1,4 @@
-﻿using FingerFighter.Control.Factories;
+﻿using FingerFighter.Control.Factories.EnemySpawn;
 
 namespace FingerFighter.Control.Combat
 {
@@ -7,7 +7,7 @@ namespace FingerFighter.Control.Combat
         protected override void OnDisable()
         {
             base.OnDisable();
-            EnemySpawnRandomCount.ReturnToPool(gameObject, id.EnemyType);
+            AEnemySpawn.ReturnToPool(gameObject, id.EnemyType);
         }
     }
 }

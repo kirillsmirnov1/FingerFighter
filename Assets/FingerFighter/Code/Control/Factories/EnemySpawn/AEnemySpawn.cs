@@ -3,9 +3,9 @@ using FingerFighter.Model.Combat;
 using FingerFighter.View;
 using UnityEngine;
 
-namespace FingerFighter.Control.Factories
+namespace FingerFighter.Control.Factories.EnemySpawn
 {
-    public abstract class EnemySpawn : JumpObjectOnOutOfCamera
+    public abstract class AEnemySpawn : JumpObjectOnOutOfCamera
     {
         [SerializeField] protected EnemyStatsList enemyData;
         
@@ -13,7 +13,7 @@ namespace FingerFighter.Control.Factories
         private readonly Dictionary<string, Queue<GameObject>> pool = new Dictionary<string, Queue<GameObject>>();
         
         private Transform anchor;
-        private static EnemySpawn _instance;
+        private static AEnemySpawn _instance;
         private Vector2 _currentPos;
 
         private void Awake()

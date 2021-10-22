@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace FingerFighter.Control.Factories
+namespace FingerFighter.Control.Factories.EnemySpawn
 {
-    public class EnemySpawnRandomCount : EnemySpawn
+    public class EnemySpawnRandomCount : AEnemySpawn
     {
         [SerializeField] private Vector2Int enemyCount = new Vector2Int(3, 10);
 

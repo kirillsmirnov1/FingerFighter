@@ -1,9 +1,9 @@
 ﻿using FingerFighter.Model.EnemyFormations;
 using UnityEngine;
 
-namespace FingerFighter.Control.Factories
+namespace FingerFighter.Control.Factories.EnemySpawn
 {
-    public class EnemySpawnFormation : EnemySpawn
+    public class EnemySpawnFormation : AEnemySpawn
     {
         [SerializeField] private EnemyFormationPack pack;
         
