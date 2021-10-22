@@ -15,6 +15,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         private Transform anchor;
         private static AEnemySpawn _instance;
         private Vector2 _currentPos;
+        private int _aliveEnemies;
 
         private void Awake()
         {
@@ -49,6 +50,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
             var instance = GetFromPool(enemyTag);
             instance.SetActive(true);
             instance.transform.position = pos;
+            UpdateAliveEnemyCount(1);
         }
 
         protected GameObject GetFromPool(string enemyTag)
@@ -61,6 +63,21 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         protected virtual void ReturnToPoolImpl(GameObject obj, string enemyType)
         {
             pool[enemyType].Enqueue(obj);
+            UpdateAliveEnemyCount(-1);
+        }
+
+        private void UpdateAliveEnemyCount(int change)
+        {
+            _aliveEnemies += change;
+            if (_aliveEnemies == 0)
+            {
+                NoEnemiesLeftAlive();
+            }
+        }
+
+        protected virtual void NoEnemiesLeftAlive()
+        {
+            Debug.Log("No enemies left alive");
         }
 
         public static void ReturnToPool(GameObject obj, string enemyType)
