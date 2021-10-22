@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FingerFighter.Model.Combat;
 using FingerFighter.View;
 using UnityEngine;
@@ -34,7 +34,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 
         protected override void OnTriggerExit2D(Collider2D other) { }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        protected virtual void OnTriggerEnter2D(Collider2D other)
         {
             _currentPos = transform.position;
             Spawn();
