@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using FingerFighter.Model.Combat;
 using FingerFighter.View;
 using UnityEngine;
@@ -58,9 +58,14 @@ namespace FingerFighter.Control.Factories.EnemySpawn
                 : Instantiate(prefabs[enemyTag], anchor);
         }
 
+        protected virtual void ReturnToPoolImpl(GameObject obj, string enemyType)
+        {
+            pool[enemyType].Enqueue(obj);
+        }
+
         public static void ReturnToPool(GameObject obj, string enemyType)
         {
-            _instance?.pool[enemyType].Enqueue(obj);
+            _instance?.ReturnToPoolImpl(obj, enemyType);
         }
     }
 }
