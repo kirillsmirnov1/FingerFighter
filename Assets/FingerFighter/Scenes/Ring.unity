@@ -420,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4143355490249659025, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
       propertyPath: m_Name
-      value: ButtonLoadsScene
+      value: LoadRunnerButton
       objectReference: {fileID: 0}
     - target: {fileID: 4143355490249659026, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
       propertyPath: m_Pivot.x
@@ -505,6 +505,18 @@ PrefabInstance:
     - target: {fileID: 4143355490249659026, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143355490249659052, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143355490249659052, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: be5002d09fb203143b4202f9212748ae, type: 3}
+    - target: {fileID: 4143355490249659052, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6061952409573288526, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
       propertyPath: sceneName
