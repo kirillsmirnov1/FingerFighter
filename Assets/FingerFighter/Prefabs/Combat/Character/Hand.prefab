@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74a087b986a59447896f621d6b65030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affiliation: 0
+  id: {fileID: 0}
   hitDataProvider: {fileID: 7233169938493871838}
 --- !u!114 &261871681114540746
 MonoBehaviour:
@@ -304,8 +304,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 937e97cfb2f16fc44b0a7fbb61cf65e5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
