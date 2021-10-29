@@ -18,6 +18,7 @@ namespace FingerFighter.View
         
         public void Init(FlyingTextData data)
         {
+            transform.position = data.Position;
             text.text = data.Text;
             text.color = data.TextColor;
             _direction = data.Direction;

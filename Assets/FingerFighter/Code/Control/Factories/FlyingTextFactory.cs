@@ -19,33 +19,37 @@ namespace FingerFighter.Control.Factories
         private void Awake()
         {
             Instance = this;
-            HitTaker.OnHitTaken += Instantiate;
+            HitTaker.OnHitTaken += OnHitTaken;
         }
 
         private void OnDestroy()
         {
-            HitTaker.OnHitTaken -= Instantiate;
+            HitTaker.OnHitTaken -= OnHitTaken;
         }
 
-        private void Instantiate(HitData hitData)
+        private void OnHitTaken(HitData hitData)
         {
             if(hitData.Force < 1) return;
-            var newFlyingText = GetNewFlyingText(hitData.Position);
-            newFlyingText.Init(ComposeFlyingTextData(hitData));
+            Instantiate(ComposeFlyingTextData(hitData));
         }
 
-        private FlyingText GetNewFlyingText(Vector2 position)
+        private void Instantiate(FlyingTextData data)
+        {
+            var newFlyingText = GetNewFlyingText();
+            newFlyingText.Init(data);
+        }
+
+        private FlyingText GetNewFlyingText()
         {
             if (_pool.Count > 0)
             {
                 var newFlyingText = _pool.Dequeue();
-                newFlyingText.transform.position = position;
                 newFlyingText.gameObject.SetActive(true);
                 return newFlyingText;
             }
             else
             {
-                return Instantiate(hitDamageTextPrefab, position, Quaternion.identity, transform)
+                return Instantiate(hitDamageTextPrefab, transform)
                     .GetComponent<FlyingText>();
             }
         }
@@ -56,6 +60,7 @@ namespace FingerFighter.Control.Factories
             {
                 Text = $"{hitData.Force:0}",
                 TextColor = PickColor(hitData),
+                Position = hitData.Position,
                 Direction = hitData.Direction
             };
         }
