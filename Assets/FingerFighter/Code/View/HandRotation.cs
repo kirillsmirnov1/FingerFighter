@@ -1,4 +1,4 @@
-using FingerFighter.Control.Character.Handles;
+﻿using FingerFighter.Control.Character.Handles;
 using UnityEngine;
 
 namespace FingerFighter.View
@@ -15,7 +15,8 @@ namespace FingerFighter.View
             rb.angularVelocity = 0f;
             var movementDirection = speed.Direction;
             
-            if(movementDirection.magnitude < 0.001f) return;
+            // too rough [0.1f; 0.01f] too sensitive // IMPR might wanna tweak later
+            if(movementDirection.magnitude < 0.05f) return; 
 
             Vector2 toBody = body.position - transform.position;
             if (Vector2.Dot(movementDirection, toBody) > 0) movementDirection *= -1f;
