@@ -7,18 +7,21 @@ namespace FingerFighter.Control.Character.Handles
     public class HandleSpeed : MonoBehaviour
     {
         [SerializeField] private TextMeshPro txt;
-        [SerializeField] private int cachedSpeedCount = 5;
+        [SerializeField] private int cacheSize = 5;
         
         public float Speed { get; private set; }
         public Vector2 Direction { get; private set; }
 
         private Vector2 _prevPos;
+        private Vector2 _currentDirection;
         private float[] _cachedSpeed;
-        private int _cachedSpeedIndex;
+        private Vector2[] _cachedDirection;
+        private int _cacheIndex;
 
         private void Start()
         {
-            _cachedSpeed = new float[cachedSpeedCount];
+            _cachedSpeed = new float[cacheSize];
+            _cachedDirection = new Vector2[cacheSize];
             _prevPos = transform.position;
         }
 
@@ -26,24 +29,34 @@ namespace FingerFighter.Control.Character.Handles
         {
             UpdateDirection();
             UpdateSpeed();
-            // DisplaySpeed();
+            _cacheIndex = (_cacheIndex + 1) % cacheSize;
         }
 
         private void UpdateDirection()
         {
             Vector2 curPos = transform.position;
-            Direction = curPos - _prevPos;
+            _currentDirection = curPos - _prevPos;
             _prevPos = curPos;
+
+            _cachedDirection[_cacheIndex] = _currentDirection;
+            
+            var sumDir = Vector2.zero;
+            for (var i = 0; i < _cachedDirection.Length; i++)
+            {
+                var direction = _cachedDirection[i];
+                sumDir += direction;
+            }
+            sumDir /= cacheSize;
+            Direction = sumDir;
         }
 
         private void UpdateSpeed()
         {
-            var currentSpeed = Direction.magnitude / Time.deltaTime;
+            var currentSpeed = _currentDirection.magnitude / Time.deltaTime;
             
-            _cachedSpeed[_cachedSpeedIndex] = currentSpeed;
-            _cachedSpeedIndex = (_cachedSpeedIndex + 1) % cachedSpeedCount;
-            
-            Speed = _cachedSpeed.Sum() / cachedSpeedCount;
+            _cachedSpeed[_cacheIndex] = currentSpeed;
+
+            Speed = _cachedSpeed.Sum() / cacheSize;
         }
 
         private void DisplaySpeed()

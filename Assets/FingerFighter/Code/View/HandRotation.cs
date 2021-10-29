@@ -1,4 +1,4 @@
-﻿using FingerFighter.Control.Character.Handles;
+using FingerFighter.Control.Character.Handles;
 using UnityEngine;
 
 namespace FingerFighter.View
@@ -12,7 +12,6 @@ namespace FingerFighter.View
         
         private void Update()
         {
-            // TODO accumulate direction for smoother movement 
             rb.angularVelocity = 0f;
             var movementDirection = speed.Direction;
             
