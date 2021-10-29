@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using FingerFighter.Control.Combat;
 using FingerFighter.Control.Damage;
 using FingerFighter.Model;
+using FingerFighter.Model.Combat;
 using FingerFighter.Model.Damage;
 using FingerFighter.View;
 using UnityEngine;
@@ -13,22 +15,32 @@ namespace FingerFighter.Control.Factories
         public static FlyingTextFactory Instance;
 
         [SerializeField] private GameObject hitDamageTextPrefab;
+        [SerializeField] private EnemyStatsList enemyStats;
         
         private readonly Queue<FlyingText> _pool = new Queue<FlyingText>();
-        
+        private readonly Vector2 _enemyDeathTextDirection = Vector2.up * 0.3f;
+
         private void Awake()
         {
             Instance = this;
             HitTaker.OnHitTaken += OnHitTaken;
+            EnemyStatus.OnDeath += OnEnemyDeath;
         }
 
         private void OnDestroy()
         {
             HitTaker.OnHitTaken -= OnHitTaken;
+            EnemyStatus.OnDeath -= OnEnemyDeath;
+        }
+
+        private void OnEnemyDeath(string enemyTag, Vector2 deathPos)
+        {
+            Instantiate(ComposeFlyingTextData(enemyTag, deathPos));
         }
 
         private void OnHitTaken(HitData hitData)
         {
+            if(hitData.Affected == Affiliation.Enemy) return;
             if(hitData.Force < 1) return;
             Instantiate(ComposeFlyingTextData(hitData));
         }
@@ -52,6 +64,17 @@ namespace FingerFighter.Control.Factories
                 return Instantiate(hitDamageTextPrefab, transform)
                     .GetComponent<FlyingText>();
             }
+        }
+
+        private FlyingTextData ComposeFlyingTextData(string enemyTag, Vector2 deathPos)
+        {
+            return new FlyingTextData
+            {
+                Text = $"+{(int)enemyStats[enemyTag].health}",
+                TextColor = Color.white,
+                Position = deathPos,
+                Direction = _enemyDeathTextDirection
+            };
         }
 
         private FlyingTextData ComposeFlyingTextData(HitData hitData)

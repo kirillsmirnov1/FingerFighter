@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitDamageTextPrefab: {fileID: 1593544413518964786, guid: 3a9954d627d645358e5b05eceabf4b7b, type: 3}
+  enemyStats: {fileID: 11400000, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
