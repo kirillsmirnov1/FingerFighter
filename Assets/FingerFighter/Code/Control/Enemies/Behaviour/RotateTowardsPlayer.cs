@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FingerFighter.Model.Util;
+using UnityEngine;
 
 namespace FingerFighter.Control.Enemies.Behaviour
 {
@@ -7,9 +8,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
     {
         public override void Apply(EnemyBehaviourMachine enemy)
         {
-            var dirToPlayer = enemy.directionToPlayer;
-            var angle = Mathf.Atan2(dirToPlayer.y, dirToPlayer.x) * Mathf.Rad2Deg;
-            var desiredRotation = Quaternion.Euler(0, 0, angle + enemy.angleOffset);
+            var desiredRotation = QuaternionExt.LookRotation2D(enemy.directionToPlayer, enemy.angleOffset);
             var nextRotation = Quaternion.Slerp(enemy.transform.rotation, desiredRotation, enemy.Stats.rotationSpeed); 
             enemy.transform.rotation = nextRotation;
         }
