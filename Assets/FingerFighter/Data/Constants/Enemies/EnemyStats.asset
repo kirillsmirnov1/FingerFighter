@@ -29,9 +29,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
-  m_Name: Another
+  m_Name: FlyFast
   m_EditorClassIdentifier: 
-  tag: Another
+  tag: FlyFast
   prefab: {fileID: 3432435433514336836, guid: 11325792cda9b934d9ad4bcd6527c732, type: 3}
   health: 25
   movementSpeed: 10
