@@ -48,7 +48,7 @@ namespace FingerFighter.Control.Enemies.Snake
             public override void FixedUpdate()
             {
                 Segment.transform.position = Segment.body.transform.position;
-                // TODO rotation
+                Segment.transform.rotation = Segment.body.transform.rotation;
             }
         }
 
