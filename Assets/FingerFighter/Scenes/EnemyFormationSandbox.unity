@@ -2665,6 +2665,18 @@ PrefabInstance:
       value: 1.6425936
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
+      propertyPath: formation.entries.Array.data[9].enemy
+      value: 
+      objectReference: {fileID: -526747421762644956, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+    - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
+      propertyPath: formation.entries.Array.data[9].pos.x
+      value: 1.7490091
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
+      propertyPath: formation.entries.Array.data[9].pos.y
+      value: 3.463722
+      objectReference: {fileID: 0}
+    - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formationEntries.Array.data[0].enemyType
       value: Fly
       objectReference: {fileID: 0}

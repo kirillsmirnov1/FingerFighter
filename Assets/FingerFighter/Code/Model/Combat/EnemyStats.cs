@@ -15,6 +15,7 @@ namespace FingerFighter.Model.Combat
 
         [Header("Formation Editor")] 
         public Color gizmoColor;
+        public Sprite gizmoIcon;
         
         private void OnValidate()
         {

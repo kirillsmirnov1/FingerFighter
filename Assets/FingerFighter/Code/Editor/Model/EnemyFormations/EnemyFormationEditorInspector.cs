@@ -28,8 +28,15 @@ namespace FingerFighter.Model.EnemyFormations
             if(formation.formation.entries == null) return;
             for (int i = 0; i < formation.formation.entries.Length; i++)
             {
-                var oldPoint = transform.TransformPoint(formation.formation.entries[i].pos);
+                var entry = formation.formation.entries[i];
+                
+                var handleColor = Color.white - entry.enemy.gizmoColor;
+                handleColor.a = 1;
+                Handles.color = handleColor;
+                
+                var oldPoint = transform.TransformPoint(entry.pos);
                 var newPoint = Handles.FreeMoveHandle(oldPoint, Quaternion.identity, HandleSize, Snap, Handles.DotHandleCap);
+
                 if (oldPoint != newPoint)
                 {
                     Undo.RecordObject(formation, "Move");

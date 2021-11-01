@@ -1,4 +1,4 @@
-﻿using System;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace FingerFighter.Model.EnemyFormations
@@ -39,9 +39,8 @@ namespace FingerFighter.Model.EnemyFormations
                 Debug.LogWarning($"No stats for {gameObject.name}:{index}");
                 return;
             }
-
-            Gizmos.color = formationEntry.enemy.gizmoColor;
-            Gizmos.DrawSphere(formationEntry.pos, 0.3f);
+            
+            Gizmos.DrawIcon(formationEntry.pos, AssetDatabase.GetAssetPath(formationEntry.enemy.gizmoIcon));
         }
 
         private static void DrawBorderRect()
