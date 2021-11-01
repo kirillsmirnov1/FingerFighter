@@ -15,6 +15,7 @@ MonoBehaviour:
   body: {fileID: 0}
   previous: {fileID: 0}
   next: {fileID: 0}
+  rb: {fileID: 1183240457381917521}
 --- !u!1001 &3104166690050586463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,5 +104,10 @@ PrefabInstance:
 --- !u!1 &7340352278540750819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_PrefabInstance: {fileID: 3104166690050586463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1183240457381917521 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
   m_PrefabInstance: {fileID: 3104166690050586463}
   m_PrefabAsset: {fileID: 0}
