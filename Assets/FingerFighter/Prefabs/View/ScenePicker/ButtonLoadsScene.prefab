@@ -65,10 +65,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Load Scene
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a54b6cd4e264f024e8cc86a5e5ff230b, type: 2}
+  m_sharedMaterial: {fileID: 3473103291430654729, guid: a54b6cd4e264f024e8cc86a5e5ff230b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 125
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -269,6 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNameReference:
-    sceneName: 
+    sceneName: Load Scene
     sceneAsset: {fileID: 0}
   sceneName: {fileID: 4143355489794063171}
