@@ -48,7 +48,7 @@ namespace FingerFighter.Control.Enemies.Snake
 
             public override void FixedUpdate()
             {
-                Segment.transform.position = Segment.body.transform.position;
+                Segment.rb.MovePosition(Segment.body.transform.position);
                 Segment.transform.rotation = Segment.body.transform.rotation;
             }
         }
@@ -61,8 +61,8 @@ namespace FingerFighter.Control.Enemies.Snake
             {
                 var targetPosition = Vector2.Lerp(Segment.rb.position, Segment.previous.rb.position, 0.05f);
                 var toTarget = targetPosition - Segment.rb.position;
-                Vector3 moveVector = Vector2.ClampMagnitude(toTarget, .05f);
-                Segment.transform.position += moveVector;
+                var moveVector = Vector2.ClampMagnitude(toTarget, .05f);
+                Segment.rb.MovePosition(Segment.rb.position + moveVector);
                 Segment.transform.rotation = QuaternionExt.LookRotation2D(toTarget, -90f);
             }
         }
