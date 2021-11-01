@@ -609,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3740371941508899968, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
       propertyPath: m_Name
-      value: MainCamera
+      value: Camera_Google
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
