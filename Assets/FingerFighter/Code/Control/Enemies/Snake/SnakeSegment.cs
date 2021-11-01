@@ -13,7 +13,12 @@ namespace FingerFighter.Control.Enemies.Snake
         
         // TODO change on death of another segment 
         private SnakeSegmentState _state;
-        
+
+        private void Awake()
+        {
+            transform.parent = null; // TODO find another way of freeing from hierarchy 
+        }
+
         private void OnEnable()
         {
             SetState();
@@ -53,7 +58,10 @@ namespace FingerFighter.Control.Enemies.Snake
 
             public override void FixedUpdate()
             {
-                Segment.transform.position = Vector2.Lerp(Segment.rb.position, Segment.previous.rb.position, 0.08f); 
+                var targetPosition = Vector2.Lerp(Segment.rb.position, Segment.previous.rb.position, 0.05f);
+                var toTarget = targetPosition - Segment.rb.position;
+                Vector3 moveVector = Vector2.ClampMagnitude(toTarget, .05f);
+                Segment.transform.position += moveVector; 
                 // TODO rotation 
             }
         }
