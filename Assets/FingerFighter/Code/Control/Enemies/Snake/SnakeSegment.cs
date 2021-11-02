@@ -59,32 +59,42 @@ namespace FingerFighter.Control.Enemies.Snake
         {
             protected readonly SnakeSegment Self;
             protected SnakeSegmentState(SnakeSegment segment) => Self = segment;
-            public abstract void FixedUpdate();
+
+            protected abstract Transform Target { get; }
+            
+            public void FixedUpdate()
+            {
+                RotateToTarget();
+                MoveForward();
+            }
+
+            private void RotateToTarget()
+            {
+                // TODO cache data from head 
+                // TODO refactor behaviour machine 
+                Vector2 toTarget = Target.position - Self.transform.position;
+                var desiredRotation = QuaternionExt.LookRotation2DAngle(toTarget, -90f);
+                var nextRotation = Mathf.Lerp(Self.rb.rotation, desiredRotation, Self.head.RotationSpeed);
+                Self.rb.rotation = nextRotation;
+            }
+
+            private void MoveForward()
+            {
+                var movement = Self.transform.up * Self.head.MovementSpeed;
+                Self.rb.AddForce(movement, ForceMode2D.Force);
+            }
         }
 
         private class Head : SnakeSegmentState
         {
             public Head(SnakeSegment segment) : base(segment) { }
-
-            public override void FixedUpdate()
-            {
-                Self.rb.MovePosition(Self.head.transform.position);
-                Self.rb.MoveRotation(Self.head.transform.rotation);
-            }
+            protected override Transform Target => Self.head.Player;
         }
 
         private class Segment : SnakeSegmentState
         {
             public Segment(SnakeSegment segment) : base(segment) { }
-
-            public override void FixedUpdate()
-            {
-                var targetPosition = Vector2.Lerp(Self.rb.position, Self.previous.rb.position, 0.05f);
-                var toTarget = targetPosition - Self.rb.position;
-                var moveVector = Vector2.ClampMagnitude(toTarget, .05f);
-                Self.rb.MovePosition(Self.rb.position + moveVector);
-                Self.rb.MoveRotation(QuaternionExt.LookRotation2DAngle(toTarget, -90f));
-            }
+            protected override Transform Target => Self.previous.transform;
         }
     }
 }
