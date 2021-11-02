@@ -6,11 +6,10 @@ namespace FingerFighter.Control.Enemies.Snake
     public class SnakeSegment : MonoBehaviour
     {
         [SerializeField] private SnakeHead head;
-        
-        [SerializeField] private SnakeSegment previous;
-        [SerializeField] private SnakeSegment next;
-
         [SerializeField] private Rigidbody2D rb;
+        
+        [HideInInspector] public SnakeSegment previous;
+        [HideInInspector] public SnakeSegment next;
         
         private Transform _target;
         public bool IsHead { get; private set; }
