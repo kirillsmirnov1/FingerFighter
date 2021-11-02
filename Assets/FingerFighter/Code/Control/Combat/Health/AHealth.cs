@@ -8,25 +8,30 @@ namespace FingerFighter.Control.Combat.Health
         [SerializeField] private float baseHealth;
         public virtual float BaseHealth => baseHealth;
 
-        private float _currentHealth;
-        private readonly object _lock = new object();
+        public float CurrentHealth { get; protected set; }
+        protected readonly object Lock = new object();
 
         public event Action<float> onHealthChange;
         public event Action onNoHealth;
         
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            _currentHealth = BaseHealth;
+            CurrentHealth = BaseHealth;
         }
 
         public void Change(float healthChange)
         {
-            lock (_lock)
+            lock (Lock)
             {
-                _currentHealth = Mathf.Max(0, _currentHealth + healthChange);
-                onHealthChange?.Invoke(_currentHealth);
-                if(_currentHealth < 0.0001f) onNoHealth?.Invoke();
+                CurrentHealth = Mathf.Max(0, CurrentHealth + healthChange);
+                NotifyOnHealthChange();
             }
+        }
+
+        protected void NotifyOnHealthChange()
+        {
+            onHealthChange?.Invoke(CurrentHealth);
+            if (CurrentHealth < 0.0001f) onNoHealth?.Invoke();
         }
     }
 }
