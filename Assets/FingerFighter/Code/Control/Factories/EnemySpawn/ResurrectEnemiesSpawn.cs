@@ -10,6 +10,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 
         protected override void ReturnToPoolImpl(GameObject obj, string enemyType)
         {
+            if(!gameObject.activeSelf) return;
             base.ReturnToPoolImpl(obj, enemyType);
             this.DelayAction(respawnDelay, () => SpawnEnemy(enemyType, obj.transform.position));
         }
