@@ -61,7 +61,8 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private void SetParams()
         {
-            _movementSpeed = head.MovementSpeed;
+            var mod = IsHead ? 1f : 2f;
+            _movementSpeed = mod * head.MovementSpeed;
             _rotationSpeed = head.RotationSpeed;
         }
 
