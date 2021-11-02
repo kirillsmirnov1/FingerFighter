@@ -57,8 +57,8 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private abstract class SnakeSegmentState
         {
-            protected readonly SnakeSegment Segment;
-            public SnakeSegmentState(SnakeSegment segment) => Segment = segment;
+            protected readonly SnakeSegment Self;
+            protected SnakeSegmentState(SnakeSegment segment) => Self = segment;
             public abstract void FixedUpdate();
         }
 
@@ -68,8 +68,8 @@ namespace FingerFighter.Control.Enemies.Snake
 
             public override void FixedUpdate()
             {
-                Segment.rb.MovePosition(Segment.head.transform.position);
-                Segment.rb.MoveRotation(Segment.head.transform.rotation);
+                Self.rb.MovePosition(Self.head.transform.position);
+                Self.rb.MoveRotation(Self.head.transform.rotation);
             }
         }
 
@@ -79,11 +79,11 @@ namespace FingerFighter.Control.Enemies.Snake
 
             public override void FixedUpdate()
             {
-                var targetPosition = Vector2.Lerp(Segment.rb.position, Segment.previous.rb.position, 0.05f);
-                var toTarget = targetPosition - Segment.rb.position;
+                var targetPosition = Vector2.Lerp(Self.rb.position, Self.previous.rb.position, 0.05f);
+                var toTarget = targetPosition - Self.rb.position;
                 var moveVector = Vector2.ClampMagnitude(toTarget, .05f);
-                Segment.rb.MovePosition(Segment.rb.position + moveVector);
-                Segment.rb.MoveRotation(QuaternionExt.LookRotation2DAngle(toTarget, -90f));
+                Self.rb.MovePosition(Self.rb.position + moveVector);
+                Self.rb.MoveRotation(QuaternionExt.LookRotation2DAngle(toTarget, -90f));
             }
         }
     }
