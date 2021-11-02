@@ -6,16 +6,21 @@ namespace FingerFighter.Control.Combat
 {
     public class EnemyStatus : CombatEntityStatus
     {
+        [SerializeField] private bool isSegment;
+        
         /// <summary>
-        /// tag and position
+        /// tag, segment flag and position
         /// </summary>
-        public static event Action<string, Vector2> OnDeath;
+        public static event Action<string, bool, Vector2> OnDeath;
         
         protected override void OnDisable()
         {
             base.OnDisable();
-            OnDeath?.Invoke(id.EnemyType, transform.position);
-            AEnemySpawn.ReturnToPool(gameObject, id.EnemyType);
+            OnDeath?.Invoke(id.EnemyType, isSegment, transform.position);
+            if (!isSegment)
+            {
+                AEnemySpawn.ReturnToPool(gameObject, id.EnemyType);
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2374c2c9dfcc47c9963058e4a4dc2020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 0}
+  head: {fileID: 0}
   previous: {fileID: 0}
   next: {fileID: 0}
   rb: {fileID: 1183240457381917521}
@@ -23,6 +23,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4472681907977186123, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: isSegment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1302259381993553923, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: stats
       value: 
