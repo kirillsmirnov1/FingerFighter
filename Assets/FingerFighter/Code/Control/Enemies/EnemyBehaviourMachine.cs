@@ -25,7 +25,6 @@ namespace FingerFighter.Control.Enemies
         private void OnValidate()
         {
             rb = GetComponent<Rigidbody2D>();
-            id = GetComponent<CombatEntityId>();
         }
 
         private void OnEnable()

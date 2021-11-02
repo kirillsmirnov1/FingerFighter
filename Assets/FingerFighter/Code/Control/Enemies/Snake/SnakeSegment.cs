@@ -15,11 +15,6 @@ namespace FingerFighter.Control.Enemies.Snake
         // TODO change on death of another segment 
         private SnakeSegmentState _state;
 
-        private void Awake()
-        {
-            transform.parent = null; // TODO find another way of freeing from hierarchy 
-        }
-
         private void OnEnable()
         {
             SetState();
