@@ -3,7 +3,7 @@ using UnityUtils.Extensions;
 
 namespace FingerFighter.Control.Factories.EnemySpawn
 {
-    public class RingEnemySpawn : AEnemySpawn
+    public class ResurrectEnemiesSpawn : AEnemySpawn
     {
         [Header("Ring Spawn")]
         [SerializeField] private float respawnDelay = 3f;
