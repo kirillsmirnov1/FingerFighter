@@ -13,6 +13,7 @@ namespace FingerFighter.Control.Enemies.Snake
         [SerializeField] private Rigidbody2D rb;
         
         private Transform _target;
+        public bool IsHead { get; private set; }
 
         private void OnEnable()
         {
@@ -21,6 +22,7 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private void OnDisable()
         {
+            IsHead = false;
             OnSegmentLoss();
         }
 
@@ -47,9 +49,10 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private void SetTarget()
         {
-            var isHead = previous == null;
-            _target = isHead ? head.Player : previous.transform;
+            IsHead = previous == null;
+            _target = IsHead ? head.Player : previous.transform;
         }
+
 
         public void FixedUpdate()
         {
