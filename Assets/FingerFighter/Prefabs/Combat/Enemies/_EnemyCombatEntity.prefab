@@ -94,6 +94,10 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 7197095819147163866}
+    - target: {fileID: 3166363421491597416, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 4f4635d98eac56e4ebb5e83b71c47b53, type: 2}
     - target: {fileID: 3621181120631163398, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: m_RootOrder
       value: 0
