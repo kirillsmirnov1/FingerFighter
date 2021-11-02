@@ -33,10 +33,10 @@ namespace FingerFighter.Control.Factories
             EnemyStatus.OnDeath -= OnEnemyDeath;
         }
 
-        private void OnEnemyDeath(string enemyTag, bool isSegment, Vector2 deathPos)
+        private void OnEnemyDeath(EnemyDeathData enemyDeathData)
         {
-            if(isSegment) return;
-            Instantiate(ComposeFlyingTextData(enemyTag, deathPos));
+            if(enemyDeathData.IsSegment) return;
+            Instantiate(ComposeFlyingTextData(enemyDeathData.Tag, enemyDeathData.DeathPos));
         }
 
         private void OnHitTaken(HitData hitData)

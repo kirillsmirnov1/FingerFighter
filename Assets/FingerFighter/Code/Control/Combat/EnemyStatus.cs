@@ -1,5 +1,6 @@
 ﻿using System;
 using FingerFighter.Control.Factories.EnemySpawn;
+using FingerFighter.Model.Combat;
 using UnityEngine;
 
 namespace FingerFighter.Control.Combat
@@ -11,16 +12,24 @@ namespace FingerFighter.Control.Combat
         /// <summary>
         /// tag, segment flag and position
         /// </summary>
-        public static event Action<string, bool, Vector2> OnDeath;
+        public static event Action<EnemyDeathData> OnDeath;
         
         protected override void OnDisable()
         {
             base.OnDisable();
-            OnDeath?.Invoke(id.EnemyType, isSegment, transform.position);
+            OnDeath?.Invoke(DeathData);
             if (!isSegment)
             {
                 AEnemySpawn.ReturnToPool(gameObject, id.EnemyType);
             }
         }
+
+        private EnemyDeathData DeathData =>
+            new EnemyDeathData
+            {
+                Tag = id.EnemyType, 
+                IsSegment = isSegment, 
+                DeathPos = transform.position
+            };
     }
 }

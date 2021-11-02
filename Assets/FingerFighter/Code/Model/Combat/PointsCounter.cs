@@ -17,10 +17,10 @@ namespace FingerFighter.Model.Combat
 
         private void OnDestroy() => EnemyStatus.OnDeath -= OnEnemyDeath;
 
-        private void OnEnemyDeath(string enemyTag, bool isSegment, Vector2 pos)
+        private void OnEnemyDeath(EnemyDeathData enemyDeathData)
         {
-            if(isSegment) return;
-            var points = enemyData[enemyTag].health; // IMPR might change points logic later 
+            if(enemyDeathData.IsSegment) return;
+            var points = enemyData[enemyDeathData.Tag].health; // IMPR might change points logic later 
             pointsCounter.Value += points;
         }
     }
