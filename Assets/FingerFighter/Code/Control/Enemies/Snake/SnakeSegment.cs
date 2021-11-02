@@ -12,11 +12,11 @@ namespace FingerFighter.Control.Enemies.Snake
 
         [SerializeField] private Rigidbody2D rb;
         
-        private SnakeSegmentState _state;
+        private Transform _target;
 
         private void OnEnable()
         {
-            SetState();
+            SetTarget();
         }
 
         private void OnDisable()
@@ -35,66 +35,42 @@ namespace FingerFighter.Control.Enemies.Snake
             if (previous != null)
             {
                 previous.next = next;
-                previous.SetState();
+                previous.SetTarget();
             }
 
             if (next != null)
             {
                 next.previous = previous;
-                next.SetState();
+                next.SetTarget();
             }
         }
 
-        private void SetState()
+        private void SetTarget()
         {
-            _state = previous == null ? (SnakeSegmentState) new Head(this) : new Segment(this);
+            var isHead = previous == null;
+            _target = isHead ? head.Player : previous.transform;
         }
 
-        private void FixedUpdate()
+        public void FixedUpdate()
         {
-            _state.FixedUpdate();
+            RotateToTarget();
+            MoveForward();
         }
 
-        private abstract class SnakeSegmentState
+        private void RotateToTarget()
         {
-            protected readonly SnakeSegment Self;
-            protected SnakeSegmentState(SnakeSegment segment) => Self = segment;
-
-            protected abstract Transform Target { get; }
-            
-            public void FixedUpdate()
-            {
-                RotateToTarget();
-                MoveForward();
-            }
-
-            private void RotateToTarget()
-            {
-                // TODO cache data from head 
-                // TODO refactor behaviour machine 
-                Vector2 toTarget = Target.position - Self.transform.position;
-                var desiredRotation = QuaternionExt.LookRotation2D(toTarget, -90f);
-                var nextRotation = Quaternion.Slerp(Self.transform.rotation, desiredRotation, Self.head.RotationSpeed);
-                Self.rb.MoveRotation(nextRotation);
-            }
-
-            private void MoveForward()
-            {
-                var movement = Self.transform.up * Self.head.MovementSpeed;
-                Self.rb.AddForce(movement, ForceMode2D.Force);
-            }
+            // TODO cache data from head 
+            // TODO refactor behaviour machine 
+            Vector2 toTarget = _target.position - transform.position;
+            var desiredRotation = QuaternionExt.LookRotation2D(toTarget, -90f);
+            var nextRotation = Quaternion.Slerp(transform.rotation, desiredRotation, head.RotationSpeed);
+            rb.MoveRotation(nextRotation);
         }
 
-        private class Head : SnakeSegmentState
+        private void MoveForward()
         {
-            public Head(SnakeSegment segment) : base(segment) { }
-            protected override Transform Target => Self.head.Player;
-        }
-
-        private class Segment : SnakeSegmentState
-        {
-            public Segment(SnakeSegment segment) : base(segment) { }
-            protected override Transform Target => Self.previous.transform;
+            var movement = transform.up * head.MovementSpeed;
+            rb.AddForce(movement, ForceMode2D.Force);
         }
     }
 }
