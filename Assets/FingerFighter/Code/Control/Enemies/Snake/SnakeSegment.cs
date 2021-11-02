@@ -28,7 +28,6 @@ namespace FingerFighter.Control.Enemies.Snake
         private void OnSegmentLoss()
         {
             FixSegmentsConnection();
-            // TODO notify body 
         }
 
         private void FixSegmentsConnection()
