@@ -1,5 +1,4 @@
-﻿using FingerFighter.Model.Combat;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityUtils.Extensions;
 
 namespace FingerFighter.Control.Factories.EnemySpawn
@@ -7,20 +6,15 @@ namespace FingerFighter.Control.Factories.EnemySpawn
     public class RingEnemySpawn : AEnemySpawn
     {
         [Header("Ring Spawn")]
-        [SerializeField] private EnemyStats dummyStats;
-        [SerializeField] private Vector2 dummyPos;
         [SerializeField] private float respawnDelay = 3f;
 
         protected override void ReturnToPoolImpl(GameObject obj, string enemyType)
         {
             base.ReturnToPoolImpl(obj, enemyType);
-            this.DelayAction(respawnDelay, Spawn);
+            this.DelayAction(respawnDelay, () => SpawnEnemy(enemyType, obj.transform.position));
         }
 
-        protected override void Spawn()
-        {
-            SpawnEnemy(dummyStats.tag, dummyPos);
-        }
+        protected override void Spawn() { }
 
         protected override void OnTriggerEnter2D(Collider2D other)
         {

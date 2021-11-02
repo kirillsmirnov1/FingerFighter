@@ -36,7 +36,7 @@ MonoBehaviour:
   prefab: {fileID: 147482741919032023, guid: 6beaff1c1903b704a968e6e66527adc6, type: 3}
   health: 75
   movementSpeed: 4
-  rotationSpeed: 0.1
+  rotationSpeed: 0.2
   collisionDamage: 5
   gizmoColor: {r: 1, g: 0, b: 0, a: 0}
   gizmoIcon: {fileID: 21300000, guid: 742a82f794900454395edf8512e9ba4a, type: 3}
