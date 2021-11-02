@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 7197095819147163866}
   id: {fileID: 1302259381993553923}
+  isSegment: 0
 --- !u!114 &-4055086784509483958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,11 +141,15 @@ PrefabInstance:
     - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: stats
       value: 
-      objectReference: {fileID: 11400000, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 6695693307076008194, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: affiliation
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8468718182152183055, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 4f4635d98eac56e4ebb5e83b71c47b53, type: 2}
     - target: {fileID: 8468718182152183055, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: m_LinearDrag
       value: 5
