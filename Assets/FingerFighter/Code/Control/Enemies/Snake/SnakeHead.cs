@@ -1,4 +1,5 @@
-﻿using FingerFighter.Model.Combat;
+﻿using System;
+using FingerFighter.Model.Combat;
 using UnityEngine;
 using UnityUtils.Variables;
 
@@ -24,6 +25,7 @@ namespace FingerFighter.Control.Enemies.Snake
         {
             _segments = GetComponentsInChildren<SnakeSegment>(true);
             InitSegmentChain();
+            InitSegmentPositions();
             SetSegmentsActive();
         }
 
@@ -36,6 +38,15 @@ namespace FingerFighter.Control.Enemies.Snake
                 _segments[i].next = _segments[i + 1];
             }
             _segments[_segments.Length - 1].previous = _segments[_segments.Length - 2];
+        }
+
+        private void InitSegmentPositions()
+        {
+            var gap = -transform.up * _segments[0].GetComponent<CircleCollider2D>().radius * 2;
+            for (int i = 0; i < _segments.Length; i++)
+            {
+                _segments[i].transform.localPosition = Vector3.zero + gap * i;
+            }
         }
 
         private void SetSegmentsActive()
