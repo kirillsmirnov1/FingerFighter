@@ -12,11 +12,13 @@ namespace FingerFighter.Control.Enemies.Snake
         [HideInInspector] public SnakeSegment next;
         
         private Transform _target;
+        private float _movementSpeed;
+        private float _rotationSpeed;
         public bool IsHead { get; private set; }
 
         private void OnEnable()
         {
-            SetTarget();
+            Init();
         }
 
         private void OnDisable()
@@ -35,20 +37,32 @@ namespace FingerFighter.Control.Enemies.Snake
             if (previous != null)
             {
                 previous.next = next;
-                previous.SetTarget();
+                previous.Init();
             }
 
             if (next != null)
             {
                 next.previous = previous;
-                next.SetTarget();
+                next.Init();
             }
+        }
+
+        private void Init()
+        {
+            SetTarget();
+            SetParams();
         }
 
         private void SetTarget()
         {
             IsHead = previous == null;
             _target = IsHead ? head.Player : previous.transform;
+        }
+
+        private void SetParams()
+        {
+            _movementSpeed = head.MovementSpeed;
+            _rotationSpeed = head.RotationSpeed;
         }
 
 
@@ -60,17 +74,16 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private void RotateToTarget()
         {
-            // TODO cache data from head 
             // TODO refactor behaviour machine 
             Vector2 toTarget = _target.position - transform.position;
             var desiredRotation = QuaternionExt.LookRotation2D(toTarget, -90f);
-            var nextRotation = Quaternion.Slerp(transform.rotation, desiredRotation, head.RotationSpeed);
+            var nextRotation = Quaternion.Slerp(transform.rotation, desiredRotation, _rotationSpeed);
             rb.MoveRotation(nextRotation);
         }
 
         private void MoveForward()
         {
-            var movement = transform.up * head.MovementSpeed;
+            var movement = transform.up * _movementSpeed;
             rb.AddForce(movement, ForceMode2D.Force);
         }
     }
