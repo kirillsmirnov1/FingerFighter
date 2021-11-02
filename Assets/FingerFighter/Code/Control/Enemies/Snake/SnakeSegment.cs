@@ -73,9 +73,9 @@ namespace FingerFighter.Control.Enemies.Snake
                 // TODO cache data from head 
                 // TODO refactor behaviour machine 
                 Vector2 toTarget = Target.position - Self.transform.position;
-                var desiredRotation = QuaternionExt.LookRotation2DAngle(toTarget, -90f);
-                var nextRotation = Mathf.Lerp(Self.rb.rotation, desiredRotation, Self.head.RotationSpeed);
-                Self.rb.rotation = nextRotation;
+                var desiredRotation = QuaternionExt.LookRotation2D(toTarget, -90f);
+                var nextRotation = Quaternion.Slerp(Self.transform.rotation, desiredRotation, Self.head.RotationSpeed);
+                Self.rb.MoveRotation(nextRotation);
             }
 
             private void MoveForward()
