@@ -3,7 +3,7 @@ using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Enemies.Snake
 {
-    public class SnakeBody : MonoBehaviour
+    public class SnakeHead : MonoBehaviour
     {
         [SerializeField] private TransformVariable player;
         public Transform Player => player.Value;

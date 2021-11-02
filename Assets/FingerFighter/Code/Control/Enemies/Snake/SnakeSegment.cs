@@ -5,7 +5,7 @@ namespace FingerFighter.Control.Enemies.Snake
 {
     public class SnakeSegment : MonoBehaviour
     {
-        [SerializeField] private SnakeBody body;
+        [SerializeField] private SnakeHead head;
         
         [SerializeField] private SnakeSegment previous;
         [SerializeField] private SnakeSegment next;
@@ -68,8 +68,8 @@ namespace FingerFighter.Control.Enemies.Snake
 
             public override void FixedUpdate()
             {
-                Segment.rb.MovePosition(Segment.body.transform.position);
-                Segment.rb.MoveRotation(Segment.body.transform.rotation);
+                Segment.rb.MovePosition(Segment.head.transform.position);
+                Segment.rb.MoveRotation(Segment.head.transform.rotation);
             }
         }
 
