@@ -33,8 +33,8 @@ MonoBehaviour:
   m_Name: Snake
   m_EditorClassIdentifier: 
   tag: Snake
-  prefab: {fileID: 0}
-  health: 25
+  prefab: {fileID: 147482741919032023, guid: 6beaff1c1903b704a968e6e66527adc6, type: 3}
+  health: 75
   movementSpeed: 4
   rotationSpeed: 0.1
   collisionDamage: 5
