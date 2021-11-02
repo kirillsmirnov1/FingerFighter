@@ -12,12 +12,37 @@ namespace FingerFighter.Control.Enemies.Snake
 
         [SerializeField] private Rigidbody2D rb;
         
-        // TODO change on death of another segment 
         private SnakeSegmentState _state;
 
         private void OnEnable()
         {
             SetState();
+        }
+
+        private void OnDisable()
+        {
+            OnSegmentLoss();
+        }
+
+        private void OnSegmentLoss()
+        {
+            FixSegmentsConnection();
+            // TODO notify body 
+        }
+
+        private void FixSegmentsConnection()
+        {
+            if (previous != null)
+            {
+                previous.next = next;
+                previous.SetState();
+            }
+
+            if (next != null)
+            {
+                next.previous = previous;
+                next.SetState();
+            }
         }
 
         private void SetState()
