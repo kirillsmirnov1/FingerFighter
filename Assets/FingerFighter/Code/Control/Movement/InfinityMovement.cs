@@ -6,6 +6,7 @@ namespace FingerFighter.Control.Movement
     {
         [SerializeField] private float speed = 1f;
         [SerializeField] private float radius = 1f;
+        [SerializeField] private Rigidbody2D rb;
         
         private float _t;
 
@@ -13,8 +14,7 @@ namespace FingerFighter.Control.Movement
         {
             _t += Time.deltaTime;
             var t = speed * _t;
-            transform.position = radius 
-                * new Vector2(Mathf.Sin(2 * t) / 2, Mathf.Cos(t));
+            rb.MovePosition(radius * new Vector2(Mathf.Sin(2 * t) / 2, Mathf.Cos(t)));
         }
     }
 }
