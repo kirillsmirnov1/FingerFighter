@@ -24,7 +24,7 @@ namespace FingerFighter.Control.Enemies.Snake
         {
             for (int i = 0; i < _segments.Length; i++)
             {
-                if (_segments[i].enabled) return _segments[i].transform;
+                if (_segments[i].isActiveAndEnabled) return _segments[i].transform;
             }
             return _segments[0].transform;
         }
