@@ -25,8 +25,10 @@ namespace FingerFighter.Control.Damage
             
             if (hitTaker == null) return;
             if (hitTaker.Affiliation == _affiliation) return;
-            
-            hitTaker.TakeAHit(PrepareHitData(other, hitTaker));
+
+            var hitData = PrepareHitData(other, hitTaker);
+            if(hitData.Force < 1f) return;
+            hitTaker.TakeAHit(hitData);
         }
 
         private HitData PrepareHitData(Collision2D hitTakerCollision, HitTaker hitTaker)

@@ -42,7 +42,6 @@ namespace FingerFighter.Control.Factories
         private void OnHitTaken(HitData hitData)
         {
             if(hitData.Affected == Affiliation.Enemy) return;
-            if(hitData.Force < 1) return;
             Instantiate(ComposeFlyingTextData(hitData));
         }
 
