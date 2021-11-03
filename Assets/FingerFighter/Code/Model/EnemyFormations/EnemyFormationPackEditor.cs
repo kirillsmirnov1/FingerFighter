@@ -7,7 +7,7 @@ namespace FingerFighter.Model.EnemyFormations
     {
         [SerializeField] private EnemyFormationPack enemyFormationPack;
         [SerializeField] private EnemyFormationEditor[] editors;
-        
+#if UNITY_EDITOR
         private void OnValidate()
         {
             UpdatePack();
@@ -37,11 +37,16 @@ namespace FingerFighter.Model.EnemyFormations
         private void UpdateEditors()
         {
             editors = GetComponentsInChildren<EnemyFormationEditor>();
+            foreach (var editor in editors)
+            {
+                editor.UpdateName();
+            }
         }
 
         private void OverwritePack()
         {
             enemyFormationPack.Formations = editors.Select(e => e.formation).ToArray();
         }
+#endif
     }
 }

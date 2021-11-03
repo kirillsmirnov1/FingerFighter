@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 namespace FingerFighter.Model.EnemyFormations
@@ -7,11 +8,17 @@ namespace FingerFighter.Model.EnemyFormations
     {
         [SerializeField] private EnemyFormationPackEditor packEditor;
         [SerializeField] public EnemyFormation formation;
+#if UNITY_EDITOR
         
         private void OnValidate()
         {
             packEditor = GetComponentInParent<EnemyFormationPackEditor>();
             UpdatePack();
+        }
+
+        public void UpdateName()
+        {
+            gameObject.name = $"#{transform.GetSiblingIndex():000} : P{formation.entries.Sum(e => e.enemy.points):0000}";
         }
 
         public void UpdatePack() => packEditor?.UpdatePack();
@@ -48,5 +55,6 @@ namespace FingerFighter.Model.EnemyFormations
             Gizmos.color = Color.green;
             Gizmos.DrawWireCube(Vector3.zero, 10 * Vector3.one);
         }
+#endif
     }
 }
