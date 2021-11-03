@@ -43,6 +43,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 
         private void JumpToCamera()
         {
+            if(_camera == null) return;
             transform.position = (Vector2)_camera.transform.position + _jumpToCameraGap;
         }
     }
