@@ -71,6 +71,7 @@ MonoBehaviour:
   health: {fileID: 8611005736955571769}
   id: {fileID: 6832915485324401256}
   isSegment: 0
+  deathPosTransform: {fileID: 1237548405309726053}
 --- !u!114 &8611005736955571769
 MonoBehaviour:
   m_ObjectHideFlags: 0

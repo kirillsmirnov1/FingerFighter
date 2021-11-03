@@ -15,6 +15,7 @@ MonoBehaviour:
   health: {fileID: 7197095819147163866}
   id: {fileID: 1302259381993553923}
   isSegment: 0
+  deathPosTransform: {fileID: 8987050289203696391}
 --- !u!114 &-4055086784509483958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +166,11 @@ PrefabInstance:
 --- !u!1 &5677381796131911868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 14481932405088701, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+  m_PrefabInstance: {fileID: 5690702287620315393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8987050289203696391 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3621181120631163398, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
   m_PrefabInstance: {fileID: 5690702287620315393}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1302259381993553923 stripped
