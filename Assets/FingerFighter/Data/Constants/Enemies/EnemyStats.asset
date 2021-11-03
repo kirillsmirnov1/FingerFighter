@@ -15,6 +15,7 @@ MonoBehaviour:
   tag: Fly
   prefab: {fileID: 3432435433514336836, guid: 18eedc65fec292a428e10d2e7cf50444, type: 3}
   health: 50
+  points: 50
   movementSpeed: 4
   rotationSpeed: 0.1
   collisionDamage: 5
@@ -30,11 +31,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
-  m_Name: Snake
+  m_Name: Snake_L6
   m_EditorClassIdentifier: 
-  tag: Snake
+  tag: Snake_L6
   prefab: {fileID: 147482741919032023, guid: 6beaff1c1903b704a968e6e66527adc6, type: 3}
-  health: 75
+  health: 20
+  points: 120
   movementSpeed: 4
   rotationSpeed: 0.2
   collisionDamage: 5
@@ -55,6 +57,7 @@ MonoBehaviour:
   tag: FlyFast
   prefab: {fileID: 3432435433514336836, guid: 11325792cda9b934d9ad4bcd6527c732, type: 3}
   health: 25
+  points: 25
   movementSpeed: 10
   rotationSpeed: 0.03
   collisionDamage: 3
@@ -75,6 +78,7 @@ MonoBehaviour:
   tag: Dummy
   prefab: {fileID: 3432435433514336836, guid: 19a3375d720a17f4a8e79b81e48e9e2a, type: 3}
   health: 500
+  points: 0
   movementSpeed: 0
   rotationSpeed: 0.1
   collisionDamage: 0

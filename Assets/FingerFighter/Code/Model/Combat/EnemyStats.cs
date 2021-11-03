@@ -9,6 +9,7 @@ namespace FingerFighter.Model.Combat
      
         [Header("Combat")]
         public float health;
+        public int points;
         public float movementSpeed;
         public float rotationSpeed;
         public float collisionDamage;

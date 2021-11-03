@@ -71,7 +71,7 @@ namespace FingerFighter.Control.Factories
         {
             return new FlyingTextData
             {
-                Text = $"+{(int)enemyStats[enemyTag].health}",
+                Text = $"+{enemyStats[enemyTag].points}",
                 TextColor = Color.white,
                 Position = deathPos,
                 Direction = _enemyDeathTextDirection

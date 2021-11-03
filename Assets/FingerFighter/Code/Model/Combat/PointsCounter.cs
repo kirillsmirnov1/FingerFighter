@@ -20,7 +20,7 @@ namespace FingerFighter.Model.Combat
         private void OnEnemyDeath(EnemyDeathData enemyDeathData)
         {
             if(enemyDeathData.IsSegment) return;
-            var points = enemyData[enemyDeathData.Tag].health; // IMPR might change points logic later 
+            var points = enemyData[enemyDeathData.Tag].points; 
             pointsCounter.Value += points;
         }
     }
