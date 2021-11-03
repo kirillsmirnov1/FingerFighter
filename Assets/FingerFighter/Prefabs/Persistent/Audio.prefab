@@ -151,3 +151,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e50a46dc4794f1847a3aa263a29686fb, type: 3}
   - {fileID: 8300000, guid: 8bf713f4a4f3d5d43b71c49269d75c7e, type: 3}
   - {fileID: 8300000, guid: b1f296e9ed17f7546b9665f63e4d02de, type: 3}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 0acc2227bee07aa43884b7c492d1aeca, type: 3}
+  - {fileID: 8300000, guid: 183dfa142a5771848af736c80d6541a7, type: 3}
+  - {fileID: 8300000, guid: dd48c2656b10e6f4283c70d8d8d484cb, type: 3}
+  - {fileID: 8300000, guid: 3108dc856e44ed94585b634c46a0b0b5, type: 3}
+  - {fileID: 8300000, guid: 6b55c0e659ec1dd49b0176c0380dcb54, type: 3}

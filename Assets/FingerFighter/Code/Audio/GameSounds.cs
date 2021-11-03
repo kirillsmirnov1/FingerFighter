@@ -8,6 +8,8 @@ namespace FingerFighter.Audio
     public class GameSounds : MonoBehaviour
     {
         [SerializeField] private AudioClip[] enemyHitSounds;
+        [SerializeField] private AudioClip[] playerHitSounds;
+        
         // TODO enemyDeathSounds
         // TODO playerDeath sound 
         
@@ -25,10 +27,12 @@ namespace FingerFighter.Audio
             HitTaker.OnHitTaken -= OnHitTaken;
         }
 
-        private void OnHitTaken(HitData obj)
+        private void OnHitTaken(HitData hitData)
         {
-            // TODO another sound for player hit 
-            _audioSource.PlayOneShot(enemyHitSounds[Random.Range(0, enemyHitSounds.Length)]);
+            var clip = hitData.Affected == Affiliation.Player
+                ? playerHitSounds[Random.Range(0, playerHitSounds.Length)]
+                : enemyHitSounds[Random.Range(0, enemyHitSounds.Length)];
+            _audioSource.PlayOneShot(clip);
         }
     }
 }
