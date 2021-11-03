@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 6402533313623781743}
-  cachedSpeedCount: 5
+  cacheSize: 5
 --- !u!114 &6430294526901351928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 937e97cfb2f16fc44b0a7fbb61cf65e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0afbaa9d216fb7443b3c7b5144f4d1d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
