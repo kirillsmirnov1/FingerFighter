@@ -36,6 +36,7 @@ namespace FingerFighter.Control.Factories
         private void OnEnemyDeath(EnemyDeathData enemyDeathData)
         {
             if(enemyDeathData.IsSegment) return;
+            if(enemyStats[enemyDeathData.Tag].points < 1) return;
             Instantiate(ComposeFlyingTextData(enemyDeathData.Tag, enemyDeathData.DeathPos));
         }
 
