@@ -105,18 +105,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunnerCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 3740371941508899971, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.0064524733
-      objectReference: {fileID: 0}
-    - target: {fileID: 3740371941508899971, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.25053817
-      objectReference: {fileID: 0}
-    - target: {fileID: 3740371941508899971, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.2735849
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
 --- !u!1 &7578428885991522280 stripped

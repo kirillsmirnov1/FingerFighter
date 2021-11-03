@@ -322,11 +322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 332498959470768500, guid: 8737d3affbf00724c96a6e7696d7ab9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.65
+      value: 8.1
       objectReference: {fileID: 0}
     - target: {fileID: 332498959470768500, guid: 8737d3affbf00724c96a6e7696d7ab9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.29
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 332498959470768500, guid: 8737d3affbf00724c96a6e7696d7ab9c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1106,16 +1106,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6932841200370089466, guid: 961e44e4c584def49bdee9b8cf517384, type: 3}
       propertyPath: m_Size.x
-      value: 23
+      value: 23.05
       objectReference: {fileID: 0}
     - target: {fileID: 6932841200370089466, guid: 961e44e4c584def49bdee9b8cf517384, type: 3}
       propertyPath: m_Size.y
-      value: 11
+      value: 10.16
       objectReference: {fileID: 0}
     - target: {fileID: 6932841200370089466, guid: 961e44e4c584def49bdee9b8cf517384, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2e8a947656a44be408deb3c21af6daee, type: 3}
+      objectReference: {fileID: 21300000, guid: cfa70810483130246b71588771791a9d, type: 3}
     - target: {fileID: 6932841200370089467, guid: 961e44e4c584def49bdee9b8cf517384, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1544,7 +1544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3740371941508899964, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.14
+      value: 3.82
       objectReference: {fileID: 0}
     - target: {fileID: 3740371941508899964, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1585,6 +1585,10 @@ PrefabInstance:
     - target: {fileID: 3740371941508899968, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
       propertyPath: m_Name
       value: Camera_itch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740371941508899968, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3740371941508899971, guid: 060ea4a3939462e4f9c9c2e9a02cf234, type: 3}
       propertyPath: m_CullingMask.m_Bits
