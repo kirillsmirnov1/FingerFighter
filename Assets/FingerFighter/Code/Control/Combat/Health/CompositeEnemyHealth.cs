@@ -7,7 +7,7 @@
 
         protected override void OnEnable()
         {
-            _healths = GetComponentsInChildren<EnemyHealth>();
+            _healths = GetComponentsInChildren<EnemyHealth>(true);
             for (int i = 0; i < _healths.Length; i++)
             {
                 _healths[i].onHealthChange += OnSegmentHealthChange;
