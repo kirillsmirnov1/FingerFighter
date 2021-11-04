@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4257701915767529849}
-  - component: {fileID: 4257701915767529848}
   - component: {fileID: 4257701915767529735}
+  - component: {fileID: 4257701915767529848}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -33,6 +33,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4257701915767529735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257701915767529850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 923529a3fb064d69bcba0cacf64e30f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDeath: {fileID: 8300000, guid: f74e76c2460857b4d97ad4ee633f1632, type: 3}
+  enemyHitSounds:
+  - {fileID: 8300000, guid: 736e16693b6966e4b8ba2550dac3afa0, type: 3}
+  - {fileID: 8300000, guid: e40516db94186ff458cb62460c941c01, type: 3}
+  - {fileID: 8300000, guid: 488dd8bfa958f7747acac9acc44a76f2, type: 3}
+  - {fileID: 8300000, guid: 7f161c34331e0d64889eacf182c160e4, type: 3}
+  - {fileID: 8300000, guid: 6568c8d21bbdc2446ad0c269aab5a759, type: 3}
+  - {fileID: 8300000, guid: 7bb9bb8705b678a4194844bcbe3d5441, type: 3}
+  - {fileID: 8300000, guid: f7bf9e90ef351264d882f595c8eff18b, type: 3}
+  - {fileID: 8300000, guid: e50a46dc4794f1847a3aa263a29686fb, type: 3}
+  - {fileID: 8300000, guid: 8bf713f4a4f3d5d43b71c49269d75c7e, type: 3}
+  - {fileID: 8300000, guid: b1f296e9ed17f7546b9665f63e4d02de, type: 3}
+  playerHitSounds:
+  - {fileID: 8300000, guid: 0acc2227bee07aa43884b7c492d1aeca, type: 3}
+  - {fileID: 8300000, guid: 183dfa142a5771848af736c80d6541a7, type: 3}
+  - {fileID: 8300000, guid: dd48c2656b10e6f4283c70d8d8d484cb, type: 3}
+  - {fileID: 8300000, guid: 3108dc856e44ed94585b634c46a0b0b5, type: 3}
+  - {fileID: 8300000, guid: 6b55c0e659ec1dd49b0176c0380dcb54, type: 3}
 --- !u!82 &4257701915767529848
 AudioSource:
   m_ObjectHideFlags: 0
@@ -129,35 +159,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4257701915767529735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4257701915767529850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923529a3fb064d69bcba0cacf64e30f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHitSounds:
-  - {fileID: 8300000, guid: 736e16693b6966e4b8ba2550dac3afa0, type: 3}
-  - {fileID: 8300000, guid: e40516db94186ff458cb62460c941c01, type: 3}
-  - {fileID: 8300000, guid: 488dd8bfa958f7747acac9acc44a76f2, type: 3}
-  - {fileID: 8300000, guid: 7f161c34331e0d64889eacf182c160e4, type: 3}
-  - {fileID: 8300000, guid: 6568c8d21bbdc2446ad0c269aab5a759, type: 3}
-  - {fileID: 8300000, guid: 7bb9bb8705b678a4194844bcbe3d5441, type: 3}
-  - {fileID: 8300000, guid: f7bf9e90ef351264d882f595c8eff18b, type: 3}
-  - {fileID: 8300000, guid: e50a46dc4794f1847a3aa263a29686fb, type: 3}
-  - {fileID: 8300000, guid: 8bf713f4a4f3d5d43b71c49269d75c7e, type: 3}
-  - {fileID: 8300000, guid: b1f296e9ed17f7546b9665f63e4d02de, type: 3}
-  playerHitSounds:
-  - {fileID: 8300000, guid: 0acc2227bee07aa43884b7c492d1aeca, type: 3}
-  - {fileID: 8300000, guid: 183dfa142a5771848af736c80d6541a7, type: 3}
-  - {fileID: 8300000, guid: dd48c2656b10e6f4283c70d8d8d484cb, type: 3}
-  - {fileID: 8300000, guid: 3108dc856e44ed94585b634c46a0b0b5, type: 3}
-  - {fileID: 8300000, guid: 6b55c0e659ec1dd49b0176c0380dcb54, type: 3}
 --- !u!1 &6381489026693012253
 GameObject:
   m_ObjectHideFlags: 0

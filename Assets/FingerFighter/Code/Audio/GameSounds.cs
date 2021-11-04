@@ -1,4 +1,5 @@
-﻿using FingerFighter.Control.Damage;
+﻿using FingerFighter.Control.Combat;
+using FingerFighter.Control.Damage;
 using FingerFighter.Model.Damage;
 using UnityEngine;
 
@@ -7,12 +8,12 @@ namespace FingerFighter.Audio
     [RequireComponent(typeof(AudioSource))]
     public class GameSounds : MonoBehaviour
     {
+        [SerializeField] private AudioClip playerDeath;
         [SerializeField] private AudioClip[] enemyHitSounds;
         [SerializeField] private AudioClip[] playerHitSounds;
         
         // TODO enemyDeathSounds
-        // TODO playerDeath sound 
-        
+
         private AudioSource _audioSource;
 
         private void Awake()
@@ -20,11 +21,18 @@ namespace FingerFighter.Audio
             _audioSource = GetComponent<AudioSource>();
 
             HitTaker.OnHitTaken += OnHitTaken;
+            PlayerStatus.OnDead += OnPlayerDeath;
         }
 
         private void OnDestroy()
         {
             HitTaker.OnHitTaken -= OnHitTaken;
+            PlayerStatus.OnDead -= OnPlayerDeath;
+        }
+
+        private void OnPlayerDeath()
+        {
+            _audioSource.PlayOneShot(playerDeath);
         }
 
         private void OnHitTaken(HitData hitData)
