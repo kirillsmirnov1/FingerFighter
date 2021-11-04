@@ -121,10 +121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6421657617639299687}
-        m_TargetAssemblyTypeName: FingerFighter.Control.Scenes.ButtonLoadsScene,
-          Assembly-CSharp
-        m_MethodName: OnClick
+      - m_Target: {fileID: 11400000, guid: 2245531ccbdcbf24bbd9964243633bd0, type: 2}
+        m_TargetAssemblyTypeName: UnityUtils.Events.GameEvent, trulden.unity-utils.runtime
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
