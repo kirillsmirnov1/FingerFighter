@@ -1,6 +1,5 @@
 using System;
 using FingerFighter.Control.Combat.Health;
-using FingerFighter.Model;
 using FingerFighter.Model.Combat;
 using FingerFighter.Model.Damage;
 using UnityEngine;
