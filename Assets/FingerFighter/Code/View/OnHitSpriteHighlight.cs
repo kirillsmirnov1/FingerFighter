@@ -37,6 +37,7 @@ namespace FingerFighter.View
         private void OnHit(HitData obj)
         {
             StopAllCoroutines();
+            if (!gameObject.activeSelf) return;
             StartCoroutine(HitHighlight());
         }
 
