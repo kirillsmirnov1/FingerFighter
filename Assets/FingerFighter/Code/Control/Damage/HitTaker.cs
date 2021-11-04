@@ -11,6 +11,7 @@ namespace FingerFighter.Control.Damage
     [RequireComponent(typeof(Rigidbody2D))]
     public class HitTaker : MonoBehaviour
     {
+        public event Action<HitData> onHitTaken; 
         public static event Action<HitData> OnHitTaken;
 
         [SerializeField] private CombatEntityId id;
@@ -26,6 +27,7 @@ namespace FingerFighter.Control.Damage
         public void TakeAHit(HitData hitData)
         {
             health.Change(-hitData.Force); 
+            onHitTaken?.Invoke(hitData);
             OnHitTaken?.Invoke(hitData);
         }
     }
