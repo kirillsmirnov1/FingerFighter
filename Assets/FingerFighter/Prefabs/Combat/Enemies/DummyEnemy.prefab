@@ -31,6 +31,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3889289879592315171, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: highlightColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3889289879592315171, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: highlightColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3889289879592315171, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: highlightColor.r
+      value: 0.47843137
+      objectReference: {fileID: 0}
     - target: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_AngularDrag
       value: 3

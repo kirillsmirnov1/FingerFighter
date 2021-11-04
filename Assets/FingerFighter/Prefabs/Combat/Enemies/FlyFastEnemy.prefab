@@ -35,6 +35,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3889289879592315171, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: highlightColor.b
+      value: 0.49019608
+      objectReference: {fileID: 0}
     - target: {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: movementSpeed
       value: 
@@ -57,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: fecc33c7499c93547be33ba80e31c633, type: 2}
     - target: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_Name
-      value: AnotherEnemy
+      value: FlyFastEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_IsActive
