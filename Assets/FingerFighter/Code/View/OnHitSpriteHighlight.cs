@@ -26,6 +26,14 @@ namespace FingerFighter.View
             hitTaker.onHitTaken += OnHit;
         }
 
+        private void OnDisable()
+        {
+            for (int i = 0; i < sprites.Length; i++)
+            {
+                sprites[i].color = _defaultColors[i];
+            }
+        }
+
         private void OnHit(HitData obj)
         {
             StopAllCoroutines();
