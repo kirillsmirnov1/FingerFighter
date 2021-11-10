@@ -5,39 +5,25 @@ namespace FingerFighter.Builder
 {
     public static class CustomBuild
     {
+        private enum BuildType
+        {
+            TestApk,
+            ReleaseAab,
+        }
+        
         [MenuItem("Build/Dev apk Build and Run")]
         public static void DevBuildAndRun()
         {
-            var options = new BuildPlayerOptions
-            {
-                locationPathName = "Build/ff.apk",
-                scenes = EditorBuildSettings.scenes
-                    .Where(x => x.enabled)
-                    .Select(x => x.path).ToArray(),
-                options = BuildOptions.AutoRunPlayer,
-                targetGroup = BuildTargetGroup.Android,
-                target = BuildTarget.Android
-            };
             PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.Mono2x);
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7;
             PlayerSettings.Android.useCustomKeystore = false;
             EditorUserBuildSettings.buildAppBundle = false;
-            BuildPipeline.BuildPlayer(options);
+            BuildPipeline.BuildPlayer(PrepareOptions(BuildType.TestApk));
         }
-        
+
         [MenuItem("Build/Release aab Build")]
         public static void ReleaseBuild()
         {
-            var options = new BuildPlayerOptions
-            {
-                locationPathName = "Build/ff.aab",
-                scenes = EditorBuildSettings.scenes
-                    .Where(x => x.enabled)
-                    .Select(x => x.path).ToArray(),
-                options = BuildOptions.ShowBuiltPlayer,
-                targetGroup = BuildTargetGroup.Android,
-                target = BuildTarget.Android,
-            };
             PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
             EditorUserBuildSettings.buildAppBundle = true;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7 | AndroidArchitecture.ARM64;
@@ -49,7 +35,19 @@ namespace FingerFighter.Builder
 
             PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevel30; // FIXME doesn't work for some reason 
             
-            BuildPipeline.BuildPlayer(options);
+            BuildPipeline.BuildPlayer(PrepareOptions(BuildType.ReleaseAab));
         }
+
+        private static BuildPlayerOptions PrepareOptions(BuildType buildType) =>
+            new BuildPlayerOptions
+            {
+                locationPathName = $"Build/ff.{(buildType == BuildType.TestApk ? "apk" : "aab")}",
+                scenes = EditorBuildSettings.scenes
+                    .Where(x => x.enabled)
+                    .Select(x => x.path).ToArray(),
+                options = buildType == BuildType.TestApk ? BuildOptions.AutoRunPlayer : BuildOptions.ShowBuiltPlayer,
+                targetGroup = BuildTargetGroup.Android,
+                target = BuildTarget.Android
+            };
     }
 }
