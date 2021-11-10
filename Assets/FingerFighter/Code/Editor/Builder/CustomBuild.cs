@@ -17,10 +17,10 @@ namespace FingerFighter.Builder
                 options = BuildOptions.AutoRunPlayer,
                 target = BuildTarget.Android
             };
-            // TODO set mono
-            // TODO disable keystore 
-            // TODO disable arm64 
-            // TODO build apk 
+            PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.Mono2x);
+            PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7;
+            PlayerSettings.Android.useCustomKeystore = false;
+            EditorUserBuildSettings.buildAppBundle = false;
             BuildPipeline.BuildPlayer(options);
         }
     }
