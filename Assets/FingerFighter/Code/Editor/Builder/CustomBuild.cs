@@ -22,8 +22,27 @@ namespace FingerFighter.Builder
         public static void ReleaseBuild()
         {
             TweakSettings(BuildType.ReleaseAab);
-            BuildPipeline.BuildPlayer(PrepareOptions(BuildType.ReleaseAab));
+
+            if (PasswordNotSet)
+            {
+                EnterPasswordWindow.ShowWindow(password => { 
+                    PlayerSettings.Android.keystoreName = "C:/Users/Kiril/Dropbox/archive/android keys/fingerFighters.keystore";
+                    PlayerSettings.Android.keyaliasName = "fingerfighters";
+                    PlayerSettings.Android.keyaliasPass = PlayerSettings.Android.keystorePass = password; 
+
+                    PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevel30; 
+                    BuildPipeline.BuildPlayer(PrepareOptions(BuildType.ReleaseAab));
+                });
+            }
+            else
+            {
+                BuildPipeline.BuildPlayer(PrepareOptions(BuildType.ReleaseAab));
+            }
         }
+
+        private static bool PasswordNotSet 
+            => string.IsNullOrEmpty(PlayerSettings.Android.keyaliasPass) 
+               || string.IsNullOrEmpty(PlayerSettings.Android.keystorePass);
 
         private static void TweakSettings(BuildType buildType)
         {
@@ -31,15 +50,6 @@ namespace FingerFighter.Builder
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7 | (buildType == BuildType.TestApk ? AndroidArchitecture.None : AndroidArchitecture.ARM64);
             PlayerSettings.Android.useCustomKeystore = buildType == BuildType.ReleaseAab;
             EditorUserBuildSettings.buildAppBundle = buildType == BuildType.ReleaseAab;
-
-            if (buildType == BuildType.ReleaseAab)
-            {
-                PlayerSettings.Android.keystoreName = "C:/Users/Kiril/Dropbox/archive/android keys/fingerFighters.keystore";
-                PlayerSettings.Android.keyaliasName = "fingerfighters";
-                PlayerSettings.Android.keyaliasPass = PlayerSettings.Android.keystorePass = "PASS"; // IMPR show window 
-
-                PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevel30; 
-            }
         }
 
         private static BuildPlayerOptions PrepareOptions(BuildType buildType) =>
