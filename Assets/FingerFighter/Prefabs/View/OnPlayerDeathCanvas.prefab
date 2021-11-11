@@ -1034,8 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b91eca6b1734511a33a70f854866c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runScore: {fileID: 11400000, guid: ae7db4e60edd1c34f81cf5032898711a, type: 2}
-  runHighScore: {fileID: 11400000, guid: 293e26aab23cc9240b7506ff23a809ec, type: 2}
+  highScoreProcessor: {fileID: 11400000, guid: e2442791e31b59b4984e87b7f54a022d, type: 2}
   playerDeathView: {fileID: 7162359046890853601}
   overlayScore: {fileID: 0}
 --- !u!114 &7162359046890853601
@@ -1053,3 +1052,4 @@ MonoBehaviour:
   fades:
   - {fileID: 1702747998}
   scorePrompt: {fileID: 6706678994248344771}
+  highScore: {fileID: 11400000, guid: c3224ac42b1da0843815cf8cdfe7fc2b, type: 2}

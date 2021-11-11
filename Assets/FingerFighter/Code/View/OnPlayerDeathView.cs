@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityUtils.Variables;
 using UnityUtils.VisualEffects;
 
 namespace FingerFighter.View
@@ -7,12 +8,13 @@ namespace FingerFighter.View
     public class OnPlayerDeathView : UiFadePanel
     {
         [SerializeField] private TextMeshProUGUI scorePrompt;
+        [SerializeField] private BoolVariable highScore;
         
-        public void Show(bool highScore)
+        public override void Show()
         {
             scorePrompt.text = highScore ? "NEW HIGH SCORE" : "score";
             scorePrompt.color = highScore ? Color.yellow : Color.white;
-            Show();
+            base.Show();
         }
     }
 }
