@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectsToInit:
+  - {fileID: 11400000, guid: 6326b0c077923b4449ac51261204ee1d, type: 2}
   - {fileID: 11400000, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
 --- !u!1 &8658784549739042182
 GameObject:
