@@ -20,13 +20,13 @@ namespace FingerFighter.View
             OnPlayerAlive();
             
             PlayerStatus.OnAlive += OnPlayerAlive;
-            PlayerStatus.OnDead += OnPlayerDead;
+            PlayerStatus.OnDeath += OnPlayerDead;
         }
 
         private void OnDestroy()
         {
             PlayerStatus.OnAlive -= OnPlayerAlive;
-            PlayerStatus.OnDead -= OnPlayerDead;
+            PlayerStatus.OnDeath -= OnPlayerDead;
         }
 
         private void Update() => _onUpdate?.Invoke();

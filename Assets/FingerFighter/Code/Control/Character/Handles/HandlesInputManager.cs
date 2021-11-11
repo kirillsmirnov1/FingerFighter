@@ -34,14 +34,14 @@ namespace FingerFighter.Control.Character.Handles
             _camera = Camera.main;
             Touch.onFingerDown += OnFingerDown;
             Touch.onFingerUp += OnFingerUp;
-            PlayerStatus.OnDead += OnPlayerDead;
+            PlayerStatus.OnDeath += OnPlayerDead;
         }
 
         private void OnDisable()
         {
             Touch.onFingerDown -= OnFingerDown;
             Touch.onFingerUp -= OnFingerUp;
-            PlayerStatus.OnDead -= OnPlayerDead;
+            PlayerStatus.OnDeath -= OnPlayerDead;
         }
 
         private void OnFingerDown(Finger finger)

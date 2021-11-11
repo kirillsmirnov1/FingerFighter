@@ -1,5 +1,4 @@
 ﻿using FingerFighter.Control.Combat.Health;
-using FingerFighter.Model;
 using FingerFighter.Model.Combat;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ namespace FingerFighter.Control.Combat
 {
     [RequireComponent(typeof(AHealth))]
     [RequireComponent(typeof(CombatEntityId))]
-    public class CombatEntityStatus : MonoBehaviour
+    public abstract class CombatEntityStatus : MonoBehaviour
     {
         [SerializeField] private AHealth health;
         [SerializeField] protected CombatEntityId id;
@@ -19,7 +18,17 @@ namespace FingerFighter.Control.Combat
         }
 
         protected virtual void OnEnable() => health.onNoHealth += OnNoHealth;
-        protected virtual void OnDisable() => health.onNoHealth -= OnNoHealth;
+        protected virtual void OnDisable()
+        {
+            health.onNoHealth -= OnNoHealth;
+            if (health.NoHealth)
+            {
+                OnEntityDeath();
+            }
+        }
+
+        protected abstract void OnEntityDeath();
+
         private void OnNoHealth() => gameObject.SetActive(false);
     }
 }

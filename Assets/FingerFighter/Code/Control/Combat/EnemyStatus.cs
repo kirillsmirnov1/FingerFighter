@@ -15,9 +15,8 @@ namespace FingerFighter.Control.Combat
         /// </summary>
         public static event Action<EnemyDeathData> OnDeath;
         
-        protected override void OnDisable()
+        protected override void OnEntityDeath()
         {
-            base.OnDisable();
             OnDeath?.Invoke(DeathData);
             if (!isSegment)
             {

@@ -21,13 +21,13 @@ namespace FingerFighter.Audio
             _audioSource = GetComponent<AudioSource>();
 
             HitTaker.OnHitTaken += OnHitTaken;
-            PlayerStatus.OnDead += OnPlayerDeath;
+            PlayerStatus.OnDeath += OnPlayerDeath;
         }
 
         private void OnDestroy()
         {
             HitTaker.OnHitTaken -= OnHitTaken;
-            PlayerStatus.OnDead -= OnPlayerDeath;
+            PlayerStatus.OnDeath -= OnPlayerDeath;
         }
 
         private void OnPlayerDeath()

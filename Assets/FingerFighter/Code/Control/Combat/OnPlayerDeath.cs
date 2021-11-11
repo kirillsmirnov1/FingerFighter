@@ -7,8 +7,8 @@ namespace FingerFighter.Control.Combat
     {
         [SerializeField] private UnityEvent actions;
         
-        private void Awake() => PlayerStatus.OnDead += OnDeath;
-        private void OnDestroy() => PlayerStatus.OnDead -= OnDeath;
+        private void Awake() => PlayerStatus.OnDeath += OnDeath;
+        private void OnDestroy() => PlayerStatus.OnDeath -= OnDeath;
         private void OnDeath() => actions.Invoke();
     }
 }

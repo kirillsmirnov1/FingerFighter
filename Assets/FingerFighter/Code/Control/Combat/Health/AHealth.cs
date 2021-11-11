@@ -8,6 +8,7 @@ namespace FingerFighter.Control.Combat.Health
         [SerializeField] private float baseHealth;
         public virtual float BaseHealth => baseHealth;
 
+        public bool NoHealth => CurrentHealth < 0.0001f;
         public float CurrentHealth { get; protected set; }
         protected readonly object Lock = new object();
 
@@ -31,7 +32,7 @@ namespace FingerFighter.Control.Combat.Health
         protected void NotifyOnHealthChange()
         {
             onHealthChange?.Invoke(CurrentHealth);
-            if (CurrentHealth < 0.0001f) onNoHealth?.Invoke();
+            if (NoHealth) onNoHealth?.Invoke();
         }
     }
 }
