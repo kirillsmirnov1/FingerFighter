@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b5537ba8dc4d04bd75616b34de21ce, type: 3}
-  m_Name: _SaveFile
+  m_Script: {fileID: 11500000, guid: 01867ee928e747099e2f812c20e9aa2a, type: 3}
+  m_Name: longZero
   m_EditorClassIdentifier: 
-  logSave: 0
-  varRefs:
-  - variable: {fileID: 11400000, guid: 293e26aab23cc9240b7506ff23a809ec, type: 2}
-    defaultValue: {fileID: 11400000, guid: 0c6373b7504b7554786cd86961ff74b0, type: 2}
+  value: 0
+  guid: 0c6373b7504b7554786cd86961ff74b0
