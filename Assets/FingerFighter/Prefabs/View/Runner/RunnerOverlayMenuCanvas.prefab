@@ -212,6 +212,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackToRingButton
       objectReference: {fileID: 0}
+    - target: {fileID: 9076361307643165591, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076361307643165591, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076361307643165591, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11400000, guid: e2442791e31b59b4984e87b7f54a022d, type: 2}
+    - target: {fileID: 9076361307643165591, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076361307643165591, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Process
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076361307643165591, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FingerFighter.Model.Combat.HighScoreProcessor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076361307643165591, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
 --- !u!224 &3828724331489875826 stripped
