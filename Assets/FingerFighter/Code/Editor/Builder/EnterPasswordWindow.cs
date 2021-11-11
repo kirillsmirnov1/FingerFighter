@@ -8,11 +8,15 @@ namespace FingerFighter.Builder
     {
         private string _pass;
         private static Action<string> _callback;
-        
-        public static void ShowWindow(Action<string> passCallback = null)
+
+        public static void ShowWindow(Action<string> passCallback)
         {
             _callback = passCallback;
-            GetWindow<EnterPasswordWindow>("Enter password");
+            var window = GetWindow<EnterPasswordWindow>("Enter password");
+            var windowSize = new Vector2(400, 200);
+            var windowPos = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height) / 2 - windowSize;
+            window.position = new Rect(windowPos, windowSize);
+            window.maxSize = windowSize;
         }
         
         private void OnGUI()
