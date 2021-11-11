@@ -1,14 +1,18 @@
-﻿using UnityEngine;
-using UnityEngine.Events;
+﻿using FingerFighter.View;
+using UnityEngine;
 using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Combat
 {
     public class OnPlayerDeath : MonoBehaviour
     {
-        [SerializeField] private UnityEvent actions;
+        [Header("Data")]
         [SerializeField] private FloatVariable runScore;
         [SerializeField] private LongVariable runHighScore;
+        
+        [Header("View")] 
+        [SerializeField] private OnPlayerDeathView playerDeathView;
+        [SerializeField] private GameObject overlayScore;
         
         private void Awake() => PlayerStatus.OnDeath += OnDeath;
         private void OnDestroy() => PlayerStatus.OnDeath -= OnDeath;
@@ -16,11 +20,9 @@ namespace FingerFighter.Control.Combat
         {
             var newHighScore = runScore.Value > runHighScore.Value;
             if (newHighScore) runHighScore.Value = (long) runScore.Value;
-            // TODO hide overlay score 
-            // TODO if high score, show prompt 
-
-            // TODO show view 
-            actions.Invoke();
+        
+            overlayScore.SetActive(false);
+            playerDeathView.Show(newHighScore);
         }
     }
 }
