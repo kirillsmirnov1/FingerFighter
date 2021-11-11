@@ -21,7 +21,7 @@ namespace FingerFighter.Builder
         
         private void OnGUI()
         {
-            _pass = EditorGUILayout.TextField("Password", _pass);
+            _pass = EditorGUILayout.PasswordField("Password", _pass);
             if (GUILayout.Button("Ok") || Event.current.keyCode == KeyCode.Return)
             {
                 HandleInput();
