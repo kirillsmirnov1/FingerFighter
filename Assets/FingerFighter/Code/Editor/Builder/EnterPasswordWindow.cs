@@ -22,11 +22,16 @@ namespace FingerFighter.Builder
         private void OnGUI()
         {
             _pass = EditorGUILayout.TextField("Password", _pass);
-            if (GUILayout.Button("Ok"))
+            if (GUILayout.Button("Ok") || Event.current.keyCode == KeyCode.Return)
             {
-                Close();
-                _callback?.Invoke(_pass);
+                HandleInput();
             }
+        }
+
+        private void HandleInput()
+        {
+            Close();
+            _callback?.Invoke(_pass);
         }
     }
 }
