@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using FingerFighter.Model.Combat;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace FingerFighter.Control.Factories
@@ -30,13 +31,19 @@ namespace FingerFighter.Control.Factories
             }
         }
 
-        public static GameObject Get(string enemyTag) => _instance.GetImpl(enemyTag);
+        public static GameObject Get(string enemyTag, Vector2 spawnPos = new Vector2(), float rotation = 0f) 
+            => _instance.GetImpl(enemyTag, spawnPos, rotation);
 
-        private GameObject GetImpl(string enemyTag)
+        private GameObject GetImpl(string enemyTag, Vector2 spawnPos = new Vector2(), float rotation = 0f)
         {
-            return _pool[enemyTag].Count > 0 
+            var obj = _pool[enemyTag].Count > 0 
                 ? _pool[enemyTag].Dequeue() 
                 : Instantiate(_prefabs[enemyTag], _anchor);
+
+            obj.transform.position = spawnPos;
+            obj.transform.rotation = quaternion.Euler(0, 0, rotation);
+
+            return obj;
         }
 
         public static void ReturnToPool(GameObject obj, string enemyType) 
