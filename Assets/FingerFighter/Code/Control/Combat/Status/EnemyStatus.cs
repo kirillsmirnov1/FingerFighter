@@ -8,6 +8,7 @@ namespace FingerFighter.Control.Combat.Status
     public class EnemyStatus : CombatEntityStatus
     {
         [SerializeField] private bool isSegment;
+        [SerializeField] private bool isProjectile;
         [SerializeField] private Transform deathPosTransform;
 
         public static event Action OnSpawn;
@@ -35,6 +36,7 @@ namespace FingerFighter.Control.Combat.Status
             {
                 Tag = id.EnemyType, 
                 IsSegment = isSegment, 
+                IsProjectile = isProjectile,
                 DeathPos = deathPosTransform.position
             };
     }

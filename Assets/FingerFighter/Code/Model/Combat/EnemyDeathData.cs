@@ -6,6 +6,7 @@ namespace FingerFighter.Model.Combat
     {
         public string Tag;
         public bool IsSegment;
+        public bool IsProjectile;
         public Vector2 DeathPos;
     }
 }

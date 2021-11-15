@@ -19,8 +19,11 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         private void OnDestroy() 
             => EnemyStatus.OnDeath -= OnEnemyDeath;
 
-        private void OnEnemyDeath(EnemyDeathData deathData) 
-            => this.DelayAction(respawnDelay, () => SpawnEnemy(deathData.Tag, deathData.DeathPos));
+        private void OnEnemyDeath(EnemyDeathData deathData)
+        {
+            if(deathData.IsProjectile) return;
+            this.DelayAction(respawnDelay, () => SpawnEnemy(deathData.Tag, deathData.DeathPos));
+        }
 
         protected override void Spawn() { }
 
