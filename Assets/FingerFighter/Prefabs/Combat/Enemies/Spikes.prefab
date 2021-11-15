@@ -99,6 +99,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
   m_PrefabInstance: {fileID: 3238743766670128438}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5698017593363074540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7197095819147163866, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_PrefabInstance: {fileID: 3238743766670128438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077486950152932746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ff82e3e51b4ef8982dd525a99ae154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &999649111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,3 +126,16 @@ MonoBehaviour:
   afterShotRotation: 10
   projectileType: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
   projectileImpulse: 30
+--- !u!114 &3765001871929776198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077486950152932746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b042a9136e47fc8d659cb82e4b7e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 5698017593363074540}
