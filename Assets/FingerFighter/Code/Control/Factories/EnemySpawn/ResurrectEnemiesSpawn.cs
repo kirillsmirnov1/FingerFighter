@@ -22,6 +22,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         private void OnEnemyDeath(EnemyDeathData deathData)
         {
             if(deathData.IsProjectile) return;
+            if (!gameObject.activeSelf) return;
             this.DelayAction(respawnDelay, () => SpawnEnemy(deathData.Tag, deathData.DeathPos));
         }
 
