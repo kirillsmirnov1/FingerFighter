@@ -35,9 +35,13 @@ PrefabInstance:
       propertyPath: m_LinearDrag
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_Name
-      value: Spikes
+      value: SpikesPrototype
       objectReference: {fileID: 0}
     - target: {fileID: 8987050289203696391, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_RootOrder
@@ -86,3 +90,24 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+--- !u!1 &7077486950152932746 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_PrefabInstance: {fileID: 3238743766670128438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &999649111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077486950152932746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf5570f74c40b2a17f32e8b0343d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotDelay: 0.3
+  afterShotRotation: 10
+  projectileType: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+  projectileImpulse: 30
