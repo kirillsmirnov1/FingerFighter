@@ -32,16 +32,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: m_Mass
+      value: 9000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_LinearDrag
-      value: 500
+      value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_Constraints
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_Name
-      value: SpikesPrototype
+      value: Spikes
       objectReference: {fileID: 0}
     - target: {fileID: 8987050289203696391, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_RootOrder
