@@ -19,7 +19,7 @@ namespace FingerFighter.Control.Combat.Damage
             _affiliation = id.Affiliation;
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        protected virtual void OnCollisionEnter2D(Collision2D other)
         {
             var hitTaker = other.gameObject.GetComponent<HitTaker>();
             

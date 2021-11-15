@@ -1,4 +1,5 @@
-﻿using FingerFighter.Control.Factories;
+﻿using FingerFighter.Control.Combat.Damage;
+using FingerFighter.Control.Factories;
 using FingerFighter.Model.Combat;
 using FingerFighter.Model.Util;
 using UnityEngine;
@@ -42,6 +43,7 @@ namespace FingerFighter.Control.Enemies
         {
             var newProjectile = EnemyPool.Get(projectileType.tag, SpawnPos, _rotation)
                 .GetComponent<Rigidbody2D>();
+            newProjectile.GetComponent<ProjectileHitProvider>().parentTurret = gameObject;
             newProjectile.gameObject.SetActive(true);
             newProjectile.AddForce(projectileImpulse * Vector2Ext.DegreeToVector2(_rotation), ForceMode2D.Impulse);
         }
