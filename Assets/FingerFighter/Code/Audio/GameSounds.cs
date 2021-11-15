@@ -1,6 +1,6 @@
-﻿using FingerFighter.Control.Combat;
-using FingerFighter.Control.Damage;
-using FingerFighter.Model.Damage;
+﻿using FingerFighter.Control.Combat.Damage;
+using FingerFighter.Control.Combat.Status;
+using FingerFighter.Model.Combat.Damage;
 using UnityEngine;
 
 namespace FingerFighter.Audio

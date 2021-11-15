@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using FingerFighter.Control.Cam;
 using FingerFighter.Model.Combat;
-using FingerFighter.View;
 using UnityEngine;
 
 namespace FingerFighter.Control.Factories.EnemySpawn

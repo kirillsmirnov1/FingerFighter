@@ -1,4 +1,4 @@
-﻿using FingerFighter.Model.Damage;
+﻿using FingerFighter.Model.Combat.Damage;
 using UnityEngine;
 using UnityUtils.Attributes;
 

@@ -1,5 +1,6 @@
-﻿using FingerFighter.Model.Combat;
-using FingerFighter.View;
+﻿using FingerFighter.Control.Combat.Status;
+using FingerFighter.Model.Combat;
+using FingerFighter.View.Display;
 using UnityEngine;
 
 namespace FingerFighter.Control.Combat

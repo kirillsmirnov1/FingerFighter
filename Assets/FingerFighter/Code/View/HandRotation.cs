@@ -1,4 +1,4 @@
-﻿using FingerFighter.Control.Character.Handles;
+﻿using FingerFighter.Control.Input.Handles;
 using UnityEngine;
 
 namespace FingerFighter.View

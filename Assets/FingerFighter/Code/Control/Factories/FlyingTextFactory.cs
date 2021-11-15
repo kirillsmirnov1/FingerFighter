@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using FingerFighter.Control.Combat;
-using FingerFighter.Control.Damage;
-using FingerFighter.Model;
+using FingerFighter.Control.Combat.Damage;
+using FingerFighter.Control.Combat.Status;
 using FingerFighter.Model.Combat;
-using FingerFighter.Model.Damage;
-using FingerFighter.View;
+using FingerFighter.Model.Combat.Damage;
+using FingerFighter.Model.ViewData;
+using FingerFighter.View.Ui;
 using UnityEngine;
 
 namespace FingerFighter.Control.Factories
