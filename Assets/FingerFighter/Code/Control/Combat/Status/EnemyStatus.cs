@@ -20,15 +20,16 @@ namespace FingerFighter.Control.Combat.Status
         protected override void OnEnable()
         {
             base.OnEnable();
-            if(isSegment) return;
+            if(isSegment || isProjectile) return;
             OnSpawn?.Invoke();
         }
 
         protected override void OnEntityDeath()
         {
             if(isSegment) return;
-            OnDeath?.Invoke(DeathData);
             EnemyPool.ReturnToPool(gameObject, id.EnemyType);
+            if(isProjectile) return;
+            OnDeath?.Invoke(DeathData);
         }
 
         private EnemyDeathData DeathData =>
