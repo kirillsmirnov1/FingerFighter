@@ -50,12 +50,13 @@ namespace FingerFighter.Control.Enemies
             {
                 var rotation = _rotation + shotAngles[i];
                 
-                var newProjectile = EnemyPool.Get(projectileType.tag, SpawnPos(rotation), rotation - 90)
-                    .GetComponent<Rigidbody2D>();
-                newProjectile.GetComponent<ProjectileHitProvider>().parentTurret = gameObject;
-                newProjectile.gameObject.SetActive(true);
-                newProjectile.AddForce(projectileImpulse * Vector2Ext.DegreeToVector2(rotation), ForceMode2D.Impulse);
-                newProjectile.rotation = rotation - 90;
+                EnemyPool.Get(projectileType.tag, SpawnPos(rotation))
+                    .GetComponent<Projectile>()
+                    .Init(
+                        gameObject, 
+                        projectileImpulse * Vector2Ext.DegreeToVector2(rotation),
+                        rotation - 90
+                        );
             }
         }
     }
