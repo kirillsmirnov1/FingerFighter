@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbf5570f74c40b2a17f32e8b0343d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotDelay: 0.1
+  shotDelay: 0.2
   afterShotRotation: 10
   projectileType: {fileID: 3323213088945303508, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
   projectileImpulse: 10
