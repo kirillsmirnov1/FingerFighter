@@ -12,6 +12,7 @@ namespace FingerFighter.Control.Enemies
         [SerializeField] private float afterShotRotation = 10;
         [SerializeField] private EnemyStats projectileType;
         [SerializeField] private float projectileImpulse = 10;
+        [SerializeField] private float[] shotAngles = {0f, 120, 240};
         
         private float _rotation;
         private float _timeForANextShot;
@@ -19,10 +20,14 @@ namespace FingerFighter.Control.Enemies
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(transform.position, SpawnPos);
+            for (int i = 0; i < shotAngles.Length; i++)
+            {
+                Gizmos.DrawLine(transform.position, SpawnPos(_rotation + shotAngles[i]));
+            }
         }
 
-        private Vector3 SpawnPos => transform.position + (Vector3) (0.5f * Vector2Ext.DegreeToVector2(_rotation));
+        private Vector3 SpawnPos(float rotation) 
+            => transform.position + (Vector3) (0.5f * Vector2Ext.DegreeToVector2(rotation));
 
         private void Update()
         {
@@ -41,12 +46,17 @@ namespace FingerFighter.Control.Enemies
 
         private void MakeAShot()
         {
-            var newProjectile = EnemyPool.Get(projectileType.tag, SpawnPos, _rotation - 90)
-                .GetComponent<Rigidbody2D>();
-            newProjectile.GetComponent<ProjectileHitProvider>().parentTurret = gameObject;
-            newProjectile.gameObject.SetActive(true);
-            newProjectile.AddForce(projectileImpulse * Vector2Ext.DegreeToVector2(_rotation), ForceMode2D.Impulse);
-            newProjectile.rotation = _rotation - 90;
+            for (var i = 0; i < shotAngles.Length; i++)
+            {
+                var rotation = _rotation + shotAngles[i];
+                
+                var newProjectile = EnemyPool.Get(projectileType.tag, SpawnPos(rotation), rotation - 90)
+                    .GetComponent<Rigidbody2D>();
+                newProjectile.GetComponent<ProjectileHitProvider>().parentTurret = gameObject;
+                newProjectile.gameObject.SetActive(true);
+                newProjectile.AddForce(projectileImpulse * Vector2Ext.DegreeToVector2(rotation), ForceMode2D.Impulse);
+                newProjectile.rotation = rotation - 90;
+            }
         }
     }
 }
