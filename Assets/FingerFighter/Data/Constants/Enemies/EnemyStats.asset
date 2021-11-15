@@ -121,7 +121,7 @@ MonoBehaviour:
   points: 0
   movementSpeed: 0
   rotationSpeed: 0
-  collisionDamage: 5
+  collisionDamage: 1
   gizmoColor: {r: 0.9960785, g: 0.23529413, b: 0.47450984, a: 0}
   gizmoIcon: {fileID: 0}
 --- !u!114 &3446871869396048324

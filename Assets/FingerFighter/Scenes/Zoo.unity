@@ -3680,18 +3680,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 240244467}
     m_Modifications:
-    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
-      propertyPath: shotDelay
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
-      propertyPath: projectileType
-      value: 
-      objectReference: {fileID: 3323213088945303508, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
-      propertyPath: projectileImpulse
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3738,7 +3726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7077486950152932746, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
       propertyPath: m_Name
-      value: SpikesPrototype
+      value: Spikes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
