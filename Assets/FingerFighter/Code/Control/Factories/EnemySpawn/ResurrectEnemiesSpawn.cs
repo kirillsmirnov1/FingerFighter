@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using FingerFighter.Control.Combat.Status;
+using FingerFighter.Model.Combat;
+using UnityEngine;
 using UnityUtils.Extensions;
 
 namespace FingerFighter.Control.Factories.EnemySpawn
@@ -8,12 +10,17 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         [Header("Ring Spawn")]
         [SerializeField] private float respawnDelay = 3f;
 
-        protected override void ReturnToPoolImpl(GameObject obj, string enemyType)
+        protected override void Awake()
         {
-            if(!gameObject.activeSelf) return;
-            base.ReturnToPoolImpl(obj, enemyType);
-            this.DelayAction(respawnDelay, () => SpawnEnemy(enemyType, obj.transform.position));
+            base.Awake();
+            EnemyStatus.OnDeath += OnEnemyDeath;
         }
+
+        private void OnDestroy() 
+            => EnemyStatus.OnDeath -= OnEnemyDeath;
+
+        private void OnEnemyDeath(EnemyDeathData deathData) 
+            => this.DelayAction(respawnDelay, () => SpawnEnemy(deathData.Tag, deathData.DeathPos));
 
         protected override void Spawn() { }
 

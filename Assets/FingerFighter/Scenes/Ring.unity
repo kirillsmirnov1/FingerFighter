@@ -366,6 +366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682015557}
   - component: {fileID: 682015558}
+  - component: {fileID: 682015559}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -405,6 +406,19 @@ MonoBehaviour:
   jumpDirection: {x: 0, y: 0}
   enemyData: {fileID: 11400000, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
   respawnDelay: 3
+--- !u!114 &682015559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682015556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d716d3db4c5f461499f0523d69ba1989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
 --- !u!1 &843072942
 GameObject:
   m_ObjectHideFlags: 0

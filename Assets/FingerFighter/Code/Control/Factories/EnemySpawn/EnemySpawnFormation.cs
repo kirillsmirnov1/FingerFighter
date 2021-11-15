@@ -1,4 +1,6 @@
-﻿using FingerFighter.Model.EnemyFormations;
+﻿using FingerFighter.Control.Combat.Status;
+using FingerFighter.Model.Combat;
+using FingerFighter.Model.EnemyFormations;
 using UnityEngine;
 
 namespace FingerFighter.Control.Factories.EnemySpawn
@@ -11,12 +13,45 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         
         private Camera _camera;
         private Vector2 _jumpToCameraGap;
+        private int _aliveEnemies;
 
         protected override void Awake()
         {
             base.Awake();
+            InitValues();
+            SubscribeToEvents();
+        }
+
+        private void OnDestroy()
+        {
+            UnsubscribeFromEvents();
+        }
+
+        private void InitValues()
+        {
             _camera = Camera.main;
             _jumpToCameraGap = new Vector2(0, _camera.orthographicSize) + jumpDirection / 2;
+        }
+
+        private void SubscribeToEvents()
+        {
+            EnemyStatus.OnSpawn += IncrementAliveEnemiesCounter;
+            EnemyStatus.OnDeath += DecrementAliveEnemiesCounter;
+        }
+
+        private void UnsubscribeFromEvents()
+        {
+            EnemyStatus.OnSpawn -= IncrementAliveEnemiesCounter;
+            EnemyStatus.OnDeath -= DecrementAliveEnemiesCounter;
+        }
+
+        private void IncrementAliveEnemiesCounter() 
+            => _aliveEnemies++;
+
+        private void DecrementAliveEnemiesCounter(EnemyDeathData obj)
+        {
+            _aliveEnemies--;
+            if(_aliveEnemies <= 0) NoEnemiesLeftAlive();
         }
 
         protected override void Spawn()
@@ -35,11 +70,8 @@ namespace FingerFighter.Control.Factories.EnemySpawn
             return formation;
         }
 
-        protected override void NoEnemiesLeftAlive()
-        {
-            base.NoEnemiesLeftAlive();
-            JumpToCamera();
-        }
+        private void NoEnemiesLeftAlive() 
+            => JumpToCamera();
 
         private void JumpToCamera()
         {
