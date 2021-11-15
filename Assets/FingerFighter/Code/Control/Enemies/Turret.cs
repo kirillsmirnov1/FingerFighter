@@ -15,6 +15,14 @@ namespace FingerFighter.Control.Enemies
         private float _rotation;
         private float _timeForANextShot;
 
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position, SpawnPos);
+        }
+
+        private Vector3 SpawnPos => transform.position + (Vector3) (0.5f * Vector2Ext.DegreeToVector2(_rotation));
+
         private void Update()
         {
             if (Time.time > _timeForANextShot)
@@ -34,7 +42,7 @@ namespace FingerFighter.Control.Enemies
         {
             var newProjectile = EnemyPool.Get(projectileType.tag).GetComponent<Rigidbody2D>();
             
-            newProjectile.position = transform.position;
+            newProjectile.position = SpawnPos;
             newProjectile.rotation = _rotation;
             newProjectile.AddForce(projectileImpulse * Vector2Ext.DegreeToVector2(_rotation), ForceMode2D.Impulse);
         }
