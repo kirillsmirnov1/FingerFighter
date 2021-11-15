@@ -41,11 +41,12 @@ namespace FingerFighter.Control.Enemies
 
         private void MakeAShot()
         {
-            var newProjectile = EnemyPool.Get(projectileType.tag, SpawnPos, _rotation)
+            var newProjectile = EnemyPool.Get(projectileType.tag, SpawnPos, _rotation - 90)
                 .GetComponent<Rigidbody2D>();
             newProjectile.GetComponent<ProjectileHitProvider>().parentTurret = gameObject;
             newProjectile.gameObject.SetActive(true);
             newProjectile.AddForce(projectileImpulse * Vector2Ext.DegreeToVector2(_rotation), ForceMode2D.Impulse);
+            newProjectile.rotation = _rotation - 90;
         }
     }
 }

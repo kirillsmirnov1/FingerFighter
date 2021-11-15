@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_AngularDrag
-      value: 100
+      value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_Name
@@ -150,19 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ff82e3e51b4ef8982dd525a99ae154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1270280342409717768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8223152287390871414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b042a9136e47fc8d659cb82e4b7e2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: {fileID: 6860571311091920656}
 --- !u!70 &4575821767500183168
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -179,6 +166,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.67, y: 0.38}
   m_Direction: 0
+--- !u!114 &-1270280342409717768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8223152287390871414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37b042a9136e47fc8d659cb82e4b7e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 6860571311091920656}
 --- !u!114 &694344228457108285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,3 +193,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: {fileID: 3370403104444700617}
   hitDataProvider: {fileID: 8894026298759312256}
+  parentTurret: {fileID: 0}
