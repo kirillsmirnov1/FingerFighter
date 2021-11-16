@@ -21,6 +21,7 @@ namespace FingerFighter.Model.EnemyFormations
 
         private static EnemyFormation BossEntry(EnemyFormationPack pack) 
             => new EnemyFormation {
+                id = "BOSS",
                 entries = new [] {
                     new EnemyFormationEntry {
                         enemy = pack.Boss,
