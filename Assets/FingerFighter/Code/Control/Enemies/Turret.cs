@@ -3,6 +3,7 @@ using FingerFighter.Control.Factories;
 using FingerFighter.Model.Combat;
 using FingerFighter.Model.Util;
 using UnityEngine;
+using UnityUtils.Attributes;
 
 namespace FingerFighter.Control.Enemies
 {
@@ -12,6 +13,9 @@ namespace FingerFighter.Control.Enemies
         [SerializeField] private float afterShotRotation = 10;
         [SerializeField] private EnemyStats projectileType;
         [SerializeField] private float projectileImpulse = 10;
+        [SerializeField] private RotationMode rotationMode;
+        [ConditionalField("rotationMode", compareValues: new object[] {RotationMode.Arc})]
+        [SerializeField] private Vector2 arcFromTo = new Vector2(225, 315);
         [SerializeField] private float[] shotAngles = {0f, 120, 240};
         
         private float _rotation;
@@ -30,7 +34,12 @@ namespace FingerFighter.Control.Enemies
         
         private void Awake()
         {
-            _incrementRotation = CircularRotation;
+            _incrementRotation = rotationMode switch
+            {
+                RotationMode.Circular => CircularRotation,
+                RotationMode.Arc => ArcRotation,
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
         
         private Vector3 SpawnPos(float rotation) 
@@ -61,6 +70,15 @@ namespace FingerFighter.Control.Enemies
             _rotation = (_rotation + afterShotRotation) % 360f;
         }
 
+        private void ArcRotation()
+        {
+            _rotation = Mathf.Clamp(_rotation + afterShotRotation, arcFromTo.x, arcFromTo.y);
+            if (_rotation == arcFromTo.x || _rotation == arcFromTo.y)
+            {
+                afterShotRotation = -afterShotRotation;
+            }
+        }
+
         private void MakeAShot()
         {
             for (var i = 0; i < shotAngles.Length; i++)
@@ -84,6 +102,12 @@ namespace FingerFighter.Control.Enemies
                     newShot.GetComponent<Rigidbody2D>().AddForce(impulse, ForceMode2D.Impulse);
                 }
             }
+        }
+        
+        public enum RotationMode
+        {
+            Circular,
+            Arc,
         }
     }
 }
