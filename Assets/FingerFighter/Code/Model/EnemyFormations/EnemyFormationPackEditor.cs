@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using FingerFighter.Model.Combat;
 using UnityEngine;
 
 namespace FingerFighter.Model.EnemyFormations
@@ -6,6 +7,7 @@ namespace FingerFighter.Model.EnemyFormations
     public class EnemyFormationPackEditor : MonoBehaviour
     {
         [SerializeField] private EnemyFormationPack enemyFormationPack;
+        [SerializeField] private EnemyStats boss;
         [SerializeField] private EnemyFormationEditor[] editors;
 #if UNITY_EDITOR
         private void OnValidate()
@@ -46,6 +48,7 @@ namespace FingerFighter.Model.EnemyFormations
         private void OverwritePack()
         {
             enemyFormationPack.Formations = editors.Select(e => e.formation).ToArray();
+            enemyFormationPack.Boss = boss;
         }
 #endif
     }
