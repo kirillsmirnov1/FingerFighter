@@ -1,4 +1,4 @@
-﻿using FingerFighter.Control.Combat.Damage;
+﻿using System;
 using FingerFighter.Control.Factories;
 using FingerFighter.Model.Combat;
 using FingerFighter.Model.Util;
@@ -26,6 +26,13 @@ namespace FingerFighter.Control.Enemies
             }
         }
 
+        private Action _incrementRotation;
+        
+        private void Awake()
+        {
+            _incrementRotation = CircularRotation;
+        }
+        
         private Vector3 SpawnPos(float rotation) 
             => transform.position + (Vector3) (0.5f * Vector2Ext.DegreeToVector2(rotation));
 
@@ -40,7 +47,17 @@ namespace FingerFighter.Control.Enemies
 
         private void IncrementParams()
         {
+            IncrementTime();
+            _incrementRotation?.Invoke();
+        }
+
+        private void IncrementTime()
+        {
             _timeForANextShot = Time.time + shotDelay;
+        }
+
+        private void CircularRotation()
+        {
             _rotation = (_rotation + afterShotRotation) % 360f;
         }
 
