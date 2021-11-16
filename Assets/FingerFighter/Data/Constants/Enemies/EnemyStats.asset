@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: _Boss_SpikeFlies
   m_EditorClassIdentifier: 
   tag: _Boss_SpikeFlies
-  prefab: {fileID: 0}
+  prefab: {fileID: 4547526338717813335, guid: a1c43b7d57b30fc46bac63019c1cc8db, type: 3}
   health: 500
   points: 1000
   movementSpeed: 100
