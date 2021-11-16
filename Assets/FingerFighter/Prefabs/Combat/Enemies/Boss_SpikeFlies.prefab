@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6711568502887942109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: shotDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: projectileType
+      value: 
+      objectReference: {fileID: -5716806658356583056, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: afterShotRotation
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: shotAngles.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: shotAngles.Array.data[0]
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 505557422452779265, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530861235688142133, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 4430819533194483818, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785505754524739121, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077486950152932746, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: m_Name
+      value: SpikeFlies_Boss
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}

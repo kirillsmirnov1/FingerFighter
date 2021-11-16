@@ -49,14 +49,23 @@ namespace FingerFighter.Control.Enemies
             for (var i = 0; i < shotAngles.Length; i++)
             {
                 var rotation = _rotation + shotAngles[i];
+                var impulse = projectileImpulse * Vector2Ext.DegreeToVector2(rotation);
                 
-                EnemyPool.Get(projectileType.tag, SpawnPos(rotation))
-                    .GetComponent<Projectile>()
-                    .Init(
+                var newShot = EnemyPool.Get(projectileType.tag, SpawnPos(rotation));
+                var newProjectile = newShot.GetComponent<Projectile>(); // FIXME find a way of doing it one way without any npe 
+                if(newProjectile != null)
+                {
+                    newProjectile.Init(
                         gameObject, 
-                        projectileImpulse * Vector2Ext.DegreeToVector2(rotation),
+                        impulse,
                         rotation - 90
                         );
+                }
+                else
+                {
+                    newShot.SetActive(true); 
+                    newShot.GetComponent<Rigidbody2D>().AddForce(impulse, ForceMode2D.Impulse);
+                }
             }
         }
     }

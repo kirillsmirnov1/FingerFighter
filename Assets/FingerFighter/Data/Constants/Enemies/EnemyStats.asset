@@ -103,6 +103,7 @@ MonoBehaviour:
   - {fileID: -4539852944185796980}
   - {fileID: 3446871869396048324}
   - {fileID: 3323213088945303508}
+  - {fileID: 4430819533194483818}
 --- !u!114 &3323213088945303508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,3 +146,24 @@ MonoBehaviour:
   collisionDamage: 5
   gizmoColor: {r: 0.9960785, g: 0.23529413, b: 0.47450984, a: 1}
   gizmoIcon: {fileID: -2135585597343286014, guid: b15ecd14acfa72142982e344c7dc62ff, type: 3}
+--- !u!114 &4430819533194483818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
+  m_Name: _Boss_SpikeFlies
+  m_EditorClassIdentifier: 
+  tag: _Boss_SpikeFlies
+  prefab: {fileID: 0}
+  health: 500
+  points: 1000
+  movementSpeed: 100
+  rotationSpeed: 0
+  collisionDamage: 10
+  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoIcon: {fileID: 0}
