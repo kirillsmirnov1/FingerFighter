@@ -140,7 +140,7 @@ MonoBehaviour:
   prefab: {fileID: 7077486950152932746, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
   health: 75
   points: 100
-  movementSpeed: 0
+  movementSpeed: 100
   rotationSpeed: 0
   collisionDamage: 5
   gizmoColor: {r: 0.9960785, g: 0.23529413, b: 0.47450984, a: 1}

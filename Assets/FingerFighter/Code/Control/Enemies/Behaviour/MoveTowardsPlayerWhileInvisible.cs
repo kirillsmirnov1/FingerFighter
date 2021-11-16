@@ -16,12 +16,6 @@ namespace FingerFighter.Control.Enemies.Behaviour
         private Transform _player;
         private Transform _self;
 
-        private void OnValidate()
-        {
-            rb = GetComponent<Rigidbody2D>();
-            id = GetComponent<CombatEntityId>();
-        }
-
         private void Awake()
         {
             OnBecameInvisible();
@@ -40,8 +34,6 @@ namespace FingerFighter.Control.Enemies.Behaviour
             _onFixedUpdate?.Invoke();
         }
         
-        
-        // TODO Tweak until it works
         private void Move()
         {
             Vector2 direction = (_player.position - _self.position).normalized;
