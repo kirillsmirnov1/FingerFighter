@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpDirection: {x: 0, y: 10}
   enemyData: {fileID: 11400000, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-  pack: {fileID: 11400000, guid: 8176b997b047a8f4badb8407221ffe2f, type: 2}
+  enemyFormationPackProvider: {fileID: 11400000, guid: 351ff579f73a452489d45f8ad7e079b8, type: 2}
 --- !u!58 &455552260
 CircleCollider2D:
   m_ObjectHideFlags: 0

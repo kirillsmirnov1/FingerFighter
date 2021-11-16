@@ -1,4 +1,5 @@
-﻿using FingerFighter.Control.Combat.Status;
+﻿using System.Collections.Generic;
+using FingerFighter.Control.Combat.Status;
 using FingerFighter.Model.Combat;
 using FingerFighter.Model.EnemyFormations;
 using UnityEngine;
@@ -7,10 +8,10 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 {
     public class EnemySpawnFormation : AEnemySpawn
     {
-        [SerializeField] private EnemyFormationPack pack;
-        
-        private int _formationIterator;
-        
+        [SerializeField] private EnemyFormationPackProvider enemyFormationPackProvider;
+
+        private Queue<EnemyFormation> _formationQueue = new Queue<EnemyFormation>();
+
         private Camera _camera;
         private Vector2 _jumpToCameraGap;
         private int _aliveEnemies;
@@ -54,7 +55,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
             if(_aliveEnemies <= 0) NoEnemiesLeftAlive();
         }
 
-        protected override void Spawn()
+        protected override void Spawn() // TODO control spawn from Flow manager 
         {
             var formation = NextFormation().entries;
             for (int i = 0; i < formation.Length; i++)
@@ -65,9 +66,11 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 
         private EnemyFormation NextFormation()
         {
-            var formation = pack.Formations[_formationIterator];
-            _formationIterator = (_formationIterator + 1) % pack.Formations.Length;
-            return formation;
+            if (_formationQueue.Count == 0)
+            {
+                _formationQueue = new Queue<EnemyFormation>(enemyFormationPackProvider.NextPack());
+            }
+            return _formationQueue.Dequeue();
         }
 
         private void NoEnemiesLeftAlive() 
