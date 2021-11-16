@@ -11,12 +11,15 @@ namespace FingerFighter.Model.EnemyFormations
         [SerializeField] private EnemyFormationPackArray packs;
         [SerializeField] private int formationsPerRun = 10;
 
-        public IEnumerable<EnemyFormation> NextPack()
+        public PackToSpawn NextPack()
         {
             var pack = PickAPack();
             var formations = PickFormations(pack.Formations);
-            return formations
-                .Append(BossEntry(pack));
+            return new PackToSpawn()
+            {
+                ID = pack.Id,
+                Formations = formations.Append(BossEntry(pack))
+            };
         }
 
         private static EnemyFormation BossEntry(EnemyFormationPack pack) 

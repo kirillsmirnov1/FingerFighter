@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using FingerFighter.Control.Combat.Status;
 using FingerFighter.Model.Combat;
 using FingerFighter.Model.EnemyFormations;
@@ -8,6 +9,8 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 {
     public class EnemySpawnFormation : AEnemySpawn
     {
+        public static event Action<string, string> OnFormationSpawned; 
+
         [SerializeField] private EnemyFormationPackProvider enemyFormationPackProvider;
 
         private Queue<EnemyFormation> _formationQueue = new Queue<EnemyFormation>();
@@ -15,6 +18,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         private Camera _camera;
         private Vector2 _jumpToCameraGap;
         private int _aliveEnemies;
+        private string _currentPackId;
 
         protected override void Awake()
         {
@@ -57,18 +61,21 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 
         protected override void Spawn() // TODO control spawn from Flow manager 
         {
-            var formation = NextFormation().entries;
-            for (int i = 0; i < formation.Length; i++)
+            var formation = NextFormation();
+            for (int i = 0; i < formation.entries.Length; i++)
             {
-                SpawnEnemy(formation[i].enemy.tag, formation[i].pos);
+                SpawnEnemy(formation.entries[i].enemy.tag, formation.entries[i].pos);
             }
+            OnFormationSpawned?.Invoke(_currentPackId, formation.id); // IMPR might use FormationSpawnInfo 
         }
 
         private EnemyFormation NextFormation()
         {
             if (_formationQueue.Count == 0)
             {
-                _formationQueue = new Queue<EnemyFormation>(enemyFormationPackProvider.NextPack());
+                var pack = enemyFormationPackProvider.NextPack();
+                _currentPackId = pack.ID;
+                _formationQueue = new Queue<EnemyFormation>(pack.Formations);
             }
             return _formationQueue.Dequeue();
         }

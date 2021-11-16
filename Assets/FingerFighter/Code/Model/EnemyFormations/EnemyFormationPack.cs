@@ -11,6 +11,7 @@ namespace FingerFighter.Model.EnemyFormations
         [SerializeField] private EnemyStats boss;
         [SerializeField] private EnemyFormation[] formations;
 
+        public string Id => id;
         public EnemyFormation[] Formations => formations;
         public EnemyStats Boss => boss;
 
