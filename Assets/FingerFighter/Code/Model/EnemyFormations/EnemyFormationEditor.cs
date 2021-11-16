@@ -18,7 +18,9 @@ namespace FingerFighter.Model.EnemyFormations
 
         public void UpdateName()
         {
-            gameObject.name = $"#{transform.GetSiblingIndex():000} : P{formation.entries.Sum(e => e.enemy.points):0000}";
+            var index = transform.GetSiblingIndex();
+            gameObject.name = $"#{index:000} : P{formation.entries.Sum(e => e.enemy.points):0000}";
+            formation.id = index.ToString(); // FIXME I'll need to keep them stable in release 
         }
 
         public void UpdatePack() => packEditor?.UpdatePack();

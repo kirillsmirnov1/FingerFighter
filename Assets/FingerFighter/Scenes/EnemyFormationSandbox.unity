@@ -1302,6 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyFormationPack: {fileID: 11400000, guid: 8176b997b047a8f4badb8407221ffe2f, type: 2}
+  id: 1
   boss: {fileID: 4430819533194483818, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
   editors:
   - {fileID: 1119185725}

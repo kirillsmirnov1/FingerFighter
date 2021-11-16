@@ -49,12 +49,14 @@ namespace FingerFighter.Model.EnemyFormations
         private void DisplayData()
         {
             var packEditor = serializedObject.FindProperty("packEditor");
+            var id = serializedObject.FindProperty("formation.id");
             var formation = serializedObject.FindProperty("formation.entries");
             
             serializedObject.Update();
             {
                 EditorGUILayout.PropertyField(packEditor);
                 EditorGUILayout.LabelField(new GUIContent("Formation"));
+                EditorGUILayout.PropertyField(id);
                 EditorList.Show(formation, EditorListOption.ListSize | EditorListOption.Buttons);
             }
             serializedObject.ApplyModifiedProperties();

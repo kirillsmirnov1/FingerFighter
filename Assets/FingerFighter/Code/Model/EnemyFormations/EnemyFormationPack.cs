@@ -7,27 +7,17 @@ namespace FingerFighter.Model.EnemyFormations
     [CreateAssetMenu(menuName = "Data/EnemyFormationPack", fileName = "EnemyFormationPack", order = 0)]
     public class EnemyFormationPack : ScriptableObject
     {
+        [SerializeField] private string id;
         [SerializeField] private EnemyStats boss;
         [SerializeField] private EnemyFormation[] formations;
 
-        public EnemyFormation[] Formations
-        {
-            get => formations;
-            set
-            {
-                SetPackDirty();
-                formations = value;
-            }
-        }
+        public EnemyFormation[] Formations => formations;
+        public EnemyStats Boss => boss;
 
-        public EnemyStats Boss
+        public void Overwrite(string newId, EnemyFormation[] newFormations, EnemyStats newBoss)
         {
-            get => boss;
-            set
-            {
-                SetPackDirty();
-                boss = value;
-            } 
+            (id, formations, boss) = (newId, newFormations, newBoss);
+            SetPackDirty();
         }
 
         private void SetPackDirty()

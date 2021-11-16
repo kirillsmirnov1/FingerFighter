@@ -7,6 +7,7 @@ namespace FingerFighter.Model.EnemyFormations
     public class EnemyFormationPackEditor : MonoBehaviour
     {
         [SerializeField] private EnemyFormationPack enemyFormationPack;
+        [SerializeField] private string id;
         [SerializeField] private EnemyStats boss;
         [SerializeField] private EnemyFormationEditor[] editors;
 #if UNITY_EDITOR
@@ -45,11 +46,11 @@ namespace FingerFighter.Model.EnemyFormations
             }
         }
 
-        private void OverwritePack()
-        {
-            enemyFormationPack.Formations = editors.Select(e => e.formation).ToArray();
-            enemyFormationPack.Boss = boss;
-        }
+        private void OverwritePack() 
+            => enemyFormationPack.Overwrite(id, Formations, boss);
+
+        private EnemyFormation[] Formations 
+            => editors.Select(e => e.formation).ToArray();
 #endif
     }
 }
