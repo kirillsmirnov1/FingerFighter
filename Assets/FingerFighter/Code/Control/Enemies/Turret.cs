@@ -23,10 +23,28 @@ namespace FingerFighter.Control.Enemies
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = Color.yellow;
-            for (int i = 0; i < shotAngles.Length; i++)
+            switch (rotationMode)
             {
-                Gizmos.DrawLine(transform.position, SpawnPos(_rotation + shotAngles[i]));
+                case RotationMode.Circular:
+                    Gizmos.color = Color.yellow;
+                    for (int i = 0; i < shotAngles.Length; i++)
+                    {
+                        Gizmos.DrawLine(transform.position, SpawnPos(_rotation + shotAngles[i]));
+                    }
+                    break;
+                case RotationMode.Arc:
+                    Gizmos.color = Color.green;
+                    Gizmos.DrawLine(transform.position, SpawnPos(arcFromTo.x, 1f));
+                    Gizmos.DrawLine(transform.position, SpawnPos(arcFromTo.y, 1f));
+                    Gizmos.color = Color.yellow;
+                    for (int i = 0; i < shotAngles.Length; i++)
+                    {
+                        if(Application.isPlaying)
+                            Gizmos.DrawLine(transform.position, SpawnPos(_rotation + shotAngles[i]));
+                        else
+                            Gizmos.DrawLine(transform.position, SpawnPos(_rotation + shotAngles[i] + arcFromTo.x));
+                    }
+                    break;
             }
         }
 
@@ -42,8 +60,8 @@ namespace FingerFighter.Control.Enemies
             };
         }
         
-        private Vector3 SpawnPos(float rotation) 
-            => transform.position + (Vector3) (0.5f * Vector2Ext.DegreeToVector2(rotation));
+        private Vector3 SpawnPos(float rotation, float magnitude = 0.5f) 
+            => transform.position + (Vector3) (magnitude * Vector2Ext.DegreeToVector2(rotation));
 
         private void Update()
         {
