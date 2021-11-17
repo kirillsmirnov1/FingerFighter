@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthChangeDisplay
       objectReference: {fileID: 0}
+    - target: {fileID: 4543807391903638853, guid: 2484716c0565e144a81cab33e03ed51c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6453176833594790945, guid: 2484716c0565e144a81cab33e03ed51c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
