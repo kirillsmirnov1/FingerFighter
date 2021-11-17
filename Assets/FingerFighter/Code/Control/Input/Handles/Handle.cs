@@ -20,7 +20,6 @@ namespace FingerFighter.Control.Input.Handles
 
         private void Update()
         {
-            // IMPR state machine 
             if(finger == null) return;
             
             Vector2 fingerPos = _camera.ScreenToWorldPoint(finger.screenPosition);
