@@ -2,6 +2,7 @@
 using FingerFighter.Control.Factories.EnemySpawn;
 using FingerFighter.Model.EnemyFormations;
 using UnityEngine;
+using UnityUtils.Extensions;
 
 namespace FingerFighter.Control.Combat.Flow
 {
@@ -36,7 +37,7 @@ namespace FingerFighter.Control.Combat.Flow
         }
 
         private void Update() 
-            => _state.Update();
+            => _state?.Update();
 
         private void UpdateFormationsQueue()
         {
@@ -46,10 +47,11 @@ namespace FingerFighter.Control.Combat.Flow
         }
 
         private void NoEnemiesLeft() 
-            => _state.NoEnemiesLeft();
+            => _state?.NoEnemiesLeft();
 
         private void NextRoom()
         {
+            _state = null;
             if (_formations.Count > 1)
             {
                 _state = new Room(this);
@@ -63,7 +65,7 @@ namespace FingerFighter.Control.Combat.Flow
                 _state = new Rest(this);
                 UpdateFormationsQueue();
             }
-            _state.Enter();
+            this.DelayAction(0f, () => _state.Enter());
         }
     }
 }
