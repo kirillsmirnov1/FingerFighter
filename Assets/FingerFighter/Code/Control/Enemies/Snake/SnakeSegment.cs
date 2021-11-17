@@ -56,7 +56,7 @@ namespace FingerFighter.Control.Enemies.Snake
         private void SetTarget()
         {
             IsHead = previous == null;
-            _target = IsHead ? head.Player : previous.transform;
+            _target = IsHead ? head.Target : previous.transform;
         }
 
         private void SetParams()

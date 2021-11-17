@@ -1,19 +1,36 @@
-﻿using FingerFighter.Model.Combat;
+﻿using System;
+using FingerFighter.Model.Combat;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityUtils.Attributes;
 using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Enemies.Snake
 {
     public class SnakeHead : MonoBehaviour
     {
-        [SerializeField] private TransformVariable player;
         [SerializeField] private CombatEntityId id;
+        
+        [SerializeField] private TargetTransformType type;
+        [ConditionalField("type", compareValues: new object[]{TargetTransformType.Component})]
+        [SerializeField] private Transform transformComponent;
+        [ConditionalField("type", compareValues: new object[]{TargetTransformType.Variable})]
+        [SerializeField] private TransformVariable transformVariable;
 
         private SnakeSegment[] _segments;
-        
-        public Transform Player => player.Value;
+        public Transform Target { get; private set; }
+
         public float MovementSpeed => id.EnemyStats.movementSpeed;
         public float RotationSpeed => id.EnemyStats.rotationSpeed;
+
+        private void Awake()
+        {
+            Target = type switch {
+                TargetTransformType.Variable => transformVariable.Value,
+                TargetTransformType.Component => transformComponent,
+                _ => throw new ArgumentOutOfRangeException()
+            };
+        }
 
         private void OnEnable()
         {
@@ -63,6 +80,12 @@ namespace FingerFighter.Control.Enemies.Snake
                 if (_segments[i].IsHead) return _segments[i].transform;
             }
             return _segments[0].transform;
+        }
+
+        public enum TargetTransformType
+        {
+            Variable,
+            Component,
         }
     }
 }
