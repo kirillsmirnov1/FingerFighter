@@ -156,9 +156,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
-  m_Name: _Boss_SpikeFlies
+  m_Name: FlyShot
   m_EditorClassIdentifier: 
-  tag: _Boss_SpikeFlies
+  tag: FlyShot
   prefab: {fileID: 4547526338717813335, guid: a1c43b7d57b30fc46bac63019c1cc8db, type: 3}
   health: 500
   points: 1000
