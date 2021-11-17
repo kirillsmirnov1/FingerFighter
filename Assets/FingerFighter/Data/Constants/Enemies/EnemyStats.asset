@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: 3446871869396048324}
   - {fileID: 3323213088945303508}
   - {fileID: 4430819533194483818}
+  - {fileID: 6527744406199669517}
 --- !u!114 &3323213088945303508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +168,24 @@ MonoBehaviour:
   collisionDamage: 10
   gizmoColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoIcon: {fileID: 0}
+--- !u!114 &6527744406199669517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
+  m_Name: Snake_3
+  m_EditorClassIdentifier: 
+  tag: Snake_3
+  prefab: {fileID: 6184310394750562119, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
+  health: 20
+  points: 60
+  movementSpeed: 6
+  rotationSpeed: 0.3
+  collisionDamage: 3
+  gizmoColor: {r: 0.47450984, g: 0.13333334, b: 0.54509807, a: 1}
+  gizmoIcon: {fileID: 21300000, guid: 456f2a19775e082419734a633756a408, type: 3}
