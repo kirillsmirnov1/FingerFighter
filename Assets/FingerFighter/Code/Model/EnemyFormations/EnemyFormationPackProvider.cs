@@ -36,7 +36,7 @@ namespace FingerFighter.Model.EnemyFormations
             var indexes = Enumerable
                 .Range(0, formations.Length)
                 .Shuffle()
-                .Take(formationsPerRun)
+                .Take(Mathf.Max(formationsPerRun, formations.Length))
                 .OrderBy(x => x);
             
             foreach (var index in indexes)
