@@ -49,7 +49,7 @@ namespace FingerFighter.Model.EnemyFormations
                 return;
             }
             
-            Gizmos.DrawIcon(formationEntry.pos, AssetDatabase.GetAssetPath(formationEntry.enemy.gizmoIcon));
+            Gizmos.DrawIcon(formationEntry.pos, AssetDatabase.GetAssetPath(formationEntry.enemy.gizmoIcon), true);
         }
 
         private static void DrawBorderRect()
