@@ -1,4 +1,4 @@
-﻿using FingerFighter.Control.Factories.EnemySpawn;
+﻿using FingerFighter.Control.Combat.Flow;
 using TMPro;
 using UnityEngine;
 
@@ -8,15 +8,14 @@ namespace FingerFighter.View.TextColorAnim
     public class FormationSpawnInfoDisplay : TmpTextFade
     {
         private void Awake() 
-            => EnemySpawnFormation.OnFormationSpawned += DisplayFormationInfo;
+            => RunnerFlow.State.OnRoomEntered += OnRoomEntered;
 
         private void OnDestroy() 
-            => EnemySpawnFormation.OnFormationSpawned -= DisplayFormationInfo;
+            => RunnerFlow.State.OnRoomEntered -= OnRoomEntered;
 
-        private void DisplayFormationInfo(string packId, string formationId)
+        private void OnRoomEntered(string roomName)
         {
-            var str = $"{packId} : {formationId}";
-            SetText(str);
+            SetText(roomName);
             ResetDurationTimer();
         }
     }

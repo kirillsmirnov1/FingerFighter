@@ -8,7 +8,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
     {
         [SerializeField] protected EnemyStatsList enemyData;
         
-        private Vector2 _currentPos;
+        protected Vector2 CurrentPos;
 
         protected virtual void Awake() { }
 
@@ -16,7 +16,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 
         protected virtual void OnTriggerEnter2D(Collider2D other)
         {
-            _currentPos = transform.position;
+            CurrentPos = transform.position;
             Spawn();
             Jump();
         }
@@ -25,7 +25,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
 
         protected void SpawnEnemy(string enemyTag, Vector2 relativePos)
         {
-            var pos = _currentPos + relativePos;
+            var pos = CurrentPos + relativePos;
             var instance = EnemyPool.Get(enemyTag, pos);
             instance.SetActive(true);
         }
