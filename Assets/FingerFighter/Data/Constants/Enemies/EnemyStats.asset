@@ -105,6 +105,7 @@ MonoBehaviour:
   - {fileID: 3323213088945303508}
   - {fileID: 4430819533194483818}
   - {fileID: 6527744406199669517}
+  - {fileID: 7693426959447353640}
 --- !u!114 &3323213088945303508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +190,24 @@ MonoBehaviour:
   collisionDamage: 3
   gizmoColor: {r: 0.47450984, g: 0.13333334, b: 0.54509807, a: 1}
   gizmoIcon: {fileID: 21300000, guid: 456f2a19775e082419734a633756a408, type: 3}
+--- !u!114 &7693426959447353640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
+  m_Name: TwoTails
+  m_EditorClassIdentifier: 
+  tag: TwoTails
+  prefab: {fileID: 4833485101410928002, guid: a1d9d2007d49bb348a9d94f08f4fd380, type: 3}
+  health: 50
+  points: 350
+  movementSpeed: 4
+  rotationSpeed: 0.4
+  collisionDamage: 5
+  gizmoColor: {r: 1, g: 0.22352943, b: 0.4666667, a: 0}
+  gizmoIcon: {fileID: 21300000, guid: 607ae3d1fb7304e4993aba6dd520692e, type: 3}
