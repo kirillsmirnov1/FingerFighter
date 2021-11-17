@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df35f4a66664717bb45ad9eefa7b49c, type: 3}
+  m_Name: EFP_Dos
+  m_EditorClassIdentifier: 
+  id: 2
+  boss: {fileID: -526747421762644956, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+  formations:
+  - id: 0
+    entries:
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0, y: 2}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -1.9917223, y: -0.9411777}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 1.991722, y: -0.9411777}
+  - id: 1
+    entries:
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0.016728446, y: 0.05592537}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -10.074747, y: -9.977402}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 10.047497, y: -9.978264}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0.017587751, y: -19.826048}
+  - id: 2
+    entries:
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0, y: 2}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -9.471428, y: -5.453602}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 9.471428, y: -5.494782}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -1.9917223, y: -0.9411777}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 1.991722, y: -0.9411777}
+  - id: 3
+    entries:
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -1.5129371, y: -1.9831958}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 8.099753, y: -11.535177}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 8.099753, y: -8.482059}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -8.012659, y: -11.595886}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -8.011799, y: -8.482059}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 1.6017513, y: -17.912624}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -1.5736451, y: -17.912624}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 1.5129377, y: -1.982336}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -0.043979228, y: 0.051642418}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -10.135456, y: -9.916695}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 9.98679, y: -9.978265}
+    - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0.01758784, y: -20.068882}
