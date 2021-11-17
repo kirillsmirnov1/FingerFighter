@@ -7,11 +7,12 @@ namespace FingerFighter.Control.Combat.Flow
         private class Room : State
         {
             private float _durationLeft;
-            public Room(RunnerFlow flow) : base(flow) { }
+
+            public Room(RunnerFlow flow) : base(flow) 
+                => _durationLeft = Flow.roomDuration;
 
             public override void Enter()
             {
-                _durationLeft = Flow.roomDuration;
                 var formation = Flow.NextFormation;
                 Flow.spawn.Spawn(formation);
                 RoomEntered($"{Flow._currentPack} : {formation.id}");

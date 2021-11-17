@@ -7,13 +7,14 @@ namespace FingerFighter.Control.Combat.Flow
         private class Rest : State
         {
             private float _durationLeft;
-            
-            public Rest(RunnerFlow flow) : base(flow) { }
+
+            public Rest(RunnerFlow flow) : base(flow) 
+                => _durationLeft = Flow.restDuration;
+
             public override void NoEnemiesLeft() { }
             
             public override void Enter()
             {
-                _durationLeft = Flow.restDuration;
                 RoomEntered("REST");
             }
 
