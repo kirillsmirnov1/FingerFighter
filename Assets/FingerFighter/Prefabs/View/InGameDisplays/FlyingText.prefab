@@ -52,49 +52,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1593544413518964787}
   duration: 3
-  speed: 1
-  textAlphaCurve:
+  textAlpha:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0.0025504676
-      outSlope: 0.0025504676
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.25136864
-      value: 1.0006411
-      inSlope: 0.016694278
-      outSlope: 0.016694278
+      time: 0.15
+      value: 1
+      inSlope: -0.06658452
+      outSlope: -0.06658452
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.1906609
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.90186715
-      value: 0.3941676
-      inSlope: -1.2100242
-      outSlope: -1.2100242
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.045785014
-      outWeight: 0.30045566
+      inWeight: 0.33333334
+      outWeight: 0.04167187
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -4.0166736
-      outSlope: -4.0166736
-      tangentMode: 34
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  speed: 1.5
 --- !u!23 &1593544413518964784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -225,5 +216,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1593544413518964784}
   m_maskType: 0
+  _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0

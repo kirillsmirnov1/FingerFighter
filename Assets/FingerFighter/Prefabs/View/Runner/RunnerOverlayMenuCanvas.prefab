@@ -148,6 +148,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2426328540576461534}
+  duration: 3
+  textAlpha:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.0060252706
+      outSlope: 0.0060252706
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.50154686
+      value: 1.003022
+      inSlope: 0.020977281
+      outSlope: 0.020977281
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.101400316
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0007324
+      value: -0.002357483
+      inSlope: -2.0140395
+      outSlope: -2.0140395
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &4332243332402111496
 PrefabInstance:
   m_ObjectHideFlags: 0

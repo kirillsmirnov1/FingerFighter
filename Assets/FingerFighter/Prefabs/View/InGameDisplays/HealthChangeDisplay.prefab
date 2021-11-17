@@ -50,44 +50,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4768c5025634992838b4ae15c973b18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 0}
   text: {fileID: 8410578476383169751}
   duration: 1
-  textTransparency:
+  textAlpha:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0014154282
-      value: 0.0047169924
-      inSlope: 20.485577
-      outSlope: 20.485577
+      time: 0
+      value: 1
+      inSlope: 0.008715145
+      outSlope: 0.008715145
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.05
-      value: 1
-      inSlope: 0.012489513
-      outSlope: 0.012489513
+      time: 0.15210387
+      value: 1.0013256
+      inSlope: -0.015868815
+      outSlope: -0.015868815
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.023087015
+      inWeight: 0.6112494
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.49974206
-      value: 1.0017159
-      inSlope: 0.02070185
-      outSlope: 0.02070185
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.059287105
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -2.0023987
-      outSlope: -2.0023987
+      time: 1.0007324
+      value: -0.0047187805
+      inSlope: -1.1854944
+      outSlope: -1.1854944
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -95,6 +85,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  health: {fileID: 0}
 --- !u!114 &8410578476383169751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +175,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3139498573221523094}
   m_maskType: 0
+  _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
 --- !u!23 &3139498573221523094

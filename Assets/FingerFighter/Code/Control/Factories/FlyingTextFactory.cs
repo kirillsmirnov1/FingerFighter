@@ -5,7 +5,7 @@ using FingerFighter.Control.Combat.Status;
 using FingerFighter.Model.Combat;
 using FingerFighter.Model.Combat.Damage;
 using FingerFighter.Model.ViewData;
-using FingerFighter.View.Ui;
+using FingerFighter.View.TextColorAnim;
 using UnityEngine;
 
 namespace FingerFighter.Control.Factories
