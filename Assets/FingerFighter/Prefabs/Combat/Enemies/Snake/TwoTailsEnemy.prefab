@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69401f6fb6324df98948c3366295703e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: {fileID: 4833485101410927756}
   type: 1
   transformComponent: {fileID: 4714342100875897970}
   transformVariable: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
-  id: {fileID: 4833485101410927756}
 --- !u!1 &1639566033733937695
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,10 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69401f6fb6324df98948c3366295703e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: {fileID: 4833485101410927756}
   type: 1
   transformComponent: {fileID: 4714342100875897970}
   transformVariable: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
-  id: {fileID: 4833485101410927756}
 --- !u!1 &4833485101410928002
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 4833485101410927756}
   - component: {fileID: 4833485101410927843}
   - component: {fileID: 4833485101410927782}
+  - component: {fileID: 1371100280330666567}
   m_Layer: 0
   m_Name: TwoTailsEnemy
   m_TagString: Untagged
@@ -167,7 +168,7 @@ MonoBehaviour:
   id: {fileID: 4833485101410927756}
   isSegment: 0
   isProjectile: 0
-  deathPosTransform: {fileID: 5926555280072218785}
+  deathPosTransform: {fileID: 4714342100875897970}
 --- !u!114 &4833485101410927782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +182,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseHealth: 0
+--- !u!114 &1371100280330666567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833485101410928002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba609abcf8fc4f94c8cc7d1a1d4968c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &842472761285217408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -652,9 +665,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7340352278540750819, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_Name
-      value: HeadSnakeSegment
+      value: TwoTailHead
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6697019454327140876, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
 --- !u!4 &4714342100875897970 stripped
 Transform:
