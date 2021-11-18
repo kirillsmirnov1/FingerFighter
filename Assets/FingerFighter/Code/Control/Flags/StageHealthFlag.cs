@@ -13,6 +13,7 @@ namespace FingerFighter.Control.Flags
 
         private void OnEnable()
         {
+            CheckStageHealthsOnDepletion();
             for (int i = 0; i < stageHealths.Length; i++)
             {
                 stageHealths[i].onNoHealth += CheckStageHealthsOnDepletion;
