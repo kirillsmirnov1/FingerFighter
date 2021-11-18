@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace FingerFighter.Control.Flags
+namespace FingerFighter.Control.Conditions.Flags
 {
     public abstract class AFlag : MonoBehaviour
     {

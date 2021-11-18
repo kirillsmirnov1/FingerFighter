@@ -2,7 +2,7 @@
 using FingerFighter.Control.Combat.Health;
 using UnityEngine;
 
-namespace FingerFighter.Control.Flags
+namespace FingerFighter.Control.Conditions.Flags
 {
     /// <summary>
     /// On while all stageHealths are on 
