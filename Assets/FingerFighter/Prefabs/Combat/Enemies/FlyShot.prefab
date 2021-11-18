@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
       propertyPath: shotDelay
-      value: 0.4
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
       propertyPath: arcFromTo.x
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7077486950152932746, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
       propertyPath: m_Name
-      value: Boss_SpikeFlies
+      value: FlyShot
       objectReference: {fileID: 0}
     - target: {fileID: 7264015798258832955, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
       propertyPath: id
