@@ -39,7 +39,6 @@ namespace FingerFighter.Control.Scenes
 
         private void OnClick()
         {
-            Debug.Log($"Clicked on {sceneNameReference.sceneName} button");
             SceneManager.LoadScene(sceneNameReference.sceneName);
         }
     }
