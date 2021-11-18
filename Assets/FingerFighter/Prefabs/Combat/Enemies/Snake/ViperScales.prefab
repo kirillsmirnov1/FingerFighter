@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 4176904084525418266, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     - target: {fileID: 5628503915625463350, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_Radius
-      value: 1.3
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 6317527418233840728, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_RootOrder
@@ -53,11 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6317527418233840728, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6317527418233840728, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6317527418233840728, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -119,5 +119,55 @@ PrefabInstance:
       propertyPath: m_Name
       value: ViperScales
       objectReference: {fileID: 0}
+    - target: {fileID: 9144044292352986796, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: damageBlockers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9144044292352986796, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: damageBlockers.Array.data[0]
+      value: 
+      objectReference: {fileID: 8646458446534542630}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+--- !u!1 &8883713668583901626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7340352278540750819, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+  m_PrefabInstance: {fileID: 2204337207439738457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1267362030766454243 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1081411534119875514, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+  m_PrefabInstance: {fileID: 2204337207439738457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3290960861497953130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883713668583901626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266052c7bbe6477789f1daa5382eee57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flag: {fileID: 8646458446534542630}
+  spriteRenderer: {fileID: 1267362030766454243}
+  onSprite: {fileID: 21300000, guid: 3e5475faae8b9a74db64b67f3493fe8f, type: 3}
+  offSprite: {fileID: 21300000, guid: 1ae29aef0c1645d418479ed438e71bac, type: 3}
+--- !u!114 &8646458446534542630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883713668583901626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd341e07511452b93e4b09d5e96b52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageHealths:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
