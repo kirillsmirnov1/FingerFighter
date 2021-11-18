@@ -8,7 +8,6 @@ namespace FingerFighter.Control.Enemies.Snake
 
         // TODO lock health until tails are dead
         // TODO position subheads on enable
-        // TODO move head segment towards player 
 
         private void OnEnable()
         {
