@@ -1,7 +1,6 @@
 ﻿using System;
 using FingerFighter.Model.Combat;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityUtils.Attributes;
 using UnityUtils.Variables;
 
@@ -25,11 +24,22 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private void Awake()
         {
-            Target = type switch {
+            InitTarget();
+        }
+
+        public void InitTarget()
+        {
+            Target = type switch
+            {
                 TargetTransformType.Variable => transformVariable.Value,
                 TargetTransformType.Component => transformComponent,
                 _ => throw new ArgumentOutOfRangeException()
             };
+        }
+
+        public void MoveToTargetPos()
+        {
+            transform.position = Target.position;
         }
 
         private void OnEnable()
