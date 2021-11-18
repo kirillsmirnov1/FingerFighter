@@ -68,10 +68,10 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private void InitSegmentPositions()
         {
-            var gap = -transform.up * _segments[0].GetComponent<CircleCollider2D>().radius * 2;
-            for (int i = 0; i < _segments.Length; i++)
+            var gap = -_segments[0].transform.up * _segments[0].GetComponent<CircleCollider2D>().radius * 2;
+            for (int i = 1; i < _segments.Length; i++)
             {
-                _segments[i].transform.localPosition = Vector3.zero + gap * i;
+                _segments[i].transform.localPosition = gap * i;
             }
         }
 
