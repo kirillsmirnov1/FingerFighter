@@ -106,6 +106,7 @@ MonoBehaviour:
   - {fileID: 4430819533194483818}
   - {fileID: 6527744406199669517}
   - {fileID: 7693426959447353640}
+  - {fileID: 4900934111517240449}
 --- !u!114 &3323213088945303508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,6 +168,27 @@ MonoBehaviour:
   movementSpeed: 100
   rotationSpeed: 0
   collisionDamage: 10
+  gizmoColor: {r: 0, g: 0, b: 0, a: 0}
+  gizmoIcon: {fileID: 0}
+--- !u!114 &4900934111517240449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8622121e9742f3b3cc7bf5031377ed, type: 3}
+  m_Name: TwoTails_Segment
+  m_EditorClassIdentifier: 
+  tag: TwoTails_Segment
+  prefab: {fileID: 0}
+  health: 50
+  points: 0
+  movementSpeed: 30
+  rotationSpeed: 0.8
+  collisionDamage: 5
   gizmoColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoIcon: {fileID: 0}
 --- !u!114 &6527744406199669517
