@@ -121,3 +121,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+--- !u!1 &3432435433514336836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_PrefabInstance: {fileID: 7018976011654019832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8321217783572822779 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1302259381993553923, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_PrefabInstance: {fileID: 7018976011654019832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432435433514336836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5f9f44770b4388bedfc9353c979701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &6491913280614711030 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_PrefabInstance: {fileID: 7018976011654019832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &361072766526470441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432435433514336836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a300285ef7c0468cb77b5b5d9b1201f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: {fileID: 8321217783572822779}
+  rb: {fileID: 6491913280614711030}
+  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+--- !u!114 &2061975145203726888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432435433514336836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c55aa70a9384e7886202108545ade88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: {fileID: 8321217783572822779}
+  rb: {fileID: 6491913280614711030}
+  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  angleOffset: -90

@@ -1,43 +1,30 @@
 ﻿using System;
-using FingerFighter.Model.Combat;
 using UnityEngine;
-using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Enemies.Behaviour
 {
-    public class MoveTowardsPlayerWhileInvisible : MonoBehaviour
+    public class MoveTowardsPlayerWhileInvisible : AEnemyBehaviour
     {
-        [SerializeField] private TransformVariable player;
-        [SerializeField] private Rigidbody2D rb;
-        [SerializeField] private CombatEntityId id;
+        private Action _action;
 
-        private EnemyStats _stats;
-        private Action _onFixedUpdate;
-        private Transform _player;
-        private Transform _self;
-
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             OnBecameInvisible();
-            _player = player.Value;
-            _self = transform;
-            _stats = id.EnemyStats;
         }
 
         private void OnBecameVisible() 
-            => _onFixedUpdate = null;
+            => _action = null;
         private void OnBecameInvisible() 
-            => _onFixedUpdate = Move;
+            => _action = Move;
 
-        private void FixedUpdate()
-        {
-            _onFixedUpdate?.Invoke();
-        }
-        
+        protected override void Apply() 
+            => _action?.Invoke();
+
         private void Move()
         {
-            Vector2 direction = (_player.position - _self.position).normalized;
-            rb.velocity += _stats.movementSpeed * direction;
+            Vector2 direction = (Player.position - Self.position).normalized;
+            rb.velocity += Stats.movementSpeed * direction;
         }
     }
 }

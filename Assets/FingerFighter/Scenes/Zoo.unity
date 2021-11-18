@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3432435433514336836, guid: 18eedc65fec292a428e10d2e7cf50444, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eedc65fec292a428e10d2e7cf50444, type: 3}
 --- !u!4 &25220194 stripped
@@ -707,6 +711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake3Enemy  (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6184310394750562119, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6184310394750562157, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -838,6 +846,10 @@ PrefabInstance:
     - target: {fileID: 6184310394750562119, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
       propertyPath: m_Name
       value: Snake3Enemy  (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184310394750562119, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6184310394750562157, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
       propertyPath: m_RootOrder
@@ -1050,6 +1062,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6beaff1c1903b704a968e6e66527adc6, type: 3}
+--- !u!114 &2135187324 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4530861235688142133, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+  m_PrefabInstance: {fileID: 3238743766985084954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5f9f44770b4388bedfc9353c979701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &2135187325 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1697247444425519416, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+  m_PrefabInstance: {fileID: 3238743766985084954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1301069036925141624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1224,6 +1252,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes
       objectReference: {fileID: 0}
+    - target: {fileID: 7264015798258832955, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: id
+      value: 
+      objectReference: {fileID: 2135187324}
+    - target: {fileID: 7264015798258832955, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 2135187325}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
 --- !u!4 &6184310395173931723 stripped

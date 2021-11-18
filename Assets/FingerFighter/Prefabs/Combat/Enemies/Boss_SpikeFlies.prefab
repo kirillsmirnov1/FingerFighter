@@ -107,5 +107,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_SpikeFlies
       objectReference: {fileID: 0}
+    - target: {fileID: 7264015798258832955, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: id
+      value: 
+      objectReference: {fileID: 7189044317641601768}
+    - target: {fileID: 7264015798258832955, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 5379992242167101157}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+--- !u!114 &7189044317641601768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4530861235688142133, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+  m_PrefabInstance: {fileID: 6711568502887942109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5f9f44770b4388bedfc9353c979701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &5379992242167101157 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1697247444425519416, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+  m_PrefabInstance: {fileID: 6711568502887942109}
+  m_PrefabAsset: {fileID: 0}

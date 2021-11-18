@@ -3,14 +3,18 @@ using UnityEngine;
 
 namespace FingerFighter.Control.Enemies.Behaviour
 {
-    [CreateAssetMenu(menuName = "EnemyBehaviour/RotateTowardsPlayer", fileName = "RotateTowardsPlayer", order = 0)]
     public class RotateTowardsPlayer : AEnemyBehaviour
     {
-        public override void Apply(EnemyBehaviourMachine enemy)
+        [SerializeField] public float angleOffset = -90;
+
+        protected override void Apply()
         {
-            var desiredRotation = QuaternionExt.LookRotation2D(enemy.directionToPlayer, enemy.angleOffset);
-            var nextRotation = Quaternion.Slerp(enemy.transform.rotation, desiredRotation, enemy.Stats.rotationSpeed); 
-            enemy.transform.rotation = nextRotation;
+            var desiredRotation = QuaternionExt.LookRotation2D(DirectionToPlayer, angleOffset);
+            var nextRotation = Quaternion.Slerp(Self.rotation, desiredRotation, Stats.rotationSpeed); 
+            Self.rotation = nextRotation;
         }
+
+        private Vector2 DirectionToPlayer 
+            => (Player.position - Self.position).normalized;
     }
 }
