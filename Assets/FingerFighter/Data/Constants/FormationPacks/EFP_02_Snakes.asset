@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2df35f4a66664717bb45ad9eefa7b49c, type: 3}
-  m_Name: EFP_Dos
+  m_Name: EFP_02_Snakes
   m_EditorClassIdentifier: 
   id: 2
   boss: {fileID: -526747421762644956, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}

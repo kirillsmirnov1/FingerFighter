@@ -2656,7 +2656,7 @@ GameObject:
   - component: {fileID: 776832938}
   - component: {fileID: 776832939}
   m_Layer: 0
-  m_Name: EFP_Uno
+  m_Name: EFP_01_Flies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2778,7 +2778,7 @@ GameObject:
   - component: {fileID: 882258705}
   - component: {fileID: 882258706}
   m_Layer: 0
-  m_Name: EFP_Dos
+  m_Name: EFP_02_Snakes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
