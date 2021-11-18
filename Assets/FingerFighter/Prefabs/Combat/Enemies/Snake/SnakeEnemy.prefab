@@ -71,6 +71,7 @@ MonoBehaviour:
   health: {fileID: 8611005736955571769}
   id: {fileID: 6832915485324401256}
   isSegment: 0
+  isProjectile: 0
   deathPosTransform: {fileID: 1237548405309726053}
 --- !u!114 &8611005736955571769
 MonoBehaviour:
@@ -97,21 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69401f6fb6324df98948c3366295703e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
   id: {fileID: 6832915485324401256}
---- !u!114 &3800230010172213305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8623325848391461889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d967e9152154a8a91d86bb24a932690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snakeHead: {fileID: 4643626372681247921}
+  type: 0
+  transformComponent: {fileID: 0}
+  transformVariable: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
 --- !u!1001 &1423006096115552962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -660,6 +650,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6453176833594790945, guid: 2484716c0565e144a81cab33e03ed51c, type: 3}
   m_PrefabInstance: {fileID: 5234006936967760196}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3800230010172213305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8623325848391461889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d967e9152154a8a91d86bb24a932690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snakeHead: {fileID: 4643626372681247921}
 --- !u!1001 &6533917855297099467
 PrefabInstance:
   m_ObjectHideFlags: 0
