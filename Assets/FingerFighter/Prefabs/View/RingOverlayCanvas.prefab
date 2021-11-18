@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: high score
+  m_text: best score
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f9c17ca4bf4bd5045a44c18159217dc4, type: 2}
   m_sharedMaterial: {fileID: -5582463615599203063, guid: f9c17ca4bf4bd5045a44c18159217dc4, type: 2}
@@ -231,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398864685912628422, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
       propertyPath: m_Name
-      value: RingOverlayCanvas Variant
+      value: RingOverlayCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 9076361307643165586, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
       propertyPath: m_IsActive
