@@ -171,3 +171,28 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &5821539465252413711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883713668583901626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbf5570f74c40b2a17f32e8b0343d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotDelay: 1
+  afterShotRotation: 0
+  projectileType: {fileID: 3323213088945303508, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+  projectileImpulse: 10
+  rotationMode: 0
+  arcFromTo: {x: 225, y: 315}
+  shotAngles:
+  - 0
+  - 45
+  - -45
+  - 180
+  - 225
+  - 135
