@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EFP_02_Snakes
   m_EditorClassIdentifier: 
   id: 2
-  boss: {fileID: -526747421762644956, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+  boss: {fileID: 4176904084525418266, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
   formations:
   - id: 1
     entries:
