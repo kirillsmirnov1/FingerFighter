@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8611005736955571769}
   - component: {fileID: 4643626372681247921}
   m_Layer: 0
-  m_Name: SnakeEnemy
+  m_Name: Snake6Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
