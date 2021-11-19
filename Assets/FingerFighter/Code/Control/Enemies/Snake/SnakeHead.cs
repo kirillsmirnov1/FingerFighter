@@ -80,6 +80,7 @@ namespace FingerFighter.Control.Enemies.Snake
             for (int i = 0; i < _segments.Length; i++)
             {
                 _segments[i].gameObject.SetActive(true);
+                _segments[i].enabled = true;
             }
         }
 

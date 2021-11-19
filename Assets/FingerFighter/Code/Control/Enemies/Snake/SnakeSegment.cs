@@ -14,9 +14,9 @@ namespace FingerFighter.Control.Enemies.Snake
         private Transform _target;
         private float _movementSpeed;
         private float _rotationSpeed;
-        public bool IsHead { get; private set; }
+        public bool IsHead { get; protected set; }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             Init();
         }
@@ -27,7 +27,7 @@ namespace FingerFighter.Control.Enemies.Snake
             OnSegmentLoss();
         }
 
-        private void OnSegmentLoss()
+        protected void OnSegmentLoss()
         {
             FixSegmentsConnection();
         }
@@ -53,7 +53,7 @@ namespace FingerFighter.Control.Enemies.Snake
             SetParams();
         }
 
-        private void SetTarget()
+        protected virtual void SetTarget()
         {
             IsHead = previous == null;
             _target = IsHead ? head.Target : previous.transform;
