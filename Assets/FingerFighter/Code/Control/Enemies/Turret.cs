@@ -26,13 +26,14 @@ namespace FingerFighter.Control.Enemies
 
         private void OnDrawGizmos()
         {
+            var localRotation = transform.rotation.eulerAngles.z + _rotation;
             switch (rotationMode)
             {
                 case RotationMode.Circular:
                     Gizmos.color = Color.yellow;
                     for (int i = 0; i < shotAngles.Length; i++)
                     {
-                        Gizmos.DrawLine(transform.position, SpawnPos(_rotation + shotAngles[i]));
+                        Gizmos.DrawLine(transform.position, SpawnPos(localRotation + shotAngles[i]));
                     }
                     break;
                 case RotationMode.Arc:
@@ -43,9 +44,9 @@ namespace FingerFighter.Control.Enemies
                     for (int i = 0; i < shotAngles.Length; i++)
                     {
                         if(Application.isPlaying)
-                            Gizmos.DrawLine(transform.position, SpawnPos(_rotation + shotAngles[i]));
+                            Gizmos.DrawLine(transform.position, SpawnPos(localRotation + shotAngles[i]));
                         else
-                            Gizmos.DrawLine(transform.position, SpawnPos(_rotation + shotAngles[i] + arcFromTo.x));
+                            Gizmos.DrawLine(transform.position, SpawnPos(localRotation + shotAngles[i] + arcFromTo.x));
                     }
                     break;
             }
