@@ -98,9 +98,10 @@ namespace FingerFighter.Control.Enemies
 
         private void MakeAShot()
         {
+            var turretRotation = transform.rotation.eulerAngles.z;
             for (var i = 0; i < shotAngles.Length; i++)
             {
-                var rotation = _rotation + shotAngles[i];
+                var rotation = _rotation + turretRotation + shotAngles[i];
                 var impulse = projectileImpulse * Vector2Ext.DegreeToVector2(rotation);
                 
                 var newShot = EnemyPool.Get(projectileType.tag, SpawnPos(rotation));
