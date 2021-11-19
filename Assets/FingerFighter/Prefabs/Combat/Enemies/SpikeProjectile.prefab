@@ -132,6 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5f9f44770b4388bedfc9353c979701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &1783804654233097007 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2600201135451604197, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_PrefabInstance: {fileID: 4383301811929978826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &552566178718389188 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
@@ -203,7 +208,7 @@ MonoBehaviour:
   id: {fileID: 3370403104444700617}
   hitDataProvider: {fileID: 8894026298759312256}
   parentTurret: {fileID: 0}
---- !u!114 &1286737377767166670
+--- !u!114 &1947840213636329113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,5 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f314f1f8cb2497ca1769cd8b74132ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1783804654233097007}
   hitProvider: {fileID: 694344228457108285}
   rb: {fileID: 552566178718389188}

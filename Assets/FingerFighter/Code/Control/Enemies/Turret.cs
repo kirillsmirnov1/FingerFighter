@@ -14,6 +14,7 @@ namespace FingerFighter.Control.Enemies
         [SerializeField] private float afterShotRotation = 10;
         [SerializeField] private EnemyStats projectileType;
         [SerializeField] private float projectileImpulse = 10;
+        [SerializeField] private Color projectileColor;
         [SerializeField] private RotationMode rotationMode;
         [ConditionalField("rotationMode", compareValues: new object[] {RotationMode.Arc})]
         [SerializeField] private Vector2 arcFromTo = new Vector2(225, 315);
@@ -48,6 +49,12 @@ namespace FingerFighter.Control.Enemies
                     }
                     break;
             }
+        }
+
+        private void OnValidate()
+        {
+            if(projectileColor.a == 0)
+                projectileColor = GetComponent<SpriteRenderer>().color;
         }
 
         private void OnEnable()
@@ -116,6 +123,7 @@ namespace FingerFighter.Control.Enemies
                 {
                     newProjectile.Init(
                         gameObject, 
+                        projectileColor,
                         impulse,
                         rotation - 90
                         );
