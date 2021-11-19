@@ -20,6 +20,7 @@ namespace FingerFighter.Control.Enemies
         
         private float _rotation;
         private float _timeForANextShot;
+        private Action _incrementRotation;
 
         private void OnDrawGizmos()
         {
@@ -48,8 +49,6 @@ namespace FingerFighter.Control.Enemies
             }
         }
 
-        private Action _incrementRotation;
-        
         private void Awake()
         {
             _incrementRotation = rotationMode switch
