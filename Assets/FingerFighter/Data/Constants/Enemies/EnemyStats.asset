@@ -166,7 +166,7 @@ MonoBehaviour:
   prefab: {fileID: 465813981547213348, guid: 165e32e741a954e45b22ae2c5e42bc7c, type: 3}
   health: 70
   points: 1000
-  movementSpeed: 4
+  movementSpeed: 40
   rotationSpeed: 0.2
   collisionDamage: 10
   gizmoColor: {r: 0, g: 1, b: 1, a: 1}
