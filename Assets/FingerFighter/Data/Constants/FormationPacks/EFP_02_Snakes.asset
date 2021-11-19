@@ -46,7 +46,7 @@ MonoBehaviour:
   - id: 5
     entries:
     - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-      pos: {x: 0.00000059604645, y: -3.3553538}
+      pos: {x: 0, y: -2.3011441}
     - enemy: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
       pos: {x: -3.3994737, y: -19.590393}
     - enemy: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
@@ -70,11 +70,11 @@ MonoBehaviour:
   - id: 8
     entries:
     - enemy: {fileID: 7693426959447353640, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-      pos: {x: 0.036489487, y: -3.7567248}
+      pos: {x: -0.055180468, y: -3.0691972}
   - id: 9
     entries:
     - enemy: {fileID: 7693426959447353640, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-      pos: {x: -0.042123973, y: -15.612583}
+      pos: {x: 0.0037115319, y: -16.025099}
   - id: 10
     entries:
     - enemy: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}

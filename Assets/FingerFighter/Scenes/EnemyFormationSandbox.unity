@@ -905,11 +905,11 @@ PrefabInstance:
       objectReference: {fileID: 7693426959447353640, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.x
-      value: 0.036489487
+      value: -0.055180468
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.y
-      value: -3.7567248
+      value: -3.0691972
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[1].enemy
@@ -6421,11 +6421,11 @@ PrefabInstance:
       objectReference: {fileID: 7693426959447353640, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.x
-      value: -0.042123973
+      value: 0.0037115319
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.y
-      value: -15.612583
+      value: -16.025099
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[1].enemy
@@ -7172,11 +7172,11 @@ PrefabInstance:
       objectReference: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.x
-      value: 0.00000059604645
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.y
-      value: -3.3553538
+      value: -2.3011441
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[1].enemy
