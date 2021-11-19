@@ -24,7 +24,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
         private void Move()
         {
             Vector2 direction = (Player.position - Self.position).normalized;
-            rb.velocity += Stats.movementSpeed * direction;
+            rb.AddForce(Stats.movementSpeed * direction, ForceMode2D.Force);
         }
     }
 }
