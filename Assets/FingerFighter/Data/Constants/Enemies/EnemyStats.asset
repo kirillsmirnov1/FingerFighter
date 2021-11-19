@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tag: Viper
   prefab: {fileID: 465813981547213348, guid: 165e32e741a954e45b22ae2c5e42bc7c, type: 3}
-  health: 70
+  health: 200
   points: 1000
   movementSpeed: 40
   rotationSpeed: 0.2
