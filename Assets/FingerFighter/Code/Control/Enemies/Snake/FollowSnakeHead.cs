@@ -8,7 +8,7 @@ namespace FingerFighter.Control.Enemies.Snake
         
         private void Update()
         {
-            transform.position = snakeHead.HeadSegment().position;
+            transform.position = snakeHead.HeadSegment.position;
         }
     }
 }

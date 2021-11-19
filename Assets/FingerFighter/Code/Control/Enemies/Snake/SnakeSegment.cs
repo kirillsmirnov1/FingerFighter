@@ -34,17 +34,19 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private void FixSegmentsConnection()
         {
-            if (previous != null)
+            if (previous != null && previous.gameObject.activeSelf)
             {
                 previous.next = next;
                 previous.Init();
             }
 
-            if (next != null)
+            if (next != null && next.gameObject.activeSelf)
             {
                 next.previous = previous;
                 next.Init();
             }
+            
+            head.UpdateHeadSegment();
         }
 
         private void Init()

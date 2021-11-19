@@ -18,6 +18,7 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private SnakeSegment[] _segments;
         public Transform Target { get; private set; }
+        public Transform HeadSegment { get; private set; }
 
         public float MovementSpeed => id.EnemyStats.movementSpeed;
         public float RotationSpeed => id.EnemyStats.rotationSpeed;
@@ -53,6 +54,7 @@ namespace FingerFighter.Control.Enemies.Snake
             InitSegmentChain();
             InitSegmentPositions();
             SetSegmentsActive();
+            UpdateHeadSegment();
         }
 
         private void InitSegmentChain()
@@ -84,13 +86,25 @@ namespace FingerFighter.Control.Enemies.Snake
             }
         }
 
-        public Transform HeadSegment()
+        public void UpdateHeadSegment()
         {
             for (int i = 0; i < _segments.Length; i++)
             {
-                if (_segments[i].IsHead) return _segments[i].transform;
+                if (_segments[i].IsHead)
+                {
+                    HeadSegment = _segments[i].transform;
+                    return;
+                }
             }
-            return _segments[0].transform;
+            for (int i = 0; i < _segments.Length; i++)
+            {
+                if (_segments[i].gameObject.activeSelf)
+                {
+                    HeadSegment = _segments[i].transform;
+                    return;
+                }
+            }
+            HeadSegment = _segments[0].transform;
         }
 
         public enum TargetTransformType
