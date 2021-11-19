@@ -9,6 +9,7 @@ namespace FingerFighter.Control.Enemies
 {
     public class Turret : MonoBehaviour
     {
+        [SerializeField] private float startDelay;
         [SerializeField] private float shotDelay = .3f;
         [SerializeField] private float afterShotRotation = 10;
         [SerializeField] private EnemyStats projectileType;
@@ -47,6 +48,11 @@ namespace FingerFighter.Control.Enemies
                     }
                     break;
             }
+        }
+
+        private void OnEnable()
+        {
+            _timeForANextShot = Time.time + startDelay;
         }
 
         private void Awake()
