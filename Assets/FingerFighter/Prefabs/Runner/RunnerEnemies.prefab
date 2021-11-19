@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomDuration: 25
-  restDuration: 25
+  restDuration: 10
   spawn: {fileID: 1084927433933010853}
   enemyProvider: {fileID: 11400000, guid: 351ff579f73a452489d45f8ad7e079b8, type: 2}
 --- !u!114 &1084927433263730647
