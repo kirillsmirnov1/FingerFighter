@@ -9,6 +9,12 @@ namespace FingerFighter.View.TextColorAnim
     {
         [SerializeField] private AHealth health;
 
+        protected override void OnValidate()
+        {
+            base.OnValidate();
+            health ??= GetComponentInParent<AHealth>();
+        }
+
         protected void Awake()
         {
             health.onHealthChange += DisplayHealthChange;

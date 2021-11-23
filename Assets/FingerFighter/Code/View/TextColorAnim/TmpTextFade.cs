@@ -14,7 +14,7 @@ namespace FingerFighter.View.TextColorAnim
 
         protected bool ShowTimeIsOver => _durationLeft < 0.00001f;
 
-        private void OnValidate() 
+        protected virtual void OnValidate() 
             => text = GetComponent<TMP_Text>();
 
         private void OnEnable()
