@@ -17,7 +17,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         private void InitValues()
         {
             _camera = Camera.main;
-            _jumpToCameraGap = new Vector2(0, _camera.orthographicSize) + jumpDirection / 2;
+            _jumpToCameraGap = new Vector2(0, _camera.orthographicSize * 2f);
         }
 
         public void Spawn(EnemyFormation formation)
@@ -34,9 +34,5 @@ namespace FingerFighter.Control.Factories.EnemySpawn
             var newPos = (Vector2) _camera.transform.position + _jumpToCameraGap;
             CurrentPos = transform.position = newPos;
         }
-
-        protected override void OnTriggerEnter2D(Collider2D other) { }
-
-        protected override void Spawn() { }
     }
 }

@@ -25,12 +25,5 @@ namespace FingerFighter.Control.Factories.EnemySpawn
             if (!gameObject.activeSelf) return;
             this.DelayAction(respawnDelay, () => SpawnEnemy(deathData.Tag, deathData.DeathPos));
         }
-
-        protected override void Spawn() { }
-
-        protected override void OnTriggerEnter2D(Collider2D other)
-        {
-            // No need to react to camera on ring 
-        }
     }
 }
