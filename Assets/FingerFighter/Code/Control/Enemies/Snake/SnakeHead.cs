@@ -1,4 +1,5 @@
 ﻿using System;
+using FingerFighter.Control.Combat.Status;
 using FingerFighter.Model.Combat;
 using UnityEngine;
 using UnityUtils.Attributes;
@@ -9,6 +10,7 @@ namespace FingerFighter.Control.Enemies.Snake
     public class SnakeHead : MonoBehaviour
     {
         [SerializeField] private CombatEntityId id;
+        [SerializeField] private EnemyStatus status;
         
         [SerializeField] private TargetTransformType type;
         [ConditionalField("type", compareValues: new object[]{TargetTransformType.Component})]
@@ -87,23 +89,27 @@ namespace FingerFighter.Control.Enemies.Snake
 
         public void UpdateHeadSegment()
         {
-            for (int i = 0; i < _segments.Length; i++)
+            HeadSegment = NewHeadSegment();
+            if (status != null) status.deathPosTransform = HeadSegment;
+        }
+
+        private Transform NewHeadSegment()
+        {
+            for (var i = 0; i < _segments.Length; i++)
             {
                 if (_segments[i].IsHead)
                 {
-                    HeadSegment = _segments[i].transform;
-                    return;
+                    return _segments[i].transform;
                 }
             }
-            for (int i = 0; i < _segments.Length; i++)
+            for (var i = 0; i < _segments.Length; i++)
             {
                 if (_segments[i].gameObject.activeSelf)
                 {
-                    HeadSegment = _segments[i].transform;
-                    return;
+                    return _segments[i].transform;
                 }
             }
-            HeadSegment = _segments[0].transform;
+            return _segments[0].transform;
         }
 
         public enum TargetTransformType

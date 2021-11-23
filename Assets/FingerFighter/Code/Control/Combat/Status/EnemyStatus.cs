@@ -9,7 +9,7 @@ namespace FingerFighter.Control.Combat.Status
     {
         [SerializeField] private bool isSegment;
         [SerializeField] private bool isProjectile;
-        [SerializeField] private Transform deathPosTransform;
+        [SerializeField] public Transform deathPosTransform;
 
         public static event Action OnSpawn;
         /// <summary>
