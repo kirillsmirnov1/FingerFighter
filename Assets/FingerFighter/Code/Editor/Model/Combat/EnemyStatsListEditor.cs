@@ -20,7 +20,7 @@ namespace FingerFighter.Model.Combat
 
                 if (GUILayout.Button("Remove"))
                 {
-                    statsList.Remove(); // TODO remove selected array element 
+                    statsList.Remove(); 
                 }
             }
             GUILayout.EndHorizontal();
