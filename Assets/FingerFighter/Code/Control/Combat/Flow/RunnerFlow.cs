@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using FingerFighter.Control.Combat.Status;
 using FingerFighter.Control.Factories.EnemySpawn;
 using FingerFighter.Model.EnemyFormations;
 using UnityEngine;
@@ -20,24 +22,38 @@ namespace FingerFighter.Control.Combat.Flow
         
         private Queue<EnemyFormation> _formations;
         private string _currentPack;
-        
+        private Action _onUpdate;
+
         private EnemyFormation NextFormation 
             => _formations.Dequeue();
 
-        private void Awake() 
-            => AliveEnemiesCounter.OnNoEnemiesLeftAlive += NoEnemiesLeft;
+        private void Awake()
+        {
+            AliveEnemiesCounter.OnNoEnemiesLeftAlive += NoEnemiesLeft;
+            PlayerStatus.OnDeath += PauseFlow;
+        }
 
-        private void OnDestroy() 
-            => AliveEnemiesCounter.OnNoEnemiesLeftAlive -= NoEnemiesLeft;
+        private void OnDestroy()
+        {
+            AliveEnemiesCounter.OnNoEnemiesLeftAlive -= NoEnemiesLeft;
+            PlayerStatus.OnDeath -= PauseFlow;
+        }
 
         private void OnEnable()
         {
+            ResumeFlow();
             UpdateFormationsQueue();
             NextRoom();
         }
 
+        private void ResumeFlow() 
+            => _onUpdate = () => _state?.Update();
+
+        private void PauseFlow() 
+            => _onUpdate = null;
+
         private void Update() 
-            => _state?.Update();
+            => _onUpdate?.Invoke();
 
         private void UpdateFormationsQueue()
         {
