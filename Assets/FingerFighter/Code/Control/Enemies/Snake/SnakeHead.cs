@@ -21,7 +21,6 @@ namespace FingerFighter.Control.Enemies.Snake
         public Transform HeadSegment { get; private set; }
 
         public float MovementSpeed => id.EnemyStats.movementSpeed;
-        public float RotationSpeed => id.EnemyStats.rotationSpeed;
 
         private void Awake()
         {

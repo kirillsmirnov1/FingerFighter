@@ -13,12 +13,12 @@ namespace FingerFighter.Control.Enemies.Behaviour
         protected EnemyStats Stats => id.EnemyStats;
 
         protected Transform Self;
-        protected Transform Player;
+        protected Transform Target;
         
         protected virtual void Awake()
         {
             Self = transform;
-            Player = player.Value;
+            Target = player.Value;
         }
 
         private void OnValidate()
@@ -30,5 +30,8 @@ namespace FingerFighter.Control.Enemies.Behaviour
         private void FixedUpdate() => Apply();
 
         protected abstract void Apply();
+
+        public void OverrideTarget(Transform target)
+            => Target = target;
     }
 }

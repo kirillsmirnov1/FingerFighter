@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityUtils.Extensions;
+﻿using FingerFighter.Control.Enemies.Behaviour;
+using UnityEngine;
 
 namespace FingerFighter.Control.Enemies.Snake
 {
@@ -7,13 +7,12 @@ namespace FingerFighter.Control.Enemies.Snake
     {
         [SerializeField] private SnakeHead head;
         [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private RotateTowardsTarget rotation;
         
         [HideInInspector] public SnakeSegment previous;
         [HideInInspector] public SnakeSegment next;
         
-        private Transform _target;
         private float _movementSpeed;
-        private float _rotationSpeed;
         public bool IsHead { get; protected set; }
 
         protected virtual void OnEnable()
@@ -58,29 +57,19 @@ namespace FingerFighter.Control.Enemies.Snake
         protected virtual void SetTarget()
         {
             IsHead = previous == null;
-            _target = IsHead ? head.Target : previous.transform;
+            rotation.OverrideTarget(IsHead ? head.Target : previous.transform);
         }
 
         private void SetParams()
         {
             var mod = IsHead ? 1f : 2f;
             _movementSpeed = mod * head.MovementSpeed;
-            _rotationSpeed = head.RotationSpeed;
         }
 
 
         public void FixedUpdate()
         {
-            RotateToTarget();
             MoveForward();
-        }
-
-        private void RotateToTarget()
-        {
-            Vector2 toTarget = _target.position - transform.position;
-            var desiredRotation = QuaternionExt.LookRotation2D(toTarget, -90f);
-            var nextRotation = Quaternion.Slerp(transform.rotation, desiredRotation, _rotationSpeed);
-            rb.MoveRotation(nextRotation);
         }
 
         private void MoveForward()

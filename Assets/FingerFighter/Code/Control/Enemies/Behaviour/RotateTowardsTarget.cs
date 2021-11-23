@@ -3,7 +3,7 @@ using UnityUtils.Extensions;
 
 namespace FingerFighter.Control.Enemies.Behaviour
 {
-    public class RotateTowardsPlayer : AEnemyBehaviour
+    public class RotateTowardsTarget : AEnemyBehaviour
     {
         [SerializeField] public float angleOffset = -90;
 
@@ -22,6 +22,6 @@ namespace FingerFighter.Control.Enemies.Behaviour
             => QuaternionExt.LookRotation2D(DirectionToPlayer, angleOffset);
 
         private Vector2 DirectionToPlayer 
-            => (Player.position - Self.position).normalized;
+            => (Target.position - Self.position).normalized;
     }
 }
