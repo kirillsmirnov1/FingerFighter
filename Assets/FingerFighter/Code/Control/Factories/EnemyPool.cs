@@ -41,7 +41,8 @@ namespace FingerFighter.Control.Factories
                 : Instantiate(_prefabs[enemyTag], _anchor).GetComponent<CombatEntityId>();
 
             obj.transform.position = spawnPos;
-            obj.transform.rotation = quaternion.Euler(0, 0, rotation);
+            if (rotation != 0f)
+                obj.transform.rotation = quaternion.Euler(0, 0, rotation);
 
             return obj;
         }

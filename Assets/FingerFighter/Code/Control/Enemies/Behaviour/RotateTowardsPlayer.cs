@@ -7,12 +7,19 @@ namespace FingerFighter.Control.Enemies.Behaviour
     {
         [SerializeField] public float angleOffset = -90;
 
+        private void OnEnable()
+        {
+            Self.rotation = DesiredRotation;
+        }
+
         protected override void Apply()
         {
-            var desiredRotation = QuaternionExt.LookRotation2D(DirectionToPlayer, angleOffset);
-            var nextRotation = Quaternion.Slerp(Self.rotation, desiredRotation, Stats.rotationSpeed); 
+            var nextRotation = Quaternion.Slerp(Self.rotation, DesiredRotation, Stats.rotationSpeed); 
             Self.rotation = nextRotation;
         }
+
+        private Quaternion DesiredRotation 
+            => QuaternionExt.LookRotation2D(DirectionToPlayer, angleOffset);
 
         private Vector2 DirectionToPlayer 
             => (Player.position - Self.position).normalized;
