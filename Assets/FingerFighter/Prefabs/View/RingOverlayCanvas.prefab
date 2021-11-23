@@ -253,7 +253,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4143355489794063171, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
       propertyPath: m_text
-      value: Run
+      value: Fight
       objectReference: {fileID: 0}
     - target: {fileID: 4143355490249659025, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
       propertyPath: m_Name
