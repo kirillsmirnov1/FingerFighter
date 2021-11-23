@@ -337,13 +337,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 0}
-  rb: {fileID: 1079975434784994568}
   rotation: {fileID: 5174071990211263744}
   movementForward: {fileID: 8142227564492531588}
   previous: {fileID: 0}
   next: {fileID: 0}
-  reserveBehaviours:
-  - {fileID: 3823453769896515446}
+  chainedBehaviour: {fileID: 8142227564492531588}
+  freeBehaviour: {fileID: 3823453769896515446}
 --- !u!114 &8646458446534542630
 MonoBehaviour:
   m_ObjectHideFlags: 0

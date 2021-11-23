@@ -4,11 +4,13 @@ namespace FingerFighter.Control.Enemies.Snake
 {
     public class SnakeSegmentDetachesWhenHead : SnakeSegment
     {
-        [SerializeField] private MonoBehaviour[] reserveBehaviours;
+        [Header("Head detach")]
+        [SerializeField] private MonoBehaviour chainedBehaviour;
+        [SerializeField] private MonoBehaviour freeBehaviour;
 
         protected override void OnEnable()
         {
-            SetReserveBehavioursEnabled(false);
+            SetChainedStatus(true);
             base.OnEnable();
         }
 
@@ -20,16 +22,14 @@ namespace FingerFighter.Control.Enemies.Snake
                 OnSegmentLoss();
                 IsHead = false;
                 enabled = false;
-                SetReserveBehavioursEnabled(true);
+                SetChainedStatus(false);
             }
         }
 
-        private void SetReserveBehavioursEnabled(bool isEnabled)
+        private void SetChainedStatus(bool isChained)
         {
-            for (int i = 0; i < reserveBehaviours.Length; i++)
-            {
-                reserveBehaviours[i].enabled = isEnabled;
-            }
+            chainedBehaviour.enabled = isChained;
+            freeBehaviour.enabled = !isChained;
         }
     }
 }
