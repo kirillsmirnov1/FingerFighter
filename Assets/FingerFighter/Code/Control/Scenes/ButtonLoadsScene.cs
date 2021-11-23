@@ -1,8 +1,8 @@
-﻿using FingerFighter.Model.Scenes;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityUtils.Scenes;
 
 namespace FingerFighter.Control.Scenes
 {

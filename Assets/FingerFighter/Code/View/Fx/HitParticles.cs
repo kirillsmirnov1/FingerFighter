@@ -1,7 +1,7 @@
 ﻿using FingerFighter.Control.Combat.Damage;
 using FingerFighter.Model.Combat.Damage;
-using FingerFighter.Model.Util;
 using UnityEngine;
+using UnityUtils.Extensions;
 
 namespace FingerFighter.View.Fx
 {

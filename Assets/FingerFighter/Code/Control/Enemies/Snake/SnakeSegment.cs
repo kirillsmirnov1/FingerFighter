@@ -1,5 +1,5 @@
-﻿using FingerFighter.Model.Util;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityUtils.Extensions;
 
 namespace FingerFighter.Control.Enemies.Snake
 {

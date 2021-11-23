@@ -1,9 +1,9 @@
 ﻿using System;
 using FingerFighter.Control.Factories;
 using FingerFighter.Model.Combat;
-using FingerFighter.Model.Util;
 using UnityEngine;
 using UnityUtils.Attributes;
+using UnityUtils.Extensions;
 
 namespace FingerFighter.Control.Enemies
 {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityUtils.Saves; // FIXME shouldn't be in Saves
+using UnityUtils.SO;
 
 namespace FingerFighter.Model.Combat
 {

@@ -1,5 +1,5 @@
-﻿using FingerFighter.Model.Scenes;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityUtils.Scenes;
 
 namespace FingerFighter.Control.Scenes
 {
