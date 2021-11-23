@@ -27,7 +27,7 @@ namespace FingerFighter.Control.Factories.EnemySpawn
         {
             var pos = CurrentPos + relativePos;
             var instance = EnemyPool.Get(enemyTag, pos);
-            instance.SetActive(true);
+            instance.gameObject.SetActive(true);
         }
     }
 }

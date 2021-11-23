@@ -27,7 +27,7 @@ namespace FingerFighter.Control.Combat.Status
         protected override void OnEntityDeath()
         {
             if(isSegment) return;
-            EnemyPool.ReturnToPool(gameObject, id.EnemyType);
+            EnemyPool.ReturnToPool(id, id.EnemyType);
             if(isProjectile) return;
             OnDeath?.Invoke(DeathData);
         }

@@ -10,7 +10,7 @@ namespace FingerFighter.Control.Factories
         [SerializeField] private EnemyStatsList enemyData;
         
         private readonly Dictionary<string, GameObject> _prefabs = new Dictionary<string, GameObject>();
-        private readonly Dictionary<string, Queue<GameObject>> _pool = new Dictionary<string, Queue<GameObject>>();
+        private readonly Dictionary<string, Queue<CombatEntityId>> _pool = new Dictionary<string, Queue<CombatEntityId>>();
         
         private Transform _anchor;
         private static EnemyPool _instance;
@@ -26,19 +26,19 @@ namespace FingerFighter.Control.Factories
         {
             for (var i = 0; i < enemyData.Count; i++)
             {
-                _pool.Add(enemyData[i].tag, new Queue<GameObject>());
+                _pool.Add(enemyData[i].tag, new Queue<CombatEntityId>());
                 _prefabs.Add(enemyData[i].tag, enemyData[i].prefab);
             }
         }
 
-        public static GameObject Get(string enemyTag, Vector2 spawnPos = new Vector2(), float rotation = 0f) 
+        public static CombatEntityId Get(string enemyTag, Vector2 spawnPos = new Vector2(), float rotation = 0f) 
             => _instance.GetImpl(enemyTag, spawnPos, rotation);
 
-        private GameObject GetImpl(string enemyTag, Vector2 spawnPos = new Vector2(), float rotation = 0f)
+        private CombatEntityId GetImpl(string enemyTag, Vector2 spawnPos = new Vector2(), float rotation = 0f)
         {
             var obj = _pool[enemyTag].Count > 0 
                 ? _pool[enemyTag].Dequeue() 
-                : Instantiate(_prefabs[enemyTag], _anchor);
+                : Instantiate(_prefabs[enemyTag], _anchor).GetComponent<CombatEntityId>();
 
             obj.transform.position = spawnPos;
             obj.transform.rotation = quaternion.Euler(0, 0, rotation);
@@ -46,10 +46,10 @@ namespace FingerFighter.Control.Factories
             return obj;
         }
 
-        public static void ReturnToPool(GameObject obj, string enemyType) 
+        public static void ReturnToPool(CombatEntityId obj, string enemyType) 
             => _instance.ReturnToPoolImpl(obj, enemyType);
 
-        private void ReturnToPoolImpl(GameObject obj, string enemyType) 
+        private void ReturnToPoolImpl(CombatEntityId obj, string enemyType) 
             => _pool[enemyType].Enqueue(obj);
     }
 }
