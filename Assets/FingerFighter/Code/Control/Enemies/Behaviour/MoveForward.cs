@@ -6,7 +6,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
     {
         protected override void Apply()
         {
-            var movement = Self.up * Stats.movementSpeed;
+            var movement = Self.up * MovementSpeed;
             rb.AddForce(movement, ForceMode2D.Force);
         }
     }

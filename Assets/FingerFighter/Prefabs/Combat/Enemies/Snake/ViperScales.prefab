@@ -259,6 +259,28 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
   m_PrefabInstance: {fileID: 2204337207439738457}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5174071990211263744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6438632396425821017, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+  m_PrefabInstance: {fileID: 2204337207439738457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883713668583901626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c55aa70a9384e7886202108545ade88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8142227564492531588 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7955716314765976029, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+  m_PrefabInstance: {fileID: 2204337207439738457}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8883713668583901626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a300285ef7c0468cb77b5b5d9b1201f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3290960861497953130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,7 +338,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 0}
   rb: {fileID: 1079975434784994568}
-  rotation: {fileID: 7023560975910937240}
+  rotation: {fileID: 5174071990211263744}
+  movementForward: {fileID: 8142227564492531588}
   previous: {fileID: 0}
   next: {fileID: 0}
   reserveBehaviours:
@@ -337,19 +360,3 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!114 &7023560975910937240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8883713668583901626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c55aa70a9384e7886202108545ade88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: {fileID: 2851297708628160773}
-  rb: {fileID: 1079975434784994568}
-  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
-  angleOffset: -90

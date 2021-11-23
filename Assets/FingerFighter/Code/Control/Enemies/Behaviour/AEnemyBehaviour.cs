@@ -14,11 +14,14 @@ namespace FingerFighter.Control.Enemies.Behaviour
 
         protected Transform Self;
         protected Transform Target;
+
+        protected float MovementSpeed;
         
         protected virtual void Awake()
         {
             Self = transform;
             Target = player.Value;
+            MovementSpeed = Stats.movementSpeed;
         }
 
         private void OnValidate()
@@ -33,5 +36,8 @@ namespace FingerFighter.Control.Enemies.Behaviour
 
         public void OverrideTarget(Transform target)
             => Target = target;
+
+        public void OverrideMovementSpeed(float movementSpeed)
+            => MovementSpeed = movementSpeed;
     }
 }

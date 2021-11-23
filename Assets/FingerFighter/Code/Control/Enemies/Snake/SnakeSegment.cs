@@ -6,13 +6,12 @@ namespace FingerFighter.Control.Enemies.Snake
     public class SnakeSegment : MonoBehaviour
     {
         [SerializeField] private SnakeHead head;
-        [SerializeField] private Rigidbody2D rb;
         [SerializeField] private RotateTowardsTarget rotation;
+        [SerializeField] private MoveForward movementForward;
         
         [HideInInspector] public SnakeSegment previous;
         [HideInInspector] public SnakeSegment next;
         
-        private float _movementSpeed;
         public bool IsHead { get; protected set; }
 
         protected virtual void OnEnable()
@@ -63,19 +62,7 @@ namespace FingerFighter.Control.Enemies.Snake
         private void SetParams()
         {
             var mod = IsHead ? 1f : 2f;
-            _movementSpeed = mod * head.MovementSpeed;
-        }
-
-
-        public void FixedUpdate()
-        {
-            MoveForward();
-        }
-
-        private void MoveForward()
-        {
-            var movement = transform.up * _movementSpeed;
-            rb.AddForce(movement, ForceMode2D.Force);
+            movementForward.OverrideMovementSpeed(mod * head.MovementSpeed);
         }
     }
 }

@@ -208,7 +208,7 @@ MonoBehaviour:
   prefab: {fileID: 0}
   health: 50
   points: 0
-  movementSpeed: 30
+  movementSpeed: 100
   rotationSpeed: 0.8
   collisionDamage: 5
   gizmoColor: {r: 0, g: 0, b: 0, a: 0}
