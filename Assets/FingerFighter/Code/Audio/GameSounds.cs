@@ -11,8 +11,6 @@ namespace FingerFighter.Audio
         [SerializeField] private AudioClip playerDeath;
         [SerializeField] private AudioClip[] enemyHitSounds;
         [SerializeField] private AudioClip[] playerHitSounds;
-        
-        // TODO enemyDeathSounds
 
         private AudioSource _audioSource;
 

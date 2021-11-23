@@ -6,9 +6,7 @@ namespace FingerFighter.Control.Enemies.Snake
     {
         [SerializeField] private GameObject headSegment;
         [SerializeField] private SnakeHead[] subheads;
-        
-        // TODO lock health until tails are dead
-        
+
         private void OnEnable()
         {
             headSegment.gameObject.SetActive(true);

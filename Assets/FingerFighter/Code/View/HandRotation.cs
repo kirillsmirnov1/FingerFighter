@@ -15,7 +15,7 @@ namespace FingerFighter.View
             rb.angularVelocity = 0f;
             var movementDirection = speed.Direction;
             
-            // too rough [0.1f; 0.01f] too sensitive // IMPR might wanna tweak later
+            // too rough [0.1f; 0.01f] too sensitive
             if(movementDirection.magnitude < 0.05f) return; 
 
             Vector2 toBody = body.position - transform.position;

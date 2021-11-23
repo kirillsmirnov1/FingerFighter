@@ -77,7 +77,6 @@ namespace FingerFighter.Control.Enemies.Snake
 
         private void RotateToTarget()
         {
-            // TODO refactor behaviour machine 
             Vector2 toTarget = _target.position - transform.position;
             var desiredRotation = QuaternionExt.LookRotation2D(toTarget, -90f);
             var nextRotation = Quaternion.Slerp(transform.rotation, desiredRotation, _rotationSpeed);
