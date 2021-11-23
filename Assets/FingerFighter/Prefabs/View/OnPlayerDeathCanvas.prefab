@@ -694,6 +694,7 @@ MonoBehaviour:
   variable: {fileID: 11400000, guid: ae7db4e60edd1c34f81cf5032898711a, type: 2}
   prefix: 
   postfix: 
+  showZero: 1
 --- !u!1 &4378291406464650987
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 540, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8963069556835444970
