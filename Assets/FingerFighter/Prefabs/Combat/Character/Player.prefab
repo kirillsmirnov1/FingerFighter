@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 4853382111378400893}
+    - target: {fileID: 971673427722101645, guid: 6ff1a117c4e14ff1a7b9ba1497375f24, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 971673427722101646, guid: 6ff1a117c4e14ff1a7b9ba1497375f24, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -104,6 +108,10 @@ PrefabInstance:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 4853382111378400893}
+    - target: {fileID: 971673427722101645, guid: 6ff1a117c4e14ff1a7b9ba1497375f24, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 971673427722101646, guid: 6ff1a117c4e14ff1a7b9ba1497375f24, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -374,6 +382,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7704720750568381924, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8804967116690744106, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
@@ -498,6 +510,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 332498959470768500}
     m_Modifications:
+    - target: {fileID: 3139498573221523094, guid: 2484716c0565e144a81cab33e03ed51c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4543807391903638853, guid: 2484716c0565e144a81cab33e03ed51c, type: 3}
       propertyPath: m_Name
       value: HealthChangeDisplay
