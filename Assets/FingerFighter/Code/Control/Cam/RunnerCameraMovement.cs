@@ -1,12 +1,14 @@
 ﻿using System;
 using FingerFighter.Control.Combat.Status;
 using UnityEngine;
+using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Cam
 {
     public class RunnerCameraMovement : MonoBehaviour
     {
         [SerializeField] private float speed = 1f;
+        [SerializeField] private FloatVariable combatTimeScale;
 
         private Transform _transform;
         private Vector3 _up;
@@ -34,6 +36,6 @@ namespace FingerFighter.Control.Cam
         private void OnPlayerAlive() => _onUpdate = Move;
         private void OnPlayerDead() => _onUpdate = null;
         
-        private void Move() => _transform.position += _up * (speed * Time.deltaTime);
+        private void Move() => _transform.position += _up * (speed * Time.deltaTime * combatTimeScale);
     }
 }

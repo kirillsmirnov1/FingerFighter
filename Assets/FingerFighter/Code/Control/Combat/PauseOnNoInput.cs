@@ -24,7 +24,6 @@ namespace FingerFighter.Control.Combat
         [SerializeField] private SpriteRenderer fade;
         
         // TODO turrets
-        // TODO camera 
         // TODO flow 
         private void OnValidate() => this.CheckNullFields();
 
