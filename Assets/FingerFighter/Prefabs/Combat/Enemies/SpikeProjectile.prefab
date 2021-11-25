@@ -45,11 +45,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_Mass
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_LinearDrag
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_AngularDrag
@@ -224,6 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f314f1f8cb2497ca1769cd8b74132ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: {fileID: 3370403104444700617}
+  rb: {fileID: 552566178718389188}
+  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
   spriteRenderer: {fileID: 1783804654233097007}
   hitProvider: {fileID: 694344228457108285}
-  rb: {fileID: 552566178718389188}

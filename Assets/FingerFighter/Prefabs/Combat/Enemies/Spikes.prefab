@@ -237,7 +237,7 @@ MonoBehaviour:
   shotDelay: 0.2
   afterShotRotation: 10
   projectileType: {fileID: 3323213088945303508, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-  projectileImpulse: 0.1
+  projectileImpulse: 50
   projectileColor: {r: 0.99607843, g: 0.23529412, b: 0.4745098, a: 1}
   rotationMode: 0
   arcFromTo: {x: 225, y: 315}
