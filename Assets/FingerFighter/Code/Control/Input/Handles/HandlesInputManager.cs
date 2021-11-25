@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using FingerFighter.Control.Combat.Status;
@@ -10,6 +11,9 @@ namespace FingerFighter.Control.Input.Handles
     [DefaultExecutionOrder(-1)]
     public class HandlesInputManager : MonoBehaviour
     {
+        public static event Action OnInputLost;
+        public static event Action OnInputRegained;
+        
         [SerializeField] private Handle[] handles;
 
         private readonly Dictionary<Finger, Handle> _pairings = new Dictionary<Finger, Handle>();
@@ -52,6 +56,7 @@ namespace FingerFighter.Control.Input.Handles
                 var handle = PickHandleForFinger(finger);  
                 handle.finger = finger;
                 _pairings.Add(finger, handle);
+                if(_pairings.Count == 1) OnInputRegained?.Invoke();
             }
         }
 
@@ -86,6 +91,7 @@ namespace FingerFighter.Control.Input.Handles
                 handle.finger = null;
                 _pairings.Remove(finger);
                 _freeHandles.Add(handle);
+                if(_pairings.Count == 0) OnInputLost?.Invoke();
             }
         }
 

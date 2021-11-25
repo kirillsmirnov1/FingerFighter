@@ -2,6 +2,7 @@
 using FingerFighter.Model.Combat.Damage;
 using UnityEngine;
 using UnityUtils.Attributes;
+using UnityUtils.Variables;
 
 namespace FingerFighter.Model.Combat
 {
@@ -16,7 +17,8 @@ namespace FingerFighter.Model.Combat
         [SerializeField] public Rigidbody2D rb;
         [ConditionalField("affiliation", compareValues:new object[] {Affiliation.Enemy})] 
         [SerializeField] public Projectile projectile;
-        
+        [SerializeField] public FloatVariable combatTimeScale;
+
         public string EnemyType => stats.tag;
         public Affiliation Affiliation => affiliation;
         public EnemyStats EnemyStats => stats;

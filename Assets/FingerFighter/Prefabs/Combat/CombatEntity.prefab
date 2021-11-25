@@ -52,6 +52,7 @@ MonoBehaviour:
   stats: {fileID: 0}
   rb: {fileID: 8468718182152183055}
   projectile: {fileID: 0}
+  combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
 --- !u!114 &1664665695224966896
 MonoBehaviour:
   m_ObjectHideFlags: 0

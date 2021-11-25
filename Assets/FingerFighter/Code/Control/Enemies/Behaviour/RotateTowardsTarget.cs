@@ -14,7 +14,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
 
         protected override void Apply()
         {
-            var nextRotation = Quaternion.Slerp(Self.rotation, DesiredRotation, Stats.rotationSpeed); 
+            var nextRotation = Quaternion.Slerp(Self.rotation, DesiredRotation, CombatTimeScale * Stats.rotationSpeed); 
             Self.rotation = nextRotation;
         }
 

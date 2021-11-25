@@ -6,7 +6,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
     {
         protected override void Apply()
         {
-            var acceleration = Self.up * MovementSpeed;
+            var acceleration = Self.up * (MovementSpeed * CombatTimeScale);
             rb.AddAcceleration(acceleration);
         }
     }

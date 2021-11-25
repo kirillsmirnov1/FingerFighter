@@ -10,6 +10,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
         [SerializeField] protected Rigidbody2D rb;
         [SerializeField] protected TransformVariable player;
 
+        protected float CombatTimeScale => id.combatTimeScale.Value;
         protected EnemyStats Stats => id.EnemyStats;
 
         protected Transform Self;

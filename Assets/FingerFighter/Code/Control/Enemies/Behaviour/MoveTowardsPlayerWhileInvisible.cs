@@ -25,7 +25,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
         private void Move()
         {
             Vector2 direction = (Target.position - Self.position).normalized;
-            var acceleration = MovementSpeed * direction;
+            var acceleration = direction * (CombatTimeScale * MovementSpeed);
             rb.AddAcceleration(acceleration);
         }
     }
