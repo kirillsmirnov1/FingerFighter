@@ -37,7 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3889289879592315171, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: highlightColor.b
-      value: 0.49019608
+      value: 0.30206665
+      objectReference: {fileID: 0}
+    - target: {fileID: 3889289879592315171, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: highlightColor.g
+      value: 0.0028924954
+      objectReference: {fileID: 0}
+    - target: {fileID: 3889289879592315171, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: highlightColor.r
+      value: 0.6132076
       objectReference: {fileID: 0}
     - target: {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: movementSpeed
