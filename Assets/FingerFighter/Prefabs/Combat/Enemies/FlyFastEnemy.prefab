@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: enemyType
       value: Another
       objectReference: {fileID: 0}
+    - target: {fileID: 1302259381993553923, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 6228224665379509468}
     - target: {fileID: 2600201135451604197, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -149,6 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5f9f44770b4388bedfc9353c979701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &5007347860745305629 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2600201135451604197, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_PrefabInstance: {fileID: 7018976011654019832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &6491913280614711030 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
@@ -170,6 +179,23 @@ MonoBehaviour:
   rb: {fileID: 6491913280614711030}
   player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
   angleOffset: -90
+--- !u!114 &6228224665379509468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432435433514336836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c732e28367754e5ca55fd49b4a1018aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: {fileID: 8321217783572822779}
+  rb: {fileID: 6491913280614711030}
+  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  spriteRenderer: {fileID: 5007347860745305629}
+  hitProvider: {fileID: 0}
 --- !u!114 &7721126284494063482
 MonoBehaviour:
   m_ObjectHideFlags: 0

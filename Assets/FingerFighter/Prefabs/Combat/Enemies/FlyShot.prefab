@@ -32,8 +32,20 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: projectileColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: projectileColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
+      propertyPath: projectileColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
       propertyPath: projectileImpulse
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 999649111, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
       propertyPath: shotAngles.Array.size

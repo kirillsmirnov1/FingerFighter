@@ -124,21 +124,8 @@ namespace FingerFighter.Control.Enemies.Behaviour
                 
                 var newShot = EnemyPool.Get(projectileType.tag, SpawnPos(rotation));
                 var newProjectile = newShot.projectile;
-                if(newProjectile != null)
-                {
-                    newProjectile.Init(
-                        gameObject, 
-                        projectileColor,
-                        impulse,
-                        rotation - 90
-                        );
-                }
-                else
-                {
-                    newShot.gameObject.SetActive(true); 
-                    newShot.rb.AddForce(impulse, ForceMode2D.Impulse);
-                }
-            }
+                newProjectile.Init(gameObject, projectileColor, impulse, rotation - 90);
+            } 
         }
         
         public enum RotationMode

@@ -10,7 +10,7 @@ namespace FingerFighter.Control.Enemies.Behaviour.Projectiles
         [SerializeField] private ProjectileHitProvider hitProvider;
         
         private float _angle;
-        private Vector2 _impulse;
+        protected Vector2 Impulse;
 
         private void OnValidate()
         {
@@ -22,16 +22,16 @@ namespace FingerFighter.Control.Enemies.Behaviour.Projectiles
         public void Init(GameObject parentTurret, Color projectileColor, Vector2 impulse, float angle)
         {
             _angle = angle;
-            hitProvider.parentTurret = parentTurret;
+            if(hitProvider!= null) hitProvider.parentTurret = parentTurret;
             spriteRenderer.color = projectileColor;
-            _impulse = impulse;
+            Impulse = impulse;
             gameObject.SetActive(true);
         }
 
         protected override void Apply()
         {
             rb.rotation = _angle;
-            rb.AddAcceleration(_impulse * CombatTimeScale);
+            rb.AddAcceleration(Impulse * CombatTimeScale);
         }
     }
 }
