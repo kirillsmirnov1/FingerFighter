@@ -1,42 +1,37 @@
 ﻿using FingerFighter.Model.Combat;
+using FingerFighter.Model.Enemies;
 using UnityEngine;
-using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Enemies.Behaviour
 {
+    [RequireComponent(typeof(EnemyComponents))]
     public abstract class AEnemyBehaviour : MonoBehaviour
     {
-        [SerializeField] private CombatEntityId id;
-        [SerializeField] protected Rigidbody2D rb;
-        [SerializeField] protected TransformVariable player;
+        [SerializeField] private EnemyComponents components;
 
-        protected float CombatTimeScale => id.combatTimeScale.Value;
-        protected EnemyStats Stats => id.EnemyStats;
+        protected virtual void OnValidate()
+        {
+            components ??= GetComponent<EnemyComponents>();
+        }
+
+        protected float CombatTimeScale => components.combatTimeScale.Value;
+        protected EnemyStats Stats => components.id.EnemyStats;
+        protected Rigidbody2D Rb => components.rb;
 
         protected Transform Self;
-        protected Transform Target;
+        protected Transform Target => components.Target;
 
         protected float MovementSpeed;
         
         protected virtual void Awake()
         {
             Self = transform;
-            Target = player.Value;
             MovementSpeed = Stats.movementSpeed;
-        }
-
-        private void OnValidate()
-        {
-            id ??= GetComponent<CombatEntityId>();
-            rb ??= GetComponent<Rigidbody2D>();
         }
 
         private void FixedUpdate() => Apply();
 
         protected abstract void Apply();
-
-        public void OverrideTarget(Transform target)
-            => Target = target;
 
         public void OverrideMovementSpeed(float movementSpeed)
             => MovementSpeed = movementSpeed;

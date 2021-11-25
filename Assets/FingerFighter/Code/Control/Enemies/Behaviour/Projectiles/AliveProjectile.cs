@@ -7,8 +7,8 @@ namespace FingerFighter.Control.Enemies.Behaviour.Projectiles
     {
         protected override void Apply()
         {
-            rb.AddAcceleration(Impulse * CombatTimeScale);
-            var impulseChangeMod = Mathf.Clamp01(1f - rb.drag * CombatTimeScale * Time.deltaTime); 
+            Rb.AddAcceleration(Impulse * CombatTimeScale);
+            var impulseChangeMod = Mathf.Clamp01(1f - Rb.drag * CombatTimeScale * Time.deltaTime); 
             Impulse = impulseChangeMod * Impulse;
         }
     }

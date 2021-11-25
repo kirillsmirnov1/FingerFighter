@@ -52,8 +52,9 @@ namespace FingerFighter.Control.Enemies.Behaviour
             }
         }
 
-        private void OnValidate()
+        protected override void OnValidate()
         {
+            base.OnValidate();
             if(projectileColor.a == 0)
                 projectileColor = GetComponent<SpriteRenderer>().color;
         }
@@ -123,7 +124,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
                 var impulse = projectileImpulse * Vector2Ext.DegreeToVector2(rotation);
                 
                 var newShot = EnemyPool.Get(projectileType.tag, SpawnPos(rotation));
-                var newProjectile = newShot.projectile;
+                var newProjectile = newShot.components.projectile;
                 newProjectile.Init(gameObject, projectileColor, impulse, rotation - 90);
             } 
         }

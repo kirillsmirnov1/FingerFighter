@@ -12,11 +12,11 @@ namespace FingerFighter.Control.Enemies.Behaviour.Projectiles
         private float _angle;
         protected Vector2 Impulse;
 
-        private void OnValidate()
+        protected override void OnValidate()
         {
+            base.OnValidate();
             spriteRenderer = GetComponent<SpriteRenderer>();
             hitProvider = GetComponent<ProjectileHitProvider>();
-            rb = GetComponent<Rigidbody2D>();
         }
 
         public void Init(GameObject parentTurret, Color projectileColor, Vector2 impulse, float angle)
@@ -30,8 +30,8 @@ namespace FingerFighter.Control.Enemies.Behaviour.Projectiles
 
         protected override void Apply()
         {
-            rb.rotation = _angle;
-            rb.AddAcceleration(Impulse * CombatTimeScale);
+            Rb.rotation = _angle;
+            Rb.AddAcceleration(Impulse * CombatTimeScale);
         }
     }
 }

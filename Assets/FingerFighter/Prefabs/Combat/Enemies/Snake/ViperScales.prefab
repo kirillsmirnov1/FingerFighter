@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8153454205803742506}
   - component: {fileID: 3823453769896515446}
   - component: {fileID: 8276284226210680293}
+  - component: {fileID: 1551273802383833716}
   m_Layer: 0
   m_Name: MoveToPlayerWhenDetachedAndInvisible
   m_TagString: Untagged
@@ -44,9 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82bed20209b54ebab9f36bde640eb781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: {fileID: 2851297708628160773}
-  rb: {fileID: 1079975434784994568}
-  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  components: {fileID: 1551273802383833716}
 --- !u!212 &8276284226210680293
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -98,6 +97,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1551273802383833716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2569386833912847237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09298e1ca8449889bedb796c1912234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: {fileID: 2851297708628160773}
+  rb: {fileID: 1079975434784994568}
+  projectile: {fileID: 0}
+  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
 --- !u!1001 &2204337207439738457
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,15 +275,15 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
   m_PrefabInstance: {fileID: 2204337207439738457}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5174071990211263744 stripped
+--- !u!114 &5406362396040678481 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6438632396425821017, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6165464133649533448, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
   m_PrefabInstance: {fileID: 2204337207439738457}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8883713668583901626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c55aa70a9384e7886202108545ade88, type: 3}
+  m_Script: {fileID: 11500000, guid: b09298e1ca8449889bedb796c1912234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &8142227564492531588 stripped
@@ -309,9 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbf5570f74c40b2a17f32e8b0343d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: {fileID: 2851297708628160773}
-  rb: {fileID: 1079975434784994568}
-  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  components: {fileID: 5406362396040678481}
   startDelay: 0
   shotDelay: 1
   afterShotRotation: 0
@@ -340,8 +354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 0}
-  rotation: {fileID: 5174071990211263744}
   movementForward: {fileID: 8142227564492531588}
+  components: {fileID: 5406362396040678481}
   previous: {fileID: 0}
   next: {fileID: 0}
   chainedBehaviour: {fileID: 8142227564492531588}

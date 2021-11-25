@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9116437791671532887, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 1947840213636329113}
     m_RemovedComponents:
     - {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
     - {fileID: 7280140631237757289, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
@@ -141,11 +145,6 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2600201135451604197, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
   m_PrefabInstance: {fileID: 4383301811929978826}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &552566178718389188 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
-  m_PrefabInstance: {fileID: 4383301811929978826}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8894026298759312256 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -4055086784509483958, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
@@ -166,6 +165,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85ff82e3e51b4ef8982dd525a99ae154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4778471044332563101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9116437791671532887, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_PrefabInstance: {fileID: 4383301811929978826}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8223152287390871414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09298e1ca8449889bedb796c1912234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!70 &4575821767500183168
@@ -224,8 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f314f1f8cb2497ca1769cd8b74132ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: {fileID: 3370403104444700617}
-  rb: {fileID: 552566178718389188}
-  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  components: {fileID: 4778471044332563101}
   spriteRenderer: {fileID: 1783804654233097007}
   hitProvider: {fileID: 694344228457108285}

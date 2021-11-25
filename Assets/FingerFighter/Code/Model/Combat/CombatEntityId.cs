@@ -1,8 +1,7 @@
-﻿using FingerFighter.Control.Enemies.Behaviour.Projectiles;
-using FingerFighter.Model.Combat.Damage;
+﻿using FingerFighter.Model.Combat.Damage;
+using FingerFighter.Model.Enemies;
 using UnityEngine;
 using UnityUtils.Attributes;
-using UnityUtils.Variables;
 
 namespace FingerFighter.Model.Combat
 {
@@ -12,13 +11,10 @@ namespace FingerFighter.Model.Combat
 
         [ConditionalField("affiliation", compareValues:new object[] {Affiliation.Enemy})] 
         [SerializeField] private EnemyStats stats;
-
-        [Header("Fields")]
-        [SerializeField] public Rigidbody2D rb;
         [ConditionalField("affiliation", compareValues:new object[] {Affiliation.Enemy})] 
-        [SerializeField] public Projectile projectile;
-        [SerializeField] public FloatVariable combatTimeScale;
-
+        [SerializeField]
+        public EnemyComponents components;
+        
         public string EnemyType => stats.tag;
         public Affiliation Affiliation => affiliation;
         public EnemyStats EnemyStats => stats;
@@ -31,7 +27,7 @@ namespace FingerFighter.Model.Combat
             Check(IsEnemy && IsNotBaseEnemyPrefab && NoStatsForThatEnemy, 
                 $"Provide enemy data for {gameObject.name}");
 
-            rb = GetComponent<Rigidbody2D>();
+            if (IsEnemy) components ??= GetComponent<EnemyComponents>();
         }
 
         private static void Check(bool condition, string warning)

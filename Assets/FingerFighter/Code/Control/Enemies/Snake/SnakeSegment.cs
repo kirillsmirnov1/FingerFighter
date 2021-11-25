@@ -1,5 +1,5 @@
-﻿using FingerFighter.Control.Enemies.Behaviour;
-using FingerFighter.Control.Enemies.Behaviour.Movement;
+﻿using FingerFighter.Control.Enemies.Behaviour.Movement;
+using FingerFighter.Model.Enemies;
 using UnityEngine;
 
 namespace FingerFighter.Control.Enemies.Snake
@@ -7,13 +7,18 @@ namespace FingerFighter.Control.Enemies.Snake
     public class SnakeSegment : MonoBehaviour
     {
         [SerializeField] private SnakeHead head;
-        [SerializeField] private RotateTowardsTarget rotation;
         [SerializeField] private MoveForward movementForward;
-        
+        [SerializeField] private EnemyComponents components;
+
         [HideInInspector] public SnakeSegment previous;
         [HideInInspector] public SnakeSegment next;
         
         public bool IsHead { get; protected set; }
+
+        private void OnValidate()
+        {
+            components ??= GetComponent<EnemyComponents>();
+        }
 
         protected virtual void OnEnable()
         {
@@ -57,7 +62,7 @@ namespace FingerFighter.Control.Enemies.Snake
         protected virtual void SetTarget()
         {
             IsHead = previous == null;
-            rotation.OverrideTarget(IsHead ? head.Target : previous.transform);
+            components.OverrideTarget(IsHead ? head.Target : previous.transform);
         }
 
         private void SetParams()
