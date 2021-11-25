@@ -11,7 +11,7 @@ namespace FingerFighter.Control.Combat.Status
         [SerializeField] private AHealth health;
         [SerializeField] protected CombatEntityId id;
 
-        private void OnValidate()
+        protected virtual void OnValidate()
         {
             if (health == null) health = GetComponent<AHealth>();
             if (id == null) id = GetComponent<CombatEntityId>();

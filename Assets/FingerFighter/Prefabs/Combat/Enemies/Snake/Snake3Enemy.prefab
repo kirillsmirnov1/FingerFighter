@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6184310394750561830}
   - component: {fileID: 6184310394750561891}
   - component: {fileID: 6184310394750561829}
+  - component: {fileID: 5196348176545618909}
   m_Layer: 0
   m_Name: Snake3Enemy
   m_TagString: Untagged
@@ -50,9 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affiliation: 1
-  stats: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-  rb: {fileID: 0}
-  projectile: {fileID: 0}
 --- !u!114 &6184310394750561830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +68,7 @@ MonoBehaviour:
   isSegment: 0
   isProjectile: 0
   deathPosTransform: {fileID: 0}
+  components: {fileID: 5196348176545618909}
 --- !u!114 &6184310394750561891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,11 +94,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69401f6fb6324df98948c3366295703e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: {fileID: 6184310394750561865}
   status: {fileID: 6184310394750561830}
+  components: {fileID: 5196348176545618909}
   type: 0
   transformComponent: {fileID: 0}
   transformVariable: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+--- !u!114 &5196348176545618909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6184310394750562119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09298e1ca8449889bedb796c1912234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  projectile: {fileID: 0}
+  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
+  stats: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
 --- !u!1001 &2762849374059788931
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,6 +148,10 @@ PrefabInstance:
       value: 0.16686158
       objectReference: {fileID: 0}
     - target: {fileID: 4109175301827065692, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+    - target: {fileID: 6165464133649533448, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: stats
       value: 
       objectReference: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
@@ -252,6 +272,10 @@ PrefabInstance:
       propertyPath: stats
       value: 
       objectReference: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+    - target: {fileID: 6165464133649533448, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     - target: {fileID: 6317527418233840728, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -366,6 +390,10 @@ PrefabInstance:
       value: 0.16686158
       objectReference: {fileID: 0}
     - target: {fileID: 4109175301827065692, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+    - target: {fileID: 6165464133649533448, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: stats
       value: 
       objectReference: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}

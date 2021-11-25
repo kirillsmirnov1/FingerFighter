@@ -1,22 +1,23 @@
-﻿using UnityEngine;
+﻿using FingerFighter.Model.Enemies;
+using UnityEngine;
 
 namespace FingerFighter.Model.Combat.Damage.HitDataProvider
 {
     public class EnemyCollisionHitForce : AHitDataProvider
     {
-        [SerializeField] private CombatEntityId id;
+        [SerializeField] private EnemyComponents components;
         private HitData _hitData;
 
         private void OnValidate()
         {
-            id = GetComponent<CombatEntityId>();
+            components = GetComponent<EnemyComponents>();
         }
 
         private void OnEnable()
         {
             _hitData = new HitData
             {
-                Force = id.EnemyStats.collisionDamage
+                Force = components.stats.collisionDamage
             };
         }
 

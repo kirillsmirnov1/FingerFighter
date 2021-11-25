@@ -15,7 +15,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
         }
 
         protected float CombatTimeScale => components.combatTimeScale.Value;
-        protected EnemyStats Stats => components.id.EnemyStats;
+        protected EnemyStats Stats => components.stats;
         protected Rigidbody2D Rb => components.rb;
 
         protected Transform Self;

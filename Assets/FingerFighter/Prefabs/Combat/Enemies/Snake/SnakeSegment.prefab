@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9116437791671532887, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     m_RemovedComponents:
     - {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
@@ -107,22 +111,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5677381796131911868, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
   m_PrefabInstance: {fileID: 3104166690050586463}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4109175301827065692 stripped
+--- !u!114 &6165464133649533448 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1302259381993553923, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9116437791671532887, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
   m_PrefabInstance: {fileID: 3104166690050586463}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7340352278540750819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d5f9f44770b4388bedfc9353c979701, type: 3}
+  m_Script: {fileID: 11500000, guid: b09298e1ca8449889bedb796c1912234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &1183240457381917521 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
-  m_PrefabInstance: {fileID: 3104166690050586463}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6438632396425821017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,9 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c55aa70a9384e7886202108545ade88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: {fileID: 4109175301827065692}
-  rb: {fileID: 1183240457381917521}
-  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  components: {fileID: 6165464133649533448}
   angleOffset: -90
 --- !u!114 &6697019454327140876
 MonoBehaviour:
@@ -152,9 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 0}
-  rb: {fileID: 1183240457381917521}
-  rotation: {fileID: 6438632396425821017}
   movementForward: {fileID: 7955716314765976029}
+  components: {fileID: 6165464133649533448}
   previous: {fileID: 0}
   next: {fileID: 0}
 --- !u!114 &7955716314765976029
@@ -169,6 +165,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a300285ef7c0468cb77b5b5d9b1201f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: {fileID: 4109175301827065692}
-  rb: {fileID: 1183240457381917521}
-  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  components: {fileID: 6165464133649533448}

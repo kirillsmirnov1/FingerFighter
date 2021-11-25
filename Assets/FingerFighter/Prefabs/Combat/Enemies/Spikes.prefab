@@ -109,11 +109,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09298e1ca8449889bedb796c1912234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: {fileID: 4530861235688142133}
   rb: {fileID: 1697247444425519416}
   projectile: {fileID: 0}
   player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
   combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
+  stats: {fileID: 3446871869396048324, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
 --- !u!1001 &3238743766670128438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,6 +205,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9116437791671532887, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 3446871869396048324, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     m_RemovedComponents:
     - {fileID: 4421984580034263092, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
@@ -218,17 +222,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8987050289203696391, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
   m_PrefabInstance: {fileID: 3238743766670128438}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4530861235688142133 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1302259381993553923, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}
-  m_PrefabInstance: {fileID: 3238743766670128438}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7077486950152932746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d5f9f44770b4388bedfc9353c979701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1697247444425519416 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 4287288054429647886, guid: 1ce942afc2d5a3143bf6f09f78da0ce8, type: 3}

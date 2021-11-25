@@ -124,7 +124,7 @@ namespace FingerFighter.Control.Enemies.Behaviour
                 var impulse = projectileImpulse * Vector2Ext.DegreeToVector2(rotation);
                 
                 var newShot = EnemyPool.Get(projectileType.tag, SpawnPos(rotation));
-                var newProjectile = newShot.components.projectile;
+                var newProjectile = newShot.projectile;
                 newProjectile.Init(gameObject, projectileColor, impulse, rotation - 90);
             } 
         }

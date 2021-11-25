@@ -1,17 +1,17 @@
-﻿using FingerFighter.Model.Combat;
+﻿using FingerFighter.Model.Enemies;
 using UnityEngine;
 
 namespace FingerFighter.Control.Combat.Health
 {
     public class EnemyHealth : AHealth
     {
-        [SerializeField] private CombatEntityId id;
+        [SerializeField] private EnemyComponents components;
 
-        public override float BaseHealth => id.EnemyStats.health;
+        public override float BaseHealth => components.stats.health;
         
         private void OnValidate()
         {
-            id = GetComponent<CombatEntityId>();
+            components = GetComponent<EnemyComponents>();
         }
     }
 }

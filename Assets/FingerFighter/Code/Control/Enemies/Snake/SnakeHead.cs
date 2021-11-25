@@ -1,6 +1,6 @@
 ﻿using System;
 using FingerFighter.Control.Combat.Status;
-using FingerFighter.Model.Combat;
+using FingerFighter.Model.Enemies;
 using UnityEngine;
 using UnityUtils.Attributes;
 using UnityUtils.Variables;
@@ -9,9 +9,9 @@ namespace FingerFighter.Control.Enemies.Snake
 {
     public class SnakeHead : MonoBehaviour
     {
-        [SerializeField] private CombatEntityId id;
         [SerializeField] private EnemyStatus status;
-        
+        [SerializeField] private EnemyComponents components;
+
         [SerializeField] private TargetTransformType type;
         [ConditionalField("type", compareValues: new object[]{TargetTransformType.Component})]
         [SerializeField] private Transform transformComponent;
@@ -22,7 +22,12 @@ namespace FingerFighter.Control.Enemies.Snake
         public Transform Target { get; private set; }
         public Transform HeadSegment { get; private set; }
 
-        public float MovementSpeed => id.EnemyStats.movementSpeed;
+        public float MovementSpeed => components.stats.movementSpeed;
+
+        private void OnValidate()
+        {
+            components ??= GetComponent<EnemyComponents>();
+        }
 
         private void Awake()
         {

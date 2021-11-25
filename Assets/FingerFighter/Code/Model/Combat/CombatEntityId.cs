@@ -1,7 +1,5 @@
 ﻿using FingerFighter.Model.Combat.Damage;
-using FingerFighter.Model.Enemies;
 using UnityEngine;
-using UnityUtils.Attributes;
 
 namespace FingerFighter.Model.Combat
 {
@@ -9,25 +7,12 @@ namespace FingerFighter.Model.Combat
     {
         [SerializeField] private Affiliation affiliation = Affiliation.Nada;
 
-        [ConditionalField("affiliation", compareValues:new object[] {Affiliation.Enemy})] 
-        [SerializeField] private EnemyStats stats;
-        [ConditionalField("affiliation", compareValues:new object[] {Affiliation.Enemy})] 
-        [SerializeField]
-        public EnemyComponents components;
-        
-        public string EnemyType => stats.tag;
         public Affiliation Affiliation => affiliation;
-        public EnemyStats EnemyStats => stats;
         
         private void OnValidate()
         {
             Check(AffiliationNotSet && IsNotCombatEntityPrefab, 
                 $"Set affiliation on {gameObject.name}");
-            
-            Check(IsEnemy && IsNotBaseEnemyPrefab && NoStatsForThatEnemy, 
-                $"Provide enemy data for {gameObject.name}");
-
-            if (IsEnemy) components ??= GetComponent<EnemyComponents>();
         }
 
         private static void Check(bool condition, string warning)
@@ -37,8 +22,5 @@ namespace FingerFighter.Model.Combat
 
         private bool AffiliationNotSet => affiliation == Affiliation.Nada;
         private bool IsNotCombatEntityPrefab => gameObject.name != "CombatEntity";
-        private bool IsEnemy => affiliation == Affiliation.Enemy;
-        private bool IsNotBaseEnemyPrefab => gameObject.name != "_EnemyCombatEntity";
-        private bool NoStatsForThatEnemy => stats == null;
     }
 }
