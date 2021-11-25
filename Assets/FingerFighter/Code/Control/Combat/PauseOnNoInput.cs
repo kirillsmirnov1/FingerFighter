@@ -8,19 +8,27 @@ namespace FingerFighter.Control.Combat
 {
     public class PauseOnNoInput : MonoBehaviour
     {
-        [Range(0f, 1f)]
-        [SerializeField] private float pauseTimeSpeed = 0.1f;
-        [SerializeField] private FloatVariable combatTimeScale;
+        [Header("Settings")]
+        [Range(0f, 0.999f)]
+        [SerializeField] private float timeScaleAtPause = 0.1f;
+        [Range(1, 100)]
+        [SerializeField] private int maxStepsToPause = 10;
+        [Range(0.001f, 0.1f)]
+        [SerializeField] private float stepDuration = 0.025f;
         
+        [Header("Variable")]
+        [SerializeField] private FloatVariable combatTimeScale;
+        private WaitForSeconds _wfs;
+
         // TODO fade 
         // TODO turrets
         // TODO camera 
         // TODO flow 
-        // TODO go from current scale to desired (calculate how many steps you need 
         private void OnValidate() => this.CheckNullFields();
 
         private void Awake()
         {
+            _wfs = new WaitForSeconds(stepDuration);
             combatTimeScale.Value = 1f;
             HandlesInputManager.OnInputRegained += UnPause;
             HandlesInputManager.OnInputLost += Pause;
@@ -36,30 +44,34 @@ namespace FingerFighter.Control.Combat
         private void UnPause()
         {
             StopAllCoroutines();
-            ChangeTimeFlow(pauseTimeSpeed, 1f);
+            ChangeTimeFlow(combatTimeScale, 1f);
         }
 
         private void Pause()
         {
             StopAllCoroutines();
-            ChangeTimeFlow(1f, pauseTimeSpeed);
+            ChangeTimeFlow(combatTimeScale, timeScaleAtPause);
         }
 
         private void ChangeTimeFlow(float from, float to)
         {
-            var changeDuration = 0.25f;
-            var steps = 10;
-            var wfs = new WaitForSeconds(changeDuration / steps);
+            var totalScaleChange = 1f - timeScaleAtPause;
+            var currentScaleChange = Mathf.Abs(to - from);
+            var scaleChangeRatio = currentScaleChange / totalScaleChange;
             
+            var steps = (int) (maxStepsToPause * scaleChangeRatio);
+
             StartCoroutine(ChangeTimeCoroutine());
 
             IEnumerator ChangeTimeCoroutine()
             {
-                for (float i = 0; i <= steps; i++)
+                for (float i = 0; i < steps; i++)
                 {
                     combatTimeScale.Value = Mathf.Lerp(from, to, i / steps);
-                    yield return wfs;
+                    yield return _wfs;
                 }
+
+                combatTimeScale.Value = to;
             }
         }
     }
