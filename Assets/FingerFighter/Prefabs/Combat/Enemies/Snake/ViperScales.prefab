@@ -309,6 +309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dbf5570f74c40b2a17f32e8b0343d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: {fileID: 2851297708628160773}
+  rb: {fileID: 1079975434784994568}
+  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
   startDelay: 0
   shotDelay: 1
   afterShotRotation: 0

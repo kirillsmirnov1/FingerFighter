@@ -1,4 +1,5 @@
 ﻿using System;
+using FingerFighter.Control.Enemies.Behaviour;
 using FingerFighter.Control.Factories;
 using FingerFighter.Model.Combat;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityUtils.Extensions;
 
 namespace FingerFighter.Control.Enemies
 {
-    public class Turret : MonoBehaviour
+    public class Turret : AEnemyBehaviour
     {
         [SerializeField] private float startDelay;
         [SerializeField] private float shotDelay = .3f;
@@ -21,7 +22,7 @@ namespace FingerFighter.Control.Enemies
         [SerializeField] private float[] shotAngles = {0f, 120, 240};
         
         private float _rotation;
-        private float _timeForANextShot;
+        private float _timeTillNextShot;
         private Action _incrementRotation;
 
         private void OnDrawGizmos()
@@ -58,13 +59,16 @@ namespace FingerFighter.Control.Enemies
                 projectileColor = GetComponent<SpriteRenderer>().color;
         }
 
+        protected override void Apply() { } // Using Time.deltaTime so no FixedUpdate here 
+
         private void OnEnable()
         {
-            _timeForANextShot = Time.time + startDelay;
+            _timeTillNextShot = startDelay;
         }
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             _incrementRotation = rotationMode switch
             {
                 RotationMode.Circular => CircularRotation,
@@ -78,7 +82,8 @@ namespace FingerFighter.Control.Enemies
 
         private void Update()
         {
-            if (Time.time > _timeForANextShot)
+            _timeTillNextShot -= Time.deltaTime * CombatTimeScale;
+            if (_timeTillNextShot <= 0f)
             {
                 MakeAShot();
                 IncrementParams();
@@ -93,7 +98,7 @@ namespace FingerFighter.Control.Enemies
 
         private void IncrementTime()
         {
-            _timeForANextShot = Time.time + shotDelay;
+            _timeTillNextShot = shotDelay;
         }
 
         private void CircularRotation()
