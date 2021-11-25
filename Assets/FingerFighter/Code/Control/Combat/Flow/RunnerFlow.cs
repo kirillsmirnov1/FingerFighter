@@ -5,6 +5,7 @@ using FingerFighter.Control.Factories.EnemySpawn;
 using FingerFighter.Model.EnemyFormations;
 using UnityEngine;
 using UnityUtils.Extensions;
+using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Combat.Flow
 {
@@ -18,6 +19,9 @@ namespace FingerFighter.Control.Combat.Flow
         [SerializeField] private EnemySpawnFormation spawn;
         [SerializeField] private EnemyFormationPackProvider enemyProvider;
 
+        [Header("Data")]
+        [SerializeField] private FloatVariable combatTimeScale;
+        
         private State _state;
         
         private Queue<EnemyFormation> _formations;

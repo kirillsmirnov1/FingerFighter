@@ -20,7 +20,7 @@ namespace FingerFighter.Control.Combat.Flow
 
             public override void Update()
             {
-                _durationLeft -= Time.deltaTime;
+                _durationLeft -= Time.deltaTime * Flow.combatTimeScale;
                 if (_durationLeft <= 0)
                 {
                     Flow.NextRoom();

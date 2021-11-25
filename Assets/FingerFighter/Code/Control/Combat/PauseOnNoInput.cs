@@ -23,7 +23,6 @@ namespace FingerFighter.Control.Combat
         [Header("Components")]
         [SerializeField] private SpriteRenderer fade;
         
-        // TODO flow 
         private void OnValidate() => this.CheckNullFields();
 
         private void Awake()
