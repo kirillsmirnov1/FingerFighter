@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 332498959470768500, guid: 8737d3affbf00724c96a6e7696d7ab9c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 332498959470768500, guid: 8737d3affbf00724c96a6e7696d7ab9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -296,8 +296,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fe123ac77d4ba4996ce8f65ffe9cda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseTimeSpeed: 0.05
+  timeScaleAtPause: 0.1
+  maxStepsToPause: 10
+  stepDuration: 0.025
   combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
+  fade: {fileID: 1294211831}
 --- !u!4 &716021074
 Transform:
   m_ObjectHideFlags: 0
@@ -312,6 +315,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1294211831 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1294211831, guid: c6bc024923b7e604ba9fe2f5f7bb113c, type: 3}
+  m_PrefabInstance: {fileID: 7578428886239725460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1326619140
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +526,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1084927433263730632, guid: afb9691f6a7e36e478cd248102a53e66, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1084927433263730632, guid: afb9691f6a7e36e478cd248102a53e66, type: 3}
       propertyPath: m_LocalPosition.x

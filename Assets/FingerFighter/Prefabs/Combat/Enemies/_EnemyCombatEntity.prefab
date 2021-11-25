@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: affiliation
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7704720750568381924, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 8468718182152183055, guid: 2c16d38fe42507c4d880a3e69cd91185, type: 3}
       propertyPath: m_Material
       value: 

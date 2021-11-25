@@ -20,7 +20,9 @@ namespace FingerFighter.Control.Combat
         [SerializeField] private FloatVariable combatTimeScale;
         private WaitForSeconds _wfs;
 
-        // TODO fade 
+        [Header("Components")]
+        [SerializeField] private SpriteRenderer fade;
+        
         // TODO turrets
         // TODO camera 
         // TODO flow 
@@ -55,6 +57,10 @@ namespace FingerFighter.Control.Combat
 
         private void ChangeTimeFlow(float from, float to)
         {
+            var startAlpha = fade.color.a;
+            var endAlpha = to >= from ? 0f : 1f;
+            var fadeColor = Color.white;
+            
             var totalScaleChange = 1f - timeScaleAtPause;
             var currentScaleChange = Mathf.Abs(to - from);
             var scaleChangeRatio = currentScaleChange / totalScaleChange;
@@ -67,10 +73,15 @@ namespace FingerFighter.Control.Combat
             {
                 for (float i = 0; i < steps; i++)
                 {
-                    combatTimeScale.Value = Mathf.Lerp(from, to, i / steps);
+                    var t = i / steps;
+                    combatTimeScale.Value = Mathf.Lerp(from, to, t);
+                    fadeColor.a = Mathf.Lerp(startAlpha, endAlpha, t);
+                    fade.color = fadeColor;
                     yield return _wfs;
                 }
 
+                fadeColor.a = endAlpha;
+                fade.color = fadeColor;
                 combatTimeScale.Value = to;
             }
         }
