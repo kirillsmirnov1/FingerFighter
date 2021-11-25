@@ -16,7 +16,7 @@ namespace FingerFighter.Control.Input.Handles
         private List<Handle> _freeHandles;
 
         private static readonly object Lock = new object();
-        private UnityEngine.Camera _camera;
+        private Camera _camera;
     
         private void OnValidate()
         {
@@ -31,7 +31,7 @@ namespace FingerFighter.Control.Input.Handles
 
         private void OnEnable()
         {
-            _camera = UnityEngine.Camera.main;
+            _camera = Camera.main;
             Touch.onFingerDown += OnFingerDown;
             Touch.onFingerUp += OnFingerUp;
             PlayerStatus.OnDeath += OnPlayerDead;
