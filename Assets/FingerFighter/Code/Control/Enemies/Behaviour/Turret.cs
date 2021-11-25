@@ -1,12 +1,11 @@
 ﻿using System;
-using FingerFighter.Control.Enemies.Behaviour;
 using FingerFighter.Control.Factories;
 using FingerFighter.Model.Combat;
 using UnityEngine;
 using UnityUtils.Attributes;
 using UnityUtils.Extensions;
 
-namespace FingerFighter.Control.Enemies
+namespace FingerFighter.Control.Enemies.Behaviour
 {
     public class Turret : AEnemyBehaviour
     {

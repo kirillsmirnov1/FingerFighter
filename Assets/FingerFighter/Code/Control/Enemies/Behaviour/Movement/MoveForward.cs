@@ -1,6 +1,6 @@
 ﻿using FingerFighter.Utils;
 
-namespace FingerFighter.Control.Enemies.Behaviour
+namespace FingerFighter.Control.Enemies.Behaviour.Movement
 {
     public class MoveForward : AEnemyBehaviour
     {

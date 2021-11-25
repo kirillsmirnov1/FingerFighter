@@ -2,7 +2,7 @@
 using FingerFighter.Utils;
 using UnityEngine;
 
-namespace FingerFighter.Control.Enemies.Behaviour
+namespace FingerFighter.Control.Enemies.Behaviour.Movement
 {
     public class MoveTowardsPlayerWhileInvisible : AEnemyBehaviour
     {

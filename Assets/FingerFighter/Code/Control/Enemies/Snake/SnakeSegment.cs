@@ -1,4 +1,5 @@
 ﻿using FingerFighter.Control.Enemies.Behaviour;
+using FingerFighter.Control.Enemies.Behaviour.Movement;
 using UnityEngine;
 
 namespace FingerFighter.Control.Enemies.Snake

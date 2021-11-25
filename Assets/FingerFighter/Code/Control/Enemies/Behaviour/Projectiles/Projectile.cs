@@ -1,9 +1,8 @@
 ﻿using FingerFighter.Control.Combat.Damage;
-using FingerFighter.Control.Enemies.Behaviour;
 using FingerFighter.Utils;
 using UnityEngine;
 
-namespace FingerFighter.Control.Enemies
+namespace FingerFighter.Control.Enemies.Behaviour.Projectiles
 {
     public class Projectile : AEnemyBehaviour
     {

@@ -1,4 +1,4 @@
-﻿using FingerFighter.Control.Enemies;
+﻿using FingerFighter.Control.Enemies.Behaviour.Projectiles;
 using FingerFighter.Model.Combat.Damage;
 using UnityEngine;
 using UnityUtils.Attributes;
