@@ -19,6 +19,7 @@ MonoBehaviour:
   movementSpeed: 4
   rotationSpeed: 0.1
   collisionDamage: 5
+  moveForwardLimit: 0
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}
   gizmoIcon: {fileID: 21300000, guid: e7f3ba70fb568dc4bbd05797eb32fd21, type: 3}
 --- !u!114 &-4539852944185796980
@@ -40,6 +41,7 @@ MonoBehaviour:
   movementSpeed: 4
   rotationSpeed: 0.2
   collisionDamage: 5
+  moveForwardLimit: 0
   gizmoColor: {r: 0, g: 1, b: 1, a: 1}
   gizmoIcon: {fileID: 21300000, guid: 742a82f794900454395edf8512e9ba4a, type: 3}
 --- !u!114 &-3534459566151433842
@@ -61,6 +63,7 @@ MonoBehaviour:
   movementSpeed: 10
   rotationSpeed: 0.03
   collisionDamage: 3
+  moveForwardLimit: 0
   gizmoColor: {r: 1, g: 0, b: 1, a: 1}
   gizmoIcon: {fileID: 21300000, guid: 0c16cea59b33ecb458cb6b4b1f55a452, type: 3}
 --- !u!114 &-526747421762644956
@@ -82,6 +85,7 @@ MonoBehaviour:
   movementSpeed: 0
   rotationSpeed: 0.1
   collisionDamage: 0
+  moveForwardLimit: 0
   gizmoColor: {r: 0, g: 0, b: 0, a: 1}
   gizmoIcon: {fileID: 2747690628134850419, guid: 918ba012c4b62ea4c978be1b74128722, type: 3}
 --- !u!114 &11400000
@@ -127,6 +131,7 @@ MonoBehaviour:
   movementSpeed: 0
   rotationSpeed: 0
   collisionDamage: 1
+  moveForwardLimit: 0
   gizmoColor: {r: 0.9960785, g: 0.23529413, b: 0.47450984, a: 0}
   gizmoIcon: {fileID: 0}
 --- !u!114 &3446871869396048324
@@ -148,6 +153,7 @@ MonoBehaviour:
   movementSpeed: 10000
   rotationSpeed: 0
   collisionDamage: 5
+  moveForwardLimit: 0
   gizmoColor: {r: 0.9960785, g: 0.23529413, b: 0.47450984, a: 1}
   gizmoIcon: {fileID: -2135585597343286014, guid: b15ecd14acfa72142982e344c7dc62ff, type: 3}
 --- !u!114 &4176904084525418266
@@ -169,6 +175,7 @@ MonoBehaviour:
   movementSpeed: 4
   rotationSpeed: 0.2
   collisionDamage: 10
+  moveForwardLimit: 0
   gizmoColor: {r: 0, g: 1, b: 1, a: 1}
   gizmoIcon: {fileID: 0}
 --- !u!114 &4430819533194483818
@@ -190,6 +197,7 @@ MonoBehaviour:
   movementSpeed: 10000
   rotationSpeed: 0
   collisionDamage: 10
+  moveForwardLimit: 0
   gizmoColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoIcon: {fileID: 0}
 --- !u!114 &4900934111517240449
@@ -208,9 +216,10 @@ MonoBehaviour:
   prefab: {fileID: 0}
   health: 50
   points: 0
-  movementSpeed: 5
+  movementSpeed: 8
   rotationSpeed: 0.8
   collisionDamage: 5
+  moveForwardLimit: 0.4
   gizmoColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoIcon: {fileID: 0}
 --- !u!114 &6527744406199669517
@@ -232,6 +241,7 @@ MonoBehaviour:
   movementSpeed: 6
   rotationSpeed: 0.3
   collisionDamage: 3
+  moveForwardLimit: 0
   gizmoColor: {r: 0.47450984, g: 0.13333334, b: 0.54509807, a: 1}
   gizmoIcon: {fileID: 21300000, guid: 456f2a19775e082419734a633756a408, type: 3}
 --- !u!114 &7693426959447353640
@@ -253,5 +263,6 @@ MonoBehaviour:
   movementSpeed: 4
   rotationSpeed: 0.4
   collisionDamage: 5
+  moveForwardLimit: 0
   gizmoColor: {r: 1, g: 0.22352943, b: 0.4666667, a: 0}
   gizmoIcon: {fileID: 21300000, guid: 607ae3d1fb7304e4993aba6dd520692e, type: 3}

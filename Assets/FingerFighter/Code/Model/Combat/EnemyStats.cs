@@ -13,6 +13,7 @@ namespace FingerFighter.Model.Combat
         public float movementSpeed;
         public float rotationSpeed;
         public float collisionDamage;
+        public float moveForwardLimit;
 
         [Header("Formation Editor")] 
         public Color gizmoColor;
