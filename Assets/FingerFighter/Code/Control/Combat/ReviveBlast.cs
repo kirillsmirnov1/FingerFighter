@@ -1,4 +1,5 @@
 ﻿using FingerFighter.Model.Enemies;
+using FingerFighter.Utils;
 using UnityEngine;
 using UnityUtils.Variables;
 
@@ -25,7 +26,7 @@ namespace FingerFighter.Control.Combat
                 Vector2 playerToEnemy = enemy.transform.position - _player.transform.position;
                 var magnitude = playerToEnemy.magnitude;
                 var direction = playerToEnemy.normalized;
-                enemy.rb.AddForce(direction * (blastForce / magnitude), ForceMode2D.Impulse); // TODO consider mass 
+                enemy.rb.AddVelocityChange(direction * (blastForce / magnitude)); 
             }
         }
     }
