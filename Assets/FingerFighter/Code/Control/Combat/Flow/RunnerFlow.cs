@@ -35,12 +35,14 @@ namespace FingerFighter.Control.Combat.Flow
         {
             AliveEnemiesCounter.OnNoEnemiesLeftAlive += NoEnemiesLeft;
             PlayerStatus.OnDeath += PauseFlow;
+            PlayerStatus.OnAlive += ResumeFlow;
         }
 
         private void OnDestroy()
         {
             AliveEnemiesCounter.OnNoEnemiesLeftAlive -= NoEnemiesLeft;
             PlayerStatus.OnDeath -= PauseFlow;
+            PlayerStatus.OnAlive -= ResumeFlow;
         }
 
         private void OnEnable()
