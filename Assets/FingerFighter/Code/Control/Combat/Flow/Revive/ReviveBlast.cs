@@ -3,7 +3,7 @@ using FingerFighter.Utils;
 using UnityEngine;
 using UnityUtils.Variables;
 
-namespace FingerFighter.Control.Combat
+namespace FingerFighter.Control.Combat.Flow.Revive
 {
     public class ReviveBlast : MonoBehaviour
     {

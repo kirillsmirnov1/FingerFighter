@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6660860642096657455}
-  - component: {fileID: 6660860642096657454}
+  - component: {fileID: 4052787709487195397}
   - component: {fileID: 6660860642096657424}
   m_Layer: 0
   m_Name: Revive
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6660860642096657454
+--- !u!114 &4052787709487195397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,37 +41,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6660860642096657453}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e6957297fb206642b2f37e96c30a2c6, type: 3}
+  m_Script: {fileID: 11500000, guid: ac0cdd986fe44f9c896863e969bd4cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: b471b33f66aebde47a963389529597b8, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 6660860642096657424}
-        m_TargetAssemblyTypeName: FingerFighter.Control.Combat.ReviveBlast, Assembly-CSharp
-        m_MethodName: Blast
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  reviveEvent: {fileID: 11400000, guid: b471b33f66aebde47a963389529597b8, type: 2}
+  playerTransform: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  currentScore: {fileID: 0}
+  blast: {fileID: 6660860642096657424}
+  playerReviveDelay: 0.1
 --- !u!114 &6660860642096657424
 MonoBehaviour:
   m_ObjectHideFlags: 0

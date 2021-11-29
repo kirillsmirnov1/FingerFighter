@@ -832,6 +832,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4052787709487195397, guid: 18df1ebe1839a06499130eb971ad2b81, type: 3}
+      propertyPath: currentScore
+      value: 
+      objectReference: {fileID: 2009848049}
     - target: {fileID: 6660860642096657453, guid: 18df1ebe1839a06499130eb971ad2b81, type: 3}
       propertyPath: m_Name
       value: Revive
