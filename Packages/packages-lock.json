@@ -72,6 +72,15 @@
       "source": "builtin",
       "dependencies": {}
     },
+    "com.unity.ads": {
+      "version": "3.7.5",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
       "version": "1.13.5",
       "depth": 0,
@@ -195,6 +204,13 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "trulden.ad-hawk": {
+      "version": "https://github.com/kirillsmirnov1/Ad-Hawk.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "908359eb5b961e55fb974aa9e7b1de6250afa4ff"
     },
     "trulden.unity-utils": {
       "version": "https://github.com/kirillsmirnov1/unity-utils.git",
