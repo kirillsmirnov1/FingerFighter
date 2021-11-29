@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityUtils;
 using UnityUtils.Variables;
 
-namespace FingerFighter.Control.Combat
+namespace FingerFighter.Control.Input
 {
     public class PauseOnNoInput : MonoBehaviour
     {
