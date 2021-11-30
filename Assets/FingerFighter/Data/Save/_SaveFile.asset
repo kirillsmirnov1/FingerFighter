@@ -16,3 +16,5 @@ MonoBehaviour:
   varRefs:
   - variable: {fileID: 11400000, guid: 293e26aab23cc9240b7506ff23a809ec, type: 2}
     defaultValue: {fileID: 11400000, guid: 0c6373b7504b7554786cd86961ff74b0, type: 2}
+  - variable: {fileID: 11400000, guid: c2c4ccab921883746a4c5bdcbab4bda9, type: 2}
+    defaultValue: {fileID: 11400000, guid: 655721d346015c04abf28ed7d5faa48d, type: 2}
