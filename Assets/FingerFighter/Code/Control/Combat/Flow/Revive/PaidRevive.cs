@@ -18,6 +18,7 @@ namespace FingerFighter.Control.Combat.Flow.Revive
 
         private void Awake()
         {
+            _costMultiplier = 0;
             PlayerStatus.OnAlive += IterateReviveCostMultiplier;
             paidReviveRequest.RegisterAction(TryPaidRevive);
         }

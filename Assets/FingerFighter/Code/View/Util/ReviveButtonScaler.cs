@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityUtils.Extensions;
 
 namespace FingerFighter.View.Util
 {
@@ -17,7 +18,7 @@ namespace FingerFighter.View.Util
         {
             _used = false;
             transformToScale.localScale = Vector3.zero;
-            RebuildLayout();
+            this.DelayAction(0f, RebuildLayout);
         }
 
         public void Scale()
