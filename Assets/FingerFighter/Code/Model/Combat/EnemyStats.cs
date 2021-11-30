@@ -9,11 +9,14 @@ namespace FingerFighter.Model.Combat
      
         [Header("Combat")]
         public float health;
-        public int points;
         public float movementSpeed;
         public float rotationSpeed;
         public float collisionDamage;
         public float moveForwardLimit;
+        
+        [Header("Rewards")]
+        public int points;
+        public int coins;
 
         [Header("Formation Editor")] 
         public Color gizmoColor;

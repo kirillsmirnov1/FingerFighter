@@ -15,11 +15,12 @@ MonoBehaviour:
   tag: Fly
   prefab: {fileID: 3432435433514336836, guid: 18eedc65fec292a428e10d2e7cf50444, type: 3}
   health: 50
-  points: 50
   movementSpeed: 4
   rotationSpeed: 0.1
   collisionDamage: 5
   moveForwardLimit: 0
+  points: 50
+  coins: 5
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}
   gizmoIcon: {fileID: 21300000, guid: e7f3ba70fb568dc4bbd05797eb32fd21, type: 3}
 --- !u!114 &-4539852944185796980
@@ -37,11 +38,12 @@ MonoBehaviour:
   tag: Snake_6
   prefab: {fileID: 147482741919032023, guid: 6beaff1c1903b704a968e6e66527adc6, type: 3}
   health: 20
-  points: 120
   movementSpeed: 4
   rotationSpeed: 0.2
   collisionDamage: 5
   moveForwardLimit: 0
+  points: 120
+  coins: 12
   gizmoColor: {r: 0, g: 1, b: 1, a: 1}
   gizmoIcon: {fileID: 21300000, guid: 742a82f794900454395edf8512e9ba4a, type: 3}
 --- !u!114 &-3534459566151433842
@@ -59,11 +61,12 @@ MonoBehaviour:
   tag: FlyFast
   prefab: {fileID: 3432435433514336836, guid: 11325792cda9b934d9ad4bcd6527c732, type: 3}
   health: 25
-  points: 25
   movementSpeed: 10
   rotationSpeed: 0.03
   collisionDamage: 3
   moveForwardLimit: 0
+  points: 25
+  coins: 2
   gizmoColor: {r: 1, g: 0, b: 1, a: 1}
   gizmoIcon: {fileID: 21300000, guid: 0c16cea59b33ecb458cb6b4b1f55a452, type: 3}
 --- !u!114 &-526747421762644956
@@ -81,11 +84,12 @@ MonoBehaviour:
   tag: Dummy
   prefab: {fileID: 3432435433514336836, guid: 19a3375d720a17f4a8e79b81e48e9e2a, type: 3}
   health: 500
-  points: 0
   movementSpeed: 0
   rotationSpeed: 0.1
   collisionDamage: 0
   moveForwardLimit: 0
+  points: 0
+  coins: 0
   gizmoColor: {r: 0, g: 0, b: 0, a: 1}
   gizmoIcon: {fileID: 2747690628134850419, guid: 918ba012c4b62ea4c978be1b74128722, type: 3}
 --- !u!114 &11400000
@@ -127,11 +131,12 @@ MonoBehaviour:
   tag: _Projectile_Spike
   prefab: {fileID: 8223152287390871414, guid: 7460d7ac317193643b61cb0f13427096, type: 3}
   health: 0
-  points: 0
   movementSpeed: 0
   rotationSpeed: 0
   collisionDamage: 1
   moveForwardLimit: 0
+  points: 0
+  coins: 0
   gizmoColor: {r: 0.9960785, g: 0.23529413, b: 0.47450984, a: 0}
   gizmoIcon: {fileID: 0}
 --- !u!114 &3446871869396048324
@@ -149,11 +154,12 @@ MonoBehaviour:
   tag: Spikes
   prefab: {fileID: 7077486950152932746, guid: ad6d58ab445a0dd4e833982f96576aa9, type: 3}
   health: 75
-  points: 100
   movementSpeed: 10000
   rotationSpeed: 0
   collisionDamage: 5
   moveForwardLimit: 0
+  points: 100
+  coins: 10
   gizmoColor: {r: 0.9960785, g: 0.23529413, b: 0.47450984, a: 1}
   gizmoIcon: {fileID: -2135585597343286014, guid: b15ecd14acfa72142982e344c7dc62ff, type: 3}
 --- !u!114 &4176904084525418266
@@ -171,11 +177,12 @@ MonoBehaviour:
   tag: Viper
   prefab: {fileID: 465813981547213348, guid: 165e32e741a954e45b22ae2c5e42bc7c, type: 3}
   health: 100
-  points: 1000
   movementSpeed: 4
   rotationSpeed: 0.2
   collisionDamage: 10
   moveForwardLimit: 0
+  points: 1000
+  coins: 100
   gizmoColor: {r: 0, g: 1, b: 1, a: 1}
   gizmoIcon: {fileID: 0}
 --- !u!114 &4430819533194483818
@@ -193,11 +200,12 @@ MonoBehaviour:
   tag: FlyShot
   prefab: {fileID: 4547526338717813335, guid: a1c43b7d57b30fc46bac63019c1cc8db, type: 3}
   health: 500
-  points: 1000
   movementSpeed: 10000
   rotationSpeed: 0
   collisionDamage: 10
   moveForwardLimit: 0
+  points: 1000
+  coins: 100
   gizmoColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoIcon: {fileID: 0}
 --- !u!114 &4900934111517240449
@@ -215,11 +223,12 @@ MonoBehaviour:
   tag: TwoTails_Segment
   prefab: {fileID: 0}
   health: 50
-  points: 0
   movementSpeed: 8
   rotationSpeed: 0.8
   collisionDamage: 5
   moveForwardLimit: 0.4
+  points: 0
+  coins: 0
   gizmoColor: {r: 0, g: 0, b: 0, a: 0}
   gizmoIcon: {fileID: 0}
 --- !u!114 &6527744406199669517
@@ -237,11 +246,12 @@ MonoBehaviour:
   tag: Snake_3
   prefab: {fileID: 6184310394750562119, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
   health: 20
-  points: 60
   movementSpeed: 6
   rotationSpeed: 0.3
   collisionDamage: 3
   moveForwardLimit: 0
+  points: 60
+  coins: 6
   gizmoColor: {r: 0.47450984, g: 0.13333334, b: 0.54509807, a: 1}
   gizmoIcon: {fileID: 21300000, guid: 456f2a19775e082419734a633756a408, type: 3}
 --- !u!114 &7693426959447353640
@@ -259,10 +269,11 @@ MonoBehaviour:
   tag: TwoTails
   prefab: {fileID: 4833485101410928002, guid: a1d9d2007d49bb348a9d94f08f4fd380, type: 3}
   health: 50
-  points: 350
   movementSpeed: 4
   rotationSpeed: 0.4
   collisionDamage: 5
   moveForwardLimit: 0
+  points: 350
+  coins: 35
   gizmoColor: {r: 1, g: 0.22352943, b: 0.4666667, a: 0}
   gizmoIcon: {fileID: 21300000, guid: 607ae3d1fb7304e4993aba6dd520692e, type: 3}
