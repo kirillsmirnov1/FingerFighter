@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using UnityEditor;
+using UnityEditor.Advertisements;
 
 namespace FingerFighter.Builder
 {
@@ -46,6 +47,7 @@ namespace FingerFighter.Builder
 
         private static void TweakSettings(BuildType buildType)
         {
+            AdvertisementSettings.testMode = buildType == BuildType.TestApk;
             PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, buildType == BuildType.TestApk ? ScriptingImplementation.Mono2x : ScriptingImplementation.IL2CPP);
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7 | (buildType == BuildType.TestApk ? AndroidArchitecture.None : AndroidArchitecture.ARM64);
             PlayerSettings.Android.useCustomKeystore = buildType == BuildType.ReleaseAab;
