@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace FingerFighter.View.Util
@@ -10,16 +9,10 @@ namespace FingerFighter.View.Util
         [SerializeField] private RectTransform transformToScale;
         [SerializeField] private RectTransform parentRect;
         [SerializeField] private float scaleDuration = 1f;
-        [SerializeField] private int steps = 10;
         
         private bool _used;
-        private WaitForSeconds _wfs;
-
-        private void Awake()
-        {
-            _wfs = new WaitForSeconds(scaleDuration / steps);
-        }
-
+        private float _scaleDurationLeft;
+        
         private void OnEnable()
         {
             _used = false;
@@ -30,18 +23,17 @@ namespace FingerFighter.View.Util
         public void Scale()
         {
             if(_used) return;
+            _used = true;
+            _scaleDurationLeft = scaleDuration;
+        }
 
-            StartCoroutine(ScaleCoroutine());
-
-            IEnumerator ScaleCoroutine()
-            {
-                for (float i = 0; i <= steps; i++)
-                {
-                    transformToScale.localScale = Vector3.one * curve.Evaluate(i/steps);
-                    RebuildLayout();
-                    yield return _wfs;
-                }
-            }
+        private void Update()
+        {
+            if(_scaleDurationLeft <= 0) return;
+            _scaleDurationLeft -= Time.deltaTime;
+            
+            transformToScale.localScale = Vector3.one * curve.Evaluate(1f - _scaleDurationLeft/scaleDuration);
+            RebuildLayout();
         }
 
         private void RebuildLayout()
