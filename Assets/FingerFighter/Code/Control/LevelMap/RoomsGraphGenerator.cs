@@ -11,6 +11,7 @@ namespace FingerFighter.Control.LevelMap
         [SerializeField] private Vector2Int roomCount = new Vector2Int(6, 10);
         [SerializeField] private Vector2Int minPos = new Vector2Int(-2, -3);
         [SerializeField] private Vector2Int maxPos = new Vector2Int(2, 3);
+        [SerializeField] private float roomMarkRadius = 0.2f;
         
         [Header("Results")]
         [SerializeField] private List<Room> rooms;
@@ -21,7 +22,7 @@ namespace FingerFighter.Control.LevelMap
         {
             foreach (var room in rooms)
             {
-                Gizmos.DrawSphere(room.pos, 0.1f);   
+                Gizmos.DrawSphere(room.pos, roomMarkRadius);   
             }
         }
 
