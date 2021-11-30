@@ -1,11 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FingerFighter.Control.LevelMap
 {
     public class RoomsGraphGenerator : MonoBehaviour
     {
-        [SerializeField] private Room[] rooms;
+        [SerializeField] private List<Room> rooms;
         
         private void OnDrawGizmos()
         {
@@ -13,6 +14,17 @@ namespace FingerFighter.Control.LevelMap
             {
                 Gizmos.DrawSphere((Vector3Int) room.gridPos, 0.1f);   
             }
+        }
+
+        public void Generate()
+        {
+            rooms = new List<Room>
+            {
+                new Room {gridPos = new Vector2Int(0, -4)}, // Starter 
+                new Room {gridPos = new Vector2Int(0, 4)} // Boss
+            };
+            
+            // TODO add more
         }
     }
 
