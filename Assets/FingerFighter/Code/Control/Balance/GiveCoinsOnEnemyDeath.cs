@@ -1,5 +1,4 @@
-﻿using System;
-using FingerFighter.Control.Combat.Status;
+﻿using FingerFighter.Control.Combat.Status;
 using FingerFighter.Model.Combat;
 using UnityEngine;
 using UnityUtils.Variables;
