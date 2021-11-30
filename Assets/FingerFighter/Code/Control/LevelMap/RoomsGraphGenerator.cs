@@ -34,6 +34,7 @@ namespace FingerFighter.Control.LevelMap
         {
             SetAnchorRooms();
             GenerateMiddleRooms();
+            SortRoomsByGridY();
         }
 
         private void SetAnchorRooms()
@@ -68,6 +69,11 @@ namespace FingerFighter.Control.LevelMap
                     pos = newPos + NextShift,
                 });
             }
+        }
+
+        private void SortRoomsByGridY()
+        {
+            rooms = rooms.OrderBy(room => room.gridPos.y).ToList();
         }
 
         private Vector2 NextShift =>
