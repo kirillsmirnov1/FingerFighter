@@ -56,6 +56,9 @@ namespace FingerFighter.Control.Combat.Flow.Revive
         public void OnUnityAdsShowStart(string placementId)
         {
             Debug.LogWarning("UnityAdsShowStart");
+#if UNITY_EDITOR
+            OnUnityAdsShowComplete("", UnityAdsShowCompletionState.COMPLETED);
+#endif
         }
 
         public void OnUnityAdsShowClick(string placementId)
