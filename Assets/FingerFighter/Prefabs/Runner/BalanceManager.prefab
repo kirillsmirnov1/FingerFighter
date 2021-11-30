@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5940763291980283094}
   - component: {fileID: 116617116024038519}
+  - component: {fileID: 5823249585147666573}
   m_Layer: 0
   m_Name: BalanceManager
   m_TagString: Untagged
@@ -45,3 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
   coinBalance: {fileID: 11400000, guid: c2c4ccab921883746a4c5bdcbab4bda9, type: 2}
+--- !u!114 &5823249585147666573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5940763291980283095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f789921b674805835066306f7e9e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+  runAttemptGain: {fileID: 11400000, guid: d8fd83f3c6b9d0643bf12f34824a41e6, type: 2}
