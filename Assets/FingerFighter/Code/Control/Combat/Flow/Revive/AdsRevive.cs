@@ -42,6 +42,7 @@ namespace FingerFighter.Control.Combat.Flow.Revive
 
         public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
         {
+            if(showCompletionState != UnityAdsShowCompletionState.COMPLETED) return;
             Debug.Log("UnityAdsShowComplete"); // TODO find a way to test in editor 
             reward.Raise();
             LoadAd();
