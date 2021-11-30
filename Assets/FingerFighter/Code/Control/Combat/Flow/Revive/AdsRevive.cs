@@ -1,3 +1,4 @@
+using FingerFighter.View.Display;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityUtils.Events;
@@ -42,14 +43,31 @@ namespace FingerFighter.Control.Combat.Flow.Revive
 
         public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
         {
-            if(showCompletionState != UnityAdsShowCompletionState.COMPLETED) return;
-            Debug.Log("UnityAdsShowComplete"); // TODO find a way to test in editor 
-            reward.Raise();
-            LoadAd();
+            switch (showCompletionState)
+            {
+                case UnityAdsShowCompletionState.SKIPPED:
+                {
+                    UiNotifications.Show("No reward on skipped ad.");
+                    break;
+                }
+                case UnityAdsShowCompletionState.COMPLETED:
+                {
+                    Debug.Log("UnityAdsShowComplete"); 
+                    reward.Raise();
+                    LoadAd();
+                    break;
+                }
+                case UnityAdsShowCompletionState.UNKNOWN:
+                {
+                    UiNotifications.Show("Unknown ad error.");
+                    break;
+                }
+            }
         }
 
         public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
         {
+            UiNotifications.Show("Couldn't load ad.\nCheck web connection.");
             Debug.LogWarning("UnityAdsShowFailure");
             LoadAd();
         }
