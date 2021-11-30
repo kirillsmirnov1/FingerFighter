@@ -47,9 +47,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reviveEvent: {fileID: 11400000, guid: b471b33f66aebde47a963389529597b8, type: 2}
   playerTransform: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
+  playerDeathView: {fileID: 0}
   currentScore: {fileID: 0}
   blast: {fileID: 6660860642096657424}
-  playerReviveDelay: 0.1
+  reviveBlastDelay: 0.5
+  playerReviveDelay: 0.7
 --- !u!114 &6660860642096657424
 MonoBehaviour:
   m_ObjectHideFlags: 0
