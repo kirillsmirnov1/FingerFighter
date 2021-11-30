@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4052787709487195397}
   - component: {fileID: 6660860642096657424}
   - component: {fileID: 5504625715729258605}
+  - component: {fileID: 558319845924997317}
   m_Layer: 0
   m_Name: Revive
   m_TagString: Untagged
@@ -79,4 +80,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   request: {fileID: 11400000, guid: 63e5a40ba9c261a40b5e6a5ca15d1661, type: 2}
+  reward: {fileID: 11400000, guid: b471b33f66aebde47a963389529597b8, type: 2}
+--- !u!114 &558319845924997317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6660860642096657453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a758722eae94430ac0619d1742fd28a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseReviveCost: 500
+  reviveCostVariable: {fileID: 11400000, guid: dc31ca9a790622a4b9168d6deb43ab5b, type: 2}
+  coinBalance: {fileID: 11400000, guid: c2c4ccab921883746a4c5bdcbab4bda9, type: 2}
+  paidReviveRequest: {fileID: 11400000, guid: 9bbd54cecf7693a45bf652c57c10627e, type: 2}
   reward: {fileID: 11400000, guid: b471b33f66aebde47a963389529597b8, type: 2}
