@@ -2,7 +2,7 @@
 
 namespace FingerFighter.View.Ui
 {
-    public class HighScoreDisplay : LongVariableDisplay
+    public class LongRestrictedVariableDisplay : LongVariableDisplay
     {
         protected override void SetText(long value)
         {
