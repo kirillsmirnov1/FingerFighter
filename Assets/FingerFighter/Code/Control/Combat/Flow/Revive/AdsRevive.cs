@@ -51,6 +51,7 @@ namespace FingerFighter.Control.Combat.Flow.Revive
         public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
         {
             Debug.LogWarning("UnityAdsShowFailure");
+            LoadAd();
         }
 
         public void OnUnityAdsShowStart(string placementId)
