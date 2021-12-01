@@ -9,8 +9,9 @@ namespace FingerFighter.View.LevelMaps
         [SerializeField] private LevelMapVariable levelMapVariable;
         [SerializeField] private GameObject roomMarkPrefab;
         [SerializeField] private GameObject connectionPrefab;
-
-        private void Awake()
+        [SerializeField] private Camera cam;
+        
+        private void Start()
         {
             SpawnMap();
         }
@@ -37,7 +38,7 @@ namespace FingerFighter.View.LevelMaps
             foreach (var room in levelMapVariable.Value.rooms)
             {
                 var roomRect = Instantiate(roomMarkPrefab, transform).GetComponent<RectTransform>();
-                roomRect.position = Camera.main.WorldToScreenPoint(room.pos);
+                roomRect.position = cam.WorldToScreenPoint(room.pos);
             }
         }
 
