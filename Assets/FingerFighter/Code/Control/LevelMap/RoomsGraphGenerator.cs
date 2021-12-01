@@ -97,12 +97,15 @@ namespace FingerFighter.Control.LevelMap
             connections = connectionsSet.ToList();
         }
 
-        private Vector2Int ConnectionToNextRoom(int roomIndex)
+        private Vector2Int ConnectionToNextRoom(int roomIndex) 
+            => new Vector2Int(roomIndex, ClosestRoomIndex(roomIndex, roomIndex + 1, rooms.Count));
+
+        private int ClosestRoomIndex(int roomIndex, int from, int toExclusive)
         {
             var room = rooms[roomIndex];
             var bestDistance = float.MaxValue;
             var bestNextRoomIndex = rooms.Count - 1;
-            for (int i = roomIndex + 1; i < rooms.Count; i++)
+            for (int i = from; i < toExclusive; i++)
             {
                 if(rooms[i].gridPos.y == room.gridPos.y) continue;
                 var nextDistance = Vector2Int.Distance(room.gridPos, rooms[i].gridPos);
@@ -112,7 +115,8 @@ namespace FingerFighter.Control.LevelMap
                     bestNextRoomIndex = i;
                 }
             }
-            return new Vector2Int(roomIndex, bestNextRoomIndex);
+
+            return bestNextRoomIndex;
         }
 
         private Vector2 NextShift =>
