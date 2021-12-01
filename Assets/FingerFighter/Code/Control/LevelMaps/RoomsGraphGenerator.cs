@@ -18,6 +18,10 @@ namespace FingerFighter.Control.LevelMaps
         
         [Header("Results")] 
         [SerializeField] private LevelMapVariable levelMapVariable;
+
+        [Header("Debug")]
+        [SerializeField] private bool gizmoMarks = true;
+        [SerializeField] private bool gizmoConnections = true;
         
         private static readonly Random Rand = new Random();
         private LevelMap levelMap => levelMapVariable.Value;
@@ -25,18 +29,24 @@ namespace FingerFighter.Control.LevelMaps
         private void OnDrawGizmos()
         {
             if(levelMapVariable == null || levelMap == null) return;
-            
-            // Connections
-            foreach (var connection in levelMap.connections)
+
+            if (gizmoConnections)
             {
-                Gizmos.DrawLine(levelMap.rooms[connection.x].pos, levelMap.rooms[connection.y].pos);
+                // Connections
+                foreach (var connection in levelMap.connections)
+                {
+                    Gizmos.DrawLine(levelMap.rooms[connection.x].pos, levelMap.rooms[connection.y].pos);
+                }
             }
-            
-            // Marks
-            foreach (var room in levelMap.rooms)
+
+            if (gizmoMarks)
             {
-                // Gizmos.DrawSphere((Vector3Int)room.gridPos, roomMarkRadius);   
-                Gizmos.DrawSphere(room.pos, roomMarkRadius);   
+                // Marks
+                foreach (var room in levelMap.rooms)
+                {
+                    // Gizmos.DrawSphere((Vector3Int)room.gridPos, roomMarkRadius);   
+                    Gizmos.DrawSphere(room.pos, roomMarkRadius);   
+                }
             }
         }
 

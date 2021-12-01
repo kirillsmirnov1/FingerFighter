@@ -421,3 +421,5 @@ MonoBehaviour:
   roomMarkRadius: 0.2
   shiftMaxRadius: 0.2
   levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
+  gizmoMarks: 1
+  gizmoConnections: 1
