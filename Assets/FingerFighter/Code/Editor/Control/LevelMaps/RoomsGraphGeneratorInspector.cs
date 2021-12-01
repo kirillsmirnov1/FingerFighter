@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace FingerFighter.Control.LevelMap
+namespace FingerFighter.Control.LevelMaps
 {
     [CustomEditor(typeof(RoomsGraphGenerator))]
     public class RoomsGraphGeneratorInspector : Editor

@@ -1,11 +1,11 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using FingerFighter.Model.LevelMaps;
 using UnityEngine;
 using UnityUtils;
 using Random = System.Random;
 
-namespace FingerFighter.Control.LevelMap
+namespace FingerFighter.Control.LevelMaps
 {
     public class RoomsGraphGenerator : MonoBehaviour
     {
@@ -16,23 +16,23 @@ namespace FingerFighter.Control.LevelMap
         [SerializeField] private float roomMarkRadius = 0.2f;
         [SerializeField] private float shiftMaxRadius = 0.25f;
         
-        [Header("Results")]
-        [SerializeField] private List<Room> rooms;
-        [Tooltip("Indexes of connected rooms")]
-        [SerializeField] private List<Vector2Int> connections;
-
+        [Header("Results")] 
+        [SerializeField] private LevelMap levelMap;
+        
         private static readonly Random Rand = new Random();
         
         private void OnDrawGizmos()
         {
+            if(levelMap == null) return;
+            
             // Connections
-            foreach (var connection in connections)
+            foreach (var connection in levelMap.connections)
             {
-                Gizmos.DrawLine(rooms[connection.x].pos, rooms[connection.y].pos);
+                Gizmos.DrawLine(levelMap.rooms[connection.x].pos, levelMap.rooms[connection.y].pos);
             }
             
             // Marks
-            foreach (var room in rooms)
+            foreach (var room in levelMap.rooms)
             {
                 // Gizmos.DrawSphere((Vector3Int)room.gridPos, roomMarkRadius);   
                 Gizmos.DrawSphere(room.pos, roomMarkRadius);   
@@ -50,7 +50,7 @@ namespace FingerFighter.Control.LevelMap
         private void SetAnchorRooms()
         {
             var top = new Vector2Int(0, 4);
-            rooms = new List<Room>
+            levelMap.rooms = new List<Room>
             {
                 new Room {gridPos = -top, pos = -top}, // Start
                 new Room {gridPos = top, pos = top} // End
@@ -60,8 +60,8 @@ namespace FingerFighter.Control.LevelMap
         private void GenerateMiddleRooms()
         {
             var roomsToAdd = Rand.Next(roomCount.x, roomCount.y + 1);
-            var positions = new HashSet<Vector2Int>(rooms.Select(r => r.gridPos));
-            var newPos = rooms[0].gridPos;
+            var positions = new HashSet<Vector2Int>(levelMap.rooms.Select(r => r.gridPos));
+            var newPos = levelMap.rooms[0].gridPos;
 
             for (var i = 0; i < roomsToAdd; i++)
             {
@@ -73,7 +73,7 @@ namespace FingerFighter.Control.LevelMap
                 }
                 positions.Add(newPos);
 
-                rooms.Add(new Room
+                levelMap.rooms.Add(new Room
                 {
                     gridPos = newPos,
                     pos = newPos + NextShift,
@@ -83,38 +83,38 @@ namespace FingerFighter.Control.LevelMap
 
         private void SortRoomsByGridY()
         {
-            rooms = rooms.OrderBy(room => room.gridPos.y).ToList();
+            levelMap.rooms = levelMap.rooms.OrderBy(room => room.gridPos.y).ToList();
         }
 
         private void GenerateConnections()
         {
             var connectionsSet = new HashSet<Vector2Int>();
-            for (int i = 0; i < rooms.Count - 1; i++)
+            for (int i = 0; i < levelMap.rooms.Count - 1; i++)
             {
                 connectionsSet.Add(ConnectionToNextRoom(i));
             }
-            for (int i = 1; i < rooms.Count; i++)
+            for (int i = 1; i < levelMap.rooms.Count; i++)
             {
                 connectionsSet.Add(ConnectionToPrevRoom(i));   
             }
-            connections = connectionsSet.ToList();
+            levelMap.connections = connectionsSet.ToList();
         }
 
         private Vector2Int ConnectionToNextRoom(int roomIndex) 
-            => new Vector2Int(roomIndex, ClosestRoomIndex(roomIndex, roomIndex + 1, rooms.Count));
+            => new Vector2Int(roomIndex, ClosestRoomIndex(roomIndex, roomIndex + 1, levelMap.rooms.Count));
 
         private Vector2Int ConnectionToPrevRoom(int roomIndex) 
             => new Vector2Int(ClosestRoomIndex(roomIndex, 0, roomIndex), roomIndex);
 
         private int ClosestRoomIndex(int roomIndex, int from, int toExclusive)
         {
-            var room = rooms[roomIndex];
+            var room = levelMap.rooms[roomIndex];
             var bestDistance = float.MaxValue;
-            var bestNextRoomIndex = rooms.Count - 1;
+            var bestNextRoomIndex = levelMap.rooms.Count - 1;
             for (int i = from; i < toExclusive; i++)
             {
-                if(rooms[i].gridPos.y == room.gridPos.y) continue;
-                var nextDistance = Vector2Int.Distance(room.gridPos, rooms[i].gridPos);
+                if(levelMap.rooms[i].gridPos.y == room.gridPos.y) continue;
+                var nextDistance = Vector2Int.Distance(room.gridPos, levelMap.rooms[i].gridPos);
                 if (nextDistance < bestDistance)
                 {
                     bestDistance = nextDistance;
@@ -130,12 +130,5 @@ namespace FingerFighter.Control.LevelMap
                 Rand.NextFloat(-shiftMaxRadius, shiftMaxRadius),
                 Rand.NextFloat(-shiftMaxRadius, shiftMaxRadius)
             );
-    }
-
-    [Serializable]
-    public class Room
-    {
-        public Vector2Int gridPos;
-        public Vector2 pos;
     }
 }
