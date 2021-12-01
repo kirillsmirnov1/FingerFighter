@@ -17,9 +17,8 @@ namespace FingerFighter.View.LevelMaps
 
         public void SpawnMap()
         {
-            Debug.Log("TODO spawn map");
             ClearMap();
-            // TODO spawn marks
+            SpawnRoomMarks();
             SpawnConnections();
         }
 
@@ -28,6 +27,17 @@ namespace FingerFighter.View.LevelMaps
             for (int i = transform.childCount - 1; i >= 0; i--)
             {
                 DestroyImmediate(transform.GetChild(i).gameObject);
+            }
+        }
+
+        private void SpawnRoomMarks()
+        {
+            // TODO create RoomMarkView
+            // TODO set button interaction depending on proximity to player
+            foreach (var room in levelMapVariable.Value.rooms)
+            {
+                var roomRect = Instantiate(roomMarkPrefab, transform).GetComponent<RectTransform>();
+                roomRect.position = Camera.main.WorldToScreenPoint(room.pos);
             }
         }
 
