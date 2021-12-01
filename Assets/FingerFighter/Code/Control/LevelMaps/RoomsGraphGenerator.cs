@@ -17,13 +17,14 @@ namespace FingerFighter.Control.LevelMaps
         [SerializeField] private float shiftMaxRadius = 0.25f;
         
         [Header("Results")] 
-        [SerializeField] private LevelMap levelMap;
+        [SerializeField] private LevelMapVariable levelMapVariable;
         
         private static readonly Random Rand = new Random();
+        private LevelMap levelMap => levelMapVariable.Value;
         
         private void OnDrawGizmos()
         {
-            if(levelMap == null) return;
+            if(levelMapVariable == null || levelMap == null) return;
             
             // Connections
             foreach (var connection in levelMap.connections)

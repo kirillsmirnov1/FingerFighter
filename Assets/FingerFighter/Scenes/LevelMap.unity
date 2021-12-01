@@ -420,38 +420,4 @@ MonoBehaviour:
   maxPos: {x: 2, y: 3}
   roomMarkRadius: 0.2
   shiftMaxRadius: 0.2
-  levelMap:
-    rooms:
-    - gridPos: {x: 0, y: -4}
-      pos: {x: 0, y: -4}
-    - gridPos: {x: 0, y: -3}
-      pos: {x: -0.06059971, y: -3.0846276}
-    - gridPos: {x: -1, y: -2}
-      pos: {x: -0.8184508, y: -1.8428785}
-    - gridPos: {x: -2, y: -2}
-      pos: {x: -1.9747285, y: -2.0067182}
-    - gridPos: {x: -1, y: -1}
-      pos: {x: -0.90146166, y: -1.0168982}
-    - gridPos: {x: 1, y: 1}
-      pos: {x: 0.94546163, y: 1.0424944}
-    - gridPos: {x: -1, y: 1}
-      pos: {x: -1.0724283, y: 1.0893506}
-    - gridPos: {x: -2, y: 2}
-      pos: {x: -1.8297379, y: 1.921951}
-    - gridPos: {x: -1, y: 2}
-      pos: {x: -0.9212008, y: 1.815204}
-    - gridPos: {x: 0, y: 4}
-      pos: {x: 0, y: 4}
-    connections:
-    - {x: 0, y: 1}
-    - {x: 1, y: 2}
-    - {x: 2, y: 4}
-    - {x: 3, y: 4}
-    - {x: 4, y: 6}
-    - {x: 5, y: 8}
-    - {x: 6, y: 8}
-    - {x: 7, y: 9}
-    - {x: 8, y: 9}
-    - {x: 1, y: 3}
-    - {x: 4, y: 5}
-    - {x: 6, y: 7}
+  levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
