@@ -93,12 +93,18 @@ namespace FingerFighter.Control.LevelMap
             {
                 connectionsSet.Add(ConnectionToNextRoom(i));
             }
-            // TODO add previous connections 
+            for (int i = 1; i < rooms.Count; i++)
+            {
+                connectionsSet.Add(ConnectionToPrevRoom(i));   
+            }
             connections = connectionsSet.ToList();
         }
 
         private Vector2Int ConnectionToNextRoom(int roomIndex) 
             => new Vector2Int(roomIndex, ClosestRoomIndex(roomIndex, roomIndex + 1, rooms.Count));
+
+        private Vector2Int ConnectionToPrevRoom(int roomIndex) 
+            => new Vector2Int(ClosestRoomIndex(roomIndex, 0, roomIndex), roomIndex);
 
         private int ClosestRoomIndex(int roomIndex, int from, int toExclusive)
         {
