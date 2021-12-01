@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 7857382306282989999}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,5 +70,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
-  roomMarkPrefab: {fileID: 0}
-  connectionPrefab: {fileID: 0}
+  roomMarkPrefab: {fileID: 2464253741512415124, guid: 89c2fc4a9140067488bfd84d65ba38de, type: 3}
+  connectionPrefab: {fileID: 4091196204279556253, guid: 90223a8d5bde9824e8073b8b7380ff08, type: 3}
