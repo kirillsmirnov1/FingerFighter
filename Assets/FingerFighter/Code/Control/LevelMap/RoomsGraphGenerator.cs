@@ -18,11 +18,20 @@ namespace FingerFighter.Control.LevelMap
         
         [Header("Results")]
         [SerializeField] private List<Room> rooms;
+        [Tooltip("Indexes of connected rooms")]
+        [SerializeField] private List<Vector2Int> connections;
 
         private static readonly Random Rand = new Random();
         
         private void OnDrawGizmos()
         {
+            // Connections
+            foreach (var connection in connections)
+            {
+                Gizmos.DrawLine(rooms[connection.x].pos, rooms[connection.y].pos);
+            }
+            
+            // Marks
             foreach (var room in rooms)
             {
                 // Gizmos.DrawSphere((Vector3Int)room.gridPos, roomMarkRadius);   
@@ -35,6 +44,7 @@ namespace FingerFighter.Control.LevelMap
             SetAnchorRooms();
             GenerateMiddleRooms();
             SortRoomsByGridY();
+            GenerateConnections();
         }
 
         private void SetAnchorRooms()
@@ -74,6 +84,14 @@ namespace FingerFighter.Control.LevelMap
         private void SortRoomsByGridY()
         {
             rooms = rooms.OrderBy(room => room.gridPos.y).ToList();
+        }
+
+        private void GenerateConnections()
+        {
+            var connectionsSet = new HashSet<Vector2Int>();
+            // TODO add next connections
+            // TODO add previous connections 
+            connections = connectionsSet.ToList();
         }
 
         private Vector2 NextShift =>
