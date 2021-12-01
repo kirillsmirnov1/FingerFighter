@@ -10,5 +10,8 @@ namespace FingerFighter.Model.LevelMaps
         public List<Room> rooms;
         [Tooltip("Indexes of connected rooms")]
         public List<Vector2Int> connections;
+
+        public Vector2[] ConnectionPositions(Vector2Int connection)
+            => new[] {rooms[connection.x].pos, rooms[connection.y].pos};
     }
 }

@@ -35,7 +35,8 @@ namespace FingerFighter.Control.LevelMaps
                 // Connections
                 foreach (var connection in levelMap.connections)
                 {
-                    Gizmos.DrawLine(levelMap.rooms[connection.x].pos, levelMap.rooms[connection.y].pos);
+                    var positions = levelMap.ConnectionPositions(connection);
+                    Gizmos.DrawLine(positions[0], positions[1]);
                 }
             }
 
