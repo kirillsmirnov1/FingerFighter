@@ -33,12 +33,16 @@ namespace FingerFighter.View.LevelMaps
 
         private void SpawnRoomMarks()
         {
-            // TODO create RoomMarkView
-            // TODO set button interaction depending on proximity to player
-            foreach (var room in levelMapVariable.Value.rooms)
+            for (var i = 0; i < levelMapVariable.Value.rooms.Count; i++)
             {
-                var roomRect = Instantiate(roomMarkPrefab, transform).GetComponent<RectTransform>();
-                roomRect.position = cam.WorldToScreenPoint(room.pos);
+                var room = levelMapVariable.Value.rooms[i];
+                Instantiate(roomMarkPrefab, transform)
+                    .GetComponent<RoomMarkerView>()
+                    .Init(new RoomMarkerData
+                    {
+                        position = cam.WorldToScreenPoint(room.pos),
+                        roomIndex = i
+                    });
             }
         }
 
