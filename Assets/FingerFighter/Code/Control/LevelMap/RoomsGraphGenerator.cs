@@ -89,9 +89,30 @@ namespace FingerFighter.Control.LevelMap
         private void GenerateConnections()
         {
             var connectionsSet = new HashSet<Vector2Int>();
-            // TODO add next connections
+            for (int i = 0; i < rooms.Count - 1; i++)
+            {
+                connectionsSet.Add(ConnectionToNextRoom(i));
+            }
             // TODO add previous connections 
             connections = connectionsSet.ToList();
+        }
+
+        private Vector2Int ConnectionToNextRoom(int roomIndex)
+        {
+            var room = rooms[roomIndex];
+            var bestDistance = float.MaxValue;
+            var bestNextRoomIndex = rooms.Count - 1;
+            for (int i = roomIndex + 1; i < rooms.Count; i++)
+            {
+                if(rooms[i].gridPos.y == room.gridPos.y) continue;
+                var nextDistance = Vector2Int.Distance(room.gridPos, rooms[i].gridPos);
+                if (nextDistance < bestDistance)
+                {
+                    bestDistance = nextDistance;
+                    bestNextRoomIndex = i;
+                }
+            }
+            return new Vector2Int(roomIndex, bestNextRoomIndex);
         }
 
         private Vector2 NextShift =>
