@@ -15,6 +15,7 @@ namespace FingerFighter.Control.LevelMaps
         [SerializeField] private Vector2Int maxPos = new Vector2Int(2, 3);
         [SerializeField] private float roomMarkRadius = 0.2f;
         [SerializeField] private float shiftMaxRadius = 0.25f;
+        [SerializeField] private float difficultyVariation = 0.1f;
         
         [Header("Results")] 
         [SerializeField] private LevelMapVariable levelMapVariable;
@@ -91,14 +92,25 @@ namespace FingerFighter.Control.LevelMaps
                         Rand.Next(minPos.y, maxPos.y + 1));
                 }
                 positions.Add(newPos);
+                
+                var shiftedPos = newPos + NextShift;
+                var difficulty = GenerateRoomDifficulty(shiftedPos.y);
 
                 _levelMap.rooms.Add(new Room
                 {
                     type = RoomType.Regular,
+                    difficulty = difficulty,
                     gridPos = newPos,
-                    pos = newPos + NextShift,
+                    pos = shiftedPos,
                 });
             }
+        }
+
+        private float GenerateRoomDifficulty(float yPos)
+        {
+            var t = Mathf.InverseLerp(minPos.y, maxPos.y, yPos);
+            var difficulty = t + Rand.NextFloat(-difficultyVariation, difficultyVariation);
+            return Mathf.Clamp01(difficulty);
         }
 
         private void SortRoomsByGridY()

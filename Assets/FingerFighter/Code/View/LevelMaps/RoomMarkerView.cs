@@ -24,6 +24,9 @@ namespace FingerFighter.View.LevelMaps
         [SerializeField] private Sprite startSprite;
         [SerializeField] private Color startColor = Color.white;
 
+        [Header("Regular")]
+        [SerializeField] private Gradient regularRoomColors;
+        
         [Header("Boss")]
         [SerializeField] private Sprite crownSprite;
         [SerializeField] private Color crownColor = Color.yellow;
@@ -84,7 +87,7 @@ namespace FingerFighter.View.LevelMaps
                     break;
                 case RoomType.Regular:
                     // TODO set checkmark 
-                    // TODO set color 
+                    markersImage.color = regularRoomColors.Evaluate(_data.difficulty);
                     break;
                 case RoomType.Boss:
                     markersImage.sprite = crownSprite;
