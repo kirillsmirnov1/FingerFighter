@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace FingerFighter.Model.LevelMaps
 {
@@ -6,5 +7,6 @@ namespace FingerFighter.Model.LevelMaps
     {
         public Vector2 position;
         public int roomIndex;
+        public HashSet<int> neighbours;
     }
 }

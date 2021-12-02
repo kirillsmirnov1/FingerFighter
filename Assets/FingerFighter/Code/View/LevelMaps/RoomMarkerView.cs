@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FingerFighter.Model.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
@@ -17,7 +18,8 @@ namespace FingerFighter.View.LevelMaps
 
         private RoomMarkerData _data;
         private int Index => _data.roomIndex;
-        
+        private HashSet<int> Neighbours => _data.neighbours;
+
         private void OnValidate()
         {
             rect ??= GetComponent<RectTransform>();
@@ -27,17 +29,25 @@ namespace FingerFighter.View.LevelMaps
         private void Awake()
         {
             button.onClick.AddListener(NotifyOnClick);
+            OnClick += OnRoomMarkerClicked;
             PlayerMarker.OnRoomReached += OnPlayerReachedRoom;
         }
 
         private void OnDestroy()
         {
             button.onClick.RemoveListener(NotifyOnClick);
+            OnClick -= OnRoomMarkerClicked;
             PlayerMarker.OnRoomReached -= OnPlayerReachedRoom;
+        }
+
+        private void OnRoomMarkerClicked(int roomIndex)
+        {
+            button.interactable = false;
         }
 
         private void NotifyOnClick()
         {
+            button.interactable = false;
             OnClick?.Invoke(_data.roomIndex);
         }
 
@@ -52,11 +62,10 @@ namespace FingerFighter.View.LevelMaps
             if (roomIndex == Index)
             {
                 Debug.Log($"Yay! Player reached room {roomIndex}");
-                // TODO disable button 
             }
             else
             {
-                // todo check neighbours to enable / disable button 
+                button.interactable = Neighbours.Contains(roomIndex);
             }
         }
     }

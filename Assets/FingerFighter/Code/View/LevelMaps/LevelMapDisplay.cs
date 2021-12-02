@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using FingerFighter.Model.LevelMaps;
 using UnityEngine;
 
@@ -41,7 +42,8 @@ namespace FingerFighter.View.LevelMaps
                     .Init(new RoomMarkerData
                     {
                         position = cam.WorldToScreenPoint(room.pos),
-                        roomIndex = i
+                        roomIndex = i,
+                        neighbours = new HashSet<int>(room.neighbours),
                     });
             }
         }
