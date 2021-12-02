@@ -1,6 +1,7 @@
 ﻿using System;
 using FingerFighter.Model.LevelMaps;
 using UnityEngine;
+using UnityUtils.Variables;
 
 namespace FingerFighter.View.LevelMaps.Player
 {
@@ -8,10 +9,11 @@ namespace FingerFighter.View.LevelMaps.Player
     {
         public static event Action<int> OnRoomReached; 
 
-        [SerializeField] private LevelMapVariable levelMapVariable;
         [SerializeField] private float speed = 1;
         [SerializeField] private float eps = 0.1f;
-
+        [SerializeField] private LevelMapVariable levelMapVariable;
+        [SerializeField] private IntVariable currentRoom;
+        
         private State _state;
 
         private void Awake() 
@@ -20,7 +22,7 @@ namespace FingerFighter.View.LevelMaps.Player
             => RoomMarkerView.OnClick -= OnRoomMarkerClicked;
 
         private void Start() 
-            => _state = new AtPosition(this, 0); // TODO position on current room   
+            => _state = new AtPosition(this, currentRoom);   
 
         private void Update() 
             => _state.OnUpdate();

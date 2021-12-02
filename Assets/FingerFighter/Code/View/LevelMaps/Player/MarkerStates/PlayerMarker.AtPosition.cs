@@ -12,6 +12,7 @@
             
             public override void OnRoomMarkerClicked(int roomIndex)
             {
+                Marker.currentRoom.Value = roomIndex;
                 Marker._state = new Moves(Marker, roomIndex);
             }
 

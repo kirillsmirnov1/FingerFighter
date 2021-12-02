@@ -150,6 +150,7 @@ MonoBehaviour:
   button: {fileID: 6616249525245224594}
   checkMarkOverMarker: {fileID: 6046182841057340318}
   markersImage: {fileID: 7994082770259425678}
+  currentPlayerRoom: {fileID: 11400000, guid: a231fe10c9393fb40bdde69591cabc9d, type: 2}
   startSprite: {fileID: 21300000, guid: 3ef175ba7a9fcf54d8a911e4bfe549e5, type: 3}
   startColor: {r: 1, g: 1, b: 1, a: 1}
   crownSprite: {fileID: 21300000, guid: 7458aed70e582de46abbb5caed37ad33, type: 3}

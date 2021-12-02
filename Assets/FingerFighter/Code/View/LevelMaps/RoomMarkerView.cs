@@ -4,6 +4,7 @@ using FingerFighter.Model.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityUtils.Variables;
 
 namespace FingerFighter.View.LevelMaps
 {
@@ -17,7 +18,8 @@ namespace FingerFighter.View.LevelMaps
         [SerializeField] private Button button;
         [SerializeField] private GameObject checkMarkOverMarker; // TODO enable for passed locations 
         [SerializeField] private Image markersImage;
-
+        [SerializeField] private IntVariable currentPlayerRoom;
+        
         [Header("Start")]
         [SerializeField] private Sprite startSprite;
         [SerializeField] private Color startColor = Color.white;
@@ -50,6 +52,11 @@ namespace FingerFighter.View.LevelMaps
             PlayerMarker.OnRoomReached -= OnPlayerReachedRoom;
         }
 
+        private void Start()
+        {
+            OnPlayerReachedRoom(currentPlayerRoom);
+        }
+
         private void OnRoomMarkerClicked(int roomIndex)
         {
             button.interactable = false;
@@ -57,7 +64,6 @@ namespace FingerFighter.View.LevelMaps
 
         private void NotifyOnClick()
         {
-            button.interactable = false;
             OnClick?.Invoke(_data.roomIndex);
         }
 
@@ -93,7 +99,7 @@ namespace FingerFighter.View.LevelMaps
         {
             if (roomIndex == Index)
             {
-                Debug.Log($"Yay! Player reached room {roomIndex}");
+                button.interactable = false;
             }
             else
             {
