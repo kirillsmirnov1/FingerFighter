@@ -1,5 +1,6 @@
 ﻿using System;
 using FingerFighter.Model.LevelMaps;
+using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,9 +16,8 @@ namespace FingerFighter.View.LevelMaps
         [SerializeField] private Button button;
 
         private RoomMarkerData _data;
+        private int Index => _data.roomIndex;
         
-        // TODO set button interaction depending on proximity to player
-
         private void OnValidate()
         {
             rect ??= GetComponent<RectTransform>();
@@ -27,11 +27,13 @@ namespace FingerFighter.View.LevelMaps
         private void Awake()
         {
             button.onClick.AddListener(NotifyOnClick);
+            PlayerMarker.OnRoomReached += OnPlayerReachedRoom;
         }
 
         private void OnDestroy()
         {
             button.onClick.RemoveListener(NotifyOnClick);
+            PlayerMarker.OnRoomReached -= OnPlayerReachedRoom;
         }
 
         private void NotifyOnClick()
@@ -43,6 +45,19 @@ namespace FingerFighter.View.LevelMaps
         {
             _data = data;
             rect.position = _data.position;
+        }
+
+        private void OnPlayerReachedRoom(int roomIndex)
+        {
+            if (roomIndex == Index)
+            {
+                Debug.Log($"Yay! Player reached room {roomIndex}");
+                // TODO disable button 
+            }
+            else
+            {
+                // todo check neighbours to enable / disable button 
+            }
         }
     }
 }
