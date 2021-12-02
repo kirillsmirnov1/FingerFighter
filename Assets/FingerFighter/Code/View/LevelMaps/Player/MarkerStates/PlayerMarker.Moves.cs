@@ -29,7 +29,10 @@ namespace FingerFighter.View.LevelMaps.Player
             {
                 if (Vector3.Distance(Self.position, _targetPos) > Marker.eps)
                 {
-                    Self.position += (_targetPos - Self.position).normalized * (Time.deltaTime * Marker.speed);
+                    var toTarget = _targetPos - Self.position;
+                    var step = toTarget.normalized * (Time.deltaTime * Marker.speed);
+                    var nextMove = Vector3.ClampMagnitude(step, toTarget.magnitude);
+                    Self.position += nextMove;
                 }
                 else
                 {
