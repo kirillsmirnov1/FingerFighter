@@ -2,7 +2,7 @@
 using FingerFighter.Model.LevelMaps;
 using UnityEngine;
 
-namespace FingerFighter.View.LevelMaps
+namespace FingerFighter.View.LevelMaps.Player
 {
     public class PlayerMarker : MonoBehaviour
     {
