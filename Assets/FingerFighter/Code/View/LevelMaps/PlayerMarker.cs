@@ -11,51 +11,97 @@ namespace FingerFighter.View.LevelMaps
         [SerializeField] private LevelMapVariable levelMapVariable;
         [SerializeField] private float speed = 1;
         [SerializeField] private float eps = 0.1f;
-        
-        private Action _onUpdate;
-        private Vector3 _targetPos;
-        private int _targetRoom;
 
-        private void Awake()
-        {
-            // TODO position on current room 
-            RoomMarkerView.OnClick += OnRoomMarkerClicked;
-        }
+        private State _state;
 
-        private void OnDestroy()
-        {
-            RoomMarkerView.OnClick -= OnRoomMarkerClicked;
-        }
+        private void Awake() 
+            => RoomMarkerView.OnClick += OnRoomMarkerClicked;
+        private void OnDestroy() 
+            => RoomMarkerView.OnClick -= OnRoomMarkerClicked;
 
-        private void Update()
-        {
-            _onUpdate?.Invoke();
-        }
+        private void Start() 
+            => _state = new AtPosition(this, 0); // TODO position on current room   
 
-        private void OnRoomMarkerClicked(int roomIndex)
-        {
-            _targetRoom = roomIndex;
-            _targetPos = Camera.main.WorldToScreenPoint(levelMapVariable.Value.rooms[roomIndex].pos);
-            _onUpdate = MoveToTarget;
-        }
+        private void Update() 
+            => _state.OnUpdate();
 
-        private void MoveToTarget()
+        private void OnRoomMarkerClicked(int roomIndex) 
+            => _state.OnRoomMarkerClicked(roomIndex);
+
+        private Vector2 RoomMarkerScreenPosition(int roomIndex) 
+            => Camera.main.WorldToScreenPoint(levelMapVariable.Value.rooms[roomIndex].pos);
+
+        private abstract class State
         {
-            if (Vector3.Distance(transform.position, _targetPos) > eps)
+            protected readonly PlayerMarker Marker;
+            protected readonly Transform Self;
+            protected State(PlayerMarker marker)
             {
-                transform.position += (_targetPos - transform.position).normalized * (Time.deltaTime * speed);
+                Marker = marker;
+                Self = Marker.transform;
             }
-            else
+
+            public abstract void OnRoomMarkerClicked(int roomIndex);
+
+            public abstract void OnUpdate();
+        }
+
+        private class AtPosition : State
+        {
+            public AtPosition(PlayerMarker marker, int roomIndex) : base(marker)
             {
-                RoomReached();
+                Self.position = Marker.RoomMarkerScreenPosition(roomIndex);
+            }
+            
+            public override void OnRoomMarkerClicked(int roomIndex)
+            {
+                Marker._state = new Moves(Marker, roomIndex);
+            }
+
+            public override void OnUpdate()
+            {
+                // Does nothing
             }
         }
 
-        private void RoomReached()
+        private class Moves : State
         {
-            _onUpdate = null;
-            transform.position = _targetPos;
-            OnRoomReached?.Invoke(_targetRoom);
+            private readonly Vector3 _targetPos;
+            private readonly int _targetRoom;
+            
+            public Moves(PlayerMarker marker, int roomIndex) : base(marker)
+            {
+                _targetRoom = roomIndex;
+                _targetPos = Marker.RoomMarkerScreenPosition(roomIndex);
+            }
+            
+            public override void OnRoomMarkerClicked(int roomIndex)
+            {
+                // Does nothing 
+            }
+
+            public override void OnUpdate()
+            {
+                MoveToTarget();
+            }
+            
+            private void MoveToTarget()
+            {
+                if (Vector3.Distance(Self.position, _targetPos) > Marker.eps)
+                {
+                    Self.position += (_targetPos - Self.position).normalized * (Time.deltaTime * Marker.speed);
+                }
+                else
+                {
+                    RoomReached();
+                }
+            }
+            
+            private void RoomReached()
+            {
+                OnRoomReached?.Invoke(_targetRoom);
+                Marker._state = new AtPosition(Marker, _targetRoom);
+            }
         }
     }
 }
