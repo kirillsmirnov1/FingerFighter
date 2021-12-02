@@ -6,6 +6,7 @@
         {
             public AtPosition(PlayerMarker marker, int roomIndex) : base(marker)
             {
+                OnRoomReached?.Invoke(roomIndex);
                 Self.position = Marker.RoomMarkerScreenPosition(roomIndex);
             }
             

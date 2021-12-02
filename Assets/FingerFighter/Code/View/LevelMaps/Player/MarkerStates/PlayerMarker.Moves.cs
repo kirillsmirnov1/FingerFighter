@@ -37,11 +37,8 @@ namespace FingerFighter.View.LevelMaps.Player
                 }
             }
             
-            private void RoomReached()
-            {
-                OnRoomReached?.Invoke(_targetRoom);
-                Marker._state = new AtPosition(Marker, _targetRoom);
-            }
+            private void RoomReached() 
+                => Marker._state = new AtPosition(Marker, _targetRoom);
         }
     }
 }
