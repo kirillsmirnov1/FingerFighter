@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7857382306282989996}
   - component: {fileID: 7857382306282989997}
   - component: {fileID: 7271307827983755781}
+  - component: {fileID: 3183248939214974350}
   m_Layer: 0
   m_Name: RoomsGraph
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785f862d94fb52343a1fe7dff416d504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomCount: {x: 4, y: 8}
+  roomCount: {x: 4, y: 6}
   minPos: {x: -2, y: -3}
   maxPos: {x: 2, y: 3}
   roomMarkRadius: 0.2
@@ -74,3 +75,17 @@ MonoBehaviour:
   roomMarkPrefab: {fileID: 2464253741512415124, guid: 89c2fc4a9140067488bfd84d65ba38de, type: 3}
   connectionPrefab: {fileID: 4091196204279556253, guid: 90223a8d5bde9824e8073b8b7380ff08, type: 3}
   cam: {fileID: 0}
+--- !u!114 &3183248939214974350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7857382306282989999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf67718fda84f9e98197fdc4b0afddf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelMapGenerator: {fileID: 7857382306282989997}
+  levelMapDisplay: {fileID: 7271307827983755781}
