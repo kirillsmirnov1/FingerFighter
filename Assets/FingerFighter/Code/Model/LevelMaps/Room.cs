@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace FingerFighter.Model.LevelMaps
@@ -8,5 +9,6 @@ namespace FingerFighter.Model.LevelMaps
     {
         public Vector2Int gridPos;
         public Vector2 pos;
+        public List<int> neighbours = new List<int>();
     }
 }

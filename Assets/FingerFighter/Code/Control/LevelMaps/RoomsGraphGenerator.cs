@@ -110,6 +110,12 @@ namespace FingerFighter.Control.LevelMaps
                 connectionsSet.Add(ConnectionToPrevRoom(i));   
             }
             levelMap.connections = connectionsSet.ToList();
+            for (var i = 0; i < levelMap.connections.Count; i++)
+            {
+                var connection = levelMap.connections[i];
+                levelMap.rooms[connection.x].neighbours.Add(connection.y);
+                levelMap.rooms[connection.y].neighbours.Add(connection.x);
+            }
         }
 
         private Vector2Int ConnectionToNextRoom(int roomIndex) 
