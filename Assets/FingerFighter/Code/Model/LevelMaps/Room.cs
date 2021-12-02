@@ -7,6 +7,7 @@ namespace FingerFighter.Model.LevelMaps
     [Serializable]
     public class Room
     {
+        public RoomType type;
         public Vector2Int gridPos;
         public Vector2 pos;
         public List<int> neighbours = new List<int>();

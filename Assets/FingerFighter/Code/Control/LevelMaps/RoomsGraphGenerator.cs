@@ -71,8 +71,8 @@ namespace FingerFighter.Control.LevelMaps
             var top = new Vector2Int(0, 4);
             _levelMap.rooms = new List<Room>
             {
-                new Room {gridPos = -top, pos = -top}, // Start
-                new Room {gridPos = top, pos = top} // End
+                new Room {type = RoomType.Start, gridPos = -top, pos = -top},
+                new Room {type = RoomType.Boss, gridPos = top, pos = top}
             };
         }
 
@@ -94,6 +94,7 @@ namespace FingerFighter.Control.LevelMaps
 
                 _levelMap.rooms.Add(new Room
                 {
+                    type = RoomType.Regular,
                     gridPos = newPos,
                     pos = newPos + NextShift,
                 });
