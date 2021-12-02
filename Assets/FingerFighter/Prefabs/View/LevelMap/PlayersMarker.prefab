@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
-  speed: 50
-  eps: 0.1
+  speed: 100
+  eps: 0.5
