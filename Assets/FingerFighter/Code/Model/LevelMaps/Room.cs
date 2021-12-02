@@ -8,6 +8,7 @@ namespace FingerFighter.Model.LevelMaps
     public class Room
     {
         public RoomType type;
+        public float difficulty;
         public Vector2Int gridPos;
         public Vector2 pos;
         public List<int> neighbours = new List<int>();
