@@ -15,7 +15,13 @@ namespace FingerFighter.View.LevelMaps
 
         [SerializeField] private RectTransform rect;
         [SerializeField] private Button button;
-
+        [SerializeField] private GameObject checkMarkOverMarker; // TODO enable for passed locations 
+        [SerializeField] private Image markersImage;
+        
+        [Header("Boss")]
+        [SerializeField] private Sprite crownSprite;
+        [SerializeField] private Color crownColor;
+        
         private RoomMarkerData _data;
         private int Index => _data.roomIndex;
         private HashSet<int> Neighbours => _data.neighbours;
@@ -55,6 +61,26 @@ namespace FingerFighter.View.LevelMaps
         {
             _data = data;
             rect.position = _data.position;
+            SetVisuals();
+        }
+
+        private void SetVisuals()
+        {
+            switch (_data.type)
+            {
+                case RoomType.Start:
+                    // TODO set start sprite 
+                    break;
+                case RoomType.Regular:
+                    // TODO set checkmark 
+                    break;
+                case RoomType.Boss:
+                    markersImage.sprite = crownSprite;
+                    markersImage.color = crownColor;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
 
         private void OnPlayerReachedRoom(int roomIndex)

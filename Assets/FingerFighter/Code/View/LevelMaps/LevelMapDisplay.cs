@@ -41,6 +41,7 @@ namespace FingerFighter.View.LevelMaps
                     .GetComponent<RoomMarkerView>()
                     .Init(new RoomMarkerData
                     {
+                        type = room.type,
                         position = cam.WorldToScreenPoint(room.pos),
                         roomIndex = i,
                         neighbours = new HashSet<int>(room.neighbours),
