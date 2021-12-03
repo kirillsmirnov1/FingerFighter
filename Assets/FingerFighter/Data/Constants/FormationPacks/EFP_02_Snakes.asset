@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df35f4a66664717bb45ad9eefa7b49c, type: 3}
   m_Name: EFP_02_Snakes
   m_EditorClassIdentifier: 
-  id: 2
+  id: Snakes
   boss: {fileID: 4176904084525418266, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
   formations:
   - id: 1
