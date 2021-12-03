@@ -19,14 +19,20 @@ namespace FingerFighter.Control.LevelMaps
         
         [Header("Results")] 
         [SerializeField] private LevelMapVariable levelMapVariable;
-
+        [SerializeField] private RoomsStatus roomsStatus;
+        
         [Header("Debug")]
         [SerializeField] private bool gizmoMarks = true;
         [SerializeField] private bool gizmoConnections = true;
         
         private static readonly Random Rand = new Random();
-        private LevelMap _levelMap;  
-        
+        private LevelMap _levelMap;
+
+        private void OnValidate()
+        {
+            this.CheckNullFields();
+        }
+
         private void OnDrawGizmos()
         {
             if(levelMapVariable == null || _levelMap == null) return;
@@ -59,7 +65,8 @@ namespace FingerFighter.Control.LevelMaps
             GenerateMiddleRooms();
             SortRoomsByGridY();
             GenerateConnections();
-            WriteResults();
+            WriteLevelMap();
+            WriteRoomsStatus();
         }
 
         private void CreateNewMap()
@@ -163,9 +170,16 @@ namespace FingerFighter.Control.LevelMaps
             return bestNextRoomIndex;
         }
 
-        private void WriteResults()
+        private void WriteLevelMap()
         {
             levelMapVariable.Value = _levelMap;
+        }
+
+        private void WriteRoomsStatus()
+        {
+            var status = new RoomStatus[_levelMap.rooms.Count];
+            status[0] = RoomStatus.Used;
+            roomsStatus.Value = status;
         }
 
         private Vector2 NextShift =>

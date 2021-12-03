@@ -4,6 +4,7 @@ using FingerFighter.Model.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityUtils;
 using UnityUtils.Variables;
 
 namespace FingerFighter.View.LevelMaps
@@ -19,6 +20,7 @@ namespace FingerFighter.View.LevelMaps
         [SerializeField] private GameObject checkMarkOverMarker; // TODO enable for passed locations 
         [SerializeField] private Image markersImage;
         [SerializeField] private IntVariable currentPlayerRoom;
+        [SerializeField] private RoomsStatus roomsStatus;
         
         [Header("Start")]
         [SerializeField] private Sprite startSprite;
@@ -33,12 +35,14 @@ namespace FingerFighter.View.LevelMaps
         
         private RoomMarkerData _data;
         private int Index => _data.roomIndex;
+        private RoomType RoomType => _data.type;
         private HashSet<int> Neighbours => _data.neighbours;
 
         private void OnValidate()
         {
             rect ??= GetComponent<RectTransform>();
             button ??= GetComponent<Button>();
+            this.CheckNullFields();
         }
 
         private void Awake()
@@ -46,6 +50,7 @@ namespace FingerFighter.View.LevelMaps
             button.onClick.AddListener(NotifyOnClick);
             OnClick += OnRoomMarkerClicked;
             PlayerMarker.OnRoomReached += OnPlayerReachedRoom;
+            roomsStatus.OnEntryChange += SetRoomStatus;
         }
 
         private void OnDestroy()
@@ -53,11 +58,19 @@ namespace FingerFighter.View.LevelMaps
             button.onClick.RemoveListener(NotifyOnClick);
             OnClick -= OnRoomMarkerClicked;
             PlayerMarker.OnRoomReached -= OnPlayerReachedRoom;
+            roomsStatus.OnEntryChange -= SetRoomStatus;
         }
 
         private void Start()
         {
             OnPlayerReachedRoom(currentPlayerRoom);
+            SetRoomStatus(Index, roomsStatus[Index]);
+        }
+
+        private void SetRoomStatus(int roomIndex, RoomStatus newStatus)
+        {
+            if(roomIndex != Index) return;
+            checkMarkOverMarker.gameObject.SetActive(newStatus == RoomStatus.Used && RoomType != RoomType.Start);
         }
 
         private void OnRoomMarkerClicked(int roomIndex)

@@ -43,3 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad2e575bc614b04b5f9a358311337fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}

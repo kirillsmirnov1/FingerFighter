@@ -151,6 +151,7 @@ MonoBehaviour:
   checkMarkOverMarker: {fileID: 6046182841057340318}
   markersImage: {fileID: 7994082770259425678}
   currentPlayerRoom: {fileID: 11400000, guid: a231fe10c9393fb40bdde69591cabc9d, type: 2}
+  roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
   startSprite: {fileID: 21300000, guid: 3ef175ba7a9fcf54d8a911e4bfe549e5, type: 3}
   startColor: {r: 1, g: 1, b: 1, a: 1}
   regularRoomColors:
