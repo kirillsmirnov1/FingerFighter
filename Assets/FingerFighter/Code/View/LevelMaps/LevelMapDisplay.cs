@@ -52,14 +52,17 @@ namespace FingerFighter.View.LevelMaps
 
         private void SpawnConnections()
         {
-            // TODO crete RoomConnectionView or smth like that
-            // TODO set line sprite depending on proximity to player's mark
             foreach (var connection in levelMapVariable.Value.connections)
             {
-                var lineRenderer = Instantiate(connectionPrefab, transform).GetComponent<LineRenderer>();
-                var v3Positions = levelMapVariable.Value.ConnectionPositions(connection).Select(pos => (Vector3) pos)
-                    .ToArray();
-                lineRenderer.SetPositions(v3Positions);
+                Instantiate(connectionPrefab, transform)
+                    .GetComponent<RoomConnectionView>()
+                    .Init(new RoomConnectionData
+                    {
+                        positions = levelMapVariable.Value
+                            .ConnectionPositions(connection)
+                            .Select(pos => (Vector3) pos)
+                            .ToArray() 
+                    });
             }
         }
     }
