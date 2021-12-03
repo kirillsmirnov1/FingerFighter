@@ -17,7 +17,7 @@ namespace FingerFighter.View.LevelMaps
 
         [SerializeField] private RectTransform rect;
         [SerializeField] private Button button;
-        [SerializeField] private GameObject checkMarkOverMarker; // TODO enable for passed locations 
+        [SerializeField] private GameObject checkMarkOverMarker;
         [SerializeField] private Image markersImage;
         [SerializeField] private IntVariable currentPlayerRoom;
         [SerializeField] private RoomsStatus roomsStatus;
@@ -51,28 +51,22 @@ namespace FingerFighter.View.LevelMaps
         {
             button.onClick.AddListener(NotifyOnClick);
             OnClick += OnRoomMarkerClicked;
-            PlayerMarker.OnRoomReached += OnPlayerReachedRoom;
-            roomsStatus.OnEntryChange += SetRoomStatus;
+            PlayerMarker.OnRoomReached += SetButtonInteractable;
+            roomsStatus.OnEntryChange += OnStatusChange;
         }
 
         private void OnDestroy()
         {
             button.onClick.RemoveListener(NotifyOnClick);
             OnClick -= OnRoomMarkerClicked;
-            PlayerMarker.OnRoomReached -= OnPlayerReachedRoom;
-            roomsStatus.OnEntryChange -= SetRoomStatus;
+            PlayerMarker.OnRoomReached -= SetButtonInteractable;
+            roomsStatus.OnEntryChange -= OnStatusChange;
         }
 
-        private void Start()
-        {
-            OnPlayerReachedRoom(currentPlayerRoom);
-            SetRoomStatus(Index, Status);
-        }
-
-        private void SetRoomStatus(int roomIndex, RoomStatus newStatus)
+        private void OnStatusChange(int roomIndex, RoomStatus newStatus)
         {
             if(roomIndex != Index) return;
-            checkMarkOverMarker.gameObject.SetActive(newStatus == RoomStatus.Used && RoomType != RoomType.Start);
+            SetCheckmark(newStatus);
             SetColor();
         }
 
@@ -97,8 +91,10 @@ namespace FingerFighter.View.LevelMaps
         {
             SetSprite();
             SetColor();
+            SetButtonInteractable(currentPlayerRoom);
+            SetCheckmark(Status);
         }
-        
+
         private void SetSprite()
         {
             switch (_data.type)
@@ -115,6 +111,7 @@ namespace FingerFighter.View.LevelMaps
                     throw new ArgumentOutOfRangeException();
             }
         }
+
         private void SetColor()
         {
             var used = Status == RoomStatus.Used;
@@ -125,18 +122,23 @@ namespace FingerFighter.View.LevelMaps
                     break;
                 case RoomType.Regular:
                     markersImage.color = regularRoomColors.Evaluate(_data.difficulty);
-                    if (used) markersImage.color -= usedFade;
+                    if (used) ApplyFade();
                     break;
                 case RoomType.Boss:
                     markersImage.color = crownColor;
-                    if (used) markersImage.color -= usedFade;
+                    if (used) ApplyFade();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        private void OnPlayerReachedRoom(int roomIndex)
+        private void ApplyFade()
+        {
+            markersImage.color -= usedFade;
+        }
+
+        private void SetButtonInteractable(int roomIndex)
         {
             if (roomIndex == Index)
             {
@@ -146,6 +148,11 @@ namespace FingerFighter.View.LevelMaps
             {
                 button.interactable = Neighbours.Contains(roomIndex);
             }
+        }
+
+        private void SetCheckmark(RoomStatus roomStatus)
+        {
+            checkMarkOverMarker.gameObject.SetActive(roomStatus == RoomStatus.Used && RoomType != RoomType.Start);
         }
     }
 }
