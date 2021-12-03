@@ -7,8 +7,9 @@ namespace FingerFighter.View.LevelMaps
     public class RoomConnectionView : MonoBehaviour
     {
         [SerializeField] private LineRenderer lineRenderer;
-
+        
         private RoomConnectionData _data;
+        private Vector2Int Connection => _data.connection;
         // TODO set line sprite depending on proximity to player's mark
 
         private void OnValidate()

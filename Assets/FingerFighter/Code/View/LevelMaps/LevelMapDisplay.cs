@@ -58,6 +58,7 @@ namespace FingerFighter.View.LevelMaps
                     .GetComponent<RoomConnectionView>()
                     .Init(new RoomConnectionData
                     {
+                        connection = connection,
                         positions = levelMapVariable.Value
                             .ConnectionPositions(connection)
                             .Select(pos => (Vector3) pos)
