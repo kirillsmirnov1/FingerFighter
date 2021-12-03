@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
+using FingerFighter.Model.EnemyFormations;
 using FingerFighter.Model.LevelMaps;
 using UnityEngine;
 using UnityUtils;
+using UnityUtils.Variables;
 using Random = System.Random;
 
 namespace FingerFighter.Control.LevelMaps
@@ -16,6 +18,10 @@ namespace FingerFighter.Control.LevelMaps
         [SerializeField] private float shiftMaxRadius = 0.25f;
         [SerializeField] private float difficultyVariation = 0.1f;
         
+        [Header("Data")]
+        [SerializeField] private StringVariable levelId;
+        [SerializeField] private EnemyFormationPackArray enemyFormations;
+
         [Header("Results")] 
         [SerializeField] private LevelMapVariable levelMapVariable;
         [SerializeField] private RoomsStatus roomsStatus;
