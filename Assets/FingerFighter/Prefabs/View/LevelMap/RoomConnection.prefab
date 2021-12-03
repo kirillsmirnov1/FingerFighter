@@ -51,7 +51,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4ee103edea721b94185578e0c53d8e44, type: 2}
+  - {fileID: 2100000, guid: 9f556f8ef1d98264cb2dd9effc4ecdb6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,7 +125,7 @@ LineRenderer:
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
-    textureMode: 0
+    textureMode: 1
     shadowBias: 0.5
     generateLightingData: 0
   m_UseWorldSpace: 1
@@ -143,3 +143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 8370689011994533613}
+  currentRoom: {fileID: 11400000, guid: a231fe10c9393fb40bdde69591cabc9d, type: 2}
+  availableMat: {fileID: 2100000, guid: 4ee103edea721b94185578e0c53d8e44, type: 2}
+  unAvailableMat: {fileID: 2100000, guid: 9f556f8ef1d98264cb2dd9effc4ecdb6, type: 2}
