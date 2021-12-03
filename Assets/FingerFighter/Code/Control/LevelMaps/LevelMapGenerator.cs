@@ -13,7 +13,6 @@ namespace FingerFighter.Control.LevelMaps
         [SerializeField] private Vector2Int roomCount = new Vector2Int(6, 10);
         [SerializeField] private Vector2Int minPos = new Vector2Int(-2, -3);
         [SerializeField] private Vector2Int maxPos = new Vector2Int(2, 3);
-        [SerializeField] private float roomMarkRadius = 0.2f;
         [SerializeField] private float shiftMaxRadius = 0.25f;
         [SerializeField] private float difficultyVariation = 0.1f;
         
@@ -22,6 +21,7 @@ namespace FingerFighter.Control.LevelMaps
         [SerializeField] private RoomsStatus roomsStatus;
         
         [Header("Debug")]
+        [SerializeField] private float roomMarkRadius = 0.2f;
         [SerializeField] private bool gizmoMarks = true;
         [SerializeField] private bool gizmoConnections = true;
         
