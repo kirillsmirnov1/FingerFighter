@@ -1,4 +1,5 @@
 ﻿using FingerFighter.View.LevelMaps;
+using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,13 +10,15 @@ namespace FingerFighter.Control.LevelMaps
 #if UNITY_EDITOR
         [SerializeField] private RoomsGraphGenerator levelMapGenerator;
         [SerializeField] private LevelMapDisplay levelMapDisplay;
-
+        [SerializeField] private PlayerMarker playerMarker;
+        
         private void Update()
         {
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 levelMapGenerator.Generate();
                 levelMapDisplay.SpawnMap();
+                playerMarker.SetPosition(0);
             }
         }
 #endif

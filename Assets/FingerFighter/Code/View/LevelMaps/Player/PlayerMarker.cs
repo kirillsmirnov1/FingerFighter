@@ -21,12 +21,17 @@ namespace FingerFighter.View.LevelMaps.Player
         private void OnDestroy() 
             => RoomMarkerView.OnClick -= OnRoomMarkerClicked;
 
-        private void Start() 
-            => _state = new AtPosition(this, currentRoom);   
+        private void Start()
+            => SetPosition(currentRoom);   
 
         private void Update() 
             => _state.OnUpdate();
 
+        public void SetPosition(int roomIndex)
+        {
+            _state = new AtPosition(this, roomIndex);
+        }
+        
         private void OnRoomMarkerClicked(int roomIndex) 
             => _state.OnRoomMarkerClicked(roomIndex);
 
