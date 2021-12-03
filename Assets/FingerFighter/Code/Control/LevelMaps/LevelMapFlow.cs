@@ -1,4 +1,5 @@
 ﻿using FingerFighter.Model.LevelMaps;
+using FingerFighter.View.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
 using UnityUtils;
@@ -18,11 +19,21 @@ namespace FingerFighter.Control.LevelMaps
         private void Awake()
         {
             PlayerMarker.OnRoomReached += OnPlayerReachedRoom;
+            RoomMarkerView.OnClick += OnRoomClicked;
         }
 
         private void OnDestroy()
         {
             PlayerMarker.OnRoomReached -= OnPlayerReachedRoom;
+            RoomMarkerView.OnClick -= OnRoomClicked;
+        }
+
+        private void OnRoomClicked(int roomIndex)
+        {
+            if (roomsStatus[roomIndex] == RoomStatus.UnTouched)
+            {
+                roomsStatus[roomIndex] = RoomStatus.NextTarget;
+            }
         }
 
         private void OnPlayerReachedRoom(int roomIndex)
