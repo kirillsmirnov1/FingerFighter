@@ -17,6 +17,7 @@ namespace FingerFighter.Control.LevelMaps
         [SerializeField] private Vector2Int maxPos = new Vector2Int(2, 3);
         [SerializeField] private float shiftMaxRadius = 0.25f;
         [SerializeField] private float difficultyVariation = 0.1f;
+        [SerializeField] private int formationsPerRoom = 5;
         
         [Header("Data")]
         [SerializeField] private StringVariable levelId;
@@ -71,6 +72,7 @@ namespace FingerFighter.Control.LevelMaps
             GenerateMiddleRooms();
             SortRoomsByGridY();
             GenerateConnections();
+            SetRoomFormations();
             WriteLevelMap();
             WriteRoomsStatus();
         }
@@ -174,6 +176,25 @@ namespace FingerFighter.Control.LevelMaps
             }
 
             return bestNextRoomIndex;
+        }
+
+        private void SetRoomFormations()
+        {
+            var formation = enemyFormations.Get(levelId);
+            for (int i = 1; i < _levelMap.rooms.Count - 1; i++)
+            {
+                var room = _levelMap.rooms[i];
+                room.formations = PickFormations(room.difficulty, formation.Formations);
+            }
+        }
+
+        private List<int> PickFormations(float roomDifficulty, EnemyFormation[] formations) // TODO write test 
+        {
+            var lastFormationIndex = formations.Length - 1;
+            var middleIndex = Mathf.CeilToInt(lastFormationIndex * roomDifficulty);
+            var lastIndex = Mathf.Clamp(middleIndex + Mathf.CeilToInt(formationsPerRoom / 2f), 0, lastFormationIndex);
+            var startIndex = Mathf.Clamp(lastIndex - (formationsPerRoom - 1), 0, lastFormationIndex);
+            return Enumerable.Range(startIndex, formationsPerRoom).ToList();
         }
 
         private void WriteLevelMap()

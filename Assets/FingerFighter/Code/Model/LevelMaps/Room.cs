@@ -12,5 +12,6 @@ namespace FingerFighter.Model.LevelMaps
         public Vector2Int gridPos;
         public Vector2 pos;
         public List<int> neighbours = new List<int>();
+        public List<int> formations = new List<int>();
     }
 }
