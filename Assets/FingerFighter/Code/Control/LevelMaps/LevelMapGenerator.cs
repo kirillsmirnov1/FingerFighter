@@ -7,7 +7,7 @@ using Random = System.Random;
 
 namespace FingerFighter.Control.LevelMaps
 {
-    public class RoomsGraphGenerator : MonoBehaviour
+    public class LevelMapGenerator : MonoBehaviour
     {
         [Header("Settings")]
         [SerializeField] private Vector2Int roomCount = new Vector2Int(6, 10);

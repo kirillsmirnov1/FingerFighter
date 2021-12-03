@@ -8,7 +8,7 @@ namespace FingerFighter.Control.LevelMaps
     public class LevelMapDebugInputs : MonoBehaviour
     {
 #if UNITY_EDITOR
-        [SerializeField] private RoomsGraphGenerator levelMapGenerator;
+        [SerializeField] private LevelMapGenerator levelMapGenerator;
         [SerializeField] private LevelMapDisplay levelMapDisplay;
         [SerializeField] private PlayerMarker playerMarker;
         

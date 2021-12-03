@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7857382306282989999, guid: ca594552bddb1744780414002ccdb0d3, type: 3}
       propertyPath: m_Name
-      value: RoomsGraph
+      value: LevelMap
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca594552bddb1744780414002ccdb0d3, type: 3}

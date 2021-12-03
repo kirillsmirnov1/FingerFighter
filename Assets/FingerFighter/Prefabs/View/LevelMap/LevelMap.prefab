@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7271307827983755781}
   - component: {fileID: 3183248939214974350}
   m_Layer: 0
-  m_Name: RoomsGraph
+  m_Name: LevelMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,3 +90,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelMapGenerator: {fileID: 7857382306282989997}
   levelMapDisplay: {fileID: 7271307827983755781}
+  playerMarker: {fileID: 0}
