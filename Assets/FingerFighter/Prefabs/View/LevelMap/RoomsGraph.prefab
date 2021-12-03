@@ -54,7 +54,7 @@ MonoBehaviour:
   minPos: {x: -2, y: -3}
   maxPos: {x: 2, y: 3}
   roomMarkRadius: 0.2
-  shiftMaxRadius: 0.2
+  shiftMaxRadius: 0
   difficultyVariation: 0.2
   levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
   roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
