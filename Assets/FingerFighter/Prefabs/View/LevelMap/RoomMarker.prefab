@@ -183,6 +183,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
+  usedFade: {r: 0.5, g: 0.5, b: 0.5, a: 0}
   crownSprite: {fileID: 21300000, guid: 7458aed70e582de46abbb5caed37ad33, type: 3}
   crownColor: {r: 1, g: 1, b: 0, a: 1}
 --- !u!1 &6046182841057340318

@@ -28,6 +28,7 @@ namespace FingerFighter.View.LevelMaps
 
         [Header("Regular")]
         [SerializeField] private Gradient regularRoomColors;
+        [SerializeField] private Color usedFade = Color.gray;
         
         [Header("Boss")]
         [SerializeField] private Sprite crownSprite;
@@ -36,6 +37,7 @@ namespace FingerFighter.View.LevelMaps
         private RoomMarkerData _data;
         private int Index => _data.roomIndex;
         private RoomType RoomType => _data.type;
+        private RoomStatus Status => roomsStatus[Index];
         private HashSet<int> Neighbours => _data.neighbours;
 
         private void OnValidate()
@@ -64,13 +66,14 @@ namespace FingerFighter.View.LevelMaps
         private void Start()
         {
             OnPlayerReachedRoom(currentPlayerRoom);
-            SetRoomStatus(Index, roomsStatus[Index]);
+            SetRoomStatus(Index, Status);
         }
 
         private void SetRoomStatus(int roomIndex, RoomStatus newStatus)
         {
             if(roomIndex != Index) return;
             checkMarkOverMarker.gameObject.SetActive(newStatus == RoomStatus.Used && RoomType != RoomType.Start);
+            SetColor();
         }
 
         private void OnRoomMarkerClicked(int roomIndex)
@@ -92,19 +95,41 @@ namespace FingerFighter.View.LevelMaps
 
         private void SetVisuals()
         {
+            SetSprite();
+            SetColor();
+        }
+        
+        private void SetSprite()
+        {
             switch (_data.type)
             {
                 case RoomType.Start:
                     markersImage.sprite = startSprite;
-                    markersImage.color = startColor;
                     break;
                 case RoomType.Regular:
-                    // TODO set checkmark 
-                    markersImage.color = regularRoomColors.Evaluate(_data.difficulty);
                     break;
                 case RoomType.Boss:
                     markersImage.sprite = crownSprite;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+        private void SetColor()
+        {
+            var used = Status == RoomStatus.Used;
+            switch (_data.type)
+            {
+                case RoomType.Start:
+                    markersImage.color = startColor;
+                    break;
+                case RoomType.Regular:
+                    markersImage.color = regularRoomColors.Evaluate(_data.difficulty);
+                    if (used) markersImage.color -= usedFade;
+                    break;
+                case RoomType.Boss:
                     markersImage.color = crownColor;
+                    if (used) markersImage.color -= usedFade;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
