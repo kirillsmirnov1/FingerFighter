@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1084927433263730633}
   - component: {fileID: 1084927433263730646}
   - component: {fileID: 1084927433263730647}
+  - component: {fileID: 6769765985372353154}
   m_Layer: 0
   m_Name: RunnerEnemies
   m_TagString: Untagged
@@ -54,16 +55,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084927433263730635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f6c07c4eb7745f0be6e9b6da78fc515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   roomDuration: 25
-  restDuration: 10
   spawn: {fileID: 1084927433933010853}
   enemyProvider: {fileID: 11400000, guid: 351ff579f73a452489d45f8ad7e079b8, type: 2}
   combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
+  currentPack: 
+  restDuration: 10
 --- !u!114 &1084927433263730647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +78,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fdc69c99a784ac69a3655a6b1ec532a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6769765985372353154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084927433263730635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708e9c3c62e24c7cb54b0267ee9d983e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDuration: 25
+  spawn: {fileID: 1084927433933010853}
+  enemyProvider: {fileID: 11400000, guid: 351ff579f73a452489d45f8ad7e079b8, type: 2}
+  combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
+  currentPack: 
+  currentLevel: {fileID: 11400000, guid: c05b3cdb2159fbb4899e806d92cceedc, type: 2}
+  currentRoom: {fileID: 11400000, guid: a231fe10c9393fb40bdde69591cabc9d, type: 2}
+  levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
+  roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
+  levelMapScene:
+    sceneName: 
+    sceneAsset: {fileID: 102900000, guid: 303f80d93556fd1478a43a319a3cc0e2, type: 3}
 --- !u!1 &1084927433933010855
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,18 +2,22 @@
 using FingerFighter.View.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityUtils;
+using UnityUtils.Scenes;
 
 namespace FingerFighter.Control.LevelMaps
 {
     public class LevelMapFlow : MonoBehaviour
     {
         [SerializeField] private RoomsStatus roomsStatus;
-        
+        [SerializeField] private SceneNameReference runner;
+
         // TODO on boss defeat — move next 
         private void OnValidate()
         {
             this.CheckNullFields();
+            runner.SerializeName();
         }
 
         private void Awake()
@@ -51,8 +55,8 @@ namespace FingerFighter.Control.LevelMaps
 
         private void UseRoom(int roomIndex)
         {
-            // TODO actually run room 
-            roomsStatus[roomIndex] = RoomStatus.Used;
+            // TODO set flow 
+            SceneManager.LoadScene(runner.sceneName);
         }
     }
 }

@@ -47,5 +47,14 @@ namespace FingerFighter.Model.EnemyFormations
 
         private EnemyFormationPack PickRandomPack() 
             => packs.Value.Shuffle().First();
+
+        public IEnumerable<EnemyFormation> GetFormations(string packId, List<int> formationIds)
+        {
+            var pack = packs.Value.First(pack => pack.Id.Equals(packId));
+            for (var i = 0; i < formationIds.Count; i++)
+            {
+                yield return pack.Formations[formationIds[i]];
+            }
+        }
     }
 }

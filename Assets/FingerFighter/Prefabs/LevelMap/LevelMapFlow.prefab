@@ -44,3 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
+  runner:
+    sceneName: Runner
+    sceneAsset: {fileID: 102900000, guid: 351dade6bb4175c4f998b470114cdb51, type: 3}
