@@ -1,14 +1,8 @@
 ﻿namespace FingerFighter.Control.Combat.Flow
 {
-    public class BossWave : RunnerFlowState
+    public class EnemyWave : RunnerFlowState
     {
-        public BossWave(ARunnerFlow flow) : base(flow)
-        {
-        }
-
-        public override void Update()
-        {
-        }
+        public EnemyWave(ARunnerFlow flow) : base(flow) { }
 
         public override void Enter()
         {
@@ -16,6 +10,8 @@
             Flow.spawn.Spawn(formation);
             WaveChanged($"{Flow.currentPack} : {formation.id}");
         }
+
+        public override void Update() { }
 
         public override void NoEnemiesLeft()
             => Flow.GoToNextWave();

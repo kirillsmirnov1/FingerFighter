@@ -28,7 +28,7 @@ namespace FingerFighter.Control.Combat.Flow
             }
             else if(formations.Count == 1)
             {
-                state = new BossWave(this);
+                state = new EnemyWave(this);
             }
             else
             {
