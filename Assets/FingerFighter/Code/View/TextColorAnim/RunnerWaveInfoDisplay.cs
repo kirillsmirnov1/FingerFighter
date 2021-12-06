@@ -5,15 +5,15 @@ using UnityEngine;
 namespace FingerFighter.View.TextColorAnim
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
-    public class FormationSpawnInfoDisplay : TmpTextFade
+    public class RunnerWaveInfoDisplay : TmpTextFade
     {
         private void Awake() 
-            => RunnerFlow.State.OnRoomEntered += OnRoomEntered;
+            => RunnerFlowState.OnWaveStart += OnWaveStart;
 
         private void OnDestroy() 
-            => RunnerFlow.State.OnRoomEntered -= OnRoomEntered;
+            => RunnerFlowState.OnWaveStart -= OnWaveStart;
 
-        private void OnRoomEntered(string roomName)
+        private void OnWaveStart(string roomName)
         {
             SetText(roomName);
             ResetDurationTimer();

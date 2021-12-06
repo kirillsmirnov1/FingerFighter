@@ -9,26 +9,28 @@ using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Combat.Flow
 {
-    public partial class RunnerFlow : MonoBehaviour
+    // TODO extract abstract Flow
+    // TODO refactor into SO 
+    public class InfiniteRunnerFlow : MonoBehaviour  
     {
         [Header("Params")]
-        [SerializeField] private float roomDuration = 25f;
-        [SerializeField] private float restDuration = 25f;
+        [SerializeField] public float roomDuration = 25f;
+        [SerializeField] public float restDuration = 25f;
         
         [Header("Game Objects")]
-        [SerializeField] private EnemySpawnFormation spawn;
+        [SerializeField] public EnemySpawnFormation spawn;
         [SerializeField] private EnemyFormationPackProvider enemyProvider;
 
         [Header("Data")]
-        [SerializeField] private FloatVariable combatTimeScale;
+        [SerializeField] public FloatVariable combatTimeScale;
         
-        private State _state;
+        private RunnerFlowState _state;
         
         private Queue<EnemyFormation> _formations;
-        private string _currentPack;
+        [HideInInspector] public string currentPack;
         private Action _onUpdate;
 
-        private EnemyFormation NextFormation 
+        public EnemyFormation NextFormation 
             => _formations.Dequeue();
 
         private void Awake()
@@ -49,7 +51,7 @@ namespace FingerFighter.Control.Combat.Flow
         {
             ResumeFlow();
             UpdateFormationsQueue();
-            NextRoom();
+            NextWave();
         }
 
         private void ResumeFlow() 
@@ -64,23 +66,23 @@ namespace FingerFighter.Control.Combat.Flow
         private void UpdateFormationsQueue()
         {
             var pack = enemyProvider.NextPack();
-            _currentPack = pack.ID;
+            currentPack = pack.ID;
             _formations = new Queue<EnemyFormation>(pack.Formations);
         }
 
         private void NoEnemiesLeft() 
             => _state?.NoEnemiesLeft();
 
-        private void NextRoom()
+        public void NextWave()
         {
             _state = null;
             if (_formations.Count > 1)
             {
-                _state = new Room(this);
+                _state = new EnemyWaveLimitedTime(this);
             }
             else if(_formations.Count == 1)
             {
-                _state = new Boss(this);
+                _state = new BossWave(this);
             }
             else
             {
