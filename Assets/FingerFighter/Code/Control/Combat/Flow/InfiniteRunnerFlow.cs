@@ -2,7 +2,6 @@
 using FingerFighter.Model.EnemyFormations;
 using UnityEngine;
 using UnityUtils.Attributes;
-using UnityUtils.Extensions;
 
 namespace FingerFighter.Control.Combat.Flow
 {
@@ -19,23 +18,10 @@ namespace FingerFighter.Control.Combat.Flow
             formations = new Queue<EnemyFormation>(pack.Formations);
         }
 
-        public override void GoToNextWave()
+        protected override void OnNoFormationsLeft()
         {
-            state = null;
-            if (formations.Count > 1)
-            {
-                state = new EnemyWaveLimitedTime(this);
-            }
-            else if(formations.Count == 1)
-            {
-                state = new EnemyWave(this);
-            }
-            else
-            {
-                state = new Rest(this);
-                UpdateFormationsQueue();
-            }
-            this.DelayAction(0f, () => state.Enter());
+            state = new Rest(this);
+            UpdateFormationsQueue();
         }
     }
 }

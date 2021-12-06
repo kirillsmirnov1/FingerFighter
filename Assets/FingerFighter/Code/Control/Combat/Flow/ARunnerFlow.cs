@@ -4,6 +4,7 @@ using FingerFighter.Control.Combat.Status;
 using FingerFighter.Control.Factories.EnemySpawn;
 using FingerFighter.Model.EnemyFormations;
 using UnityEngine;
+using UnityUtils.Extensions;
 using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Combat.Flow
@@ -49,10 +50,28 @@ namespace FingerFighter.Control.Combat.Flow
             UpdateFormationsQueue();
             GoToNextWave();
         }
-        
-        public abstract void GoToNextWave();
+
+        public void GoToNextWave()
+        {
+            state = null;
+            if (formations.Count > 1)
+            {
+                state = new EnemyWaveLimitedTime(this);
+            }
+            else if(formations.Count == 1)
+            {
+                state = new EnemyWave(this);
+            }
+            else
+            {
+                OnNoFormationsLeft();
+            }
+            this.DelayAction(0f, () => state.Enter());
+        }
 
         protected abstract void UpdateFormationsQueue();
+
+        protected abstract void OnNoFormationsLeft();
 
         private void ResumeFlow() 
             => _onUpdate = () => state?.Update();
