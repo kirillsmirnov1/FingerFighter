@@ -7,7 +7,7 @@ namespace FingerFighter.Control.Combat.Flow
         private float _durationLeft;
 
         public Rest(InfiniteRunnerFlow flow) : base(flow)
-            => _durationLeft = Flow.restDuration;
+            => _durationLeft = flow.restDuration;
 
         public override void NoEnemiesLeft()
         {
@@ -23,7 +23,7 @@ namespace FingerFighter.Control.Combat.Flow
             _durationLeft -= Time.deltaTime;
             if (_durationLeft <= 0)
             {
-                Flow.NextWave();
+                Flow.GoToNextWave();
             }
         }
     }

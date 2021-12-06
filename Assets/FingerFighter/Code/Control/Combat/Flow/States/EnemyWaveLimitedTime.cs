@@ -6,7 +6,7 @@ namespace FingerFighter.Control.Combat.Flow
     {
         private float _durationLeft;
 
-        public EnemyWaveLimitedTime(InfiniteRunnerFlow flow) : base(flow)
+        public EnemyWaveLimitedTime(ARunnerFlow flow) : base(flow)
             => _durationLeft = Flow.roomDuration;
 
         public override void Enter()
@@ -21,11 +21,11 @@ namespace FingerFighter.Control.Combat.Flow
             _durationLeft -= Time.deltaTime * Flow.combatTimeScale;
             if (_durationLeft <= 0)
             {
-                Flow.NextWave();
+                Flow.GoToNextWave();
             }
         }
 
         public override void NoEnemiesLeft()
-            => Flow.NextWave();
+            => Flow.GoToNextWave();
     }
 }

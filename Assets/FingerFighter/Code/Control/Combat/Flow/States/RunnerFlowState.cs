@@ -9,9 +9,9 @@ namespace FingerFighter.Control.Combat.Flow
         protected static void WaveChanged(string roomName)
             => OnWaveStart?.Invoke(roomName);
 
-        protected readonly InfiniteRunnerFlow Flow;
+        protected readonly ARunnerFlow Flow;
 
-        protected RunnerFlowState(InfiniteRunnerFlow flow) => Flow = flow;
+        protected RunnerFlowState(ARunnerFlow flow) => Flow = flow;
         public abstract void Enter();
         public abstract void Update();
         public abstract void NoEnemiesLeft();

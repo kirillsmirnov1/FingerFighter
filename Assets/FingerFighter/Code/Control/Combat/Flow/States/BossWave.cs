@@ -2,7 +2,7 @@
 {
     public class BossWave : RunnerFlowState
     {
-        public BossWave(InfiniteRunnerFlow flow) : base(flow)
+        public BossWave(ARunnerFlow flow) : base(flow)
         {
         }
 
@@ -18,6 +18,6 @@
         }
 
         public override void NoEnemiesLeft()
-            => Flow.NextWave();
+            => Flow.GoToNextWave();
     }
 }

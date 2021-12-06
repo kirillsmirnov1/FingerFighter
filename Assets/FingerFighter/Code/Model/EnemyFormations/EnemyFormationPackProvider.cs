@@ -11,11 +11,11 @@ namespace FingerFighter.Model.EnemyFormations
         [SerializeField] private EnemyFormationPackArray packs;
         [SerializeField] private int formationsPerRun = 10;
 
-        public PackToSpawn NextPack()
+        public PackToSpawn NextRandomPack()
         {
-            var pack = PickAPack();
-            var formations = PickFormations(pack.Formations);
-            return new PackToSpawn()
+            var pack = PickRandomPack();
+            var formations = PickRandomFormations(pack.Formations);
+            return new PackToSpawn
             {
                 ID = pack.Id,
                 Formations = formations.Append(BossEntry(pack))
@@ -31,7 +31,7 @@ namespace FingerFighter.Model.EnemyFormations
                         pos = Vector2.zero,
                     }}};
 
-        private IEnumerable<EnemyFormation> PickFormations(EnemyFormation[] formations)
+        private IEnumerable<EnemyFormation> PickRandomFormations(EnemyFormation[] formations)
         {
             var indexes = Enumerable
                 .Range(0, formations.Length)
@@ -45,7 +45,7 @@ namespace FingerFighter.Model.EnemyFormations
             }
         }
 
-        private EnemyFormationPack PickAPack() 
+        private EnemyFormationPack PickRandomPack() 
             => packs.Value.Shuffle().First();
     }
 }
