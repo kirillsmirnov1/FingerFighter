@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using FingerFighter.Model.EnemyFormations;
 using FingerFighter.Model.LevelMaps;
 using UnityEngine;
@@ -27,10 +29,15 @@ namespace FingerFighter.Control.Combat.Flow
         protected override void UpdateFormationsQueue()
         {
             currentPack = currentLevel.Value;
-            // TODO switch on boss
-            var formationIds = levelMapVariable.Value.rooms[currentRoom].formations;
-            formations = new Queue<EnemyFormation>(
-                enemyProvider.GetFormations(currentLevel, formationIds)); 
+            var room = levelMapVariable.Value.rooms[currentRoom];
+            var formationData = room.type switch
+            {
+                RoomType.Regular => enemyProvider.GetFormations(currentPack, room.formations),
+                RoomType.Boss => enemyProvider.GetBossFormation(currentPack),
+                RoomType.Start => throw new InvalidEnumArgumentException(),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+            formations = new Queue<EnemyFormation>(formationData); 
         }
 
         protected override void OnNoFormationsLeft()

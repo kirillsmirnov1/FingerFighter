@@ -50,11 +50,20 @@ namespace FingerFighter.Model.EnemyFormations
 
         public IEnumerable<EnemyFormation> GetFormations(string packId, List<int> formationIds)
         {
-            var pack = packs.Value.First(pack => pack.Id.Equals(packId));
+            var pack = GetPackById(packId);
             for (var i = 0; i < formationIds.Count; i++)
             {
                 yield return pack.Formations[formationIds[i]];
             }
         }
+
+        public IEnumerable<EnemyFormation> GetBossFormation(string packId)
+        {
+            var pack = GetPackById(packId);
+            yield return BossEntry(pack);
+        }
+
+        private EnemyFormationPack GetPackById(string packId) 
+            => packs.Value.First(pack => pack.Id.Equals(packId));
     }
 }
