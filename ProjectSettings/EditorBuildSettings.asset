@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FingerFighter/Scenes/Runner.unity
     guid: 351dade6bb4175c4f998b470114cdb51
+  - enabled: 1
+    path: Assets/FingerFighter/Scenes/LevelMap.unity
+    guid: 303f80d93556fd1478a43a319a3cc0e2
   m_configObjects: {}
