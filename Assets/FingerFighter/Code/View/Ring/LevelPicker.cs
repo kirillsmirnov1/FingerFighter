@@ -17,6 +17,7 @@ namespace FingerFighter.View.Ring
         [SerializeField] private SceneNameReference levelMapScene;
         [SerializeField] private StringVariable levelNameVar;
         [SerializeField] private LevelMapGenerator levelMapGenerator;
+        [SerializeField] private IntVariable currentRoom;
         
         private void OnValidate()
         {
@@ -45,6 +46,7 @@ namespace FingerFighter.View.Ring
         private void OnButtonClick(int index)
         {
             var pack = packs[index];
+            currentRoom.Value = 0;
             levelNameVar.Value = pack.Id;
             levelMapGenerator.Generate();
             SceneManager.LoadScene(levelMapScene.sceneName);

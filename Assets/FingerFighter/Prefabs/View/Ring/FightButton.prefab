@@ -98,6 +98,7 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 303f80d93556fd1478a43a319a3cc0e2, type: 3}
   levelNameVar: {fileID: 11400000, guid: c05b3cdb2159fbb4899e806d92cceedc, type: 2}
   levelMapGenerator: {fileID: 11400000, guid: 940001958c68e6d41bbc6bdd470afe88, type: 2}
+  currentRoom: {fileID: 11400000, guid: a231fe10c9393fb40bdde69591cabc9d, type: 2}
 --- !u!114 &6939112542289777746
 MonoBehaviour:
   m_ObjectHideFlags: 0
