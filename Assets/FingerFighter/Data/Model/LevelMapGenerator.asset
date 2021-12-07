@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 785f862d94fb52343a1fe7dff416d504, type: 3}
   m_Name: LevelMapGenerator
   m_EditorClassIdentifier: 
-  roomCount: {x: 6, y: 10}
-  minPos: {x: -2, y: -3}
-  maxPos: {x: 2, y: 3}
+  roomCount: {x: 4, y: 6}
+  minPos: {x: -2, y: -2}
+  maxPos: {x: 2, y: 2}
   shiftMaxRadius: 0
   difficultyVariation: 0.2
   formationsPerRoom: 5
