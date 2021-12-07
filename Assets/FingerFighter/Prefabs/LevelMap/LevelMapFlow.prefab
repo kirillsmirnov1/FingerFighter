@@ -44,8 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
+  roomFlow: {fileID: 11400000, guid: e34f192e33e8d164f8b7ff70024e7c06, type: 2}
+  runnerFlowVar: {fileID: 11400000, guid: 83282738c24b6eb42be9ce5062ac4381, type: 2}
+  levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
   runner:
     sceneName: Runner
     sceneAsset: {fileID: 102900000, guid: 351dade6bb4175c4f998b470114cdb51, type: 3}
-  roomFlow: {fileID: 11400000, guid: e34f192e33e8d164f8b7ff70024e7c06, type: 2}
-  runnerFlowVar: {fileID: 11400000, guid: 83282738c24b6eb42be9ce5062ac4381, type: 2}
+  ring:
+    sceneName: Ring
+    sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}

@@ -1,4 +1,5 @@
-﻿using FingerFighter.Model.Combat.Flow;
+﻿using System;
+using FingerFighter.Model.Combat.Flow;
 using FingerFighter.Model.LevelMaps;
 using FingerFighter.View.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
@@ -12,16 +13,19 @@ namespace FingerFighter.Control.LevelMaps
     public class LevelMapFlow : MonoBehaviour
     {
         [SerializeField] private RoomsStatus roomsStatus;
-        [SerializeField] private SceneNameReference runner;
-
         [SerializeField] private RunnerFlowContainer roomFlow;
         [SerializeField] private RunnerFlowContainerVariable runnerFlowVar;
-
-        // TODO on boss defeat — move next 
+        [SerializeField] private LevelMapVariable levelMapVariable;
+        
+        [Header("Scenes")]
+        [SerializeField] private SceneNameReference runner;
+        [SerializeField] private SceneNameReference ring;
+        
         private void OnValidate()
         {
             this.CheckNullFields();
             runner.SerializeName();
+            ring.SerializeName();
         }
 
         private void Awake()
@@ -53,7 +57,21 @@ namespace FingerFighter.Control.LevelMaps
                     UseRoom();
                     break;
                 case RoomStatus.Used:
+                    var room = levelMapVariable.Value.rooms[roomIndex];
+                    switch (room.type)
+                    {
+                        case RoomType.Start:
+                        case RoomType.Regular:
+                            break;
+                        case RoomType.Boss:
+                            OnBossDefeated();
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -61,6 +79,14 @@ namespace FingerFighter.Control.LevelMaps
         {
             runnerFlowVar.Value = roomFlow;
             SceneManager.LoadScene(runner.sceneName);
+        }
+
+        private void OnBossDefeated()
+        {
+            // TODO show results 
+            // TODO allow to go next 
+            levelMapVariable.Value = null;
+            SceneManager.LoadScene(ring.sceneName);
         }
     }
 }
