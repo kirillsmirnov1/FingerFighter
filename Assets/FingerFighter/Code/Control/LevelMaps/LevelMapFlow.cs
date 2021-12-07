@@ -40,6 +40,30 @@ namespace FingerFighter.Control.LevelMaps
             RoomMarkerView.OnClick -= OnRoomClicked;
         }
 
+        private void OnEnable()
+        {
+            CheckEmptyMap();
+            CheckBossFinished();
+        }
+
+        private void CheckEmptyMap()
+        {
+            var level = levelMapVariable.Value;
+            if (level?.rooms == null || level.rooms.Count == 0)
+            {
+                SceneManager.LoadScene(ring.sceneName);
+            }
+        }
+
+        private void CheckBossFinished()
+        {
+            var bossRoomIndex = levelMapVariable.Value.rooms.Count - 1;
+            if (roomsStatus[bossRoomIndex] == RoomStatus.Used)
+            {
+                OnBossDefeated();
+            }
+        }
+
         private void OnRoomClicked(int roomIndex)
         {
             if (roomsStatus[roomIndex] == RoomStatus.UnTouched)
