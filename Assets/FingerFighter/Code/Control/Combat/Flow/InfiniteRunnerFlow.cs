@@ -5,6 +5,7 @@ using UnityUtils.Attributes;
 
 namespace FingerFighter.Control.Combat.Flow
 {
+    [CreateAssetMenu(menuName = "Model/Flow/InfiniteRunnerFlow", fileName = "InfiniteRunnerFlow", order = 0)]
     public class InfiniteRunnerFlow : ARunnerFlow  
     {
         [Separator("Infinite Runner Flow")]

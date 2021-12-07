@@ -8,6 +8,7 @@ using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Combat.Flow
 {
+    [CreateAssetMenu(menuName = "Model/Flow/RoomRunnerFlow", fileName = "RoomRunnerFlow", order = 0)]
     public class RoomRunnerFlow : ARunnerFlow
     {
         [SerializeField] private StringVariable currentLevel;

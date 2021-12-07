@@ -9,7 +9,7 @@ using UnityUtils.Variables;
 
 namespace FingerFighter.Control.Combat.Flow
 {
-    public abstract class ARunnerFlow : MonoBehaviour // TODO refactor into SO 
+    public abstract class ARunnerFlow : ScriptableObject 
     {
         [Header("Params")]
         [SerializeField] public float roomDuration = 25f;
@@ -28,11 +28,15 @@ namespace FingerFighter.Control.Combat.Flow
         protected Queue<EnemyFormation> formations;
         [HideInInspector] public string currentPack;
         private Action _onUpdate;
+        private MonoBehaviour _proxy;
 
         public EnemyFormation NextFormation 
             => formations.Dequeue();
-        
-        private void Awake()
+
+        public void Init(MonoBehaviour proxy) 
+            => _proxy = proxy;
+
+        public void OnAwake()
         {
             Spawn = spawnVariable.Value.GetComponent<EnemySpawnFormation>();
             AliveEnemiesCounter.OnNoEnemiesLeftAlive += NoEnemiesLeft;
@@ -40,19 +44,22 @@ namespace FingerFighter.Control.Combat.Flow
             PlayerStatus.OnAlive += ResumeFlow;
         }
 
-        private void OnDestroy()
+        public void OnDestroyed()
         {
             AliveEnemiesCounter.OnNoEnemiesLeftAlive -= NoEnemiesLeft;
             PlayerStatus.OnDeath -= PauseFlow;
             PlayerStatus.OnAlive -= ResumeFlow;
         }
 
-        protected void OnEnable()
+        public void OnEnabled()
         {
             ResumeFlow();
             UpdateFormationsQueue();
             GoToNextWave();
         }
+
+        public void OnUpdate() 
+            => _onUpdate?.Invoke();
 
         public void GoToNextWave()
         {
@@ -69,7 +76,7 @@ namespace FingerFighter.Control.Combat.Flow
             {
                 OnNoFormationsLeft();
             }
-            this.DelayAction(0f, () => state?.Enter());
+            _proxy.DelayAction(0f, () => state?.Enter());
         }
 
         protected abstract void UpdateFormationsQueue();
@@ -81,9 +88,6 @@ namespace FingerFighter.Control.Combat.Flow
 
         private void PauseFlow() 
             => _onUpdate = null;
-
-        private void Update() 
-            => _onUpdate?.Invoke();
 
         private void NoEnemiesLeft() 
             => state?.NoEnemiesLeft();

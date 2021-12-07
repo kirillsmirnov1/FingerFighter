@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6c07c4eb7745f0be6e9b6da78fc515, type: 3}
+  m_Name: RunnerFlow_Infinite
+  m_EditorClassIdentifier: 
+  roomDuration: 25
+  spawnVariable: {fileID: 11400000, guid: ee01150089385ec43ad7b700a68373d9, type: 2}
+  enemyProvider: {fileID: 11400000, guid: 351ff579f73a452489d45f8ad7e079b8, type: 2}
+  combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
+  currentPack: 
+  restDuration: 10
