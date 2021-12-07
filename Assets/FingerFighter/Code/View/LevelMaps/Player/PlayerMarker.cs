@@ -29,9 +29,18 @@ namespace FingerFighter.View.LevelMaps.Player
 
         public void SetPosition(int roomIndex)
         {
+            roomIndex = CheckRoomIndex(roomIndex);
             _state = new AtPosition(this, roomIndex);
         }
-        
+
+        private int CheckRoomIndex(int roomIndex)
+        {
+            if (roomIndex >= 0 & roomIndex < levelMapVariable.Value.rooms.Count)
+                return roomIndex;
+            currentRoom.Value = 0;
+            return 0;
+        }
+
         private void OnRoomMarkerClicked(int roomIndex) 
             => _state.OnRoomMarkerClicked(roomIndex);
 
