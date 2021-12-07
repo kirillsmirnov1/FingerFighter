@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7857382306282989996}
-  - component: {fileID: 7857382306282989997}
   - component: {fileID: 7271307827983755781}
   - component: {fileID: 3183248939214974350}
   m_Layer: 0
@@ -38,30 +37,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &7857382306282989997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7857382306282989999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 785f862d94fb52343a1fe7dff416d504, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomCount: {x: 4, y: 6}
-  minPos: {x: -2, y: -3}
-  maxPos: {x: 2, y: 3}
-  shiftMaxRadius: 0
-  difficultyVariation: 0.2
-  levelId: {fileID: 11400000, guid: c05b3cdb2159fbb4899e806d92cceedc, type: 2}
-  enemyFormations: {fileID: 11400000, guid: 842081fc941c4494486e770ece3cf240, type: 2}
-  levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
-  roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
-  roomMarkRadius: 0.2
-  gizmoMarks: 1
-  gizmoConnections: 1
 --- !u!114 &7271307827983755781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +65,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf67718fda84f9e98197fdc4b0afddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelMapGenerator: {fileID: 7857382306282989997}
+  levelMapGenerator: {fileID: 11400000, guid: 940001958c68e6d41bbc6bdd470afe88, type: 2}
   levelMapDisplay: {fileID: 7271307827983755781}
   playerMarker: {fileID: 0}

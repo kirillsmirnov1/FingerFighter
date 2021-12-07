@@ -9,7 +9,8 @@ using Random = System.Random;
 
 namespace FingerFighter.Control.LevelMaps
 {
-    public class LevelMapGenerator : MonoBehaviour
+    [CreateAssetMenu(menuName = "Model/LevelMap/LevelMapGenerator", fileName = "LevelMapGenerator", order = 0)]
+    public class LevelMapGenerator : ScriptableObject
     {
         [Header("Settings")]
         [SerializeField] private Vector2Int roomCount = new Vector2Int(6, 10);
@@ -27,42 +28,12 @@ namespace FingerFighter.Control.LevelMaps
         [SerializeField] private LevelMapVariable levelMapVariable;
         [SerializeField] private RoomsStatus roomsStatus;
         
-        [Header("Debug")]
-        [SerializeField] private float roomMarkRadius = 0.2f;
-        [SerializeField] private bool gizmoMarks = true;
-        [SerializeField] private bool gizmoConnections = true;
-        
         private static readonly Random Rand = new Random();
         private LevelMap _levelMap;
 
         private void OnValidate()
         {
             this.CheckNullFields();
-        }
-
-        private void OnDrawGizmos()
-        {
-            if(levelMapVariable == null || _levelMap == null) return;
-
-            if (gizmoConnections)
-            {
-                // Connections
-                foreach (var connection in _levelMap.connections)
-                {
-                    var positions = _levelMap.ConnectionPositions(connection);
-                    Gizmos.DrawLine(positions[0], positions[1]);
-                }
-            }
-
-            if (gizmoMarks)
-            {
-                // Marks
-                foreach (var room in _levelMap.rooms)
-                {
-                    // Gizmos.DrawSphere((Vector3Int)room.gridPos, roomMarkRadius);   
-                    Gizmos.DrawSphere(room.pos, roomMarkRadius);   
-                }
-            }
         }
 
         public void Generate()

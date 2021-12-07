@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 785f862d94fb52343a1fe7dff416d504, type: 3}
+  m_Name: LevelMapGenerator
+  m_EditorClassIdentifier: 
+  roomCount: {x: 6, y: 10}
+  minPos: {x: -2, y: -3}
+  maxPos: {x: 2, y: 3}
+  shiftMaxRadius: 0
+  difficultyVariation: 0.2
+  formationsPerRoom: 5
+  levelId: {fileID: 11400000, guid: c05b3cdb2159fbb4899e806d92cceedc, type: 2}
+  enemyFormations: {fileID: 11400000, guid: 842081fc941c4494486e770ece3cf240, type: 2}
+  levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
+  roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
