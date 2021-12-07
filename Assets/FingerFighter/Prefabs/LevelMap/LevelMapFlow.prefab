@@ -47,3 +47,5 @@ MonoBehaviour:
   runner:
     sceneName: Runner
     sceneAsset: {fileID: 102900000, guid: 351dade6bb4175c4f998b470114cdb51, type: 3}
+  roomFlow: {fileID: 11400000, guid: e34f192e33e8d164f8b7ff70024e7c06, type: 2}
+  runnerFlowVar: {fileID: 11400000, guid: 83282738c24b6eb42be9ce5062ac4381, type: 2}

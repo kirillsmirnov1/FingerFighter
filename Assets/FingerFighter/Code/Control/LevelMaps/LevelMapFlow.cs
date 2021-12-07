@@ -1,4 +1,5 @@
-﻿using FingerFighter.Model.LevelMaps;
+﻿using FingerFighter.Model.Combat.Flow;
+using FingerFighter.Model.LevelMaps;
 using FingerFighter.View.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
@@ -12,6 +13,9 @@ namespace FingerFighter.Control.LevelMaps
     {
         [SerializeField] private RoomsStatus roomsStatus;
         [SerializeField] private SceneNameReference runner;
+
+        [SerializeField] private RunnerFlowContainer roomFlow;
+        [SerializeField] private RunnerFlowContainerVariable runnerFlowVar;
 
         // TODO on boss defeat — move next 
         private void OnValidate()
@@ -55,7 +59,7 @@ namespace FingerFighter.Control.LevelMaps
 
         private void UseRoom(int roomIndex)
         {
-            // TODO set flow 
+            runnerFlowVar.Value = roomFlow;
             SceneManager.LoadScene(runner.sceneName);
         }
     }
