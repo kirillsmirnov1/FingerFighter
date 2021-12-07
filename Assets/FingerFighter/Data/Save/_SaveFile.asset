@@ -18,3 +18,11 @@ MonoBehaviour:
     defaultValue: {fileID: 11400000, guid: 0c6373b7504b7554786cd86961ff74b0, type: 2}
   - variable: {fileID: 11400000, guid: c2c4ccab921883746a4c5bdcbab4bda9, type: 2}
     defaultValue: {fileID: 11400000, guid: 655721d346015c04abf28ed7d5faa48d, type: 2}
+  - variable: {fileID: 11400000, guid: c05b3cdb2159fbb4899e806d92cceedc, type: 2}
+    defaultValue: {fileID: 11400000, guid: bd0c0f028a4b9694985c3749fb94f09f, type: 2}
+  - variable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
+    defaultValue: {fileID: 11400000, guid: 6c5dae3a951497f4aa98909ed63a8881, type: 2}
+  - variable: {fileID: 11400000, guid: a231fe10c9393fb40bdde69591cabc9d, type: 2}
+    defaultValue: {fileID: 11400000, guid: 7a1cbc6e490927c47aec9822d7ecf88c, type: 2}
+  - variable: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
+    defaultValue: {fileID: 11400000, guid: 8f0ea0ed2a31e7c41846cedd23fff19a, type: 2}

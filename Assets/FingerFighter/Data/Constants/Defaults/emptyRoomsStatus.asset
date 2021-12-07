@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79e63b263b5442769cb922b4dc770f24, type: 3}
-  m_Name: currentLevelId
+  m_Script: {fileID: 11500000, guid: eefe439f05de4872a268b3e37894125d, type: 3}
+  m_Name: emptyRoomsStatus
   m_EditorClassIdentifier: 
-  value: 
-  guid: c05b3cdb2159fbb4899e806d92cceedc
+  value:
+    data: 02000000000000000200000001000000000000000000000000000000000000000000000000000000
+  guid: 8f0ea0ed2a31e7c41846cedd23fff19a
