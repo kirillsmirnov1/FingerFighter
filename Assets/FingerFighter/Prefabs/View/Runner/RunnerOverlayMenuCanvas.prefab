@@ -394,6 +394,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackToRingButton
       objectReference: {fileID: 0}
+    - target: {fileID: 9076361307643165586, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9076361307643165591, guid: da97d5f8b1e8ee7458e5a5dda692de00, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
