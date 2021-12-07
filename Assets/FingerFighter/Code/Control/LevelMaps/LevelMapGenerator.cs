@@ -55,7 +55,7 @@ namespace FingerFighter.Control.LevelMaps
 
         private void SetAnchorRooms()
         {
-            var top = new Vector2Int(0, 4);
+            var top = new Vector2Int(0, maxPos.y + 1);
             _levelMap.rooms = new List<Room>
             {
                 new Room {type = RoomType.Start, gridPos = -top, pos = -top},
