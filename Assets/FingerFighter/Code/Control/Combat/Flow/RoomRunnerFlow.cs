@@ -23,7 +23,9 @@ namespace FingerFighter.Control.Combat.Flow
         
         private void OnValidate()
         {
+#if UNITY_EDITOR
             levelMapScene.SerializeName();
+#endif
         }
 
         protected override void UpdateFormationsQueue()

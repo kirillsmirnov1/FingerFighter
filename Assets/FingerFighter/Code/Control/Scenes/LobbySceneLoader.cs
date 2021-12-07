@@ -20,9 +20,11 @@ namespace FingerFighter.Control.Scenes
 
         private void OnValidate()
         {
+#if UNITY_EDITOR
             ring.SerializeName();
             map.SerializeName();
             runner.SerializeName();
+#endif
         }
 
         private void Start()

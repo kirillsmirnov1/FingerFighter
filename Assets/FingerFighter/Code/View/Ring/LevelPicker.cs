@@ -22,7 +22,9 @@ namespace FingerFighter.View.Ring
         private void OnValidate()
         {
             this.CheckNullFields();
+#if UNITY_EDITOR
             levelMapScene.SerializeName();
+#endif
         }
 
         private void Awake()

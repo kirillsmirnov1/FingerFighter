@@ -24,8 +24,10 @@ namespace FingerFighter.Control.LevelMaps
         private void OnValidate()
         {
             this.CheckNullFields();
+#if UNITY_EDITOR
             runner.SerializeName();
             ring.SerializeName();
+#endif
         }
 
         private void Awake()
