@@ -50,14 +50,14 @@ namespace FingerFighter.Control.LevelMaps
             {
                 case RoomStatus.UnTouched:
                 case RoomStatus.NextTarget:
-                    UseRoom(roomIndex);
+                    UseRoom();
                     break;
                 case RoomStatus.Used:
                     break;
             }
         }
 
-        private void UseRoom(int roomIndex)
+        private void UseRoom()
         {
             runnerFlowVar.Value = roomFlow;
             SceneManager.LoadScene(runner.sceneName);
