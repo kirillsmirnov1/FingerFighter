@@ -7,7 +7,7 @@
         public override void Enter()
         {
             var formation = Flow.NextFormation;
-            Flow.spawn.Spawn(formation);
+            Flow.Spawn.Spawn(formation);
             WaveChanged($"{Flow.currentPack} : {formation.id}");
         }
 

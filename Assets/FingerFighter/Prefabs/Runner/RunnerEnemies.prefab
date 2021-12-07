@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomDuration: 25
-  spawn: {fileID: 1084927433933010853}
+  spawnVariable: {fileID: 11400000, guid: ee01150089385ec43ad7b700a68373d9, type: 2}
   enemyProvider: {fileID: 11400000, guid: 351ff579f73a452489d45f8ad7e079b8, type: 2}
   combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
   currentPack: 
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomDuration: 25
-  spawn: {fileID: 1084927433933010853}
+  spawnVariable: {fileID: 11400000, guid: ee01150089385ec43ad7b700a68373d9, type: 2}
   enemyProvider: {fileID: 11400000, guid: 351ff579f73a452489d45f8ad7e079b8, type: 2}
   combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
   currentPack: 
@@ -100,7 +100,7 @@ MonoBehaviour:
   levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
   roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
   levelMapScene:
-    sceneName: 
+    sceneName: LevelMap
     sceneAsset: {fileID: 102900000, guid: 303f80d93556fd1478a43a319a3cc0e2, type: 3}
 --- !u!1 &1084927433933010855
 GameObject:
@@ -112,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1084927433933010852}
   - component: {fileID: 1084927433933010853}
+  - component: {fileID: 9103705209184627558}
   m_Layer: 6
   m_Name: EnemySpawnFormation
   m_TagString: Untagged
@@ -145,3 +146,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694bb6d8918a4598adcf802549f3ae8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9103705209184627558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084927433933010855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5068aad1d7f41d19645cd53f4ef0eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  variable: {fileID: 11400000, guid: ee01150089385ec43ad7b700a68373d9, type: 2}

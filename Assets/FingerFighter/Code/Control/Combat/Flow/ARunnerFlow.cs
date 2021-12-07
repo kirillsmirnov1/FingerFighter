@@ -15,11 +15,13 @@ namespace FingerFighter.Control.Combat.Flow
         [SerializeField] public float roomDuration = 25f;
                 
         [Header("Game Objects")]
-        [SerializeField] public EnemySpawnFormation spawn;
+        [SerializeField] private GameObjectVariable spawnVariable;
         [SerializeField] protected EnemyFormationPackProvider enemyProvider;
         
         [Header("Data")]
         [SerializeField] public FloatVariable combatTimeScale;
+        
+        public EnemySpawnFormation Spawn { get; private set; }
         
         protected RunnerFlowState state;
 
@@ -32,6 +34,7 @@ namespace FingerFighter.Control.Combat.Flow
         
         private void Awake()
         {
+            Spawn = spawnVariable.Value.GetComponent<EnemySpawnFormation>();
             AliveEnemiesCounter.OnNoEnemiesLeftAlive += NoEnemiesLeft;
             PlayerStatus.OnDeath += PauseFlow;
             PlayerStatus.OnAlive += ResumeFlow;
@@ -66,7 +69,7 @@ namespace FingerFighter.Control.Combat.Flow
             {
                 OnNoFormationsLeft();
             }
-            this.DelayAction(0f, () => state.Enter());
+            this.DelayAction(0f, () => state?.Enter());
         }
 
         protected abstract void UpdateFormationsQueue();
