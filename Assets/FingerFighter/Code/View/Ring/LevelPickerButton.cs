@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using FingerFighter.Utils;
+using FingerFighter.View.Display;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityUtils;
@@ -8,8 +10,12 @@ namespace FingerFighter.View.Ring
     [RequireComponent(typeof(Button))]
     public class LevelPickerButton : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI text;
+        [SerializeField] private TextMeshProUGUI levelName;
+        [SerializeField] private TextMeshProUGUI levelCost;
         [SerializeField] private Button button;
+
+        [Header("Data")]
+        [SerializeField] private StringSetVariable boughtLevels; // TODO subscribe on changes 
         
         private LevelPicker _levelPicker;
         private int _index;
@@ -17,7 +23,6 @@ namespace FingerFighter.View.Ring
 
         private void OnValidate()
         {
-            text ??= GetComponentInChildren<TextMeshProUGUI>();
             button ??= GetComponent<Button>();
             this.CheckNullFields();
         }
@@ -27,8 +32,41 @@ namespace FingerFighter.View.Ring
             _levelPicker = levelPicker;
             _index = index;
             _packId = packId;
-            text.text = _packId;
-            button.onClick.AddListener(() => _levelPicker.OnButtonClick(_index));
+
+            SetVisuals();
+            
+            button.onClick.AddListener(OnClick);
         }
+
+        private void SetVisuals()
+        {
+            SetText();
+            SetCostVisibility();
+        }
+
+        private void SetText()
+        {
+            levelName.text = _packId;
+            // TODO init cost
+        }
+
+        private void SetCostVisibility()
+        {
+            levelCost.gameObject.SetActive(!LevelBought);
+        }
+
+        private void OnClick()
+        {
+            if (LevelBought)
+            {
+                _levelPicker.LoadLevel(_packId);
+            }
+            else
+            {
+                UiNotifications.Show("TODO buying attempt");
+            }
+        }
+
+        private bool LevelBought => boughtLevels.Has(_packId);
     }
 }

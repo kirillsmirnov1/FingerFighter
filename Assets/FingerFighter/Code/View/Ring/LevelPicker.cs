@@ -41,11 +41,10 @@ namespace FingerFighter.View.Ring
             }
         }
 
-        public void OnButtonClick(int index)
+        public void LoadLevel(string packId)
         {
-            var pack = packs[index];
             currentRoom.Value = 0;
-            levelNameVar.Value = pack.Id;
+            levelNameVar.Value = packId;
             levelMapGenerator.Generate();
             SceneManagerCustom.LoadScene(levelMapScene.sceneName);
         }
