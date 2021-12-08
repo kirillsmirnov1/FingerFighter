@@ -20,6 +20,7 @@ namespace FingerFighter.View.Ring
         private LevelPicker _levelPicker;
         private int _index;
         private string _packId;
+        private ulong _packCost;
 
         private void OnValidate()
         {
@@ -27,11 +28,12 @@ namespace FingerFighter.View.Ring
             this.CheckNullFields();
         }
 
-        public void Init(LevelPicker levelPicker, int index, string packId)
+        public void Init(LevelPicker levelPicker, int index, string packId, ulong packCost)
         {
             _levelPicker = levelPicker;
             _index = index;
             _packId = packId;
+            _packCost = packCost;
 
             SetVisuals();
             
@@ -47,7 +49,7 @@ namespace FingerFighter.View.Ring
         private void SetText()
         {
             levelName.text = _packId;
-            // TODO init cost
+            levelCost.text = $"<sprite index=0 tint=1> {_packCost}";
         }
 
         private void SetCostVisibility()

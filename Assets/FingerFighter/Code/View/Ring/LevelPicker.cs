@@ -37,7 +37,7 @@ namespace FingerFighter.View.Ring
                 var pack = packs.Value[i];
                 Instantiate(levelPickerButtonPrefab, transform)
                     .GetComponent<LevelPickerButton>()
-                    .Init(this, i, pack.Id);
+                    .Init(this, i, pack.Id, pack.cost);
             }
         }
 

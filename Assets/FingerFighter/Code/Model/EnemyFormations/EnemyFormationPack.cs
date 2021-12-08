@@ -8,7 +8,7 @@ namespace FingerFighter.Model.EnemyFormations
     public class EnemyFormationPack : ScriptableObject
     {
         [SerializeField] private string id;
-        [SerializeField] private ulong cost;
+        [SerializeField] public ulong cost;
         [SerializeField] private EnemyStats boss;
         [SerializeField] private EnemyFormation[] formations;
 
