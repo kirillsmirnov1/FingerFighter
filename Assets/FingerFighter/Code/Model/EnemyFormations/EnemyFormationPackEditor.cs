@@ -8,6 +8,7 @@ namespace FingerFighter.Model.EnemyFormations
     {
         [SerializeField] private EnemyFormationPack enemyFormationPack;
         [SerializeField] private string id;
+        [SerializeField] private ulong cost;
         [SerializeField] private EnemyStats boss;
         [SerializeField] private EnemyFormationEditor[] editors;
 #if UNITY_EDITOR
@@ -47,7 +48,7 @@ namespace FingerFighter.Model.EnemyFormations
         }
 
         private void OverwritePack() 
-            => enemyFormationPack.Overwrite(id, Formations, boss);
+            => enemyFormationPack.Overwrite(id, cost, Formations, boss);
 
         private EnemyFormation[] Formations 
             => editors.Select(e => e.formation).ToArray();

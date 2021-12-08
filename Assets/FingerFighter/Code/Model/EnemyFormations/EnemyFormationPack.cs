@@ -8,6 +8,7 @@ namespace FingerFighter.Model.EnemyFormations
     public class EnemyFormationPack : ScriptableObject
     {
         [SerializeField] private string id;
+        [SerializeField] private ulong cost;
         [SerializeField] private EnemyStats boss;
         [SerializeField] private EnemyFormation[] formations;
 
@@ -15,9 +16,9 @@ namespace FingerFighter.Model.EnemyFormations
         public EnemyFormation[] Formations => formations;
         public EnemyStats Boss => boss;
 
-        public void Overwrite(string newId, EnemyFormation[] newFormations, EnemyStats newBoss)
+        public void Overwrite(string newId, ulong newCost, EnemyFormation[] newFormations, EnemyStats newBoss)
         {
-            (id, formations, boss) = (newId, newFormations, newBoss);
+            (id, cost, formations, boss) = (newId, newCost, newFormations, newBoss);
             SetPackDirty();
         }
 
