@@ -40,6 +40,6 @@ namespace FingerFighter.Utils
         }
 
         public bool Has(string str)
-            => HashSet.Contains(str);
+            => HashSet.Contains(str.ToLower());
     }
 }
