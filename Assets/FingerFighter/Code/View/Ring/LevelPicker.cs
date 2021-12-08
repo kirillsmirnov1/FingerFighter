@@ -1,6 +1,7 @@
 using FingerFighter.Control.LevelMaps;
 using FingerFighter.Control.Scenes;
 using FingerFighter.Model.EnemyFormations;
+using FingerFighter.Utils;
 using UnityEngine;
 using UnityUtils;
 using UnityUtils.Scenes;
@@ -16,6 +17,8 @@ namespace FingerFighter.View.Ring
         [SerializeField] private StringVariable levelNameVar;
         [SerializeField] private LevelMapGenerator levelMapGenerator;
         [SerializeField] private IntVariable currentRoom;
+        [SerializeField] private ULongVariable balance;
+        [SerializeField] private StringSetVariable boughtLevels;
         
         private void OnValidate()
         {
@@ -47,6 +50,15 @@ namespace FingerFighter.View.Ring
             levelNameVar.Value = packId;
             levelMapGenerator.Generate();
             SceneManagerCustom.LoadScene(levelMapScene.sceneName);
+        }
+
+        public bool CanBuy(ulong packCost) 
+            => balance.Value >= packCost;
+
+        public void Buy(string packId, ulong packCost)
+        {
+            balance.Value -= packCost;
+            boughtLevels.Add(packId);
         }
     }
 }

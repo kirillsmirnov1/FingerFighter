@@ -75,7 +75,14 @@ namespace FingerFighter.View.Ring
             }
             else
             {
-                UiNotifications.Show("TODO buying attempt");
+                if (_levelPicker.CanBuy(_packCost))
+                {
+                    _levelPicker.Buy(_packId, _packCost);
+                }
+                else
+                {
+                    UiNotifications.Show("Don't have enough coins");
+                }
             }
         }
 

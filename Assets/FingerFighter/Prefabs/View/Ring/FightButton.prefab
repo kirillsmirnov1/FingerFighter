@@ -99,6 +99,8 @@ MonoBehaviour:
   levelNameVar: {fileID: 11400000, guid: c05b3cdb2159fbb4899e806d92cceedc, type: 2}
   levelMapGenerator: {fileID: 11400000, guid: 940001958c68e6d41bbc6bdd470afe88, type: 2}
   currentRoom: {fileID: 11400000, guid: a231fe10c9393fb40bdde69591cabc9d, type: 2}
+  balance: {fileID: 11400000, guid: c2c4ccab921883746a4c5bdcbab4bda9, type: 2}
+  boughtLevels: {fileID: 11400000, guid: 9ba168a4cfd07a747a161cd576e9d7cc, type: 2}
 --- !u!114 &6939112542289777746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +157,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709345502114873010}
     m_Modifications:
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6607941101464112042, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
       propertyPath: m_Name
       value: ChooseLevelButton
@@ -246,6 +272,30 @@ PrefabInstance:
     - target: {fileID: 6607941101573389580, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
       propertyPath: m_text
       value: Flies
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
@@ -505,6 +555,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1709345502114873010}
     m_Modifications:
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6241346376110718102, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6607941101464112042, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
       propertyPath: m_Name
       value: ChooseLevelButton (1)
@@ -596,6 +670,30 @@ PrefabInstance:
     - target: {fileID: 6607941101573389580, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
       propertyPath: m_text
       value: Snakes
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607941101573389581, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 960c8ea4345c2b3408e7bf3e00341418, type: 3}
