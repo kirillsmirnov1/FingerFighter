@@ -1,8 +1,8 @@
 using FingerFighter.Control.LevelMaps;
+using FingerFighter.Control.Scenes;
 using FingerFighter.Model.EnemyFormations;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityUtils;
 using UnityUtils.Scenes;
@@ -51,7 +51,7 @@ namespace FingerFighter.View.Ring
             currentRoom.Value = 0;
             levelNameVar.Value = pack.Id;
             levelMapGenerator.Generate();
-            SceneManager.LoadScene(levelMapScene.sceneName);
+            SceneManagerCustom.LoadScene(levelMapScene.sceneName);
         }
     }
 }

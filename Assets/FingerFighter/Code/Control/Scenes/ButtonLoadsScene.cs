@@ -39,7 +39,7 @@ namespace FingerFighter.Control.Scenes
 
         private void OnClick()
         {
-            SceneManager.LoadScene(sceneNameReference.sceneName);
+            SceneManagerCustom.LoadScene(sceneNameReference.sceneName);
         }
     }
 }

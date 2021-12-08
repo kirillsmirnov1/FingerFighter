@@ -7,7 +7,7 @@ namespace FingerFighter.Control.Scenes
     {
         public void Reload()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManagerCustom.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

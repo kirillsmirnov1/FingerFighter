@@ -26,29 +26,30 @@ namespace FingerFighter.Control.Scenes
         }
 
         public static void LoadScene(string sceneName) 
-            => _instance.LoadSceneImpl(sceneName);
-
-        private void LoadSceneImpl(string sceneName)
+            => _instance.LoadSceneImpl(() => SceneManager.LoadScene(sceneName));
+        public static void LoadScene(int sceneBuildIndex)
+            => _instance.LoadSceneImpl(() => SceneManager.LoadScene(sceneBuildIndex));
+        
+        private void LoadSceneImpl(Action loadSceneAction)
         {
-            StartCoroutine(SceneLoadCoroutine(sceneName));
+            StopAllCoroutines();
+            StartCoroutine(SceneLoadCoroutine(loadSceneAction));
         }
 
-        private IEnumerator SceneLoadCoroutine(string sceneName)
+        private IEnumerator SceneLoadCoroutine(Action loadSceneAction)
         {
             var wfs = new WaitForSeconds(stepDuration);
+            
+            hexes.Scale(0);
             hexes.gameObject.SetActive(true);
-            if (Math.Abs(hexes.t - 1f) > 0.001f)
+
+            for (float i = 0; i <= duration; i += stepDuration)
             {
-                hexes.Scale(0);
-
-                for (float i = 0; i <= duration; i += stepDuration)
-                {
-                    hexes.Scale(i / duration);
-                    yield return wfs;
-                }
+                hexes.Scale(i / duration);
+                yield return wfs;
             }
-
-            SceneManager.LoadScene(sceneName);
+            
+            loadSceneAction.Invoke();
             
             for (float i = duration; i >= 0; i -= stepDuration)
             {

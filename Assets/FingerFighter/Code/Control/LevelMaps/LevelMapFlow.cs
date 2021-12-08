@@ -1,10 +1,10 @@
 ﻿using System;
+using FingerFighter.Control.Scenes;
 using FingerFighter.Model.Combat.Flow;
 using FingerFighter.Model.LevelMaps;
 using FingerFighter.View.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityUtils;
 using UnityUtils.Scenes;
 
@@ -53,7 +53,7 @@ namespace FingerFighter.Control.LevelMaps
             var level = levelMapVariable.Value;
             if (level?.rooms == null || level.rooms.Count == 0)
             {
-                SceneManager.LoadScene(ring.sceneName);
+                SceneManagerCustom.LoadScene(ring.sceneName);
             }
         }
 
@@ -104,15 +104,15 @@ namespace FingerFighter.Control.LevelMaps
         private void UseRoom()
         {
             runnerFlowVar.Value = roomFlow;
-            SceneManager.LoadScene(runner.sceneName);
+            SceneManagerCustom.LoadScene(runner.sceneName);
         }
 
         private void OnBossDefeated()
         {
             // TODO show results 
             // TODO allow to go next 
-            levelMapVariable.Value = null;
-            SceneManager.LoadScene(ring.sceneName);
+            // levelMapVariable.Value = null;
+            SceneManagerCustom.LoadScene(ring.sceneName);
         }
     }
 }

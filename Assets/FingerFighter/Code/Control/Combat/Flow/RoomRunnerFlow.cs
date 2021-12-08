@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using FingerFighter.Control.Scenes;
 using FingerFighter.Model.EnemyFormations;
 using FingerFighter.Model.LevelMaps;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityUtils.Scenes;
 using UnityUtils.Variables;
 
@@ -46,7 +46,7 @@ namespace FingerFighter.Control.Combat.Flow
         {
             // TODO consider it a win — show results 
             roomsStatus[currentRoom] = RoomStatus.Used;
-            SceneManager.LoadScene(levelMapScene.sceneName);
+            SceneManagerCustom.LoadScene(levelMapScene.sceneName);
         }
     }
 }
