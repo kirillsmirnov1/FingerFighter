@@ -15,7 +15,7 @@ namespace FingerFighter.View.Ring
         [SerializeField] private Button button;
 
         [Header("Data")]
-        [SerializeField] private StringSetVariable boughtLevels; // TODO subscribe on changes 
+        [SerializeField] private StringSetVariable boughtLevels; 
         
         private LevelPicker _levelPicker;
         private int _index;
@@ -26,6 +26,16 @@ namespace FingerFighter.View.Ring
         {
             button ??= GetComponent<Button>();
             this.CheckNullFields();
+        }
+
+        private void Awake()
+        {
+            boughtLevels.OnChangeBase += SetCostVisibility;
+        }
+
+        private void OnDestroy()
+        {
+            boughtLevels.OnChangeBase -= SetCostVisibility;
         }
 
         public void Init(LevelPicker levelPicker, int index, string packId, ulong packCost)
