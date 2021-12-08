@@ -4,7 +4,7 @@ namespace FingerFighter.View.Display.SceneChangeHex
 {
     public class HexGrid : MonoBehaviour
     {
-        [SerializeField][Range(0f, 1f)] public float t;
+        [SerializeField][Range(0f, 1f)] private float t;
         [Tooltip("Gap between rows scaling")]
         [SerializeField] private float delay = 0.01f;
         [Tooltip("Relative time it takes for row to scale")]
