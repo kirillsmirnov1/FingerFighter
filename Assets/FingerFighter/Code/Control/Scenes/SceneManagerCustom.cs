@@ -12,6 +12,9 @@ namespace FingerFighter.Control.Scenes
         [SerializeField] private HexGrid hexes;
         [SerializeField] private float duration = 1f;
         [SerializeField] private float stepDuration = 0.05f;
+
+        [Header("Fade")]
+        [SerializeField] private float t = 0;
         
         private static SceneManagerCustom _instance;
 
@@ -40,12 +43,12 @@ namespace FingerFighter.Control.Scenes
         {
             var wfs = new WaitForSeconds(stepDuration);
             
-            hexes.Scale(0);
+            hexes.Scale(t);
             hexes.gameObject.SetActive(true);
 
-            for (float i = 0; i <= duration; i += stepDuration)
+            for (float i = t * duration; i <= duration; i += stepDuration)
             {
-                hexes.Scale(i / duration);
+                hexes.Scale(t = i / duration);
                 yield return wfs;
             }
             
@@ -53,11 +56,11 @@ namespace FingerFighter.Control.Scenes
             
             for (float i = duration; i >= 0; i -= stepDuration)
             {
-                hexes.Scale(i/duration);
+                hexes.Scale(t = i/duration);
                 yield return wfs;
             }
             
-            hexes.Scale(0);
+            hexes.Scale(t = 0);
             hexes.gameObject.SetActive(false);
         }
     }
