@@ -105,8 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   t: 1
   delay: 0.1
-  k: 10
-  totalDelay: 3.4
+  duration: 1
+  tMod: 3.4
   rows:
   - {fileID: 4718122167971014076}
   - {fileID: 8551375718819574596}
@@ -132,6 +132,31 @@ MonoBehaviour:
   - {fileID: 1132063474454015084}
   - {fileID: 8551375719468133323}
   - {fileID: 1132063474581580402}
+  rowsDelay:
+  - 0
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+  - 1
+  - 1.1
+  - 1.2
+  - 1.3
+  - 1.4
+  - 1.5
+  - 1.6
+  - 1.7
+  - 1.8
+  - 1.9
+  - 2
+  - 2.1
+  - 2.2
+  - 2.3
 --- !u!114 &3667528574537670898
 MonoBehaviour:
   m_ObjectHideFlags: 0
