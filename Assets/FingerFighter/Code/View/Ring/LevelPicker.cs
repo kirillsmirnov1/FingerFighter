@@ -1,9 +1,7 @@
 using FingerFighter.Control.LevelMaps;
 using FingerFighter.Control.Scenes;
 using FingerFighter.Model.EnemyFormations;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityUtils;
 using UnityUtils.Scenes;
 using UnityUtils.Variables;
@@ -37,15 +35,13 @@ namespace FingerFighter.View.Ring
             for (var i = 0; i < packs.Value.Length; i++)
             {
                 var pack = packs.Value[i];
-                var buttonGO = Instantiate(levelPickerButtonPrefab, transform);
-                // TODO use LevelPickerButton
-                buttonGO.GetComponentInChildren<TextMeshProUGUI>().text = pack.Id;
-                var capturedIndex = i;
-                buttonGO.GetComponent<Button>().onClick.AddListener(() => OnButtonClick(capturedIndex));
+                Instantiate(levelPickerButtonPrefab, transform)
+                    .GetComponent<LevelPickerButton>()
+                    .Init(this, i, pack.Id);
             }
         }
 
-        private void OnButtonClick(int index)
+        public void OnButtonClick(int index)
         {
             var pack = packs[index];
             currentRoom.Value = 0;
