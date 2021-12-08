@@ -52,7 +52,7 @@ namespace FingerFighter.Control.Scenes
                     sceneName = runner.sceneName;
                 } 
             }
-            SceneManager.LoadScene(sceneName);
+            SceneManagerCustom.LoadScene(sceneName);
         }
     }
 }
