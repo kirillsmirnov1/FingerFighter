@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3299600611833900427, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
       propertyPath: m_Name
-      value: ChooseLevelButton
+      value: LevelPickerButton
       objectReference: {fileID: 0}
     - target: {fileID: 3299600611833900428, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
       propertyPath: m_Pivot.x
@@ -130,6 +130,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3299600611833900427, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
   m_PrefabInstance: {fileID: 8538427066251322913}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6607941101464112044 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3299600611833900429, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
+  m_PrefabInstance: {fileID: 8538427066251322913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6607941101464112042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6607941101573389580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3299600611942701869, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
+  m_PrefabInstance: {fileID: 8538427066251322913}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &39781566102586848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,3 +164,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f32da8e65ef647f698a52462bbddbeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 6607941101573389580}
+  button: {fileID: 6607941101464112044}
