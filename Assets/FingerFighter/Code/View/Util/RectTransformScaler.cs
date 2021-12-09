@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityUtils.Extensions;
 
@@ -10,16 +11,34 @@ namespace FingerFighter.View.Util
         [SerializeField] private RectTransform transformToScale;
         [SerializeField] private RectTransform parentRect;
         [SerializeField] private float scaleDuration = 1f;
+        [Tooltip("Should be either -1 or 1")]
+        [Range(-1f, 1f)]
+        [SerializeField] private float scaleDirection = 1f;
         [SerializeField] private bool minimizeOnEnable = true;
         
         private bool _used;
-        private float _scaleDurationLeft;
-        
+        private float _t;
+
+        private Func<bool> _shouldStop;
+
+        private void OnValidate()
+        {
+            scaleDirection = Mathf.Sign(scaleDirection);
+        }
+
         private void OnEnable()
         {
             _used = false;
+            Scale();
             if(minimizeOnEnable) transformToScale.localScale = Vector3.zero;
             this.DelayAction(0f, RebuildLayout);
+        }
+
+        private void InitStopper()
+        {
+            _shouldStop = scaleDirection > 0 
+                ? (Func<bool>)(() => _t >= scaleDuration)
+                : (Func<bool>)(() => _t <= 0f);
         }
 
         public void ScaleOnce()
@@ -29,17 +48,18 @@ namespace FingerFighter.View.Util
             Scale();
         }
 
-        private void Scale()
+        public void Scale()
         {
-            _scaleDurationLeft = scaleDuration;
+            scaleDirection = -scaleDirection;
+            InitStopper();
         }
 
         private void Update()
         {
-            if(_scaleDurationLeft <= 0) return;
-            _scaleDurationLeft -= Time.deltaTime;
+            if(_shouldStop()) return;
+            _t += scaleDirection * Time.deltaTime;
             
-            transformToScale.localScale = Vector3.one * curve.Evaluate(1f - _scaleDurationLeft/scaleDuration);
+            transformToScale.localScale = Vector3.one * curve.Evaluate(_t/scaleDuration);
             RebuildLayout();
         }
 

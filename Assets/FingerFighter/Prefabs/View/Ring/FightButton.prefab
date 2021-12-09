@@ -149,6 +149,7 @@ MonoBehaviour:
   transformToScale: {fileID: 1709345502114873010}
   parentRect: {fileID: 8305624191658522872}
   scaleDuration: 0.5
+  scaleDirection: 1
   minimizeOnEnable: 1
 --- !u!1001 &941290623349896579
 PrefabInstance:
@@ -457,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4143355490249659027, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ScaleOnce
+      value: Scale
       objectReference: {fileID: 0}
     - target: {fileID: 4143355490249659027, guid: 14bd2f9250a7f454cac006c1d4c32c09, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
