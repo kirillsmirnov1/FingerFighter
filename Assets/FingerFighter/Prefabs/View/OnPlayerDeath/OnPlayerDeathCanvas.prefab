@@ -1248,7 +1248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3299600611833900429, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3299600611833900429, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -1257,7 +1257,7 @@ PrefabInstance:
     - target: {fileID: 3299600611833900429, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 4083776835398024354}
+      objectReference: {fileID: 0}
     - target: {fileID: 3299600611833900429, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -1274,6 +1274,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3299600611942701869, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
+      propertyPath: m_text
+      value: give up
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
 --- !u!1 &817924427 stripped
@@ -1286,7 +1290,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3299600611833900428, guid: 5138144ef8c66bd4993abd847c2e41d6, type: 3}
   m_PrefabInstance: {fileID: 3299600612651820224}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4083776835398024354
+--- !u!114 &4579861339284219198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1295,9 +1299,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 817924427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a233a2000294ad2a2bc23d5fbc58295, type: 3}
+  m_Script: {fileID: 11500000, guid: 7dcdbad8c1bd4fb08093db4819b710ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNameReference:
+    sceneName: Ring
+    sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+  sceneName: {fileID: 0}
 --- !u!1001 &3361108631927791671
 PrefabInstance:
   m_ObjectHideFlags: 0
