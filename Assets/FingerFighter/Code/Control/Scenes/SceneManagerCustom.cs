@@ -63,5 +63,8 @@ namespace FingerFighter.Control.Scenes
             hexes.Scale(t = 0);
             hexes.gameObject.SetActive(false);
         }
+
+        public static void Reload() 
+            => LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

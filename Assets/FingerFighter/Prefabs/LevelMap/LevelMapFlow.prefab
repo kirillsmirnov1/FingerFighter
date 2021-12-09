@@ -47,6 +47,11 @@ MonoBehaviour:
   roomFlow: {fileID: 11400000, guid: e34f192e33e8d164f8b7ff70024e7c06, type: 2}
   runnerFlowVar: {fileID: 11400000, guid: 83282738c24b6eb42be9ce5062ac4381, type: 2}
   levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
+  packs: {fileID: 11400000, guid: 842081fc941c4494486e770ece3cf240, type: 2}
+  levelId: {fileID: 11400000, guid: c05b3cdb2159fbb4899e806d92cceedc, type: 2}
+  levelMapGenerator: {fileID: 11400000, guid: 940001958c68e6d41bbc6bdd470afe88, type: 2}
+  playerPos: {fileID: 11400000, guid: a231fe10c9393fb40bdde69591cabc9d, type: 2}
+  goNextButton: {fileID: 0}
   runner:
     sceneName: Runner
     sceneAsset: {fileID: 102900000, guid: 351dade6bb4175c4f998b470114cdb51, type: 3}

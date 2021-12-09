@@ -19,6 +19,15 @@ namespace FingerFighter.Model.EnemyFormations
             return Value[0];
         }
 
+        public string GetNextId(string id) 
+            => Value[GetIndex(id) + 1].Id;
+
+        public bool HasNext(string id)
+        {
+            var index = GetIndex(id);
+            return index >= 0 && index < Value.Length - 1;
+        }
+
         private int GetIndex(string id)
         {
             var packs = Value;

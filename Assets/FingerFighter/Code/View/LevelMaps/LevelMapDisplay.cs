@@ -10,8 +10,15 @@ namespace FingerFighter.View.LevelMaps
         [SerializeField] private LevelMapVariable levelMapVariable;
         [SerializeField] private GameObject roomMarkPrefab;
         [SerializeField] private GameObject connectionPrefab;
+
+        [Header("Game objects")]
+        [SerializeField] private RectTransform cancelButton;
+        [SerializeField] private RectTransform continueButton;
         [SerializeField] private Camera cam;
-        
+
+        private List<Room> Rooms 
+            => levelMapVariable.Value.rooms;
+
         private void Start()
         {
             SpawnMap();
@@ -22,6 +29,7 @@ namespace FingerFighter.View.LevelMaps
             ClearMap();
             SpawnRoomMarks();
             SpawnConnections();
+            PositionButtons();
         }
 
         public void ClearMap()
@@ -34,9 +42,9 @@ namespace FingerFighter.View.LevelMaps
 
         private void SpawnRoomMarks()
         {
-            for (var i = 0; i < levelMapVariable.Value.rooms.Count; i++)
+            for (var i = 0; i < Rooms.Count; i++)
             {
-                var room = levelMapVariable.Value.rooms[i];
+                var room = Rooms[i];
                 Instantiate(roomMarkPrefab, transform)
                     .GetComponent<RoomMarkerView>()
                     .Init(new RoomMarkerData
@@ -65,6 +73,12 @@ namespace FingerFighter.View.LevelMaps
                             .ToArray() 
                     });
             }
+        }
+
+        private void PositionButtons()
+        {
+            continueButton.position = cam.WorldToScreenPoint(Rooms[Rooms.Count-1].pos + Vector2.up);
+            cancelButton.position = cam.WorldToScreenPoint(Rooms[0].pos + Vector2.down);
         }
     }
 }

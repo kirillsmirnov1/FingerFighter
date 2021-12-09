@@ -52,6 +52,8 @@ MonoBehaviour:
   levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
   roomMarkPrefab: {fileID: 2464253741512415124, guid: 89c2fc4a9140067488bfd84d65ba38de, type: 3}
   connectionPrefab: {fileID: 4091196204279556253, guid: 90223a8d5bde9824e8073b8b7380ff08, type: 3}
+  cancelButton: {fileID: 0}
+  continueButton: {fileID: 0}
   cam: {fileID: 0}
 --- !u!114 &3183248939214974350
 MonoBehaviour:

@@ -1,12 +1,15 @@
 ﻿using System;
 using FingerFighter.Control.Scenes;
 using FingerFighter.Model.Combat.Flow;
+using FingerFighter.Model.EnemyFormations;
 using FingerFighter.Model.LevelMaps;
 using FingerFighter.View.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityUtils;
 using UnityUtils.Scenes;
+using UnityUtils.Variables;
 
 namespace FingerFighter.Control.LevelMaps
 {
@@ -16,14 +19,21 @@ namespace FingerFighter.Control.LevelMaps
         [SerializeField] private RunnerFlowContainer roomFlow;
         [SerializeField] private RunnerFlowContainerVariable runnerFlowVar;
         [SerializeField] private LevelMapVariable levelMapVariable;
+        [SerializeField] private EnemyFormationPackArray packs;
+        [SerializeField] private StringVariable levelId;
+        [SerializeField] private LevelMapGenerator levelMapGenerator;
+        [SerializeField] private IntVariable playerPos;
         
+        [Header("Components")]
+        [SerializeField] private Button goNextButton;
+
         [Header("Scenes")]
         [SerializeField] private SceneNameReference runner;
         [SerializeField] private SceneNameReference ring;
         
         private void OnValidate()
         {
-            this.CheckNullFields();
+            this.CheckNullFieldsIfNotPrefab();
 #if UNITY_EDITOR
             runner.SerializeName();
             ring.SerializeName();
@@ -60,10 +70,12 @@ namespace FingerFighter.Control.LevelMaps
         private void CheckBossFinished()
         {
             var bossRoomIndex = levelMapVariable.Value.rooms.Count - 1;
-            if (roomsStatus[bossRoomIndex] == RoomStatus.Used)
+            var bossDefeated = roomsStatus[bossRoomIndex] == RoomStatus.Used; 
+            if (bossDefeated)
             {
                 OnBossDefeated();
             }
+            goNextButton.gameObject.SetActive(bossDefeated);
         }
 
         private void OnRoomClicked(int roomIndex)
@@ -109,10 +121,24 @@ namespace FingerFighter.Control.LevelMaps
 
         private void OnBossDefeated()
         {
-            // TODO show results 
-            // TODO allow to go next 
-            // levelMapVariable.Value = null;
-            SceneManagerCustom.LoadScene(ring.sceneName);
+            goNextButton.gameObject.SetActive(true);
+            goNextButton.onClick.AddListener(OnGoingNextButtonClicked);
+        }
+
+        private void OnGoingNextButtonClicked()
+        {
+            // TODO show confirmation window 
+            if (packs.HasNext(levelId))
+            {
+                levelId.Value = packs.GetNextId(levelId);
+                levelMapGenerator.Generate();
+                playerPos.Value = 0;
+                SceneManagerCustom.Reload();
+            }
+            else
+            {
+                SceneManagerCustom.LoadScene(ring.sceneName);
+            }
         }
     }
 }

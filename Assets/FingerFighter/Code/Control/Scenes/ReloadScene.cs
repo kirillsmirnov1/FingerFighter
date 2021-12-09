@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace FingerFighter.Control.Scenes
 {
@@ -7,7 +6,7 @@ namespace FingerFighter.Control.Scenes
     {
         public void Reload()
         {
-            SceneManagerCustom.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManagerCustom.Reload();
         }
     }
 }
