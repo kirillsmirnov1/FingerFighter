@@ -19,8 +19,6 @@ namespace FingerFighter.Control.Combat.Flow
         [SerializeField] private RoomsStatus roomsStatus;
         [SerializeField] private SceneNameReference levelMapScene;
         
-        // TODO handle total death — drop progress 
-        
         private void OnValidate()
         {
 #if UNITY_EDITOR
