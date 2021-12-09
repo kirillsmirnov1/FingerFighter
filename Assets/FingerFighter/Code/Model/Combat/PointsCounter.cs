@@ -1,5 +1,4 @@
-﻿using FingerFighter.Control.Combat;
-using FingerFighter.Control.Combat.Status;
+﻿using FingerFighter.Control.Combat.Status;
 using UnityEngine;
 using UnityUtils.Variables;
 
@@ -10,12 +9,7 @@ namespace FingerFighter.Model.Combat
         [SerializeField] private FloatVariable pointsCounter;
         [SerializeField] private EnemyStatsList enemyData;
         
-        private void Awake()
-        {
-            pointsCounter.Value = 0;
-            EnemyStatus.OnDeath += OnEnemyDeath;
-        }
-
+        private void Awake() => EnemyStatus.OnDeath += OnEnemyDeath;
         private void OnDestroy() => EnemyStatus.OnDeath -= OnEnemyDeath;
 
         private void OnEnemyDeath(EnemyDeathData enemyDeathData)
