@@ -18,6 +18,7 @@ namespace FingerFighter.Control.Scenes
         [SerializeField] private float t = 0;
         
         private static SceneManagerCustom _instance;
+        private WaitForSeconds _wfsStep;
 
         private void OnValidate()
         {
@@ -26,6 +27,7 @@ namespace FingerFighter.Control.Scenes
 
         private void Awake()
         {
+            _wfsStep = new WaitForSeconds(stepDuration);
             _instance = this;
         }
 
@@ -42,24 +44,35 @@ namespace FingerFighter.Control.Scenes
 
         private IEnumerator SceneLoadCoroutine(Action loadSceneAction)
         {
-            var wfs = new WaitForSeconds(stepDuration);
-            
+            yield return FadeIn();
+            yield return DelayedSceneLoad(loadSceneAction);
+            yield return FadeOut();
+        }
+
+        private IEnumerator FadeIn()
+        {
             hexes.Scale(t);
             hexes.gameObject.SetActive(true);
 
             for (float i = t * duration; i <= duration; i += stepDuration)
             {
                 hexes.Scale(t = i / duration);
-                yield return wfs;
+                yield return _wfsStep;
             }
+        }
 
+        private IEnumerator DelayedSceneLoad(Action loadSceneAction)
+        {
             yield return new WaitForSeconds(splashDuration);
             loadSceneAction.Invoke();
-            
+        }
+
+        private IEnumerator FadeOut()
+        {
             for (float i = duration; i >= 0; i -= stepDuration)
             {
                 hexes.Scale(t = i/duration);
-                yield return wfs;
+                yield return _wfsStep;
             }
             
             hexes.Scale(t = 0);
