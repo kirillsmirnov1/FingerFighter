@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using FingerFighter.Control.Scenes;
 using FingerFighter.Model.EnemyFormations;
 using FingerFighter.Model.LevelMaps;
 using UnityEngine;
@@ -42,9 +41,8 @@ namespace FingerFighter.Control.Combat.Flow
 
         protected override void OnNoFormationsLeft()
         {
-            // TODO consider it a win — show results 
             roomsStatus[currentRoom] = RoomStatus.Used;
-            SceneManagerCustom.LoadScene(levelMapScene.sceneName);
+            PlayerWon();
         }
     }
 }

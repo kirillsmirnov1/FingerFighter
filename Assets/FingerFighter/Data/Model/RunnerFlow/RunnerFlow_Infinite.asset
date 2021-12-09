@@ -15,6 +15,7 @@ MonoBehaviour:
   roomDuration: 25
   spawnVariable: {fileID: 11400000, guid: ee01150089385ec43ad7b700a68373d9, type: 2}
   enemyProvider: {fileID: 11400000, guid: 351ff579f73a452489d45f8ad7e079b8, type: 2}
+  player: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
   combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
   currentPack: 
   restDuration: 10

@@ -11,7 +11,7 @@ namespace FingerFighter.Control.Combat.Flow.Revive
         [SerializeField] private GameEvent reviveEvent;
 
         [SerializeField] private TransformVariable playerTransform;
-        [SerializeField] private OnPlayerDeathView playerDeathView;
+        [SerializeField] private OnRoomEndView playerDeathView;
         [SerializeField] private GameObject currentScore;
         [SerializeField] private ReviveBlast blast;
         [SerializeField] private float reviveBlastDelay = 0.2f;

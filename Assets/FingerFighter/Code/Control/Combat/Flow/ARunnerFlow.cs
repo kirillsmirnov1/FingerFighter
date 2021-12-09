@@ -11,12 +11,15 @@ namespace FingerFighter.Control.Combat.Flow
 {
     public abstract class ARunnerFlow : ScriptableObject 
     {
+        public static event Action OnPlayerWon;
+        
         [Header("Params")]
         [SerializeField] public float roomDuration = 25f;
                 
         [Header("Game Objects")]
         [SerializeField] private GameObjectVariable spawnVariable;
         [SerializeField] protected EnemyFormationPackProvider enemyProvider;
+        [SerializeField] private TransformVariable player;
         
         [Header("Data")]
         [SerializeField] public FloatVariable combatTimeScale;
@@ -91,5 +94,11 @@ namespace FingerFighter.Control.Combat.Flow
 
         private void NoEnemiesLeft() 
             => state?.NoEnemiesLeft();
+
+        protected void PlayerWon()
+        {
+            player.Value.gameObject.SetActive(false);
+            OnPlayerWon?.Invoke();
+        }
     }
 }

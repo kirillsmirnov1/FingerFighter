@@ -734,7 +734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 837086224317022734, guid: c6c19a649bf4b784a93ed3b72c14e888, type: 3}
       propertyPath: m_Name
-      value: OnPlayerDeathCanvas
+      value: OnRoomEndCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 1652775857824439723, guid: c6c19a649bf4b784a93ed3b72c14e888, type: 3}
       propertyPath: m_AnchorMax.y
@@ -828,6 +828,10 @@ PrefabInstance:
       propertyPath: overlayScore
       value: 
       objectReference: {fileID: 2009848049}
+    - target: {fileID: 6198311837760073889, guid: c6c19a649bf4b784a93ed3b72c14e888, type: 3}
+      propertyPath: inGameOverlay
+      value: 
+      objectReference: {fileID: 7921561235059977674}
     - target: {fileID: 6613712682214148429, guid: c6c19a649bf4b784a93ed3b72c14e888, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1090,7 +1094,7 @@ PrefabInstance:
     - target: {fileID: 4052787709487195397, guid: 18df1ebe1839a06499130eb971ad2b81, type: 3}
       propertyPath: currentScore
       value: 
-      objectReference: {fileID: 2009848049}
+      objectReference: {fileID: 7921561235059977674}
     - target: {fileID: 4052787709487195397, guid: 18df1ebe1839a06499130eb971ad2b81, type: 3}
       propertyPath: playerDeathView
       value: 
@@ -1303,6 +1307,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 836f5eefacf932944b7c7059caf4ad90, type: 3}
+--- !u!1 &7921561235059977674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3828724331489875830, guid: 836f5eefacf932944b7c7059caf4ad90, type: 3}
+  m_PrefabInstance: {fileID: 7921561235059977673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8609122648524915228
 PrefabInstance:
   m_ObjectHideFlags: 0
