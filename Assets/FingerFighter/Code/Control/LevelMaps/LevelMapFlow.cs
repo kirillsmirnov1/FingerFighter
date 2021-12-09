@@ -132,10 +132,11 @@ namespace FingerFighter.Control.LevelMaps
             // TODO show confirmation window 
             if (packs.HasNext(levelId))
             {
+                // TODO fade in 
+                // TODO extract LevelMapLoader 
                 levelId.Value = packs.GetNextId(levelId);
-                levelMapGenerator.Generate();
                 playerPos.Value = 0;
-                SceneManagerCustom.LoadScene(levelMap.sceneName);
+                levelMapGenerator.Generate(() => SceneManagerCustom.LoadScene(levelMap.sceneName));
             }
             else
             {

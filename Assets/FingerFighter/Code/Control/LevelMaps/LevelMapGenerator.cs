@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using FingerFighter.Model.EnemyFormations;
@@ -30,10 +31,17 @@ namespace FingerFighter.Control.LevelMaps
         
         private static readonly Random Rand = new Random();
         private LevelMap _levelMap;
+        private Action _onFinish;
 
         private void OnValidate()
         {
             this.CheckNullFields();
+        }
+
+        public void Generate(Action finishCallback)
+        {
+            _onFinish = finishCallback;
+            Generate();
         }
 
         public void Generate()
@@ -46,6 +54,7 @@ namespace FingerFighter.Control.LevelMaps
             SetRoomFormations();
             WriteLevelMap();
             WriteRoomsStatus();
+            OnFinish();
         }
 
         private void CreateNewMap()
@@ -178,6 +187,12 @@ namespace FingerFighter.Control.LevelMaps
             var status = new RoomStatus[_levelMap.rooms.Count];
             status[0] = RoomStatus.Used;
             roomsStatus.Value = status;
+        }
+
+        private void OnFinish()
+        {
+            _onFinish?.Invoke();
+            _onFinish = null;
         }
 
         private Vector2 NextShift =>

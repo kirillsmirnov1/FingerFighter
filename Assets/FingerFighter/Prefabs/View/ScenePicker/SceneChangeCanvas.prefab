@@ -134,6 +134,8 @@ MonoBehaviour:
   hexes: {fileID: 8445118905330785874}
   duration: 0.5
   stepDuration: 0.025
+  splashDuration: 0.25
+  t: 0
 --- !u!1001 &8149458307594196882
 PrefabInstance:
   m_ObjectHideFlags: 0
