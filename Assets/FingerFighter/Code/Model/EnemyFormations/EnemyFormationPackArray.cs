@@ -8,13 +8,26 @@ namespace FingerFighter.Model.EnemyFormations
     {
         public EnemyFormationPack Get(string id)
         {
-            foreach (var pack in Value)
+            var index = GetIndex(id);
+
+            if (index != -1)
             {
-                if (pack.Id.Equals(id)) 
-                    return pack;
+                return Value[index];
             }
+
             Debug.LogWarning($"Couldn't get «{id}» level, returning {Value[0].Id}");
             return Value[0];
+        }
+
+        private int GetIndex(string id)
+        {
+            var packs = Value;
+            for (int i = 0; i < packs.Length; i++)
+            {
+                if (packs[i].Id.Equals(id))
+                    return i;
+            }
+            return -1;
         }
     }
 }
