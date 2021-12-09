@@ -44,6 +44,7 @@ namespace FingerFighter.Control.LevelMaps
 
         private void Awake()
         {
+            goNextButton.onClick.AddListener(OnGoingNextButtonClicked);
             PlayerMarker.OnRoomReached += OnPlayerReachedRoom;
             RoomMarkerView.OnClick += OnRoomClicked;
         }
@@ -124,7 +125,6 @@ namespace FingerFighter.Control.LevelMaps
         private void OnBossDefeated()
         {
             goNextButton.gameObject.SetActive(true);
-            goNextButton.onClick.AddListener(OnGoingNextButtonClicked);
         }
 
         private void OnGoingNextButtonClicked()
@@ -136,7 +136,8 @@ namespace FingerFighter.Control.LevelMaps
                 // TODO extract LevelMapLoader 
                 levelId.Value = packs.GetNextId(levelId);
                 playerPos.Value = 0;
-                levelMapGenerator.Generate(() => SceneManagerCustom.LoadScene(levelMap.sceneName));
+                levelMapGenerator.Generate();
+                SceneManagerCustom.LoadScene(levelMap.sceneName);
             }
             else
             {
