@@ -30,6 +30,7 @@ namespace FingerFighter.Control.LevelMaps
         [Header("Scenes")]
         [SerializeField] private SceneNameReference runner;
         [SerializeField] private SceneNameReference ring;
+        [SerializeField] private SceneNameReference levelMap;
         
         private void OnValidate()
         {
@@ -37,6 +38,7 @@ namespace FingerFighter.Control.LevelMaps
 #if UNITY_EDITOR
             runner.SerializeName();
             ring.SerializeName();
+            levelMap.SerializeName();
 #endif
         }
 
@@ -133,7 +135,7 @@ namespace FingerFighter.Control.LevelMaps
                 levelId.Value = packs.GetNextId(levelId);
                 levelMapGenerator.Generate();
                 playerPos.Value = 0;
-                SceneManagerCustom.Reload();
+                SceneManagerCustom.LoadScene(levelMap.sceneName);
             }
             else
             {

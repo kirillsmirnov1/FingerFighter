@@ -12,6 +12,7 @@ namespace FingerFighter.Control.Scenes
         [SerializeField] private HexGrid hexes;
         [SerializeField] private float duration = 1f;
         [SerializeField] private float stepDuration = 0.05f;
+        [SerializeField] private float splashDuration = 0.5f;
 
         [Header("Fade")]
         [SerializeField] private float t = 0;
@@ -51,7 +52,8 @@ namespace FingerFighter.Control.Scenes
                 hexes.Scale(t = i / duration);
                 yield return wfs;
             }
-            
+
+            yield return new WaitForSeconds(splashDuration);
             loadSceneAction.Invoke();
             
             for (float i = duration; i >= 0; i -= stepDuration)

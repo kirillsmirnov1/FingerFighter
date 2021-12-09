@@ -70,3 +70,4 @@ MonoBehaviour:
   levelMapGenerator: {fileID: 11400000, guid: 940001958c68e6d41bbc6bdd470afe88, type: 2}
   levelMapDisplay: {fileID: 7271307827983755781}
   playerMarker: {fileID: 0}
+  roomsStatus: {fileID: 11400000, guid: b061b253f0bf6054f9cd2796561f64f3, type: 2}
