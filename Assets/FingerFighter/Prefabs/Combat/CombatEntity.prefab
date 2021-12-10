@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3621181120631163398}
   - component: {fileID: 6695693307076008194}
-  - component: {fileID: 1664665695224966896}
   - component: {fileID: 1948778163881337074}
   - component: {fileID: 7704720750568381924}
   - component: {fileID: 3166363421491597416}
@@ -49,23 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   affiliation: -2147483648
-  stats: {fileID: 0}
-  rb: {fileID: 8468718182152183055}
-  projectile: {fileID: 0}
-  combatTimeScale: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
---- !u!114 &1664665695224966896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14481932405088701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7386a1b6702a4988ac9377463f4a4993, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseHealth: 0
 --- !u!114 &1948778163881337074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: {fileID: 6695693307076008194}
-  health: {fileID: 1664665695224966896}
+  health: {fileID: 0}
   damageBlockers: []
 --- !u!212 &7704720750568381924
 SpriteRenderer:

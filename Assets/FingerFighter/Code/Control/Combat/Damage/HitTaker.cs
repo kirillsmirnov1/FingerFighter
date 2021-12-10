@@ -4,6 +4,7 @@ using FingerFighter.Control.Conditions.Flags;
 using FingerFighter.Model.Combat;
 using FingerFighter.Model.Combat.Damage;
 using UnityEngine;
+using UnityUtils;
 
 namespace FingerFighter.Control.Combat.Damage
 {
@@ -20,6 +21,9 @@ namespace FingerFighter.Control.Combat.Damage
         [SerializeField] private AFlag[] damageBlockers;
 
         public Affiliation Affiliation { get; private set; }
+
+        private void OnValidate() 
+            => this.CheckNullFields();
 
         private void OnEnable()
         {

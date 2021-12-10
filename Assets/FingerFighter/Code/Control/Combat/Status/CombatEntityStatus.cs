@@ -13,8 +13,8 @@ namespace FingerFighter.Control.Combat.Status
 
         protected virtual void OnValidate()
         {
-            if (health == null) health = GetComponent<AHealth>();
-            if (id == null) id = GetComponent<CombatEntityId>();
+            health ??= GetComponent<AHealth>();
+            id ??= GetComponent<CombatEntityId>();
         }
 
         protected virtual void OnEnable() => health.onNoHealth += OnNoHealth;
