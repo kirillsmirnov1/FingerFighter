@@ -3,13 +3,12 @@ using UnityEngine;
 
 namespace FingerFighter.Control.Combat.Health
 {
-    public class AHealth : MonoBehaviour
+    public abstract class AHealth : MonoBehaviour
     {
-        [SerializeField] private float baseHealth;
-        public virtual float BaseHealth => baseHealth;
+        public abstract float BaseHealth { get; }
 
         public bool NoHealth => CurrentHealth < 0.0001f;
-        public float CurrentHealth { get; protected set; }
+        public virtual float CurrentHealth { get; protected set; }
         protected readonly object Lock = new object();
 
         public event Action<float> onHealthChange;
