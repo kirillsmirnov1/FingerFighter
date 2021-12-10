@@ -53,8 +53,7 @@ MonoBehaviour:
   blast: {fileID: 6660860642096657424}
   reviveBlastDelay: 0.5
   playerReviveDelay: 0.7
-  baseHealth: {fileID: 11400000, guid: 14dc4cc1199f2114d8f8037dc459544b, type: 2}
-  currentHealth: {fileID: 11400000, guid: e45ff0e96e9fd2644a820db757df2888, type: 2}
+  playerHealthHelper: {fileID: 11400000, guid: c29f42cff8225e148bd449e68dca587e, type: 2}
 --- !u!114 &6660860642096657424
 MonoBehaviour:
   m_ObjectHideFlags: 0
