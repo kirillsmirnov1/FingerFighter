@@ -22,9 +22,6 @@ namespace FingerFighter.Control.Combat.Damage
 
         public Affiliation Affiliation { get; private set; }
 
-        private void OnValidate() 
-            => this.CheckNullFields();
-
         private void OnEnable()
         {
             Affiliation = id.Affiliation;
