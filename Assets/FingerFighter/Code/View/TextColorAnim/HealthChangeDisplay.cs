@@ -8,7 +8,9 @@ namespace FingerFighter.View.TextColorAnim
     public class HealthChangeDisplay : TmpTextFade
     {
         [SerializeField] private AHealth health;
-
+        [SerializeField] private string prefix = "<sprite index=0 tint=1>";
+        [SerializeField] private string postfix = "%";
+        
         protected override void OnValidate()
         {
             base.OnValidate();
@@ -23,7 +25,7 @@ namespace FingerFighter.View.TextColorAnim
         private void DisplayHealthChange(float currHealth)
         {
             var healthPercent = (int) (100 * currHealth / health.BaseHealth);
-            SetText($"♥{healthPercent}%");
+            SetText($"{prefix}{healthPercent}{postfix}");
             ResetDurationTimer();
         }
     }
