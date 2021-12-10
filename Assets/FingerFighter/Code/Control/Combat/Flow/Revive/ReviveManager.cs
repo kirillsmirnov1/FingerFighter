@@ -1,5 +1,7 @@
-﻿using FingerFighter.View.Display;
+﻿using System;
+using FingerFighter.View.Display;
 using UnityEngine;
+using UnityUtils;
 using UnityUtils.Events;
 using UnityUtils.Extensions;
 using UnityUtils.Variables;
@@ -16,6 +18,13 @@ namespace FingerFighter.Control.Combat.Flow.Revive
         [SerializeField] private ReviveBlast blast;
         [SerializeField] private float reviveBlastDelay = 0.2f;
         [SerializeField] private float playerReviveDelay = 0.5f;
+        [SerializeField] private FloatVariable baseHealth;
+        [SerializeField] private FloatVariable currentHealth;
+
+        private void OnValidate()
+        {
+            this.CheckNullFieldsIfNotPrefab();
+        }
 
         private void Awake()
         {
@@ -29,6 +38,7 @@ namespace FingerFighter.Control.Combat.Flow.Revive
 
         private void OnRevive()
         {
+            currentHealth.Value = baseHealth;
             playerDeathView.Hide();
             currentScore.gameObject.SetActive(true);
             this.DelayAction(reviveBlastDelay, () => blast.Blast());
