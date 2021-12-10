@@ -549,6 +549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelMapVariable: {fileID: 11400000, guid: e52ef326e40dbb241803e398aabddfc6, type: 2}
   levelScore: {fileID: 11400000, guid: ae7db4e60edd1c34f81cf5032898711a, type: 2}
+  playerHealthHelper: {fileID: 11400000, guid: c29f42cff8225e148bd449e68dca587e, type: 2}
 --- !u!1001 &2014108044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -755,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2267947876676496292, guid: ec3fba8b3296e3c4fac743ecee4b800c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 515
       objectReference: {fileID: 0}
     - target: {fileID: 2267947876676496292, guid: ec3fba8b3296e3c4fac743ecee4b800c, type: 3}
       propertyPath: m_AnchoredPosition.y
