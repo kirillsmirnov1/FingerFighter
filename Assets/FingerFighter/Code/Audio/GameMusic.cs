@@ -8,6 +8,7 @@ namespace FingerFighter.Audio
     {
         [SerializeField] private AudioSource ambientMusic;
         [SerializeField] private AudioSource actionMusic;
+        [SerializeField] private AudioCrossFade audioCrossFade;
         [SerializeField] private SceneNameReference runnerScene;
         
         private bool _action;
@@ -37,13 +38,11 @@ namespace FingerFighter.Audio
             _action = newAction;
             if (_action)
             {
-                actionMusic.Play();
-                ambientMusic.Pause();
+                audioCrossFade.BeginCrossFade(ambientMusic, actionMusic);
             }
             else
             {
-                actionMusic.Pause();
-                ambientMusic.Play();
+                audioCrossFade.BeginCrossFade(actionMusic, ambientMusic);
             }
         }
     }
