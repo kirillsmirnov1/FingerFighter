@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using FingerFighter.Model.Combat;
+using FingerFighter.Model.Common.Combat;
 using UnityEngine;
 
 namespace FingerFighter.Model.EnemyFormations

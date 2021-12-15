@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using FingerFighter.View.Runner;
+using UnityEditor;
 using UnityEngine;
 
 namespace FingerFighter.View.Display

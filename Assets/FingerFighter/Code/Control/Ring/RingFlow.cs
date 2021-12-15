@@ -1,4 +1,4 @@
-﻿using FingerFighter.Control.Combat.Health;
+﻿using FingerFighter.Control.Common.Combat.Health;
 using FingerFighter.Model.LevelMaps;
 using UnityEngine;
 using UnityUtils.Variables;

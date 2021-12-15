@@ -1,8 +1,8 @@
 ﻿using System;
-using FingerFighter.Control.Scenes;
-using FingerFighter.Model.Combat.Flow;
+using FingerFighter.Control.Common.Scenes;
 using FingerFighter.Model.EnemyFormations;
 using FingerFighter.Model.LevelMaps;
+using FingerFighter.Model.Runner.Flow;
 using FingerFighter.View.LevelMaps;
 using FingerFighter.View.LevelMaps.Player;
 using UnityEngine;

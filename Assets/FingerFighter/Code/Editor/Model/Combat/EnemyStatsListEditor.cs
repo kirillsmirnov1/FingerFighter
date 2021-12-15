@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using FingerFighter.Model.Common.Combat;
+using UnityEditor;
 using UnityEngine;
 
 namespace FingerFighter.Model.Combat

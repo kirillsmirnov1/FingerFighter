@@ -1,5 +1,5 @@
 ﻿using FingerFighter.Utils;
-using FingerFighter.View.Display;
+using FingerFighter.View.Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

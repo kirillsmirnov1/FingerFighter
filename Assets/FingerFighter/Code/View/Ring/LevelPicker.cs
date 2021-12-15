@@ -1,5 +1,5 @@
+using FingerFighter.Control.Common.Scenes;
 using FingerFighter.Control.LevelMaps;
-using FingerFighter.Control.Scenes;
 using FingerFighter.Model.EnemyFormations;
 using FingerFighter.Utils;
 using UnityEngine;
