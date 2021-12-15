@@ -11,7 +11,7 @@ namespace FingerFighter.Audio
         [SerializeField] private AudioCrossFade audioCrossFade;
         [SerializeField] private SceneNameReference runnerScene;
         
-        private bool _action;
+        private bool _action = true;
 
         private void OnValidate()
         {
@@ -20,8 +20,11 @@ namespace FingerFighter.Audio
 #endif
         }
 
-        private void Awake() 
-            => SceneManager.sceneLoaded += OnSceneLoaded;
+        private void Awake()
+        {
+            SetAction(false);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
 
         private void OnDestroy() 
             => SceneManager.sceneLoaded -= OnSceneLoaded;
