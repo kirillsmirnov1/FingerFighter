@@ -818,7 +818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7761519382728337902, guid: b820cb927ba40fc43aab742633d65f33, type: 3}
       propertyPath: m_Name
-      value: Info
+      value: InfoWindow
       objectReference: {fileID: 0}
     - target: {fileID: 9180539546980773082, guid: b820cb927ba40fc43aab742633d65f33, type: 3}
       propertyPath: m_AnchorMax.y
