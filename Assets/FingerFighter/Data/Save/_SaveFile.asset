@@ -32,3 +32,7 @@ MonoBehaviour:
     defaultValue: {fileID: 11400000, guid: dc570cc210b142e4ea4865b4dc4d7550, type: 2}
   - variable: {fileID: 11400000, guid: e45ff0e96e9fd2644a820db757df2888, type: 2}
     defaultValue: {fileID: 11400000, guid: 14dc4cc1199f2114d8f8037dc459544b, type: 2}
+  - variable: {fileID: 11400000, guid: df47f2f33f6be8e45b834ca49036de9c, type: 2}
+    defaultValue: {fileID: 11400000, guid: f05137d7591e8ed4f9aa4d9dc99e618b, type: 2}
+  - variable: {fileID: 11400000, guid: 9d90e7dd1179ed74c86cb64e3bea42c0, type: 2}
+    defaultValue: {fileID: 11400000, guid: f05137d7591e8ed4f9aa4d9dc99e618b, type: 2}
