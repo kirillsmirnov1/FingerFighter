@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityUtils.Variables;
@@ -15,21 +14,10 @@ namespace FingerFighter.View.Util
         {
             slider ??= GetComponent<Slider>();
         }
-
-        private void Awake()
-        {
-            slider.value = variable.Value;
-            slider.onValueChanged.AddListener(OnSliderValueChange);
-        }
-
-        private void OnDestroy()
-        {
-            slider.onValueChanged.RemoveListener(OnSliderValueChange);
-        }
-
-        private void OnSliderValueChange(float newValue)
-        {
-            variable.Value = newValue;
-        }
+        
+        private void OnEnable() => slider.value = variable;
+        private void Awake() => slider.onValueChanged.AddListener(OnSliderValueChange);
+        private void OnDestroy() => slider.onValueChanged.RemoveListener(OnSliderValueChange);
+        private void OnSliderValueChange(float newValue) => variable.Value = newValue;
     }
 }
