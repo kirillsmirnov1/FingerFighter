@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3917338022341200674}
   - component: {fileID: 8148854793499957208}
+  - component: {fileID: 7961352158199054535}
   m_Layer: 0
   m_Name: action
   m_TagString: Untagged
@@ -124,6 +125,44 @@ AudioSource:
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &7961352158199054535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2520496501257595244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a192a43ffcd22478be1bdcee9b0b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  var: {fileID: 11400000, guid: b4ccc37e5c5c7f24fad631c15473056a, type: 2}
+  audioSource: {fileID: 8148854793499957208}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.55
+      inSlope: 0.35210925
+      outSlope: 0.35210925
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.3493038
+      outSlope: 0.3493038
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.9992923
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
