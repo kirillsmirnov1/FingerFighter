@@ -54,6 +54,12 @@ namespace FingerFighter.View.Util
             InitStopper();
         }
 
+        public void Close()
+        {
+            scaleDirection = -1;
+            InitStopper();
+        }
+
         private void Update()
         {
             if(_shouldStop()) return;

@@ -208,6 +208,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3758303258215860006}
+        m_TargetAssemblyTypeName: FingerFighter.View.Util.RectTransformScaler, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6794524867783958874
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +355,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3758303258215860006}
         m_TargetAssemblyTypeName: FingerFighter.View.Util.RectTransformScaler, Assembly-CSharp
         m_MethodName: Scale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5195547807247462015}
+        m_TargetAssemblyTypeName: FingerFighter.View.Util.RectTransformScaler, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -752,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3058871974870641043, guid: 5c7864c25f70c7b41bd7bf1691cbc739, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0.4999995
       objectReference: {fileID: 0}
     - target: {fileID: 3058871974870641043, guid: 5c7864c25f70c7b41bd7bf1691cbc739, type: 3}
       propertyPath: m_AnchorMax.y
@@ -760,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3058871974870641043, guid: 5c7864c25f70c7b41bd7bf1691cbc739, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0.4999995
       objectReference: {fileID: 0}
     - target: {fileID: 3058871974870641043, guid: 5c7864c25f70c7b41bd7bf1691cbc739, type: 3}
       propertyPath: m_SizeDelta.y
@@ -816,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8359425828254900514, guid: 5c7864c25f70c7b41bd7bf1691cbc739, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0.4999995
       objectReference: {fileID: 0}
     - target: {fileID: 8359425828254900514, guid: 5c7864c25f70c7b41bd7bf1691cbc739, type: 3}
       propertyPath: m_AnchorMax.y
@@ -824,7 +848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8359425828254900514, guid: 5c7864c25f70c7b41bd7bf1691cbc739, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0.4999995
       objectReference: {fileID: 0}
     - target: {fileID: 8359425828254900514, guid: 5c7864c25f70c7b41bd7bf1691cbc739, type: 3}
       propertyPath: m_SizeDelta.y
