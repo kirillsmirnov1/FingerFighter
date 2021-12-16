@@ -140,6 +140,8 @@ GameObject:
   - component: {fileID: 4257701915767529848}
   - component: {fileID: 4154625234889939552}
   - component: {fileID: 26049166298703653}
+  - component: {fileID: 7480721894570388556}
+  - component: {fileID: 9219100917386345287}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -319,6 +321,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 131e2e3665d24147b55953bf94c0ef19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7480721894570388556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257701915767529850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0302c7103cf34cafb3a05627e30a5771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeVar: {fileID: 11400000, guid: df47f2f33f6be8e45b834ca49036de9c, type: 2}
+  audioGroup: {fileID: 24100000, guid: ffc713964cafebc4891ab6a3a8db36bf, type: 2}
+  volumeParamName: VolumeMusic
+--- !u!114 &9219100917386345287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257701915767529850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0302c7103cf34cafb3a05627e30a5771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeVar: {fileID: 11400000, guid: 9d90e7dd1179ed74c86cb64e3bea42c0, type: 2}
+  audioGroup: {fileID: 24100000, guid: ffc713964cafebc4891ab6a3a8db36bf, type: 2}
+  volumeParamName: VolumeSounds
 --- !u!1 &5468198628355202881
 GameObject:
   m_ObjectHideFlags: 0
