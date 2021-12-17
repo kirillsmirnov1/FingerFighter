@@ -28,12 +28,16 @@ namespace FingerFighter.Control.Common.Input
         private void Awake()
         {
             _wfs = new WaitForSeconds(stepDuration);
+        }
+
+        private void OnEnable()
+        {
             combatTimeScale.Value = 1f;
             HandlesInputManager.OnInputRegained += UnPause;
             HandlesInputManager.OnInputLost += Pause;
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
             HandlesInputManager.OnInputRegained -= UnPause;
             HandlesInputManager.OnInputLost -= Pause;
