@@ -283,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.y
-      value: -3.6837473
+      value: -2.9380648
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[1].enemy
@@ -2460,11 +2460,11 @@ PrefabInstance:
       objectReference: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.x
-      value: 0
+      value: 0.039230935
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.y
-      value: -3.6837473
+      value: -2.7810788
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[1].enemy
@@ -4539,6 +4539,7 @@ MonoBehaviour:
   - {fileID: 343819890}
   - {fileID: 215102681}
   - {fileID: 1967956368}
+  - {fileID: 993664819}
   - {fileID: 1161470853}
   - {fileID: 1099536165}
   - {fileID: 742898347}
@@ -4548,7 +4549,6 @@ MonoBehaviour:
   - {fileID: 1058453106}
   - {fileID: 1416380213}
   - {fileID: 1521983098}
-  - {fileID: 993664819}
 --- !u!1 &824310820
 GameObject:
   m_ObjectHideFlags: 0
@@ -8620,11 +8620,11 @@ PrefabInstance:
       objectReference: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.x
-      value: 0.00000059604645
+      value: 0.0000011897536
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.y
-      value: -3.6837473
+      value: -2.9380648
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[1].enemy
@@ -15935,11 +15935,11 @@ PrefabInstance:
       objectReference: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.x
-      value: 0.00000059604645
+      value: 0.0000011897536
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[0].pos.y
-      value: -3.6837473
+      value: -2.9773111
       objectReference: {fileID: 0}
     - target: {fileID: 6037152200371020009, guid: 4a6f8c8c43760ab45a1e197c78bc2822, type: 3}
       propertyPath: formation.entries.Array.data[1].enemy

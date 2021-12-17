@@ -23,7 +23,7 @@ MonoBehaviour:
   - id: 2
     entries:
     - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-      pos: {x: 0.00000059604645, y: -3.6837473}
+      pos: {x: 0.0000011897536, y: -2.9773111}
   - id: 3
     entries:
     - enemy: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
@@ -103,7 +103,7 @@ MonoBehaviour:
   - id: 14
     entries:
     - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-      pos: {x: 0.00000059604645, y: -3.6837473}
+      pos: {x: 0.0000011897536, y: -2.9380648}
     - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
       pos: {x: -1.4746273, y: -0.45684528}
     - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
@@ -183,7 +183,7 @@ MonoBehaviour:
   - id: 22
     entries:
     - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-      pos: {x: 0, y: -3.6837473}
+      pos: {x: 0, y: -2.9380648}
     - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
       pos: {x: -2.9953372, y: 2.9544516}
     - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
@@ -251,7 +251,7 @@ MonoBehaviour:
   - id: 27
     entries:
     - enemy: {fileID: -4539852944185796980, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
-      pos: {x: 0, y: -3.6837473}
+      pos: {x: 0.039230935, y: -2.7810788}
     - enemy: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
       pos: {x: -4.5160465, y: -23.552246}
     - enemy: {fileID: 6527744406199669517, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
