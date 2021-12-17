@@ -197,6 +197,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
       value: 0.18867922
@@ -346,6 +350,18 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1855793733099305872}
   onSprite: {fileID: 21300000, guid: fef4c236cb74d734fa624f62db80a95a, type: 3}
   offSprite: {fileID: 21300000, guid: c6306a0b99f5fee48a65792d67f80dc3, type: 3}
+--- !u!114 &4973473324352882684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8295282103694165961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbea31367b331c42b7760f60f5ac9cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5742867060835199368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,18 +408,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   components: {fileID: 4850597149817799202}
---- !u!114 &4973473324352882684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8295282103694165961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cbea31367b331c42b7760f60f5ac9cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3120317160600300493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,9 +427,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: TwoTailsSegment (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2911478705436939717, guid: 047a10d633432624daab34f5be78a790, type: 3}
+      propertyPath: m_LinearDrag
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3849988241430725353, guid: 047a10d633432624daab34f5be78a790, type: 3}
       propertyPath: m_Name
       value: TwoTailsSegment (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672619323658927707, guid: 047a10d633432624daab34f5be78a790, type: 3}
+      propertyPath: m_LinearDrag
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5815216297853742184, guid: 047a10d633432624daab34f5be78a790, type: 3}
       propertyPath: m_Name
@@ -478,6 +490,10 @@ PrefabInstance:
     - target: {fileID: 5815216297853742191, guid: 047a10d633432624daab34f5be78a790, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836173632184277246, guid: 047a10d633432624daab34f5be78a790, type: 3}
+      propertyPath: m_LinearDrag
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6760530965339498871, guid: 047a10d633432624daab34f5be78a790, type: 3}
       propertyPath: m_Name
@@ -553,9 +569,17 @@ PrefabInstance:
       propertyPath: next
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2911478705436939717, guid: 047a10d633432624daab34f5be78a790, type: 3}
+      propertyPath: m_LinearDrag
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3849988241430725353, guid: 047a10d633432624daab34f5be78a790, type: 3}
       propertyPath: m_Name
       value: TwoTailsSegment (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672619323658927707, guid: 047a10d633432624daab34f5be78a790, type: 3}
+      propertyPath: m_LinearDrag
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5815216297853742184, guid: 047a10d633432624daab34f5be78a790, type: 3}
       propertyPath: m_Name
@@ -608,6 +632,10 @@ PrefabInstance:
     - target: {fileID: 5815216297853742191, guid: 047a10d633432624daab34f5be78a790, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836173632184277246, guid: 047a10d633432624daab34f5be78a790, type: 3}
+      propertyPath: m_LinearDrag
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7276839736805479576, guid: 047a10d633432624daab34f5be78a790, type: 3}
       propertyPath: next

@@ -223,7 +223,7 @@ MonoBehaviour:
   tag: TwoTails_Segment
   prefab: {fileID: 0}
   health: 50
-  movementSpeed: 8
+  movementSpeed: 16
   rotationSpeed: 0.8
   collisionDamage: 5
   moveForwardLimit: 0.4
@@ -269,7 +269,7 @@ MonoBehaviour:
   tag: TwoTails
   prefab: {fileID: 4833485101410928002, guid: a1d9d2007d49bb348a9d94f08f4fd380, type: 3}
   health: 50
-  movementSpeed: 4
+  movementSpeed: 8
   rotationSpeed: 0.4
   collisionDamage: 5
   moveForwardLimit: 0
