@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1079975434784994568, guid: 58f011c7eeb87384db2a54d25c8a7b84, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1267362030766454243, guid: 58f011c7eeb87384db2a54d25c8a7b84, type: 3}
       propertyPath: m_SortingOrder
       value: 63
@@ -111,6 +115,10 @@ PrefabInstance:
     - target: {fileID: 1079975434784994568, guid: 58f011c7eeb87384db2a54d25c8a7b84, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079975434784994568, guid: 58f011c7eeb87384db2a54d25c8a7b84, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1267362030766454243, guid: 58f011c7eeb87384db2a54d25c8a7b84, type: 3}
       propertyPath: m_Sprite
@@ -341,6 +349,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
       value: 0.18867922
@@ -475,6 +487,10 @@ PrefabInstance:
     - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
@@ -611,6 +627,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
       value: 0.18867922
@@ -745,6 +765,10 @@ PrefabInstance:
     - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
@@ -881,6 +905,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
       value: 0.18867922
@@ -1016,6 +1044,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
       value: 0.18867922
@@ -1150,6 +1182,10 @@ PrefabInstance:
     - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
@@ -1312,6 +1348,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3908044976770042322, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3954236666818775251, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
       propertyPath: m_SortingOrder
       value: 15
@@ -1343,6 +1383,10 @@ PrefabInstance:
     - target: {fileID: 5806784830741123077, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806784830741123077, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6184310394750561830, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
       propertyPath: deathPosTransform
@@ -1411,6 +1455,10 @@ PrefabInstance:
     - target: {fileID: 7016385325321330456, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016385325321330456, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8213371002191617755, guid: 0237a966a52071b40bc3b4e470979992, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1541,6 +1589,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
       value: 0.18867922
@@ -1654,6 +1706,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1183240457381917521, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2228648095029108348, guid: e3cbacf05b51e4149860b8b234ae57f3, type: 3}
       propertyPath: highlightColor.b
       value: 0.18867922
@@ -1750,6 +1806,10 @@ PrefabInstance:
     - target: {fileID: 1079975434784994568, guid: 58f011c7eeb87384db2a54d25c8a7b84, type: 3}
       propertyPath: m_Mass
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079975434784994568, guid: 58f011c7eeb87384db2a54d25c8a7b84, type: 3}
+      propertyPath: m_LinearDrag
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1267362030766454243, guid: 58f011c7eeb87384db2a54d25c8a7b84, type: 3}
       propertyPath: m_SortingOrder
