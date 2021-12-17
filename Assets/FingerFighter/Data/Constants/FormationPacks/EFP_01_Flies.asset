@@ -788,3 +788,53 @@ MonoBehaviour:
       pos: {x: 1.4595964, y: 1.500659}
     - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
       pos: {x: 6.437192, y: -6.508403}
+  - id: 34
+    entries:
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 4.4650345, y: -14.5173855}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -4.5914025, y: -14.51739}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0.09481943, y: -25.846931}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0.09481785, y: -25.13555}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0.04740882, y: -24.424168}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -16.450787, y: -9.911943}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -15.407798, y: -9.911943}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -14.412216, y: -9.959369}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 16.498196, y: -10.006794}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 15.502615, y: -9.959368}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 14.459627, y: -9.959368}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -0.000000074505806, y: 6.260175}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -0.000000074505806, y: 5.501365}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 0.047409046, y: 4.5528555}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 4.4650345, y: -5.4609504}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -4.5492797, y: -5.4609504}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 4.507156, y: -13.464313}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 3.4962053, y: -14.5173855}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -3.5383291, y: -14.475264}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -4.5914025, y: -13.464313}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 4.4229107, y: -6.471902}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: 3.4540815, y: -5.4609504}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -4.5914025, y: -6.4297786}
+    - enemy: {fileID: -3534459566151433842, guid: dae84e9c368351c4b9f3778b28e7c4fd, type: 2}
+      pos: {x: -3.496205, y: -5.5030737}
