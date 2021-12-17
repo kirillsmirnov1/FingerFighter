@@ -13,7 +13,4 @@ MonoBehaviour:
   m_Name: playerTransform
   m_EditorClassIdentifier: 
   value: {fileID: 0}
-  save: 0
-  logSave: 0
-  defaultValue: {fileID: 0}
   guid: 79ffdb47b4c561642a14f4910d8d7a88
