@@ -108,5 +108,18 @@ namespace FingerFighter.Control.Common.Input.Handles
                 OnFingerUp(fingers[i]);
             }
         }
+
+        private static bool IsPointerOverUiComponent<T>(Vector2 pos)
+        {
+            var eventData = new PointerEventData(EventSystem.current)
+            {
+                position = pos
+            };
+
+            var results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, results);
+
+            return results.Any(r => r.gameObject.TryGetComponent<T>(out _));
+        }
     }
 }
