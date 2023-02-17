@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FingerFighter.Control.Common.Combat.Status;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEngine.UI;
 using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 namespace FingerFighter.Control.Common.Input.Handles
@@ -53,6 +55,7 @@ namespace FingerFighter.Control.Common.Input.Handles
             lock (Lock)
             {
                 if (_freeHandles.Count <= 0) return;
+                if (IsPointerOverUiComponent<Button>(finger.screenPosition)) return;
                 var handle = PickHandleForFinger(finger);  
                 handle.finger = finger;
                 _pairings.Add(finger, handle);
