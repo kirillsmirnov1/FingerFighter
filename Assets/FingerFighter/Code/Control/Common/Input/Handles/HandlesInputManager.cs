@@ -55,7 +55,7 @@ namespace FingerFighter.Control.Common.Input.Handles
             lock (Lock)
             {
                 if (_freeHandles.Count <= 0) return;
-                if (IsPointerOverUiComponent<Button>(finger.screenPosition)) return;
+                if (IsPointerOverUiComponent<Image>(finger.screenPosition)) return;
                 var handle = PickHandleForFinger(finger);  
                 handle.finger = finger;
                 _pairings.Add(finger, handle);
