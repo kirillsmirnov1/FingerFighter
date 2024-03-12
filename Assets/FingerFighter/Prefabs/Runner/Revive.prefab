@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6660860642096657455}
   - component: {fileID: 4052787709487195397}
   - component: {fileID: 6660860642096657424}
-  - component: {fileID: 5504625715729258605}
   - component: {fileID: 558319845924997317}
   m_Layer: 0
   m_Name: Revive
@@ -30,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -68,20 +68,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastForce: 20
   playerTransformVariable: {fileID: 11400000, guid: 79ffdb47b4c561642a14f4910d8d7a88, type: 2}
---- !u!114 &5504625715729258605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6660860642096657453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc7929b0e3986f04a8ccde7a26d43be0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  request: {fileID: 11400000, guid: 63e5a40ba9c261a40b5e6a5ca15d1661, type: 2}
-  reward: {fileID: 11400000, guid: b471b33f66aebde47a963389529597b8, type: 2}
 --- !u!114 &558319845924997317
 MonoBehaviour:
   m_ObjectHideFlags: 0
