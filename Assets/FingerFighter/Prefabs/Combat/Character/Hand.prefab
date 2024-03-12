@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 6402533313623781743}
-  cacheSize: 5
+  cacheSize: 10
 --- !u!114 &6430294526901351928
 MonoBehaviour:
   m_ObjectHideFlags: 0
