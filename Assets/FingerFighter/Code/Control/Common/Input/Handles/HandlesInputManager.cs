@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using FingerFighter.Control.Common.Combat.Status;
+using FingerFighter.Control.Common.Input.Touches;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.EnhancedTouch;
@@ -18,7 +19,7 @@ namespace FingerFighter.Control.Common.Input.Handles
         
         [SerializeField] private Handle[] handles;
 
-        private readonly Dictionary<Finger, Handle> _pairings = new Dictionary<Finger, Handle>();
+        private readonly Dictionary<ITouchWrap, Handle> _pairings = new Dictionary<ITouchWrap, Handle>();
         private List<Handle> _freeHandles;
 
         private static readonly object Lock = new object();
@@ -50,25 +51,47 @@ namespace FingerFighter.Control.Common.Input.Handles
             PlayerStatus.OnDeath -= OnPlayerDead;
         }
 
+#if UNITY_WEBGL
+
+        private readonly ITouchWrap _mouseTouchWrap = new MouseTouchWrap();
+        private void Update()
+        {
+            if (UnityEngine.Input.GetMouseButtonDown(0))
+            {
+                OnTouchDown(_mouseTouchWrap);
+            }
+            else if (UnityEngine.Input.GetMouseButtonUp(0))
+            {
+                OnTouchUp(_mouseTouchWrap);
+            }
+        }
+
+#endif
+
         private void OnFingerDown(Finger finger)
+        {
+            OnTouchDown(new FingerTouchWrap(finger));
+        }
+
+        private void OnTouchDown(ITouchWrap touchWrap)
         {
             lock (Lock)
             {
                 if (_freeHandles.Count <= 0) return;
-                if (IsPointerOverUiComponent<Image>(finger.screenPosition)) return;
-                var handle = PickHandleForFinger(finger);  
-                handle.finger = finger;
-                _pairings.Add(finger, handle);
+                if (IsPointerOverUiComponent<Image>(touchWrap.screenPosition)) return;
+                var handle = PickHandleForFinger(touchWrap);  
+                handle.touchWrap = touchWrap;
+                _pairings.Add(touchWrap, handle);
                 if(_pairings.Count == 1) OnInputRegained?.Invoke();
             }
         }
 
-        private Handle PickHandleForFinger(Finger finger)
+        private Handle PickHandleForFinger(ITouchWrap touchWrap)
         {
             var nearestHandleIndex = 0;
             if (_freeHandles.Count > 1)
             {
-                var fingerPos = _camera.ScreenToWorldPoint(finger.screenPosition);
+                var fingerPos = _camera.ScreenToWorldPoint(touchWrap.screenPosition);
                 var minDistance = float.MaxValue;
                 for (int i = 0; i < _freeHandles.Count; i++)
                 {
@@ -85,14 +108,17 @@ namespace FingerFighter.Control.Common.Input.Handles
             return handle;
         }
 
-        private void OnFingerUp(Finger finger)
+        private void OnFingerUp(Finger finger) 
+            => OnTouchUp(new FingerTouchWrap(finger));
+        
+        private void OnTouchUp(ITouchWrap touchWrap)
         {
             lock (Lock)
             {
-                if (!_pairings.ContainsKey(finger)) return;
-                var handle = _pairings[finger];
-                handle.finger = null;
-                _pairings.Remove(finger);
+                if (!_pairings.ContainsKey(touchWrap)) return;
+                var handle = _pairings[touchWrap];
+                handle.touchWrap = null;
+                _pairings.Remove(touchWrap);
                 _freeHandles.Add(handle);
                 if(_pairings.Count == 0) OnInputLost?.Invoke();
             }
@@ -105,7 +131,7 @@ namespace FingerFighter.Control.Common.Input.Handles
             var fingers = _pairings.Keys.ToArray();
             for (int i = 0; i < fingers.Length; i++)
             {
-                OnFingerUp(fingers[i]);
+                OnTouchUp(fingers[i]);
             }
         }
 
